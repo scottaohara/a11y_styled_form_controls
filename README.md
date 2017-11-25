@@ -19,6 +19,8 @@ Read more about switch buttons and check out the repository for an [ARIA switch 
 ## Selects
 A styleable native single and multi-select pattern.  
 
+## Range Slider
+A styled native range slider that takes multiple browser quirks (re: varied implementations) into consideration.  
 
 ### License & Such
 This script was written by [Scott O'Hara](https://twitter.com/scottohara).
