@@ -3,13 +3,14 @@
 A repository of styled, accessible, checkboxes, radio buttons, selects, and more?  
 
 ## Checkboxes
-1. Stylable native checkbox  
-2. Tri-state ARIA checkboxes  
+1. Styleable native checkbox  
+2. Tristate ARIA checkboxes  
 
 ## Radio Buttons
-A stylable native radio button group pattern.  
+A styleable native radio button group pattern.  
 1. Basic design  
 2. Rating design  
+3. Pill 
 
 ## Switch Buttons  
 Switches are a type of picker input that is typically represented as an on/off toggle control.  Unlike a checkbox, switches are meant to perform an instance change in a component or application's state. 
