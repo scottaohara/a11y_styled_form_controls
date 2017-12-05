@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en-us" class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>
+			Accessible Custom Radio Pills
+		</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+
+		<style>
+		*,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-family:arial}*{margin-bottom:0}body,html{background:#fafafa;color:#450c13;font-size:18px;line-height:1.3;margin:0;padding:0;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}.content-area{padding:20px;margin:auto;max-width:660px}a{color:#921c2b}a:hover,a:focus{color:#c12f48}
+		</style>
+	</head>
+
+	<body id="body">
+
+		<div id="page" class="content-area">
+
+			<h1>
+				Custom Radio Pills
+			</h1>
+
+			<p>
+				Intro
+			</p>
+
+
+			<style>
+			.fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.fieldset legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.fieldset h3 {
+  margin: 0 0 .25em;
+}
+
+.fieldset input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.r-group {
+  background: #fafafa;
+  border: 1px solid #aaa;
+  border-radius: 2em;
+  padding: .25em;
+  display: inline-block;
+  position: relative;
+}
+
+.r-group label {
+  border: 2px solid transparent;
+  display: inline-block;
+  padding: .25em .75em;
+  border-radius: 2em;
+  color: navy;
+}
+
+.r-group input:checked + label {
+  background: blue;
+  color: #fff;
+}
+
+.r-group label:last-of-type:after {
+  position: absolute;
+  content: "";
+  left: -.35em;
+  right: -.35em;
+  top: -.35em;
+  bottom: -.35em;
+  border-radius: 2em;
+  pointer-events: none;
+  // don't like pointer-events,
+  // then use z-index: -1;
+}
+
+
+.r-group input:focus ~ label:last-of-type:after  {
+  border: 2px solid #000;
+}
+		</style>
+
+			<form method="post" action="#">
+				<fieldset class="fieldset">
+					<legend>
+						<h2>Title</h2>
+					</legend>
+
+					<div class="r-group">
+						<input type="radio" id="r1" name="radios">
+						<label for="r1">Option 1</label>
+
+						<input type="radio" id="r2" name="radios">
+
+						<label for="r2">Option 2</label>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+
+	</body>
+</html>
+
