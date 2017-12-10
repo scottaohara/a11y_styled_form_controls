@@ -1,8 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8">
-		<title>Range</title>
+		<title>Native Styled Range Input</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
 		<link rel="stylesheet" href="../css/--demo-only--.css">
 		<link rel="stylesheet" href="../css/range.css">
 	</head>
@@ -21,20 +27,35 @@
 			<!--
 				Demo
 			-->
-			<div class="demo">
-				<label for="range_input">
-					Amount
-				</label>
-				<input type="range"
-					id="range_input"
-					name="range_input"
-					min="0"
-					max="400"
-					step="10"
-					value="200"
-					class="c-range">
-			</div>
+			<main>
+				<div class="demo">
+					<h2>
+						Demo
+					</h2>
 
+					<label for="range_input">
+						Choose Amount:
+					</label>
+					<input type="range"
+						id="range_input"
+						name="range_input"
+						min="0"
+						max="400"
+						step="10"
+						value="200"
+						class="c-range">
+				</div>
+
+				<div class="demo-details">
+					<h3>
+						Demo Details
+					</h3>
+
+					<p>
+						...
+					</p>
+				</div>
+			</main>
 		</div> <!-- /.demo-wrap -->
 
 	</body>
