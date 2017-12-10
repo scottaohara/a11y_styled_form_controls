@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Native Label + Checkbox "switch" demo</title>
+		<link rel="stylesheet" href="../css/--demo-only--.css">
+		<link rel="stylesheet" href="../css/switch--button.css">
+
+		<style>
+			.dk-theme {
+				background: #222;
+				color: #eee;
+				outline: 12px solid #222;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+
+			<header class="demo-wrap__header">
+				<h1>Switch Toggle Component: Button</h1>
+				<p>
+					An example of a hard-coded Switch Button as well as a checkbox pattern that is progressively enhanced, with JavaScript, into a Switch Button.
+				</p>
+			</header>
+
+			<!--
+				Demo
+			-->
+			<main>
+				<div class="demo">
+
+					<h2>Demo</h2>
+
+					<p style="margin-bottom: .1em">Hard Coded Button</p>
+					<button type="button" id="bg" class="btn-switch" aria-pressed="false">
+						<span class="btn-switch__label">
+							Dark Header
+						</span>
+						<span class="btn-switch__toggle"></span>
+					</button>
+
+					<hr>
+
+					<p style="margin-bottom: .1em">Progressively Enhanced Button</p>
+					<span data-btn-switch>
+						<label for="pe-switch">
+							Dark Details
+						</label>
+						<input type="checkbox" id="pe-switch">
+					</span>
+
+				</div> <!-- /.demo -->
+
+				<div class="demo-details">
+					<h3>
+						Demo Details
+					</h3>
+					<p>
+						In the context of a control that is meant to perform
+						an instantaneous action, then a button utilizing aria-pressed="true/false" would be the appropriate base for the switch component.
+					</p>
+					<p>
+						As mentioned in the checkbox pattern example details, checkboxes are
+						primarily used in the context of filling out a form, and
+						they are not typically expected to cause an immediate state change to other components, or the
+						website/app in general, when interacting with them.
+					</p>
+					<p>
+						On the other hand, buttons do have a user expectation to cause
+						immediate state change. The usage of aria-pressed="true/false",
+						in combination with a visual state change, will indicate to
+						all users the present state of the button. A succinct and appropriate button label should provide the context of what the
+						button will do/undo based on state.
+					</p>
+				</div>
+			</main>
+
+			<script>
+
+				var peSwitch = document.querySelectorAll('[data-btn-switch]');
+				var i;
+
+				/**
+				 * Run function to progressively enhance a checkbox pattern
+				 * into an ARIA Button to act as a Switch Toggle.
+				 */
+				for ( i = 0; i < peSwitch.length; i++ ) {
+					var getLabel = peSwitch[i].querySelector('label').innerHTML;
+					var getID = peSwitch[i].querySelector('[type="checkbox"]').id;
+					peSwitch[i].innerHTML = '<button type="button" id="' + getID + '" class="btn-switch" aria-pressed="false"><span class="btn-switch__label">' + getLabel + '</span><span class="btn-switch__toggle"></span></button>';
+				}
+
+				/**
+				 * After all buttons have been setup, search
+				 * DOM for buttons to attach toggle function to.
+				 */
+				var btn = document.querySelectorAll('.btn-switch');
+
+				/**
+				 * After all switches have been setup, setup
+				 * eventListenter for on/off functionality.
+				 */
+				for ( i = 0; i < btn.length; i++ ) {
+					btn[i].addEventListener('click', function ( e ) {
+						this.setAttribute('aria-pressed', e.target.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+					});
+				}
+
+
+				/**
+				 * Demo Functionality
+				 */
+
+				document.getElementById('bg').addEventListener('click', function ( ) {
+					var getHeader = document.querySelector('.demo-wrap__header');
+					if ( this.getAttribute('aria-pressed') === 'true') {
+						getHeader.classList.add('dk-theme');
+					}
+					else {
+						getHeader.classList.remove('dk-theme');
+					}
+				});
+
+				document.getElementById('pe-switch').addEventListener('click', function ( ) {
+					var getHeader = document.querySelector('.demo-details');
+					if ( this.getAttribute('aria-pressed') === 'true') {
+						getHeader.classList.add('dk-theme');
+					}
+					else {
+						getHeader.classList.remove('dk-theme');
+					}
+				});
+
+			</script>
+	</body>
+</html>
