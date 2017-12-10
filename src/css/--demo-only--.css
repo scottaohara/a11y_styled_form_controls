@@ -1,0 +1,25 @@
+/**
+ * Styling for consistent demos
+ */
+html,
+body {
+	font-family: arial;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 2em 1em;
+}
+
+.demo-wrap {
+	margin: 2em auto;
+	max-width: 440px;
+}
+
+.demo-wrap__header {
+	border-bottom: 1px solid #888;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+}
