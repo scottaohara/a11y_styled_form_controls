@@ -1,0 +1,66 @@
+/* containing label */
+.check-switch {
+	border: 1px solid;
+	display: block;
+	overflow: hidden;
+	padding: 1em 0;
+	position: relative;
+}
+
+.check-switch span {
+	padding: 0 .5em;
+}
+
+/* using the before/after pseudo elements of the span to create the "switch" */
+.check-switch span:before,
+.check-switch span:after {
+	border: 1px solid;
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* styling specific to the knob of the switch */
+.check-switch span:after {
+	background: #fff;
+	border-radius: 100%;
+	height: 1.75em;
+	transition: right .2s ease-in-out;
+	right: 1.25em;
+	width: 1.75em;
+}
+
+/* styling specific to the knob "container" */
+.check-switch span:before {
+	background: #eee;
+	border-radius: 1.75em;
+	height: 2em;
+	right: .25em;
+	width: 2.75em;
+}
+
+/* hide the actual checkbox from view, but not from keyboards or ATs */
+.check-switch input {
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.check-switch input:focus + span:before {
+	outline: 2px solid;
+}
+
+/* change the position of the knob to indicate it has been checked*/
+.check-switch input:checked + span:after {
+	right: .25em;
+}
+
+/* update the color of the "container" to further visually indicate state */
+.check-switch input:checked + span:before {
+	background: green;
+}
