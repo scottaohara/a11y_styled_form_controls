@@ -11,6 +11,11 @@ body {
 
 body {
 	padding: 2em 1em;
+	line-height: 1.4;
+}
+
+h1, h2, h3 {
+	line-height: 1.1;
 }
 
 .demo-wrap {
@@ -18,8 +23,14 @@ body {
 	max-width: 440px;
 }
 
-.demo-wrap__header {
+main {
+	border-top: 1px solid #888;
+	margin-top: 1.5em;
+	padding-top: .25em;
+}
+
+.demo {
 	border-bottom: 1px solid #888;
-	margin-bottom: 1em;
-	padding-bottom: 1em;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
 }
