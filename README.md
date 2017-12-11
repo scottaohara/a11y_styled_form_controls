@@ -8,7 +8,7 @@ A repository of styled, accessible, native form elements that are typically supe
 
 ## File Upload
 A styled native file upload input that heavily relies upon the native input for appropriate announcements for assistive technologies.  
-1. [Native Range Slider](src/native-range)  
+1. [Native File Upload](src/native-file)  
 
 ## Radio Buttons
 A styleable native radio button group pattern.  
