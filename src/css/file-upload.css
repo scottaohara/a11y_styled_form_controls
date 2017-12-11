@@ -36,11 +36,17 @@
 	outline-offset: 2px;
 }
 
+/*
+
+	since the focus-within script runs in
+	all browsers, regardless of if they support
+	:focus-within or not, this isn't needed.
+
 .file-up__label:focus-within .file-up__label__text {
 	border: 1px solid #111;
 	outline: 2px solid #333;
 	outline-offset: 2px;
-}
+}*/
 
 .file-up__label.focus-within .file-up__label__text {
 	border: 1px solid #111;

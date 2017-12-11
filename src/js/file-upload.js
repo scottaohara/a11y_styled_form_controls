@@ -15,9 +15,6 @@
 
 	var widget = doc.querySelectorAll('[data-file-input]');
 
-	/**
-	 * Create Instances
-	 */
 	A11YfileUp.init = function () {
 		var i;
 
@@ -46,20 +43,18 @@
 		}
 	}; // A11YfileUp.create()
 
-
 	// go go JavaScript
 	A11YfileUp.init();
 
 })( window, document );
 
 
-
 /**
  * Focus within in all browsers.
  * source: https://gist.github.com/aFarkas/a7e0d85450f323d5e164
  */
-(function ( w, doc ) {
-	'use strict';
+	(function ( w, doc ) {
+		'use strict';
 
 		var slice = [].slice;
 		var removeClass = function (elem) {
@@ -97,4 +92,5 @@
 		doc.addEventListener('blur', update, true);
 		update();
 
-})( window, document );
+	})( window, document );
+
