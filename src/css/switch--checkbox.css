@@ -7,8 +7,13 @@
 	position: relative;
 }
 
+.check-switch:hover {
+	box-shadow: 0 0 2px blue;
+}
+
 .check-switch span {
 	padding: 0 .5em;
+	outline: none;
 }
 
 /* using the before/after pseudo elements of the span to create the "switch" */
