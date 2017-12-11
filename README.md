@@ -4,7 +4,7 @@ A repository of styled, accessible, native form elements that are typically supe
 
 ## Checkboxes
 1. [Native Checkboxes](src/native-checkbox)
-2. [Tristate ARIA checkboxes](#!)  
+2. [Tristate ARIA checkboxes](#src/aria-checkboxes)  
 
 ## File Upload
 A styled native file upload input that heavily relies upon the native input for appropriate announcements for assistive technologies.  
@@ -13,7 +13,7 @@ A styled native file upload input that heavily relies upon the native input for 
 ## Radio Buttons
 A styleable native radio button group pattern.  
 1. [Native Radio Buttons](src/native-radio)  
-2. [Rating Radios](src/native-radio--rating)  
+2. [Rating Radios](#src/native-radio--rating)  
 3. [Radio Pill](src/native-radio--pill)  
 
 ## Range Slider
@@ -22,7 +22,8 @@ A styled native range slider that takes multiple browser quirks (re: varied impl
 
 ## Select Boxes
 A styleable native single and multi-select pattern.  
-1. [Native Select Box](src/native-select)  
+1. [Native Select Box](#src/native-select)  
+2. [Native Multi-Select Box](#src/native-select--multi)  
 
 ## Switch Buttons  
 Switches are a type of picker input that is typically represented as an on/off toggle control.  Unlike a checkbox, switches are meant to perform an instance change in a component or application's state.  
