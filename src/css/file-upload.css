@@ -1,0 +1,54 @@
+.file-up {
+	margin-bottom: 1.25em;
+}
+
+.file-up__label {
+	display: inline-block;
+	position: relative;
+}
+
+.file-up__label__text {
+	border: 1px solid #666;
+	display: inline-block;
+	padding: .5em;
+}
+
+.file-up [type="file"] {
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+}
+
+.file-up__output {
+	display: inline-block;
+	font-size: .825em;
+}
+
+
+/**
+ * States
+ */
+.file-up__label:hover .file-up__label__text {
+	border: 1px solid #111;
+	outline: 2px solid #333;
+	outline-offset: 2px;
+}
+
+.file-up__label:focus-within .file-up__label__text {
+	border: 1px solid #111;
+	outline: 2px solid #333;
+	outline-offset: 2px;
+}
+
+.file-up__label.focus-within .file-up__label__text {
+	border: 1px solid #111;
+	outline: 2px solid #333;
+	outline-offset: 2px;
+}
+
+.is-disabled {
+	opacity: .5;
+	pointer-events: none;
+}
