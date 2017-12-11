@@ -3,7 +3,7 @@
 A repository of styled, accessible, native form elements that are typically super annoying to style.  
 
 ## Checkboxes
-1. [Native Checkboxes](src/native-checkbox/)
+1. [Native Checkboxes](src/native-checkbox)
 2. [Tristate ARIA checkboxes](#!)  
 
 ## File Upload
@@ -28,7 +28,7 @@ A styleable native single and multi-select pattern.
 Switches are a type of picker input that is typically represented as an on/off toggle control.  Unlike a checkbox, switches are meant to perform an instance change in a component or application's state.  
 1. [Switch Button](src/switch--checkbox/)
 2. [Switch Checkbox](src/switch--button/)
-3. [ARIA Switch Component (different repo)](https://github.com/scottaohara/aria-switch-button)
+3. [ARIA Switch Component (different repo)](https://scottaohara.github.io/aria-switch-button/)
 
 
 ### License & Such
