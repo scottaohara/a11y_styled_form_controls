@@ -5,6 +5,7 @@
 .file-up__label {
 	display: inline-block;
 	position: relative;
+	vertical-align: middle;
 }
 
 .file-up__label__text {
@@ -13,6 +14,14 @@
 	padding: .5em;
 }
 
+/**
+ * Don't want to use the standard method
+ * for visually hiding the native file upload,
+ * as setting the input to 1px height/width will
+ * cause VoiceOver to not accurately announce
+ * the state of the input (e.g. if there are
+ * files selected or not.)
+ */
 .file-up [type="file"] {
 	height: 100%;
 	left: 0;
@@ -24,6 +33,12 @@
 .file-up__output {
 	display: inline-block;
 	font-size: .825em;
+}
+
+.file-up__output:not(:empty) {
+	border: 1px solid #ddd;
+	padding: .75em;
+	vertical-align: top;
 }
 
 

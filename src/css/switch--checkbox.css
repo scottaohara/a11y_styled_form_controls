@@ -1,6 +1,6 @@
 /* containing label */
 .check-switch {
-	border: 1px solid;
+	border: 1px solid #565656;
 	display: block;
 	overflow: hidden;
 	padding: 1em 0;
@@ -8,7 +8,7 @@
 }
 
 .check-switch:hover {
-	box-shadow: 0 0 2px blue;
+	box-shadow: 0 0 2px 1px #0d5192;
 }
 
 .check-switch span {
@@ -19,7 +19,7 @@
 /* using the before/after pseudo elements of the span to create the "switch" */
 .check-switch span:before,
 .check-switch span:after {
-	border: 1px solid;
+	border: 1px solid #565656;
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -31,8 +31,8 @@
 	background: #fff;
 	border-radius: 100%;
 	height: 1.75em;
-	transition: right .2s ease-in-out;
 	right: 1.25em;
+	transition: right .2s ease-in-out;
 	width: 1.75em;
 }
 

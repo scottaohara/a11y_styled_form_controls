@@ -1,0 +1,47 @@
+input,
+button,
+textarea,
+select {
+	border-radius: 0; /* may change, but start consistently */
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: normal;
+	margin: 0;
+	overflow: visible; /* show overflow in edge */
+	text-transform: none; /* remove inheritance Edge, Firefox, IE */
+}
+
+/**
+ * Remove the Clear button added by MS browsers
+ */
+input::-ms-clear {
+	display: none;
+	height: 0;
+	width: 0;
+}
+
+
+/**
+ * <button> Focus Normalization:
+ * remove FireFox specific inner focus styles.
+ * focus style will be reapplied later.
+ */
+button::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+
+/**
+ * 1. Correct color inheritance in IE
+ * 2. Correct the text wrapping in Edge and IE
+ */
+legend {
+	color: inherit; /* 1 */
+	display: table; /* 2 */
+	line-height: normal;
+	max-width: 100%; /* 2 */
+	white-space: normal; /* 2 */
+}

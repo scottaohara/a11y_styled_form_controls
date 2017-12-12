@@ -1,23 +1,11 @@
 /**
- * <button> Focus Normalization:
- * remove FireFox specific inner focus styles.
- * focus style will be reapplied later.
- */
-button::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-
-/**
  * Button Switch Component
  */
 .btn-switch {
 	background: #fff;
-	border: 1px solid #888;
+	border: 1px solid #565656;
 	cursor: pointer;
 	display: block;
-	font-size: inherit;
 	overflow: hidden;
 	padding: 1em .5em;
 	position: relative;
@@ -26,7 +14,7 @@ button::-moz-focus-inner {
 }
 
 .btn-switch:hover {
-	box-shadow: 0 0 2px blue;
+	box-shadow: 0 0 2px 1px #0d5192;
 }
 
 /* styling specific to the toggle "container" */
@@ -40,7 +28,7 @@ button::-moz-focus-inner {
 
 .btn-switch__toggle,
 .btn-switch__toggle:after {
-	border: 1px solid;
+	border: 1px solid #565656;
 	content: "";
 	position: absolute;
 	right: .25em;

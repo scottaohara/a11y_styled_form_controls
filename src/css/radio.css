@@ -20,7 +20,6 @@
 .c-radio > label:before,
 .c-radio > label:after {
 	border: 1px solid;
-	border-color: #000;
 	border-radius: 100%;
 	content: "";
 	height: 1.125em;
@@ -33,7 +32,12 @@
 	width: 1.125em;
 }
 
+.c-radio > label:after {
+	border-color: #565656;
+}
+
 .c-radio > label:before {
+	border-color: transparent;
 	box-shadow: 0 0 0 0px rgba(0,0,0,0);
 }
 
