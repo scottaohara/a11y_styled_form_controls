@@ -23,8 +23,10 @@
  * files selected or not.)
  */
 .file-up [type="file"] {
+	font-size: .1px;
 	height: 100%;
 	left: 0;
+	min-width: 100%;
 	opacity: 0;
 	position: absolute;
 	top: 0;
