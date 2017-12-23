@@ -1,0 +1,140 @@
+.r-radios {
+	position: relative;
+}
+
+/**
+ * Visually hide radio buttons while
+ * still allowing them to receive keyboard focus
+ */
+.r-radios input[type="radio"] {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.r-radio {
+	color: #2a2a2a;
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	vertical-align: middle;
+}
+
+.r-radio svg {
+	display: block;
+	fill: #cdcdcd;
+	height: 2em;
+	transform: scale(.625);
+	transition: transform .2s ease-in-out;
+	width: 1.75em;
+}
+
+
+.r-radio span {
+	background: #333;
+	border-radius: 3px;
+	bottom: 100%;
+	color: #fff;
+	font-size: .25em;
+	left: 50%;
+	opacity: 0;
+	padding: .75em;
+	position: absolute;
+	text-align: center;
+	transform: translateY(50%) translateX(-50%);
+	transition:
+		font-size .2s ease-in-out,
+		transform .2s ease-in-out,
+		visibility .2s ease-in-out,
+		opacity .2s ease-in-out;
+	visibility: hidden;
+	white-space: nowrap;
+	width: 125%;
+}
+
+.r-radio:hover span,
+input:focus + .r-radio span {
+	font-size: .75em;
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0%) translateX(-50%);
+}
+
+/**
+ * Set any rating icon that appears
+ * in the DOM, AFTER the checked input
+ * as appearing unselected.
+ *
+ * If no input was checked by default,
+ * the first radio item will be auto
+ * selected, and that's the "none" option
+ */
+input:checked ~ .r-radio svg {
+	fill: #666;
+	transform: scale(.625);
+}
+
+/**
+ * If the no-rating option isn't checked
+ * get it to look all unselected again
+ */
+input:not(:checked) ~ .r-radio--none svg {
+	fill: #666;
+	transform: scale(.625);
+}
+
+
+/**
+ * The selectors that create the "selected"
+ * styling for the actual checked input,
+ * and the inputs previous to it in the DOM.
+ */
+.r-radio svg,
+input:checked + .r-radio svg {
+	fill: #ccac00;
+	transform: scale(1);
+}
+
+
+/**
+ * Coloring for when the "no rating"
+ * selection is currently active
+ */
+input:checked + .r-radio--none svg {
+	fill: #2a3a3a;
+}
+
+.r-radio--none span {
+	background: #66071f;
+}
+
+
+
+
+/**
+ * Disabled styling
+ */
+
+fieldset[disabled] > .r-radio svg {
+	fill: #ccc;
+	transform: scale(.825);
+}
+
+fieldset[disabled] .r-radio:hover span,
+input[disabled] + .r-radio:hover span {
+	display: none;
+}
+
+
+input[disabled] + .r-radio:hover {
+	cursor: not-allowed;
+}
+
+input[disabled] + .r-radio svg {
+	fill: #ccc;
+	transform: scale(.625);
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en-us" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Styled Native Radio Rating Component
+		</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
+		<link rel="stylesheet" href="../assets/css/--shared--.css">
+		<link rel="stylesheet" href="../assets/css/radio--rating.css">
+	</head>
+
+	<body>
+
+		<!--
+			Single SVG Reference
+		-->
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+			<symbol id="star"><g transform="scale(0.03125 0.03125)"><path d="M896 384l-313.5-40.781-134.5-279.219-134.531 279.219-313.469 40.781 230.469 208.875-59.469 303.063 277-148.812 277.062 148.812-59.562-303.063 230.5-208.875z" /></g></symbol>
+			<symbol viewBox="0 0 18 18" id="no_rating"><g transform="scale(0.017578125 0.017578125)"><path d="M512 56.889c-251.362 0-455.111 203.749-455.111 455.111s203.749 455.111 455.111 455.111 455.111-203.749 455.111-455.111-203.749-455.111-455.111-455.111zM170.667 512c0-73.639 23.666-141.694 63.472-197.527l475.388 475.388c-55.833 39.806-123.888 63.472-197.527 63.472-188.222 0-341.333-153.111-341.333-341.333zM789.861 709.527l-475.388-475.388c55.833-39.806 123.888-63.472 197.527-63.472 188.222 0 341.333 153.111 341.333 341.333 0 73.639-23.666 141.694-63.472 197.527z" /></g></symbol>
+		</svg>
+
+		<div class="demo-wrap">
+
+			<header class="demo-wrap__header">
+				<h1>Styled Native Radio Rating Component</h1>
+				<p>
+					Pattern to restyle a radio button group into a rating component.
+				</p>
+			</header>
+
+			<main>
+
+				<div class="demo">
+					<h2>
+						Demo
+					</h2>
+
+					<form>
+						<fieldset class="r-radios">
+							<legend>
+								Rate my rating system:
+							</legend>
+
+								<input checked aria-label="no rating" type="radio" name="r_input" id="r_input_0">
+								<label aria-hidden="true" for="r_input_0" class="r-radio r-radio--none">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#no_rating"/>
+									</svg>
+									<span>None</span>
+								</label>
+
+								<input aria-label="1 star" type="radio" name="r_input" id="r_input_1">
+								<label for="r_input_1" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use aria-hidden="true" xlink:href="#star"/>
+									</svg>
+									<span>1 Star</span>
+								</label>
+
+								<input aria-label="2 stars" type="radio" name="r_input" id="r_input_2">
+								<label for="r_input_2" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>2 Star</span>
+								</label>
+
+								<input aria-label="3 stars" type="radio" name="r_input" id="r_input_3">
+								<label for="r_input_3" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>3 Star</span>
+								</label>
+
+								<input aria-label="4 stars" type="radio" name="r_input" id="r_input_4">
+								<label for="r_input_4" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>4 Star</span>
+								</label>
+
+								<input aria-label="5 stars" type="radio" name="r_input" id="r_input_5">
+								<label for="r_input_5" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>5 Star</span>
+								</label>
+
+						</fieldset>
+
+						<fieldset class="r-radios" disabled>
+							<legend>
+								Disabled (via fieldset) my rating system:
+							</legend>
+
+								<input checked aria-label="no rating" type="radio" name="r_dinput" id="r_input_d0">
+								<label aria-hidden="true" for="r_input_d0" class="r-radio r-radio--none">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#no_rating"/>
+									</svg>
+									<span>None</span>
+								</label>
+
+								<input aria-label="1 star" type="radio" name="r_dinput" id="r_input_d1">
+								<label for="r_input_d1" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use aria-hidden="true" xlink:href="#star"/>
+									</svg>
+									<span>1 Star</span>
+								</label>
+
+								<input aria-label="2 stars" type="radio" name="r_dinput" id="r_input_d2">
+								<label for="r_input_d2" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>2 Star</span>
+								</label>
+
+								<input aria-label="3 stars" type="radio" name="r_dinput" id="r_input_d3">
+								<label for="r_input_d3" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>3 Star</span>
+								</label>
+
+								<input aria-label="4 stars" type="radio" name="r_dinput" id="r_input_d4">
+								<label for="r_input_d4" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>4 Star</span>
+								</label>
+
+								<input aria-label="5 stars" type="radio" name="r_dinput" id="r_input_d5">
+								<label for="r_input_d5" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>5 Star</span>
+								</label>
+
+						</fieldset>
+
+						<fieldset class="r-radios">
+							<legend>
+								Rate my rating system (some inputs disabled):
+							</legend>
+
+								<input checked aria-label="no rating" type="radio" name="r_input_dd" id="r_input_dd_0">
+								<label aria-hidden="true" for="r_input_dd_0" class="r-radio r-radio--none">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#no_rating"/>
+									</svg>
+									<span>None</span>
+								</label>
+
+								<input aria-label="1 star" type="radio" name="r_input_dd" id="r_input_dd_1">
+								<label for="r_input_dd_1" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use aria-hidden="true" xlink:href="#star"/>
+									</svg>
+									<span>1 Star</span>
+								</label>
+
+								<input disabled aria-label="2 stars" type="radio" name="r_input_dd" id="r_input_dd_2">
+								<label for="r_input_dd_2" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>2 Star</span>
+								</label>
+
+								<input aria-label="3 stars" type="radio" name="r_input_dd" id="r_input_dd_3">
+								<label for="r_input_dd_3" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>3 Star</span>
+								</label>
+
+								<input aria-label="4 stars" type="radio" name="r_input_dd" id="r_input_dd_4">
+								<label for="r_input_dd_4" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>4 Star</span>
+								</label>
+
+								<input disabled aria-label="5 stars" type="radio" name="r_input_dd" id="r_input_dd_5">
+								<label for="r_input_dd_5" class="r-radio">
+									<svg aria-hidden="true" role="img" focusable="false">
+										<use xlink:href="#star"/>
+									</svg>
+									<span>5 Star</span>
+								</label>
+
+						</fieldset>
+					</form>
+
+				</div> <!-- /.demo -->
+
+				<div class="demo-details">
+					<h3>
+						Demo Details
+					</h3>
+
+					<p>
+						...
+					</p>
+
+				</div> <!-- /.demo-details -->
+
+			</main>
+
+		</div> <!-- /.demo-wrap -->
+
+	</body>
+</html>
+
+
+
