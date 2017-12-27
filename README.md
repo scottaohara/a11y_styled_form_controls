@@ -13,7 +13,7 @@ A styled native file upload input that heavily relies upon the native input for 
 ## Radio Buttons
 A styleable native radio button group pattern.  
 1. [Native Radio Buttons](src/native-radio)  
-2. [Rating Radios](#src/native-radio--rating)  
+2. [Rating Radios](src/native-radio--rating)  
 3. [Radio Pill](src/native-radio--pill)  
 
 ## Range Slider
