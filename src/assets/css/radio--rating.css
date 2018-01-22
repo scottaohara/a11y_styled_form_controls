@@ -60,8 +60,8 @@
 input:focus + .r-radio span {
 	font-size: .75em;
 	opacity: 1;
-	visibility: visible;
 	transform: translateY(0%) translateX(-50%);
+	visibility: visible;
 }
 
 /**

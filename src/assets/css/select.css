@@ -1,0 +1,85 @@
+.select {
+  position: relative;
+}
+
+.select select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #2a2a2a;
+  border-radius: 0;
+  border: 1px solid #000;
+  color: #fff;
+  line-height: normal;
+  max-width: 100%;
+  padding: .75em;
+  width: 100%;
+}
+
+/*.select select:focus-visible*/
+.select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #fff;
+}
+
+
+.select select option {
+  background-color: #111;
+  color: #fff;
+  padding: 4px;
+}
+
+.select select:focus {
+  background-color: #111;
+  border-color: #015f9f;
+  box-shadow: inset 0 0 0 1px #015f9f,
+              0 0 0 2px #015f9f;
+  outline: none;
+}
+
+.select:after,
+.select:before {
+  bottom: 0;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+.select:before {
+  background-color: #111;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: 1.85em;
+}
+
+.select:after {
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  height: .5em;
+  margin: auto;
+  right: .75em;
+  transform-origin: center right;
+  transform: rotate(45deg);
+  width: .5em;
+  z-index: 2;
+}
+
+.select:focus-within:before {
+  background-color: #015f9f;
+}
+
+
+/**
+ * 1. remove background focus style from IE11 while keeping
+ *    focus style available on option elements
+ * 2. remove the default down arrow in IE/Edge
+ */
+.select select::-ms-value {
+  background: transparent; /* 1 */
+}
+
+.select select::-ms-expand {
+  display: none; /* 2 */
+}
