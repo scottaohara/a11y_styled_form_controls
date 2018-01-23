@@ -37,6 +37,12 @@ Switches are a type of picker input that is typically represented as an on/off t
 3. [ARIA Switch Component (different repo)](https://scottaohara.github.io/aria-switch-button/)
 
 
+## Progress Bar
+Considered part of the specification for form elements, yet not a focusable form control, progress bars indicate the current status on a scale of 0 to completion.
+1. [Native Progress Bar](#src/native-progress)  
+2. [ARIA Progress Bar](#src/aria-progress)
+
+
 ### License & Such
 This script was written by [Scott O'Hara](https://twitter.com/scottohara).
 
