@@ -1,0 +1,58 @@
+select[multiple] {
+	border: 1px solid;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.24);
+	margin-bottom: 1.25em;
+	margin-top: .5em;
+	min-height: 2.5em;
+	overflow: hidden;
+	padding: 0;
+	resize: vertical;
+	width: 100%;
+}
+
+select[multiple] option {
+	border-bottom: 1px solid;
+	padding-left: .75em;
+	padding-right: .75em;
+}
+
+select[multiple] option:hover {
+	background: #fafafa;
+}
+
+select[multiple]:not([size]) option:checked {
+	border-bottom: 1px solid blue;
+}
+
+select[multiple] option {
+	padding: .5em .75em;
+}
+
+select[multiple] option:checked {
+	padding: .75em;
+}
+
+select[multiple] option:checked:after {
+	background: blue;
+	content: "";
+	display: block;
+	height: 4px;
+	position: relative;
+	bottom: -.75em;
+	margin-left: -.75em;
+	margin-right: -.75em;
+}
+
+select[multiple][size] option {
+	padding: .75em;
+}
+
+select[multiple][disabled] {
+	max-height: 2.65em;
+	resize: none;
+}
+
+select[multiple][disabled] option {
+	padding: .75em;
+}
