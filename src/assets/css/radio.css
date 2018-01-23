@@ -2,7 +2,7 @@
 	position: relative;
 }
 
-.c-radio input[type="radio"] {
+.c-radio > input[type="radio"] {
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	overflow: hidden;
@@ -58,4 +58,13 @@
 
 .c-radio > input[disabled] ~ label {
 	opacity: .5;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	.c-radio > input:checked ~ label:before {
+		border: 6px solid;
+		box-shadow: none;
+		height: .5em;
+		width: .5em;
+	}
 }
