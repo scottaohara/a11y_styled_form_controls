@@ -48,8 +48,6 @@ Considered part of the specification for form elements, yet not a focusable form
 
 
 ### License & Such
-This script was written by [Scott O'Hara](https://twitter.com/scottohara).
+These patterns and scripts were written by [Scott O'Hara](https://twitter.com/scottohara). Everything here is under an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.
 
-It has an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.
-
-Do with it what you will :)
+Enjoy :)
