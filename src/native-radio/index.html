@@ -29,7 +29,7 @@
 			</header>
 
 			<main>
-				<div class="demo">
+				<article class="demo">
 					<h2>
 						Demo
 					</h2>
@@ -61,16 +61,43 @@
 						</fieldset>
 					</form>
 
-				</div> <!-- /.demo -->
-				<div class="demo-details">
+				</article> <!-- /.demo -->
+
+				<article class="demo-details">
 					<h3>
 						Demo Details
 					</h3>
 
 					<p>
-						...
+						These custom styles require a specific markup pattern:
 					</p>
-				</div>
+					<pre><code>&lt;div class="c-radio">
+  &lt;input type="radio" name="my_radios" id="unique_id">
+  &lt;label for="unique_id">
+    Label text here
+  &lt;/label>
+&lt;/div></code></pre>
+
+					<p>
+						The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep child absolutely positioned elements relative to the container.
+					</p>
+
+					<p>
+						The actual native radio button is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard users. Otherwise all the native radio button functionality would need to be rewritten in JavaScript.
+					</p>
+
+					<p>
+						The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible radio button.
+					</p>
+
+					<p>
+						The styling of the custom radio button is determined by the state of the actual radio button.  <code>:checked</code>, <code>disabled</code> and <code>:focus</code> will all visually change the styling of the custom radio button.
+					</p>
+
+					<footer>
+
+					</footer>
+				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
 
