@@ -26,10 +26,6 @@ Switches are a type of picker input that is typically represented as an on/off t
 3. [ARIA Switch Component (different repo)](https://scottaohara.github.io/aria-switch-button/)
 
 
-## Input with Datalist
-Styled native text input with a `datalist` drop down.
-1. [Input with Datalist](#src/native-datalist)  
-
 ## Select Boxes
 Styled native single and multi-select patterns.  
 1. [Native Select Box](src/native-select)  

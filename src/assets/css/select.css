@@ -22,11 +22,14 @@
   text-shadow: 0 0 0 #fff;
 }
 
-
 .select select option {
-  background-color: #111;
+  background: #111;
   color: #fff;
   padding: 4px;
+}
+
+.select select optgroup {
+  color: #000;
 }
 
 .select select:focus {
