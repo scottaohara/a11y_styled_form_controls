@@ -1,0 +1,60 @@
+progress {
+	box-sizing: border-box; /* 1 */
+	-webkit-appearance: none; /* 2 */
+	background: #ddd; /* 3 */
+	border: 1px solid;
+	border-radius: 4px;
+	height: 8px;
+	overflow: hidden; /* 4 */
+}
+
+::-webkit-progress-bar {
+	background: #ddd; /* 3 */
+}
+
+/**
+ * 1. Needed for ::-webkit-progress-value to work in older Webkit
+ * 2. Needed to keep bar the same height in Firefox vs Webkit
+ * 3. Webkit will need ::-webkit-progress-bar to set background
+ * 4. Set overflow hidden so as to not have to re-do border-radius
+ *    again for
+ */
+
+
+
+
+
+
+
+/**
+ * Progress Bar Value Indicator
+ */
+::-moz-progress-bar {
+	background: #3f87a6;
+}
+
+::-webkit-progress-value {
+	background: #3f87a6;
+
+}
+::-webkit-progress-inner-element {
+
+	/*
+		Additional styling to the webkit
+		value indicator goes here.
+	*/
+}
+
+
+::-ms-fill {
+	background: #3f87a6;
+}
+
+
+/**
+ * If no value is set, use :indeterminate
+ * as a styling hook for that state.
+ */
+progress:indeterminate {
+
+}

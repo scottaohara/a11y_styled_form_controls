@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Styled Progress Bar</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
+		<link rel="stylesheet" href="../assets/css/--shared--.css">
+		<link rel="stylesheet" href="../assets/css/progress-bar.css">
+
+		<style>
+			.progress-example:not(:first-of-type) {
+				margin-top: 2em;
+			}
+
+			.progress-example label:after {
+				content: "";
+				display: block;
+				margin-bottom: .5em;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+
+			<header class="demo-wrap__header">
+				<h1>Styled Native Progress Bar</h1>
+				<p>
+					Cross-browser styling for the native
+					progress bar.
+				</p>
+			</header>
+
+			<main>
+				<article class="demo">
+					<h2>
+						Demo
+					</h2>
+
+					<div class="progress-example">
+						<label for="profile">
+							Profile Completed:
+						</label>
+						<progress id="profile" value="50" max="100">50%</progress>
+					</div>
+
+					<div class="progress-example">
+						<progress aria-label="Collection status" value="25" max="100">25%</progress>
+					</div>
+
+					<div class="progress-example">
+						<p>
+							<span id="dvr">DVR Capacity:</span>
+						</p>
+						<progress aria-labelledby="dvr" value="20" max="100">20%</progress>
+					</div>
+
+					<div class="progress-example">
+						<p>
+							<span>DVR Capacity:</span>
+							<progress value="15" max="100">15 of 100</progress>
+						</p>
+					</div>
+
+				</article> <!-- /.demo -->
+				<article class="demo-details">
+					<h3>
+						Demo Details
+					</h3>
+
+					<p>
+						...
+					</p>
+				</article>
+			</main>
+		</div> <!-- /.demo-wrap -->
+
+	</body>
+</html>
