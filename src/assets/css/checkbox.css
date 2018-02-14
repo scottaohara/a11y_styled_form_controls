@@ -1,0 +1,81 @@
+.c-cb {
+	position: relative;
+}
+
+.c-cb > input[type="checkbox"] {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.c-cb > label {
+	display: block;
+	padding: .75em .5em .75em 2em;
+}
+
+.c-cb > label:before,
+.c-cb > label:after {
+	border: 1px solid;
+	content: " ";
+	position: absolute;
+	top: .825em;
+	transition:
+		border-color .2s ease-in-out,
+		box-shadow .2s ease-in-out,
+		transform .2s ease-in-out;
+}
+
+.c-cb > label:before {
+	border-color: #565656;
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px #565656;
+	height: 1.125em;
+	left: .125em;
+	width: 1.125em;
+}
+
+.c-cb > label:after {
+	border: 0;
+	border-bottom: 4px solid #565656;
+	border-right: 4px solid #565656;
+	height: .75em;
+	left: .45em;
+	transform-origin: center center;
+	transform: rotate(45deg) scale(0);
+	width: .325em;
+}
+
+.c-cb > input:checked ~ label:before {
+	border-color: transparent;
+	box-shadow: 0 0 0 2px #0d5192;
+}
+
+.c-cb > input:focus ~ label:before {
+	border-color: transparent;
+	box-shadow: 0 0 0 3px #228BEC;
+}
+
+.c-cb > input:checked ~ label:after {
+	transform: rotate(45deg) scale(1);
+}
+
+.c-cb > input:checked:focus ~ label:after {
+	border-color: #228BEC;
+}
+
+.c-cb > input[disabled] ~ label {
+	opacity: .5;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	.c-cb > input:checked ~ label:before {
+		border: 6px solid;
+		box-shadow: none;
+		height: .5em;
+		width: .5em;
+	}
+}
