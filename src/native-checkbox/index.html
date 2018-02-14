@@ -70,7 +70,29 @@
 					</h3>
 
 					<p>
-						...
+						These custom styles require a specific markup pattern:
+					</p>
+					<pre><code>&lt;div class="c-cb"&gt;
+  &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
+  &lt;label for="c_input_1"&gt;
+    Option 1
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+					<p>
+						The <code>.c-cb</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep child absolutely positioned elements and pseudo elements, relative to the container.
+					</p>
+
+					<p>
+						The actual native checkbox is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard focus. Otherwise all the native checkbox functionality would need to be rewritten in JavaScript.
+					</p>
+
+					<p>
+						The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible checkbox and "check" element.
+					</p>
+
+					<p>
+						The styling of the custom checkbox is determined by the state of the actual checkbox.  <code>:checked</code>, <code>disabled</code> and <code>:focus</code> will all visually change the styling of the custom checkbox.
 					</p>
 				</article>
 			</main>
