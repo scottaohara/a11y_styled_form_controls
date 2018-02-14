@@ -2,16 +2,12 @@
 A repository of styled, accessible, native form elements that are typically super annoying to style.  
 
 
-## Checkboxes
+## Checkboxes and Radio Buttons
+Styled native checkboxes, and radio button patterns.  
 1. [Native Checkboxes](src/native-checkbox)
-2. [Tristate ARIA checkboxes](#src/aria-checkboxes)  
-
-
-## Radio Buttons
-Styled native radio button group patterns.  
-1. [Native Radio Buttons](src/native-radio)  
-2. [Rating Radios](src/native-radio--rating)  
-3. [Radio Pill](src/native-radio--pill)  
+2. [Native Radio Buttons](src/native-radio)  
+3. [Rating Radios](src/native-radio--rating)  
+4. [Radio Pill](src/native-radio--pill)  
 
 
 ## Range Slider
@@ -20,7 +16,7 @@ A styled native range slider that takes multiple browser quirks (re: varied impl
 
 
 ## Switch Buttons  
-Switches are a type of picker input that is typically represented as an on/off toggle control.  Unlike a checkbox, switches are meant to perform an instant change in a component or application's state.  
+Switches are a type of button input that is typically represented as an on/off toggle control. Unlike a checkbox, switches are meant to perform an instant change in a component or application's state, but as there is no native "switch" control, checkboxes or buttons are often used as a base, often augmented with ARIA, especially to create a "true" switch toggle button.
 1. [Switch Button](src/switch--button/)
 2. [Switch Checkbox](src/switch--checkbox/)
 3. [ARIA Switch Component (external repo)](https://scottaohara.github.io/aria-switch-button/)
@@ -40,7 +36,6 @@ A styled native file upload input that heavily relies upon the native input for 
 ## Progress Bar
 Considered part of the specification for form elements, yet not a focusable form control, progress bars indicate the current status on a scale of 0 to completion.
 1. [Native Progress Bar](src/native-progress)  
-2. [ARIA Progress Bar](#src/aria-progress)
 
 
 ### License & Such
