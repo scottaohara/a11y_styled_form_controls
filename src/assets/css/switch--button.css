@@ -2,6 +2,7 @@
  * Button Switch Component
  */
 .btn-switch {
+	-webkit-appearance: none;
 	background: #fff;
 	border: 1px solid #565656;
 	cursor: pointer;
@@ -29,6 +30,7 @@
 .btn-switch__toggle:after {
 	border: 1px solid #565656;
 	content: "";
+	pointer-events: none;
 	position: absolute;
 	right: .25em;
 	top: 50%;
