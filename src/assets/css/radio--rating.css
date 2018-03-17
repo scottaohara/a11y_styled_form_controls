@@ -48,12 +48,16 @@
 	transform: translateY(50%) translateX(-50%);
 	transition:
 		font-size .2s ease-in-out,
+		opacity .2s ease-in-out,
 		transform .2s ease-in-out,
-		visibility .2s ease-in-out,
-		opacity .2s ease-in-out;
+		visibility .2s ease-in-out;
 	visibility: hidden;
 	white-space: nowrap;
-	width: 125%;
+	width: 130%;
+}
+
+.r-radio--none span {
+	width: 172%;
 }
 
 .r-radio:hover span,
@@ -62,6 +66,11 @@ input:focus + .r-radio span {
 	opacity: 1;
 	transform: translateY(0%) translateX(-50%);
 	visibility: visible;
+}
+
+input:checked + .r-radio span {
+	background: #111;
+	border: 1px solid #ccac00;
 }
 
 /**
@@ -105,7 +114,7 @@ input:checked + .r-radio svg {
  * selection is currently active
  */
 input:checked + .r-radio--none svg {
-	fill: #2a3a3a;
+	fill: #66071f;
 }
 
 .r-radio--none span {
