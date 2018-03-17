@@ -25,7 +25,7 @@
 
 .r-group {
 	background: #fafafa;
-	border: 1px solid #aaa;
+	border: 1px solid #083851;
 	border-radius: 2em;
 	padding: .25em;
 	display: inline-block;
@@ -33,32 +33,31 @@
 }
 
 .r-group label {
+	border-radius: 2em;
 	border: 2px solid transparent;
+	color: #083851;
 	display: inline-block;
 	padding: .25em .75em;
-	border-radius: 2em;
-	color: navy;
 }
 
 .r-group input:checked + label {
-	background: blue;
+	background: #2196f3;
 	color: #fff;
 }
 
 .r-group label:last-of-type:after {
-	position: absolute;
+	border-radius: 2em;
+	bottom: -.35em;
 	content: "";
 	left: -.35em;
+	pointer-events: none;
+	position: absolute;
 	right: -.35em;
 	top: -.35em;
-	bottom: -.35em;
-	border-radius: 2em;
-	pointer-events: none;
 	/* don't like pointer-events, */
 	/* then use z-index: -1; */
 }
 
-
 .r-group input:focus ~ label:last-of-type:after  {
-	border: 2px solid #000;
+	border: 2px solid #2196f3;
 }

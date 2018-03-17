@@ -14,6 +14,11 @@
 		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
 		<link rel="stylesheet" href="../assets/css/--shared--.css">
 		<link rel="stylesheet" href="../assets/css/radio--pill.css">
+		<style>
+			form + form {
+				margin-top: 1.25em;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -45,12 +50,36 @@
 							</legend>
 
 							<div class="r-group">
-								<input type="radio" id="r1" name="radios">
+								<input type="radio" id="r1" name="radios" checked>
 								<label for="r1">Option 1</label>
 
 								<input type="radio" id="r2" name="radios">
-
 								<label for="r2">Option 2</label>
+
+								<input type="radio" id="r3" name="radios">
+								<label for="r3">Option 3</label>
+							</div>
+						</fieldset>
+					</form>
+
+					<form method="post" action="#">
+						<fieldset class="fieldset">
+							<legend>
+								Show:
+							</legend>
+
+							<div class="r-group">
+								<input type="radio" id="r1a" name="radios_2" checked>
+								<label for="r1a">All</label>
+
+								<input type="radio" id="r3a" name="radios_2">
+								<label for="r3a">Many</label>
+
+								<input type="radio" id="r2a" name="radios_2">
+								<label for="r2a">Some</label>
+
+								<input type="radio" id="r2aa" name="radios_2">
+								<label for="r2aa">Few</label>
 							</div>
 						</fieldset>
 					</form>
@@ -62,7 +91,38 @@
 						</h3>
 
 						<p>
-							...
+							To style radio buttons into a pill-like component requires a specific markup pattern:
+						</p>
+
+<pre><code>
+&lt;fieldset class="fieldset">
+  &lt;legend>Group Title&lt;/legend>
+
+  &lt;div class="r-group">
+    &lt;input type="radio" id="r1" name="radios" checked>
+    &lt;label for="r1">Option 1&lt;/label>
+
+    &lt;input type="radio" id="r2" name="radios">
+    &lt;label for="r2">Option 2&lt;/label>
+  &lt;/div>
+&lt;/fieldset>
+</code></pre>
+
+						<p>
+							As radio buttons do not have a native way to revert to a completely unchecked state, without usage of a form reset button or a user performing a hard refresh with their browser, there should always be a safe default option <code>checked</code>, so a user doesn't have to reset a form to remove an erroneous radio button selection.
+						</p>
+
+						<p>
+							The <code>input</code> that is presently checked will trigger the CSS selector to change the style of its associated sibling <code>label</code>, to visually indicate it is the selected radio button. As the radio buttons are only visually hidden, they are still accessible to screen readers and keyboard users. Screen readers will announce the state of the selected radio button. A specific selector, utilizing the last label's <code>:after</code> pseudo-element, will create an outline around the entire component to indicate it has keyboard focus.
+						</p>
+
+						<p>
+							<strong>Note:</strong>
+							It is considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html">WCAG 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>, for example. Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document.
+						</p>
+
+						<p>
+							This pattern may be perfectly acceptable to use in the context of a form, or as a UI changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component. Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="http://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
 						</p>
 
 					</section> <!-- /.demo-details -->
