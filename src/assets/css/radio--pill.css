@@ -61,3 +61,19 @@
 .r-group input:focus ~ label:last-of-type:after  {
 	border: 2px solid #2196f3;
 }
+
+/**
+ * Undo styling that makes these pills appear as if
+ * they are all checked in high contrast mode
+ */
+@media screen and (-ms-high-contrast: active) {
+	.r-group label {
+		border: 0;
+		margin: 2px;
+	}
+
+	.r-group input:checked + label {
+		border: 2px solid;
+		margin: 0;
+	}
+}
