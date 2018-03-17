@@ -28,13 +28,19 @@
 
 .btn-switch__toggle,
 .btn-switch__toggle:after {
-	box-shadow: 0 0 0 1px #444;
+	box-shadow: 0 0 0 1px #444; /* 1 */
 	content: "";
 	pointer-events: none;
 	position: absolute;
 	right: .25em;
 	top: 50%;
 	transform: translateY(-50%);
+	/*
+	1. a box shadow is used here as the "border" for the visual toggle element,
+	   as using a normal border on mobile webkit browsers, caused odd clipping to
+	   occur when changing on/off state.  This clipping does not occur when
+	   using box shadow instead.
+	 */
 }
 
 /* styling specific to the toggle of the switch */
