@@ -25,9 +25,10 @@
 				<p>
 					Cross-browser styling for the native checkboxes.
 				</p>
-				<p>
-					<a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a>
-				</p>
+				<nav>
+					<a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a>,
+					<a href="/a11y_styled_inputs">Index of input patterns</a>
+				</nav>
 			</header>
 
 			<main>
@@ -63,38 +64,40 @@
 						</fieldset>
 					</form>
 
-				</article> <!-- /.demo -->
-				<article class="demo-details">
-					<h3>
-						Demo Details
-					</h3>
 
-					<p>
-						These custom styles require a specific markup pattern:
-					</p>
-					<pre><code>&lt;div class="c-cb"&gt;
+					<section class="demo-details">
+						<h3>
+							Demo Details
+						</h3>
+
+						<p>
+							These custom styles require a specific markup pattern:
+						</p>
+						<pre><code>&lt;div class="c-cb"&gt;
   &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
   &lt;label for="c_input_1"&gt;
     Option 1
   &lt;/label&gt;
 &lt;/div&gt;</code></pre>
 
-					<p>
-						The <code>.c-cb</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child elements and pseudo elements, within the container.
-					</p>
+						<p>
+							The <code>.c-cb</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child elements and pseudo elements, within the container.
+						</p>
 
-					<p>
-						The actual native checkbox is visually hidden but remains accessible to screen reader's virtual cursors and standard keyboard focus with the <kbd>tab</kbd> key. Keeping the checkbox accessible to screen readers and keyboard users is essential in continuing to utilize the native functionality of a checkbox. Otherwise all checkbox functionality would need to be rewritten with JavaScript and appropriate ARIA attributes, which unnecessarily balloons the development effort needed to code a custom checkbox style.
-					</p>
+						<p>
+							The actual native checkbox is visually hidden but remains accessible to screen reader's virtual cursors and standard keyboard focus with the <kbd>tab</kbd> key. Keeping the checkbox accessible to screen readers and keyboard users is essential in continuing to utilize the native functionality of a checkbox. Otherwise all checkbox functionality would need to be rewritten with JavaScript and appropriate ARIA attributes, which unnecessarily balloons the development effort needed to code a custom checkbox style.
+						</p>
 
-					<p>
-						The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible checkbox and "check" element.
-					</p>
+						<p>
+							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible checkbox and "check" element.
+						</p>
 
-					<p>
-						The styling of the custom checkbox is determined by the state of the actual checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the <code>disabled</code> attribute on the <code>input</code> will all visually change the styling of the custom checkbox.
-					</p>
-				</article>
+						<p>
+							The styling of the custom checkbox is determined by the state of the actual checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the <code>disabled</code> attribute on the <code>input</code> will all visually change the styling of the custom checkbox.
+						</p>
+					</section>
+
+				</article> <!-- /.demo -->
 			</main>
 		</div> <!-- /.demo-wrap -->
 

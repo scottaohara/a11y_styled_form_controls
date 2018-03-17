@@ -23,12 +23,12 @@
 			<header class="demo-wrap__header">
 				<h1>Styled Native Radio Buttons</h1>
 				<p>
-					Cross-browser styling for the native
-					radio buttons.
+					Cross-browser styling for the native radio buttons.
 				</p>
-				<p>
-					<a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a>
-				</p>
+				<nav>
+					<a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a>,
+					<a href="/a11y_styled_inputs">Index of input patterns</a>
+				</nav>
 			</header>
 
 			<main>
@@ -64,42 +64,39 @@
 						</fieldset>
 					</form>
 
-				</article> <!-- /.demo -->
 
-				<article class="demo-details">
-					<h3>
-						Demo Details
-					</h3>
+					<section class="demo-details">
+						<h3>
+							Demo Details
+						</h3>
 
-					<p>
-						These custom styles require a specific markup pattern:
-					</p>
-					<pre><code>&lt;div class="c-radio">
+						<p>
+							These custom styles require a specific markup pattern:
+						</p>
+						<pre><code>&lt;div class="c-radio">
   &lt;input type="radio" name="my_radios" id="unique_id">
   &lt;label for="unique_id">
     Label text here
   &lt;/label>
 &lt;/div></code></pre>
 
-					<p>
-						The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep child absolutely positioned elements and pseudo elements, relative to the container.
-					</p>
+						<p>
+							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep child absolutely positioned elements and pseudo elements, relative to the container.
+						</p>
 
-					<p>
-						The actual native radio button is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard focus. Otherwise all the native radio button functionality would need to be rewritten in JavaScript.
-					</p>
+						<p>
+							The actual native radio button is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard focus. Otherwise all the native radio button functionality would need to be rewritten in JavaScript.
+						</p>
 
-					<p>
-						The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible radio button.
-					</p>
+						<p>
+							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible radio button.
+						</p>
 
-					<p>
-						The styling of the custom radio button is determined by the state of the actual radio button.  <code>:checked</code>, <code>disabled</code> and <code>:focus</code> will all visually change the styling of the custom radio button.
-					</p>
+						<p>
+							The styling of the custom radio button is determined by the state of the actual radio button.  <code>:checked</code>, <code>disabled</code> and <code>:focus</code> will all visually change the styling of the custom radio button.
+						</p>
 
-					<footer>
-
-					</footer>
+					</section>
 				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
