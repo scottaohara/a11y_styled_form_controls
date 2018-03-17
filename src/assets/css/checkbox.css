@@ -73,7 +73,7 @@
 
 @media screen and (-ms-high-contrast: active) {
 	.c-cb > input:checked ~ label:before {
-		border: 6px solid;
+		border: 2px solid;
 		box-shadow: none;
 		height: .5em;
 		width: .5em;
