@@ -10,8 +10,8 @@ body {
 }
 
 body {
-	padding: 2em 1em;
 	line-height: 1.4;
+	padding: 2em 1em;
 }
 
 h1, h2, h3 {
@@ -29,8 +29,12 @@ main {
 	padding-top: .25em;
 }
 
-.demo {
-	border-bottom: 1px solid #888;
-	margin-bottom: 2em;
-	padding-bottom: 2em;
+.demo-details {
+	border-top: 1px solid #888;
+	margin-top: 2em;
+	padding-top: 2em;
+}
+
+.demo-details > h3 {
+	margin-top: 0;
 }
