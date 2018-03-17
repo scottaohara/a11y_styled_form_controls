@@ -28,7 +28,7 @@
 
 .btn-switch__toggle,
 .btn-switch__toggle:after {
-	border: 1px solid #565656;
+	box-shadow: 0 0 0 1px #444;
 	content: "";
 	pointer-events: none;
 	position: absolute;
