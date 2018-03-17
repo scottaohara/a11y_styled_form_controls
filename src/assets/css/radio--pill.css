@@ -40,6 +40,11 @@
 	padding: .25em .75em;
 }
 
+.r-group label:hover {
+	background: #E2F1FD;
+	border-color: #2196f3;
+}
+
 .r-group input:checked + label {
 	background: #2196f3;
 	color: #fff;
@@ -75,5 +80,9 @@
 	.r-group input:checked + label {
 		border: 2px solid;
 		margin: 0;
+	}
+
+	.r-group label:hover {
+		text-decoration: underline;
 	}
 }
