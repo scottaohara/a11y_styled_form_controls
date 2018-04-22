@@ -2,7 +2,7 @@
 A repository of customized, accessible, native form elements. 
 
 ## Why?
-These input elements are commonly used in a lot of forms, but can be considered annoying to style. Using these element patterns ensures they can both look attractive without excluding users who may rely on assistive technology to get things done.     
+These input elements are commonly used in many forms, but can be considered annoying to style. Using these element patterns ensures they can look attractive without excluding users who may rely on assistive technology to get things done.     
 
 ## How to use?
 Well, do do ya, Scott?
@@ -34,7 +34,7 @@ Unlike a checkbox, switches are meant to perform an instant change in a componen
 ### File Upload Input
 A styled file upload input that heavily relies upon the native input for appropriate and meaningful announcements for assistive technology users.
 
-File upload input allows users to files to a website.  
+File upload input allows users to add files to a website.  
 
 1. [Native File Upload (in progress)](src/native-file)  
 
