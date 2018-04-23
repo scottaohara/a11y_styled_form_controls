@@ -47,7 +47,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 [role="search"] > input[type="search"]:focus,
-[role="search"] > [type="submit"]:hover,
+[role="search"] > [type="submit"]:not([disabled]):hover,
 [role="search"] > [type="submit"]:focus {
 	box-shadow: inset 0 0 0 1px #4184F3;
 	outline: 1px solid #4184F3;
@@ -58,12 +58,20 @@ input[type="search"]::-webkit-search-cancel-button {
 	border-right-color: #4184F3;
 }
 
-[role="search"] > [type="submit"]:hover,
+[role="search"] > [type="submit"]:not([disabled]):hover,
 [role="search"] > [type="submit"]:focus {
 	background: #4184F3;
 }
 
 [role="search"] > [type="submit"]:focus svg,
-[role="search"] > [type="submit"]:hover svg {
+[role="search"] > [type="submit"]:not([disabled]):hover svg {
 	fill: #fff;
+}
+
+/**
+ * Disabled
+ */
+[role="search"][disabled],
+[role="search"] > [type="submit"][disabled] {
+	opacity: .625;
 }
