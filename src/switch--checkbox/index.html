@@ -36,9 +36,20 @@
 						Demo
 					</h2>
 
-					<label class="check-switch" for="switch">
-						<input type="checkbox" id="switch">
-						<span tabindex="-1">Example</span>
+					<p>Version: <code>[type="checkbox"]</code> styled to look like a switch
+					<label class="check-switch" for="switch_1">
+						<input type="checkbox" id="switch_1" role="switch">
+						<span tabindex="-1">Example Text:</span>
+						<!--
+							the tabindex="-1" is here to negate VO
+							from announcing the "example" label twice
+						-->
+					</label>
+
+					<p>Version: <code>[type="checkbox"][role="switch"]</code>
+					<label class="check-switch" for="switch_2">
+						<input type="checkbox" id="switch_2" role="switch">
+						<span tabindex="-1">Example Text:</span>
 						<!--
 							the tabindex="-1" is here to negate VO
 							from announcing the "example" label twice
@@ -46,13 +57,13 @@
 					</label>
 
 					<h3>
-						Alternate Version
+						Alternate Markup Version
 					</h3>
 					<div class="switchbox">
 						<label for="switchbox">
-							Turn setting on:
+							Label Text:
 						</label>
-						<input type="checkbox" id="switchbox">
+						<input type="checkbox" id="switchbox" role="switch">
 					</div>
 
 
@@ -60,6 +71,38 @@
 						<h3>
 							Demo Details
 						</h3>
+						<p>
+							The switch components are coded with the following markup patterns:
+						</p>
+
+						<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
+&lt;label class="check-switch" for="switch_1">
+  &lt;input type="checkbox" id="switch_1" role="switch">
+  &lt;span tabindex="-1">Example Text:&lt;/span>
+  &lt;!--
+    the tabindex="-1" is here to negate VO
+    from announcing the "example" label twice
+  -->
+&lt;/label>
+
+&lt;!-- Version: [type="checkbox"][role="switch"] -->
+&lt;label class="check-switch" for="switch_2">
+  &lt;input type="checkbox" id="switch_2" role="switch">
+  &lt;span tabindex="-1">Example Text:&lt;/span>
+  &lt;!--
+    the tabindex="-1" is here to negate VO
+    from announcing the "example" label twice
+  -->
+&lt;/label>
+
+&lt;!-- Alternate markup version -->
+&lt;div class="switchbox">
+  &lt;label for="switchbox">
+    Label Text:
+  &lt;/label>
+  &lt;input type="checkbox" id="switchbox" role="switch">
+&lt;/div></code></pre>
+
 						<p>
 							The typical user expectation for a checkbox is for it
 							to be engaged with, and then for an additional action,
