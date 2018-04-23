@@ -5,49 +5,50 @@
  * https://codepen.io/rakeizer/pen/QQRBoZ
  */
 .switchbox {
-  border: 1px solid;
-  display: flex;
-  padding: .5em;
+	border: 1px solid;
+	display: flex;
 }
 
 .switchbox:hover {
-  box-shadow: 0 0 2px 1px #2196f3;
+	box-shadow: 0 0 2px 1px #2196f3;
 }
 
 .switchbox input {
-  -moz-appearance: none;
-  -o-appearance: none;
-  -webkit-appearance: none;
-  background-color: #fff;
-  border-radius: .825em;
-  border: 1px solid rgba(122, 122, 122, 1);
-  box-shadow: inset -1.125em 0 0 1px rgba(122, 122, 122, 1);
-  height: 1.5em;
-  outline: none;
-  position: relative;
-  transition: all .2s ease-in-out;
-  width: 2.5em;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-webkit-appearance: none;
+	background-color: #fff;
+	border-radius: .825em;
+	border: 1px solid #565656;
+	box-shadow: inset -1.125em 0 0 1px rgba(120, 120, 120, 1);
+	height: 1.5em;
+	margin-right: .25em;
+	outline: none;
+	position: relative;
+	transition: box-shadow .2s ease-in-out;
+	width: 2.5em;
 }
 
 .switchbox input:focus {
-  outline: 2px solid;
-  outline-offset: 4px;
+	outline: 2px solid;
+	outline-offset: 4px;
 }
 
 .switchbox input:checked {
-  box-shadow: inset 1.125em 0 0 1px #2196f3;
-  border: 1px solid rgba(33, 150, 243, 1);
+	border: 1px solid rgba(0, 2, 120, 1);
+	box-shadow: inset 1.125em 0 0 1px #2196f3;
 }
 
 .switchbox input::-ms-check {
-  opacity: 0;
+	opacity: 0;
 }
 
 .switchbox label {
-  flex: 1 0 0;
+	flex: 1 0 0;
+	padding: .5em;
 }
 
 .switchbox > * {
-  align-self: center;
+	align-self: center;
 }
 
