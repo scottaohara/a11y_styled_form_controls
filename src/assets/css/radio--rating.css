@@ -3,8 +3,8 @@
 }
 
 /**
- * Visually hide radio buttons while
- * still allowing them to receive keyboard focus
+ * Visually hide radio buttons while still
+ * allowing them to receive keyboard focus.
  */
 .r-radios input[type="radio"] {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -32,7 +32,6 @@
 	transition: transform .2s ease-in-out;
 	width: 1.75em;
 }
-
 
 .r-radio span {
 	background: #333;
@@ -108,7 +107,6 @@ input:checked + .r-radio svg {
 	transform: scale(1);
 }
 
-
 /**
  * Coloring for when the "no rating"
  * selection is currently active
@@ -121,13 +119,9 @@ input:checked + .r-radio--none svg {
 	background: #66071f;
 }
 
-
-
-
 /**
  * Disabled styling
  */
-
 fieldset[disabled] > .r-radio svg {
 	fill: #ccc;
 	transform: scale(.825);
@@ -137,7 +131,6 @@ fieldset[disabled] .r-radio:hover span,
 input[disabled] + .r-radio:hover span {
 	display: none;
 }
-
 
 input[disabled] + .r-radio:hover {
 	cursor: not-allowed;
