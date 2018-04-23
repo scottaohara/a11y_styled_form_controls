@@ -69,22 +69,27 @@
   &lt;button type="submit"
     id="srch_btn"
     aria-label="Submit Search">
-    &lt;svg viewBox="50 461 23 23" aria-hidden="true" focusable="false">
-      &lt;path d="..." id="icon_search" stroke="none" fill-rule="evenodd">&lt;/path>
+    &lt;svg viewBox="50 461 23 23"
+      aria-hidden="true"
+      focusable="false">
+      &lt;path d="..."
+        id="icon_search"
+        stroke="none"
+        fill-rule="evenodd">&lt;/path>
     &lt;/svg>
   &lt;/button>
 &lt;/form></code></pre>
 						<p>
-							In this search form there is no explicit <code>label</code>, as the presence of the search icon (within the submit button) gives the visual indicator that this is a search input. However, an <code>aria-label</code> is applied to the <code>input[type="search"]</code> to give the input an accessible name.
+							In many search forms there may be no explicit <code>label</code>, as the presence of the search icon (within the submit button) gives the visual indicator to users that this is a search component. However, an <code>aria-label</code> should still be applied to the <code>input[type="search"]</code> to give the input an accessible name.
 						</p>
 						<p>
 							An <code>aria-label</code> is also used on the <code>button[type="submit"]</code> to give it an accessible name as well. The SVG within is hidden from screen readers and given an <code>focusable="false"</code> attribute to help ensure that Internet Explorer won't allow keyboard focus to enter into the SVG itself.
 						</p>
 						<p>
-							Note that the <code>input[type="search"]</code> and <code>role="search"</code> are <b>not</b> the same thing. As mentioned, the <code>role="search"</code> surfaces the form as a landmark, and should not be applied to the <code>input</code>, as that would negate the <code>input</code> as being announced as an editable text field.
+							Note that the <code>input[type="search"]</code> and <code>role="search"</code> are <b>not</b> the same thing. As mentioned, the <code>role="search"</code> surfaces the form as a landmark, and should not be applied to the <code>input</code>, as that would negate the <code>input</code> as being announced as an editable 'text field'.
 						</p>
 						<p>
-							More complex search forms might contain additional form controls, or might utilize a <code>combobox</code> in place of, or in addition to a standard <code>input[type="search"]</code> form control.
+							More complex search forms might contain additional form controls, or might utilize a <code>combobox</code> in place of, or in addition to, a standard <code>input[type="search"]</code> form control. Search forms should have a submit button as a consistent indicator in how a form can be submitted.
 						</p>
 					</section>
 				</article>
