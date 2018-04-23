@@ -48,18 +48,18 @@ input[type="search"]::-webkit-search-cancel-button {
 [role="search"] > input[type="search"]:focus,
 [role="search"] > [type="submit"]:hover,
 [role="search"] > [type="submit"]:focus {
-	box-shadow: inset 0 0 0 1px blue;
-	outline: 1px solid blue;
+	box-shadow: inset 0 0 0 1px #4184F3;
+	outline: 1px solid #4184F3;
 	outline-offset: 0;
 }
 
 [role="search"] > input[type="search"]:focus {
-	border-right-color: blue;
+	border-right-color: #4184F3;
 }
 
 [role="search"] > [type="submit"]:hover,
 [role="search"] > [type="submit"]:focus {
-	background: blue;
+	background: #4184F3;
 }
 
 [role="search"] > [type="submit"]:focus svg,
