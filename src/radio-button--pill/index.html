@@ -78,8 +78,30 @@
 								<input type="radio" id="r2a" name="radios_2">
 								<label for="r2a">Some</label>
 
-								<input type="radio" id="r2aa" name="radios_2">
+								<input type="radio" id="r2aa" name="radios_2" disabled>
 								<label for="r2aa">Few</label>
+							</div>
+						</fieldset>
+					</form>
+
+					<form method="post" action="#">
+						<fieldset class="fieldset" disabled>
+							<legend>
+								Show:
+							</legend>
+
+							<div class="r-group">
+								<input type="radio" id="r1ab" name="radios_2" checked>
+								<label for="r1ab">All</label>
+
+								<input type="radio" id="r3ab" name="radios_2">
+								<label for="r3ab">Many</label>
+
+								<input type="radio" id="r2ab" name="radios_2">
+								<label for="r2ab">Some</label>
+
+								<input type="radio" id="r2aab" name="radios_2">
+								<label for="r2aab">Few</label>
 							</div>
 						</fieldset>
 					</form>
@@ -123,12 +145,10 @@
 							This pattern may be perfectly acceptable to use in the context of a form, or as a UI changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component. Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="https://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
 						</p>
 
+
 					</section> <!-- /.demo-details -->
-
 				</article> <!-- /.demo -->
-
 			</main>
-
 		</div> <!-- /.demo-wrap -->
 
 	</body>
