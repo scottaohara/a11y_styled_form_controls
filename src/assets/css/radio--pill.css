@@ -45,6 +45,7 @@
 	border-color: #2196f3;
 }
 
+.fieldset[disabled] .r-group input:checked + label:hover,
 .r-group input:checked + label {
 	background: #2196f3;
 	color: #fff;
@@ -69,6 +70,23 @@
 	border: 2px solid #2196f3;
 }
 
+
+/**
+ * Disabled
+ */
+.fieldset[disabled],
+.r-group input[disabled] + label {
+	opacity: .5;
+}
+
+.r-group input[disabled] + label:hover,
+.fieldset[disabled] label:hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: not-allowed;
+}
+
+
 /**
  * Undo styling that makes these pills appear as
  * if they are all checked in high contrast mode.
@@ -86,5 +104,9 @@
 
 	.r-group label:hover {
 		text-decoration: underline;
+	}
+
+	.fieldset[disabled] .r-group label:hover {
+		text-decoration: none
 	}
 }
