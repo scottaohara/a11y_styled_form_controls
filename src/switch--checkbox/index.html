@@ -19,9 +19,9 @@
 		<div class="demo-wrap">
 
 			<header class="demo-wrap__header">
-				<h1>Switch Toggle Component: Checkbox</h1>
+				<h1>Switch Component: Checkbox</h1>
 				<p>
-					Pattern to restyle a checkbox into a switch component.
+					Pattern to modify a checkbox into a switch component.
 				</p>
 				<nav>
 					<ul>
@@ -38,18 +38,41 @@
 						Demo
 					</h2>
 
+
 					<label class="check-switch" for="switch">
 						<input type="checkbox" id="switch">
 						<span tabindex="-1">Example</span>
+
+					<p style="margin-bottom: .25em">
+						Version: <code>[type="checkbox"]</code> styled to look like a switch
+					</p>
+					<label class="check-switch" for="switch_1">
+						<input type="checkbox" id="switch_1" data-switch>
+						<span tabindex="-1">Example Text 1:</span>
+
 						<!--
 							the tabindex="-1" is here to negate VO
 							from announcing the "example" label twice
 						-->
 					</label>
 
+
 					<h3>
 						Alternate Version
 					</h3>
+
+					<p style="margin-bottom: .25em">
+						Version: <code>[type="checkbox"][role="switch"]</code>
+					</p>
+					<label class="check-switch" for="switch_2">
+						<input type="checkbox" id="switch_2" data-switch>
+						<span tabindex="-1">Example Text 2:</span>
+					</label>
+
+					<p style="margin-bottom: .25em">
+						Version: <code>[type="checkbox"][role="switch"]</code> - Alternate Markup/Style
+					</p>
+
 					<div class="switchbox">
 						<label for="switchbox">
 							Turn setting on:
@@ -70,6 +93,7 @@
 							website/web app.
 						</p>
 						<p>
+
 							e.g. a user checking or unchecking an "add me to your mailing list" field.  The action of adding or being removed does not transpire until the form is submitted.
 						</p>
 						<p>
@@ -78,6 +102,18 @@
 							this pattern would be in the context of a series of form fields
 							that were to be submitted all at once.  Or as a switch toggle
 							that was coupled with a "Save" or "Submit" button.
+
+							Similar to the native checkbox example, a markup pattern reliant on a native checkbox form control can be used to create a custom switch control. It should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
+						</p>
+						<p>
+							A native checkbox should be used the switch component continues to function like a checkbox. Meaning that the "switch" should not change the state of a component or alter a global site or application setting, until after a user submits the form the "switch" is a child of. A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
+						</p>
+						<p>
+							If using a visually styled switch in a website or application, it should only adhere to one of the previously mentioned roles. It should announce itself as a "switch" or a "checkbox", and this announcement, and its behavior, should be consistent across all instances of the component.
+						</p>
+						<p>
+							A small script is used to progressively enhance a checkbox <code>input</code> with a <code>data-switch</code> into a <code>role="switch"</code>. The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
+
 						</p>
 					</section> <!-- /.demo-details -->
 				</article>
@@ -94,6 +130,8 @@
 			</footer>
 
 		</div> <!-- /.demo-wrap -->
+
+		<script src="../assets/js/switch-checkbox.js"></script>
 
 	</body>
 </html>
