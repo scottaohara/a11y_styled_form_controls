@@ -1,4 +1,4 @@
-# Styled Accessible "Picker" Inputs
+# Accessible Styled Form Controls
 A repository of stylized, accessible, form control patterns. 
 
 ## Why?
