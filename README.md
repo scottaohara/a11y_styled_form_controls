@@ -1,5 +1,5 @@
 # Styled Accessible "Picker" Inputs
-A repository of customized, accessible, native form elements. 
+A repository of customized, accessible, native form controls. 
 
 ## Why?
 These input elements are commonly used in many forms, but can be considered annoying to style. Using these element patterns ensures they can look attractive without excluding users who may rely on assistive technology to get things done.     
@@ -8,12 +8,14 @@ These input elements are commonly used in many forms, but can be considered anno
 Well, do do ya, Scott?
 
 
-## Inputs
+## Form Controls
 
 ### Checkboxes and Radio Buttons
 Styled native checkboxes, and radio button patterns.  
 
-Checkboxes select one or more options from a series of choices, while radio input only allows one selection to occur. 
+Checkboxes can be be used for a single form option, or grouped to allow one or more selections to be made by the user.
+
+In contrast, radio buttons provide users a series of options to choose from, but only a single option may be chosen from an single radio button grouping.
 
 1. [Native Checkboxes](src/native-checkbox)
 2. [Native Radio Buttons](src/native-radio)  
@@ -22,9 +24,9 @@ Checkboxes select one or more options from a series of choices, while radio inpu
 
 
 ### Switch Buttons  
-Switches are a type of button control that is typically represented in the form of an on/off toggle UI control. 
+Switches are a type of form control that is typically visually represented  as an on/off toggle switch. 
 
-Unlike a checkbox, switches are meant to perform an instant change in a component or application's state, but as there is no native "switch" control, checkboxes or button elements (with appropriate ARIA attributes) are often used as a substitute for this type of control.
+Unlike a checkbox, switches are meant to perform an instant change to a component or application's state, but as there is no native "switch" control, checkboxes or button elements (with appropriate ARIA attributes) are often used as a substitute for this type of control.
 
 1. [Switch Button](src/switch--button/)
 2. [Switch Checkbox](src/switch--checkbox/)
@@ -34,7 +36,7 @@ Unlike a checkbox, switches are meant to perform an instant change in a componen
 ### File Upload Input
 A styled file upload input that heavily relies upon the native input for appropriate and meaningful announcements for assistive technology users.
 
-File upload input allows users to add files to a website.  
+File upload input allows users to add one or more files to a form on form submission.  
 
 1. [Native File Upload (in progress)](src/native-file)  
 
@@ -58,8 +60,6 @@ Select boxes allow a user to pick one or more options from a menu of choices.
 
 ### Progress Bar
 Progress bars indicate the current status of a task on a scale of 0 to completion. They are considered part of the specification for form elements, yet do not possess a focusable form control.
-
-Progress bars are useful for informing how much time remains for tasks that may take a longer amount of time, or need time to process before displaying results.  
 
 1. [Native Progress Bar (in progress)](src/native-progress)  
 
