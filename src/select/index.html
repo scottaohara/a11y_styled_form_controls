@@ -43,7 +43,8 @@
 						<select id="ex_custom_select">
 							<option>Option 1</option>
 							<option>Option 2</option>
-							<option>Option 3</option>
+							<option disabled>Option 3</option>
+							<option>Option 4</option>
 						</select>
 					</div>
 
@@ -70,7 +71,7 @@
 							<option>Option 1</option>
 							<option>Option 2</option>
 							<option>Option 3</option>
-							<optgroup label="group">
+							<optgroup label="Alternate">
 								<option>Option 4</option>
 								<option>Option 5</option>
 							</optgroup>
@@ -83,12 +84,41 @@
 						</h3>
 
 						<p>
-							...
+							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the examples presented here can provide consistent styling to the <code>select</code> wrapper, the <code>option</code> and <code>optgroup</code> elements within fare much different.
 						</p>
 
-						<h4>Note:</h4>
+						<p>The markup pattern used is as follows:</p>
+
+						<pre><code>&lt;label for="ex_custom_select">
+  Custom Style Select
+&lt;/label>
+&lt;div class="select">
+  &lt;select id="ex_custom_select">
+    &lt;option>Option 1&lt;/option>
+    &lt;option>Option 2&lt;/option>
+    &lt;option>Option 3&lt;/option>
+  &lt;/select>
+&lt;/div></code></pre>
+
 						<p>
-							<code>option</code> and <code>optgroup</code> are still notoriously difficult to style in browsers. Often the browser default styles are resistant to any CSS modifications. Though Firefox does give some leeway in how the children of a <code>select</code> can be styled. But even Firefox has its limits, where the <code>optgroup</code> is so limited in styling options that if you require the use of an <code>optgroup</code>, you'd be better off not styling the <code>select</code>.
+							The wrapping <code>div</code> is in place to provide a <code>position: relative</code> container, and to create/position the <code>:before</code> and <code>:after</code> pseudo elements, which compose the down arrow and its background. The wrapping element also handles the background color for the updated styling. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements would inconsistently render in different browsers, with the altered background coloring.
+						</p>
+
+						<p>
+							The <code>select</code> element itself has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those styles have been removed, the element can be redesigned with CSS. Additional selectors for removing native styling from Microsoft browsers, and the focus ring from Firefox also exist.
+						</p>
+
+						<p>
+							The <code>option</code> and <code>optgroup</code> elements can receive minor styling updates to their <code>color</code>, but outside of using this for indicating <code>disabled</code> states, the <code>option</code>s have been largely left in tact to maintain legibility and consistent design across browsers. For instance, Firefox would allow for background styling of the <code>option</code>s, but not the <code>optgroup</code>.  IE11 was similar to Firefox, while also having issues with providing styling to the <code>optgroup</code>'s color (at times rendering the <code>optgroup</code> invisible depending on the background color).  Chrome and Safari largely just ignored any attempt at styling the <code>option</code> or <code>optgroup</code>s, rendering them as browser defaults.
+						</p>
+
+						<p>
+							In conclusion, to "style" a standard <code>select</code> element and give it consistent design across all browsers, its advised to keep the <code>option</code> and <code>optgroup</code> styling as close to browser defaults as possible.  If a fully styleable single-<code>select</code> form control is desired, an <a href="http://w3c.github.io/aria-practices/#Listbox">ARIA listbox</a> might be the way to go. Note, there's quite a bit to do to recreate native <code>select</code> functionality, and keeping small/touch screens in mind.
+						</p>
+
+						<h4>Affects on Screen Reader Announcements?</h4>
+						<p>
+							There are no alterations to how a screen reader should announce styled select form controls.
 						</p>
 					</section>
 				</article>
