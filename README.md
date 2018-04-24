@@ -10,11 +10,10 @@ Styled native checkboxes, and radio button patterns.
 4. [Radio Pill](src/native-radio--pill)  
 
 
-## Switch Buttons  
-Switches are a type of button control that is typically represented in the form of an on/off toggle UI control. Unlike a checkbox, switches are meant to perform an instant change in a component or application's state, but as there is no native "switch" control, checkboxes or button elements (with appropriate ARIA attributes) are often used as a base or substitute for this type of control.
-1. [Switch Button](src/switch--button/)
-2. [Switch Checkbox](src/switch--checkbox/)
-3. [ARIA Switch Component (external repo)](https://scottaohara.github.io/aria-switch-button/)
+## Switches  
+Switches are a type of control that is typically represented in the form of an on/off toggle UI. Unlike a checkbox, switches are meant to perform an instant change in a component or application's state, but as there is no native "switch" control, checkboxes or button elements (with appropriate ARIA attributes) are often used as a base or substitute for this type of control.
+1. [ARIA Switch Checkbox](src/switch--checkbox/)
+2. [ARIA Switch Buttons (external repo)](https://scottaohara.github.io/aria-switch-button/)
 
 
 ## File Upload Input
@@ -39,6 +38,7 @@ Considered part of the specification for form elements, yet not a focusable form
 
 
 ## Search Component
+...  
 1. [Search Component (in progress)](src/search)  
 
 
