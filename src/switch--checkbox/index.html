@@ -103,21 +103,13 @@
 &lt;/div></code></pre>
 
 						<p>
-							The typical user expectation for a checkbox is for it
-							to be engaged with, and then for an additional action,
-							such as submitting a form, to be necessary for the
-							updated state of the checkbox to be recognized by the
-							website/web app.
+							Similar to the native checkbox example, a similar pattern utilizing a native checkbox form control can be used to create a custom switch control. However, it should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
 						</p>
 						<p>
-							e.g. a user checking or unchecking an "add me to your mailing list" field.  The action of adding or being removed does not transpire until the form is submitted.
+							The native role of a "checkbox" should be used if a switch component acts as a checkbox would. In that the checkbox "switch" should not change the state of a component or a global setting of a site or application, until after a user purposefully submits a form to save this (or any other) change(s). A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
 						</p>
 						<p>
-							As this version of a switch toggle will be announced by
-							assistive technologies as a "checkbox", the best place to use
-							this pattern would be in the context of a series of form fields
-							that were to be submitted all at once.  Or as a switch toggle
-							that was coupled with a "Save" or "Submit" button.
+							If using a visually styled switch in a website or application, it should adhere to one of the mentioned roles, announcing itself as a switch or a checkbox, and this announcement and the component's behavior should be consistent across all instances of the switch. (For instance, Why would a similar looking UI component require a form submission in some instances, but be an instantaneous change in others?)
 						</p>
 					</section> <!-- /.demo-details -->
 				</article>
