@@ -54,8 +54,8 @@ Styled single and multi-select patterns.
 
 Selects allow a user to pick one or more options from a menu of choices.
 
-1. [Native Select Box](src/select)  
-2. [Native Multi-Select Box](src/select--multi)  
+1. [Select (single)](src/select)  
+2. [Select (multi)](src/select--multi)  
 
 
 ### Progress Bar
