@@ -220,21 +220,23 @@
 							To create a custom styled rating component, without the need for JavaScript, the following markup pattern should be followed:
 						</p>
 
-						<pre><code>
-&lt;fieldset class="r-radios">
+						<pre><code>&lt;fieldset class="r-radios">
   &lt;legend>
     Rate my rating system:
   &lt;/legend>
 
-  &lt;input checked aria-label="No rating" type="radio" name="r_input" id="r_input_0">
-  &lt;label aria-hidden="true" for="r_input_0" class="r-radio r-radio--none">
+  &lt;input type="radio" name="r_input" id="r_input_0"
+    checked aria-label="No rating">
+  &lt;label aria-hidden="true" for="r_input_0"
+    class="r-radio r-radio--none">
     &lt;svg aria-hidden="true" focsable="false">
       &lt;use xlink:href="#no_rating"/>
     &lt;/svg>
     &lt;span>No rating&lt;/span>
   &lt;/label>
 
-  &lt;input aria-label="1 star" type="radio" name="r_input" id="r_input_1">
+  &lt;input type="radio" name="r_input" id="r_input_1"
+    aria-label="1 star">
   &lt;label for="r_input_1" class="r-radio">
     &lt;svg aria-hidden="true" focsable="false">
       &lt;use aria-hidden="true" xlink:href="#star"/>
@@ -242,8 +244,7 @@
     &lt;span>1 Star&lt;/span>
   &lt;/label>
 
-  <!-- add more stars here! -->
-</code></pre>
+  &lt;!-- add more stars here! --></code></pre>
 
 						<p>
 							As the rating system is built by a series of radio buttons, these form controls should live within a <code>fieldset</code> with a <code>legend</code> to appropriately caption the radio button group's purpose. If it makes sense for these groupings of radio buttons to be called out in the document outline, then the <code>legend</code> can have an appropriately ranked heading element as its child element, containing the text of the <code>legend</code>.
@@ -280,6 +281,3 @@
 
 	</body>
 </html>
-
-
-

@@ -94,8 +94,7 @@
 							To style radio buttons into a pill-like component requires a specific markup pattern:
 						</p>
 
-<pre><code>
-&lt;fieldset class="fieldset">
+<pre><code>&lt;fieldset class="fieldset">
   &lt;legend>Group Title&lt;/legend>
 
   &lt;div class="r-group">
@@ -105,8 +104,7 @@
     &lt;input type="radio" id="r2" name="radios">
     &lt;label for="r2">Option 2&lt;/label>
   &lt;/div>
-&lt;/fieldset>
-</code></pre>
+&lt;/fieldset></code></pre>
 
 						<p>
 							As radio buttons do not have a native way to revert to a completely unchecked state, without usage of a form reset button or a user performing a hard refresh with their browser, there should always be a safe default option <code>checked</code>, so a user doesn't have to reset a form to remove an erroneous radio button selection.
@@ -122,7 +120,7 @@
 						</p>
 
 						<p>
-							This pattern may be perfectly acceptable to use in the context of a form, or as a UI changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component. Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="http://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
+							This pattern may be perfectly acceptable to use in the context of a form, or as a UI changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component. Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="https://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
 						</p>
 
 					</section> <!-- /.demo-details -->
