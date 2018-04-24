@@ -75,23 +75,6 @@
   opacity: .75;
 }
 
-
-/**
- * Child elements of the select
- */
-.select select:focus option:not([disabled]),
-.select select:focus optgroup:not([disabled]) {
-  color: #111;
-  text-shadow: none;
-}
-
-.select option[disabled],
-.select optgroup[disabled] > option {
-  color: rgba(50,50,50,.5);
-}
-
-
-
 /**
  * 1. remove background focus style from IE11 while keeping
  *    focus style available on option elements
@@ -103,4 +86,19 @@
 
 .select select::-ms-expand {
   display: none; /* 2 */
+}
+
+
+/**
+ * Child elements of the select
+ */
+.select select:focus option:not([disabled]),
+.select select:focus optgroup:not([disabled]) {
+  color: #111;
+  text-shadow: none;
+}
+
+.select option[disabled],
+.select optgroup[disabled] {
+  color: rgba(50,50,50,.75);
 }
