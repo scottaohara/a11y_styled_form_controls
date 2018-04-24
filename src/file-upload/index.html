@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>
-			Styled Native File Inputs
+			Styled File Uploads
 		</title>
 		<meta name="viewport"
 			content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,19 +15,18 @@
 		<link rel="stylesheet" href="../assets/css/--shared--.css">
 		<link rel="stylesheet" href="../assets/css/file-upload.css">
 	</head>
-
 	<body>
 
 		<div class="demo-wrap">
 
 			<header class="demo-wrap__header">
-				<h1>Styled Native File Inputs</h1>
+				<h1>Styled File Uploads</h1>
 				<p>
-					Cross-browser styling for the native file inputs.
+					Cross-browser styling for the native HTML file input type.
 				</p>
 				<nav>
 					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of input patterns</a>
+					<a href="/a11y_styled_form_controls">Index of form controls</a>
 				</nav>
 			</header>
 
@@ -72,7 +71,7 @@
 						</h3>
 
 						<p>
-							To style native file inputs, a specific markup pattern is required:
+							To style <code>input[type="file"]</code>, a specific markup pattern is necessary:
 						</p>
 
 						<pre><code>&lt;div class="file-up" data-file-input>
@@ -85,8 +84,11 @@
 &lt;/div></code></pre>
 
 					<p>
-						The containing <code>div[data-file-input]</code>
+						The containing <code>div[data-file-input]</code> provides the necessary selector hook for the JavaScript.
 					</p>
+
+					...
+
 					</section>
 				</article>
 			</main>
