@@ -26,6 +26,18 @@ main {
 	padding-top: .25em;
 }
 
+pre {
+	background: #fdfdfd;
+	border: 1px solid #ccc;
+	max-width: 100%;
+	overflow: auto;
+	padding: .5em;
+}
+
+hr {
+	margin: 1.5em 0;
+}
+
 .demo-wrap {
 	margin: 2em auto;
 	max-width: 580px;
@@ -39,12 +51,4 @@ main {
 
 .demo-details > h3 {
 	margin-top: 0;
-}
-
-pre {
-	background: #fdfdfd;
-	border: 1px solid #ccc;
-	max-width: 100%;
-	overflow: auto;
-	padding: .5em;
 }
