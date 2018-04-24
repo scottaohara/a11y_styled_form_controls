@@ -55,12 +55,14 @@
 	bottom: -.35em;
 	content: "";
 	left: -.35em;
-	pointer-events: none;
+	pointer-events: none; /* 1 */
 	position: absolute;
 	right: -.35em;
 	top: -.35em;
-	/* don't like pointer-events, */
-	/* then use z-index: -1; */
+	/*
+		1. Don't like pointer-events?
+			 then use z-index: -1;
+	*/
 }
 
 .r-group input:focus ~ label:last-of-type:after  {
@@ -68,8 +70,8 @@
 }
 
 /**
- * Undo styling that makes these pills appear as if
- * they are all checked in high contrast mode
+ * Undo styling that makes these pills appear as
+ * if they are all checked in high contrast mode.
  */
 @media screen and (-ms-high-contrast: active) {
 	.r-group label {

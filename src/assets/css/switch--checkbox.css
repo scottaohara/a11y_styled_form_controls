@@ -3,7 +3,7 @@
 	border: 1px solid #565656;
 	display: block;
 	overflow: hidden;
-	padding: 1em 0;
+	padding: .5em 0;
 	position: relative;
 }
 
@@ -30,17 +30,17 @@
 .check-switch span:after {
 	background: #fff;
 	border-radius: 100%;
-	height: 1.75em;
-	right: 1.25em;
+	height: 1.5em;
+	right: 1.5em;
 	transition: right .1825s ease-in-out;
-	width: 1.75em;
+	width: 1.5em;
 }
 
 /* styling specific to the knob "container" */
 .check-switch span:before {
 	background: #eee;
 	border-radius: 1.75em;
-	height: 2em;
+	height: 1.75em;
 	right: .25em;
 	transition: background .2s ease-in-out;
 	width: 2.75em;

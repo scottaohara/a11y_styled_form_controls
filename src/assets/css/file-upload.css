@@ -3,24 +3,26 @@
 }
 
 .file-up__label {
-	display: inline-block;
+	display: inline-block; /* for browsers that don't understand flexbox */
+	display: flex;
 	position: relative;
 	vertical-align: middle;
 }
 
 .file-up__label__text {
 	border: 1px solid #666;
-	display: inline-block;
+	display: inline-block; /* for browsers that don't understand flexbox */
 	padding: .5em;
 }
 
 /**
- * Don't want to use the standard method
- * for visually hiding the native file upload,
- * as setting the input to 1px height/width will
- * cause VoiceOver to not accurately announce
- * the state of the input (e.g. if there are
- * files selected or not.)
+ * Don't want to use the 'standard' method
+ * for visually hiding the native file upload
+ * with CSS, because setting the form control
+ * to 1px height/width will cause VoiceOver to
+ * inaccurately announce the state of the
+ * form control (e.g. VO will not announce
+ * whether there are files selected or not.)
  */
 .file-up [type="file"] {
 	font-size: .1px;
@@ -35,6 +37,9 @@
 .file-up__output {
 	display: inline-block;
 	font-size: .825em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .file-up__output:not(:empty) {
@@ -46,32 +51,27 @@
 
 /**
  * States
+ *
+ * A focus within class is used to provide a visual
+ * indicator when the hidden form control has
+ * received keyboard focus.
  */
-.file-up__label:hover .file-up__label__text {
-	border: 1px solid #111;
-	outline: 2px solid #333;
-	outline-offset: 2px;
-}
-
-/*
-
-	since the focus-within script runs in
-	all browsers, regardless of if they support
-	:focus-within or not, this isn't needed.
-
-.file-up__label:focus-within .file-up__label__text {
-	border: 1px solid #111;
-	outline: 2px solid #333;
-	outline-offset: 2px;
-}*/
-
+.file-up__label:hover .file-up__label__text,
 .file-up__label.focus-within .file-up__label__text {
 	border: 1px solid #111;
 	outline: 2px solid #333;
 	outline-offset: 2px;
 }
 
-.is-disabled {
+
+/**
+ * Since the input[type="file"] comes after the label,
+ * relying solely on the [disabled] set to the <input>
+ * would be insufficient. If a [disabled] is found on
+ * the <input> this class will be added to the
+ * wrapping element of the styled form control.
+ */
+[data-file-input].is-disabled {
 	opacity: .5;
 	pointer-events: none;
 }

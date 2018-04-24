@@ -1,3 +1,9 @@
+/**
+ * Shared styling among the different form controls.
+ * Much of these styles are pulled from normalize.css.
+ * Use as necessary within your own style sheets.
+ */
+
 input,
 button,
 textarea,
@@ -9,7 +15,7 @@ select {
 	font-weight: inherit;
 	line-height: normal;
 	margin: 0;
-	overflow: visible; /* show overflow in edge */
+	overflow: visible; /* show overflow in Edge */
 	text-transform: none; /* remove inheritance Edge, Firefox, IE */
 }
 

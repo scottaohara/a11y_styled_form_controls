@@ -64,7 +64,9 @@ Progress bars indicate the current status of a task on a scale of 0 to completio
 1. [Native Progress Bar (in progress)](src/native-progress)  
 
 
-### Search Component
+## Search Component
+...  
+
 1. [Search Component (in progress)](src/search)  
 
 

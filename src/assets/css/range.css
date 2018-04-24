@@ -1,23 +1,31 @@
 /**
- * General Input Normalization
+ * General Input styling
+ *
+ * As all ranges in a UI should probably look the same, there
+ * is no need to use a class here, and the specific type of
+ * input, [range], can instead be the selector to specifically
+ * target the form control.
  */
-.c-range {
+input[type=range] {
 	-webkit-appearance: none;
 	appearance: none;
-	cursor: pointer;
 	font-size: inherit;
 	margin: 1em 0;
 	width: 100%;
+}
+
+input[type=range][disabled] {
+	opacity: .625;
 }
 
 
 /**
  * Track
  */
-.c-range::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
 	background: #eee;
-	border-radius: 4px;
 	border: 1px solid #999;
+	border-radius: 4px;
 	box-shadow:
 		inset 0 1px 3px rgba(0,0,0,.2),
 		0 0 0 0px #333;
@@ -25,10 +33,10 @@
 	width: 100%;
 }
 
-.c-range::-moz-range-track {
+input[type=range]::-moz-range-track {
 	background: #eee;
-	border-radius: 4px;
 	border: 1px solid #999;
+	border-radius: 4px;
 	box-shadow:
 		inset 0 1px 3px rgba(0,0,0,.2),
 		0 0 0 0px #333;
@@ -36,9 +44,7 @@
 	width: 100%;
 }
 
-
-
-.c-range::-ms-track {
+input[type=range]::-ms-track {
 	background: transparent;
 	border-color: transparent;
 	border-width: 1em 0;
@@ -47,128 +53,141 @@
 	width: 100%;
 }
 
-.c-range::-ms-fill-lower {
+input[type=range]::-ms-fill-lower {
 	background: #eee;
-	border-radius: 4px;
 	border: 1px solid #999;
+	border-radius: 4px;
 	box-shadow:
 		inset 0 1px 3px rgba(0,0,0,.2),
 		0 0 0 0px #333;
 }
 
-.c-range::-ms-fill-upper {
+input[type=range]::-ms-fill-upper {
 	background: #eee;
-	border-radius: 4px;
 	border: 1px solid #999;
+	border-radius: 4px;
 	box-shadow:
 		inset 0 1px 3px rgba(0,0,0,.2),
 		0 0 0 0px #333;
 }
+
 
 /**
  * Focus Styles
  */
-	.c-range:focus {
-		outline: 0;
-	}
+input[type=range]:focus {
+	outline: 0;
+}
 
-	.c-range:focus::-webkit-slider-runnable-track {
-		background: #168be8;
-	}
+input[type=range]:focus::-webkit-slider-runnable-track {
+	background: #168be8;
+}
 
-	input[type=range]::-moz-focus-outer {
-		border: 0;
-	}
+input[type=range]::-moz-focus-outer {
+	border: 0;
+}
 
-	.c-range:focus::-moz-range-track {
-		background: #168be8;
-	}
+input[type=range]:focus::-moz-range-track {
+	background: #168be8;
+}
 
-	.c-range:focus::-ms-fill-lower {
-		background: #168be8;
-	}
+input[type=range]:focus::-ms-fill-lower {
+	background: #168be8;
+}
 
-	.c-range:focus::-ms-fill-upper {
-		background: #168be8;
-	}
+input[type=range]:focus::-ms-fill-upper {
+	background: #168be8;
+}
 
+input[type=range]:focus::-webkit-slider-thumb {
+	background: #fff;
+	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+}
 
-	.c-range:focus::-webkit-slider-thumb {
-		background: #fff;
-		box-shadow: 0 0 0 2px rgba(60,60,60,.8);
-	}
+input[type=range]:focus::-moz-range-thumb {
+	background: #fff;
+	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+}
 
-	.c-range:focus::-moz-range-thumb {
-		background: #fff;
-		box-shadow: 0 0 0 2px rgba(60,60,60,.8);
-	}
-
-	.c-range:focus::-ms-thumb {
-		background: #fff;
-		box-shadow: 0 0 0 2px rgba(60,60,60,.8);
-	}
+input[type=range]:focus::-ms-thumb {
+	background: #fff;
+	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+}
 
 
 /**
  * Thumbs
  */
-	.c-range::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		background: #eee;
-		border-radius: 2px;
-		border: 1px solid rgba(0,0,0,.5);
-		box-shadow: 0 1px 3px rgba(0,0,0,.25);
-		cursor: grab;
-		height: 2em;
-		margin: -.825em 0 0;
-		position: relative;
-		width: 1.25em;
-		z-index: 3;
-	}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: #eee;
+	border: 1px solid rgba(0,0,0,.5);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	cursor: grab;
+	height: 2em;
+	margin: -.825em 0 0;
+	position: relative;
+	width: 1.25em;
+	z-index: 3;
+}
 
-	.c-range::-moz-range-thumb {
-		background: #eee;
-		border-radius: 2px;
-		border: 1px solid rgba(0,0,0,.5);
-		box-shadow: 0 1px 3px rgba(0,0,0,.25);
-		cursor: grab;
-		height: 1.825em;
-		position: relative;
-		width: 1.125em;
-		z-index: 3;
-	}
+input[type=range][disabled]::-webkit-slider-thumb {
+	cursor: not-allowed;
+}
 
-	/**
-	 * Edge respects the webkit styling here (odd), but
-	 * IE11 doesn't (correct). To get both browsers
-	 * to be correctly styled, this is still necessary
-	 * and the negative margin of the webkit styling
-	 * needs to be removed.
-	 */
-	.c-range::-ms-thumb {
-		background: #eee;
-		border-radius: 2px;
-		border: 1px solid rgba(0,0,0,.5);
-		box-shadow: 0 1px 3px rgba(0,0,0,.25);
-		cursor: grab; /* ms doesn't currently support */
-		height: 1.825em;
-		margin: 0;
-		position: relative;
-		width: 1.125em;
-		z-index: 3;
-	}
+input[type=range]::-moz-range-thumb {
+	background: #eee;
+	border: 1px solid rgba(0,0,0,.5);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	cursor: grab;
+	height: 1.825em;
+	position: relative;
+	width: 1.125em;
+	z-index: 3;
+}
+
+input[type=range][disabled]::-moz-range-thumb {
+	cursor: not-allowed;
+}
+
+/**
+ * Edge respects the webkit styling here (odd), but
+ * IE11 doesn't (correct). To get both browsers
+ * to be correctly styled, this is still necessary
+ * and the negative margin of the webkit styling
+ * needs to be removed.
+ */
+input[type=range]::-ms-thumb {
+	background: #eee;
+	border: 1px solid rgba(0,0,0,.5);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	cursor: grab; /* ms doesn't currently support */
+	height: 1.825em;
+	margin: 0;
+	position: relative;
+	width: 1.125em;
+	z-index: 3;
+}
+
+input[type=range][disabled]::-ms-thumb {
+	cursor: not-allowed;
+}
+
 
 /**
  * When a user specifically 'grabs' the
  * thumb/knob/whatever, change the cursor
- * to the 'grabbing' state.
-*/
-	.c-range::-webkit-slider-thumb:active {
-		cursor: grabbing;
-	}
-	.c-range::-moz-range-thumb:active {
-		cursor: grabbing;
-	}
-	.c-range::-ms-thumb:active {
-		cursor: grabbing; /* ms doesn't currently support */
-	}
+ * to the active state.
+ */
+input[type=range]:not([disabled])::-webkit-slider-thumb:active {
+	cursor: grabbing;
+}
+input[type=range]:not([disabled])::-moz-range-thumb:active {
+	cursor: grabbing;
+}
+input[type=range]:not([disabled])::-ms-thumb:active {
+	cursor: grabbing; /* ms doesn't currently support */
+}
