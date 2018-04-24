@@ -23,8 +23,10 @@
 					Cross-browser styling for the native range input.
 				</p>
 				<nav>
-					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of input patterns</a>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
 				</nav>
 			</header>
 
@@ -39,79 +41,35 @@
 					</label>
 					<input type="range"
 						id="range_input"
-						name="amount"
+						name="range_input"
 						min="0"
 						max="400"
 						step="10"
-						value="200">
-
-					<label for="range_dis">
-						Disabled Range:
-					</label>
-					<input type="range"
-						id="range_dis"
-						disabled
-						name="dis"
-						min="0"
-						max="400"
-						step="10"
-						value="200">
+						value="200"
+						class="c-range">
 
 				<section class="demo-details">
 					<h3>
 						Demo Details
 					</h3>
 
-
 					<p>
-						To create a custom styled range form control, only the HTML for a native <code>input</code> is needed:
+						...
 					</p>
-
-					<pre><code>
-&lt;label for="range_input">
-  Choose Amount:
-&lt;/label>
-&lt;input type="range"
-  id="range_input"
-  name="amount"
-  min="0"
-  max="400"
-  step="10"
-  value="200">
-					</code></pre>
-
-					<p>
-						The native <code>value</code>, <code>min</code>, <code>max</code>, and <code>step</code> attributes are used to provide the starting value, the minimum and maximum values of the range, and the increment in which a user can change the value, respectively.
-					</p>
-
-					<p>
-						Some things to note when styling a range form control:
-					</p>
-
-					<ul>
-						<li>
-							Each browser's implementation of the range form control requires different browser specific selectors to be written, which can lead to duplicative rule sets. Ideally you'd want to utilize CSS variables or variables in a preprocessor, like Sass, to make sure that any styling updates get made to all browsers.
-						</li>
-						<li>
-							For whatever reason, Edge will render <code>::-webkit-slider-thumb</code> styles, which would be nice to cut down on browser specific styling, if it weren't for the fact that Webkit and Edge render the range a bit differently. Webkit needs a negative margin applied to its thumb, while Edge does not. Also, IE11 does not respect the Webkit's thumb styling, which means that the <code>::-ms-thumb</code> selector is still needed for both properly styling IE11, and negating the negative margin Edge inherits from the Webkit style.
-						</li>
-						<li>
-							A range form control doesn't receive much (if anything) in the way of inherent styling when a <code>disabled</code> attribute is applied to it, unlike other form controls which visible look 'dimmed'. Since the range has so many browser specific selectors, to appropriately style the disabled range, disabled styling was taken into account for the following selectors:
-								<ul>
-									<li><code>input[type=range][disabled]</code></li>
-									<li><code>input[type=range][disabled]::-webkit-slider-thumb</code></li>
-									<li><code>input[type=range][disabled]::-moz-range-thumb</code></li>
-									<li><code>input[type=range][disabled]::-ms-thumb</code></li>
-									<li><code>input[type=range]:not([disabled])::-webkit-slider-thumb:active</code></li>
-									<li><code>input[type=range]:not([disabled])::-moz-range-thumb:active</code></li>
-									<li><code>input[type=range]:not([disabled])::-ms-thumb:active</code></li>
-								</ul>
-						</li>
-					</ul>
 				</section>
 
 				</article>
 			</main>
+
+			<footer class="demo-wrap__footer">
+				<nav>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
+				</nav>
+			</footer>
+
 		</div> <!-- /.demo-wrap -->
 
 	</body>

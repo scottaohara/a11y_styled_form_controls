@@ -1,7 +1,5 @@
 /**
- * Demo styles
- * Styling specific to the content and wrapping
- * elements of each styled form control,
+ * Styling for consistent demos
  */
 html,
 body {
@@ -20,27 +18,16 @@ h1, h2, h3 {
 	line-height: 1.1;
 }
 
+.demo-wrap {
+	margin: 2em auto;
+	max-width: 580px;
+}
+
+footer,
 main {
 	border-top: 1px solid #888;
 	margin-top: 1.5em;
 	padding-top: .25em;
-}
-
-pre {
-	background: #fdfdfd;
-	border: 1px solid #ccc;
-	max-width: 100%;
-	overflow: auto;
-	padding: .5em;
-}
-
-hr {
-	margin: 1.5em 0;
-}
-
-.demo-wrap {
-	margin: 2em auto;
-	max-width: 580px;
 }
 
 .demo-details {

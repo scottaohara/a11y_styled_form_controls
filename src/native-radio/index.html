@@ -26,8 +26,10 @@
 					Cross-browser styling for the native radio buttons.
 				</p>
 				<nav>
-					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of input patterns</a>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
 				</nav>
 			</header>
 
@@ -51,9 +53,8 @@
 							<div class="c-radio">
 								<input type="radio" name="r_input" id="r_input_2" disabled>
 								<label for="r_input_2">
-									Option 2 - this option is disabled and does not wrap,
-									just like the other options that don't wrap,
-									but it's specifically call it out here for reasons.
+									Option 2 - this option is disabled and does not wrap, just like the other options that don't wrap, but i thought i'd
+									specifically call it out here.
 								</label>
 							</div>
 							<div class="c-radio">
@@ -72,7 +73,7 @@
 						</h3>
 
 						<p>
-							Custom radio button styles require the following specific markup pattern:
+							These custom styles require a specific markup pattern:
 						</p>
 						<pre><code>&lt;div class="c-radio">
   &lt;input type="radio" name="my_radios" id="unique_id">
@@ -82,7 +83,7 @@
 &lt;/div></code></pre>
 
 						<p>
-							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child and pseudo elements relative to the container.
+							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep child absolutely positioned elements and pseudo elements, relative to the container.
 						</p>
 
 						<p>
@@ -94,12 +95,22 @@
 						</p>
 
 						<p>
-							The styling of the custom radio button is determined by the state of the native form control. The <code>:checked</code>, <code>disabled</code>, and <code>:focus</code> radio button states will all be reflected in the custom style.
+							The styling of the custom radio button is determined by the state of the actual radio button.  <code>:checked</code>, <code>disabled</code> and <code>:focus</code> will all visually change the styling of the custom radio button.
 						</p>
 
 					</section>
 				</article>
 			</main>
+
+			<footer class="demo-wrap__footer">
+				<nav>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
+				</nav>
+			</footer>
+
 		</div> <!-- /.demo-wrap -->
 
 	</body>

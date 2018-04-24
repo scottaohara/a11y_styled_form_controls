@@ -24,8 +24,10 @@
 					Pattern to restyle a checkbox into a switch component.
 				</p>
 				<nav>
-					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of input patterns</a>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
 				</nav>
 			</header>
 
@@ -36,34 +38,23 @@
 						Demo
 					</h2>
 
-					<p style="margin-bottom: .25em">
-						Version: <code>[type="checkbox"]</code> styled to look like a switch
-					</p>
-					<label class="check-switch" for="switch_1">
-						<input type="checkbox" id="switch_1" role="switch">
-						<span tabindex="-1">Example Text 1:</span>
+					<label class="check-switch" for="switch">
+						<input type="checkbox" id="switch">
+						<span tabindex="-1">Example</span>
 						<!--
 							the tabindex="-1" is here to negate VO
-							from announcing the label twice
+							from announcing the "example" label twice
 						-->
 					</label>
 
-					<p style="margin-bottom: .25em">
-						Version: <code>[type="checkbox"][role="switch"]</code>
-					</p>
-					<label class="check-switch" for="switch_2">
-						<input type="checkbox" id="switch_2" role="switch">
-						<span tabindex="-1">Example Text 2:</span>
-					</label>
-
-					<p style="margin-bottom: .25em">
-						Version: <code>[type="checkbox"][role="switch"]</code> - Alternate Markup/Style
-					</p>
+					<h3>
+						Alternate Version
+					</h3>
 					<div class="switchbox">
 						<label for="switchbox">
-							Example Text 3:
+							Turn setting on:
 						</label>
-						<input type="checkbox" id="switchbox" role="switch">
+						<input type="checkbox" id="switchbox">
 					</div>
 
 
@@ -72,49 +63,35 @@
 							Demo Details
 						</h3>
 						<p>
-							The switch components are coded with the following markup patterns:
-						</p>
-
-						<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
-&lt;label class="check-switch" for="switch_1">
-  &lt;input type="checkbox" id="switch_1" role="switch">
-  &lt;span tabindex="-1">Example Text:&lt;/span>
-  &lt;!--
-    the tabindex="-1" is here to negate VO
-    from announcing the "example" label twice
-  -->
-&lt;/label>
-
-&lt;!-- Version: [type="checkbox"][role="switch"] -->
-&lt;label class="check-switch" for="switch_2">
-  &lt;input type="checkbox" id="switch_2" role="switch">
-  &lt;span tabindex="-1">Example Text:&lt;/span>
-&lt;/label>
-
-&lt;!--
-  Version: [type="checkbox"][role="switch"]
-  Alternate markup/style
--->
-&lt;div class="switchbox">
-  &lt;label for="switchbox">
-    Label Text:
-  &lt;/label>
-  &lt;input type="checkbox" id="switchbox" role="switch">
-&lt;/div></code></pre>
-
-						<p>
-							Similar to the native checkbox example, a similar pattern utilizing a native checkbox form control can be used to create a custom switch control. However, it should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
+							The typical user expectation for a checkbox is for it
+							to be engaged with, and then for an additional action,
+							such as submitting a form, to be necessary for the
+							updated state of the checkbox to be recognized by the
+							website/web app.
 						</p>
 						<p>
-							The native role of a "checkbox" should be used if a switch component acts as a checkbox would. In that the checkbox "switch" should not change the state of a component or a global setting of a site or application, until after a user purposefully submits a form to save this (or any other) change(s). A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
+							e.g. a user checking or unchecking an "add me to your mailing list" field.  The action of adding or being removed does not transpire until the form is submitted.
 						</p>
 						<p>
-							If using a visually styled switch in a website or application, it should adhere to one of the mentioned roles, announcing itself as a switch or a checkbox, and this announcement and the component's behavior should be consistent across all instances of the switch. (For instance, Why would a similar looking UI component require a form submission in some instances, but be an instantaneous change in others?)
+							As this version of a switch toggle will be announced by
+							assistive technologies as a "checkbox", the best place to use
+							this pattern would be in the context of a series of form fields
+							that were to be submitted all at once.  Or as a switch toggle
+							that was coupled with a "Save" or "Submit" button.
 						</p>
 					</section> <!-- /.demo-details -->
 				</article>
 
 			</main>
+
+			<footer class="demo-wrap__footer">
+				<nav>
+					<ul>
+						<li><a href="https://github.com/scottaohara/a11y_styled_inputs">See source on GitHub</a></li>
+						<li><a href="/a11y_styled_inputs">Index of input patterns</a></li>
+					</ul>
+				</nav>
+			</footer>
 
 		</div> <!-- /.demo-wrap -->
 
