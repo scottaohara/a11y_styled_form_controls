@@ -13,6 +13,7 @@
 		</script>
 		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
 		<link rel="stylesheet" href="../assets/css/--shared--.css">
+		<link rel="stylesheet" href="../assets/css/radio--vhidden.css">
 		<link rel="stylesheet" href="../assets/css/radio.css">
 	</head>
 	<body>
@@ -39,7 +40,7 @@
 					<form>
 						<fieldset>
 							<legend>
-								My Radio Group
+								Visually Hidden Radios
 							</legend>
 							<div class="c-radio">
 								<input type="radio" name="r_input" id="r_input_1" checked>
@@ -64,6 +65,28 @@
 						</fieldset>
 					</form>
 
+					<hr>
+
+					<form>
+						<fieldset>
+							<legend>
+								Radio Restyles
+							</legend>
+							<label class="n-radio-label">
+								<input type="radio" id="native_r" name="n_radio" class="n-radio">
+								Restyle Option 1
+							</label>
+							<label class="n-radio-label">
+								<input type="radio" id="native_r2" name="n_radio" class="n-radio" checked>
+								Restyle Option 2
+							</label>
+							<label class="n-radio-label">
+								<input type="radio" id="native_r2" name="n_radio" class="n-radio" disabled>
+								Restyle Option 3 (disabled)
+							</label>
+						</fieldset>
+					</form>
+
 
 					<section class="demo-details">
 						<h3>
@@ -71,9 +94,12 @@
 						</h3>
 
 						<p>
-							Custom radio button styles require the following markup pattern:
+							These custom radio button styles adhere to one of the two following markup patterns:
 						</p>
-						<pre><code>&lt;div class="c-radio">
+
+						<h4>The first pattern</h4>
+						<pre><code>&lt;!-- Visually Hidden Radio Style -->
+&lt;div class="c-radio">
   &lt;input type="radio" name="my_radios" id="unique_id">
   &lt;label for="unique_id">
     Label text here
@@ -94,6 +120,17 @@
 
 						<p>
 							The styling of the custom radio button is determined by the state of the native form control. The <code>:checked</code>, <code>disabled</code>, and <code>:focus</code> radio button states will all be reflected in the custom style.
+						</p>
+
+						<h4>The second pattern</h4>
+						<pre><code>&lt;!-- Restyled Radio -->
+&lt;label class="n-radio-label">
+  &lt;input type="radio" name="n_radio" id="native_r2">
+  Label
+&lt;/label></code></pre>
+
+						<p>
+							The second pattern uses the <code>label</code> to wrap the radio button, but this pattern isn't reliant on it as part of the setup. Instead, the radio button is restyled, having its native styling completely removed by <code>appearance: none</code>. It is then restyled largely with CSS borders and box-shadows.
 						</p>
 
 					</section>

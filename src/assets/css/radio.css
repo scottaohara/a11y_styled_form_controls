@@ -1,70 +1,48 @@
-.c-radio {
-	position: relative;
+.n-radio-label {
+	display: inline-block;
+	padding: .5em 0;
+	width: 100%;
 }
 
-.c-radio > input[type="radio"] {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	top: auto;
-	white-space: nowrap;
-	width: 1px;
-}
-
-.c-radio > label {
-	display: block;
-	padding: .75em .5em .75em 2em;
-}
-
-.c-radio > label:before,
-.c-radio > label:after {
-	border: 1px solid;
+.n-radio {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
 	border-radius: 100%;
-	content: "";
-	height: 1.125em;
-	left: .125em;
-	position: absolute;
-	top: .825em;
+	border: 1px solid transparent;
+	box-shadow:
+		0 0 0 2px rgba(13,81,146, 1),
+		inset 0 0 0 0px rgba(13,81,146, 0);
+	display: inline-block;
+	height: 1.25em;
+	margin-right: .25em;
 	transition:
 		border-color .2s ease-in-out,
 		box-shadow .2s ease-in-out;
-	width: 1.125em;
+	vertical-align: text-bottom;
+	width: 1.25em;
 }
 
-.c-radio > label:after {
-	border-color: #565656;
-}
-
-.c-radio > label:before {
+.n-radio:focus {
 	border-color: transparent;
-	box-shadow: 0 0 0 0px rgba(0,0,0,0);
+	box-shadow:
+		0 0 0 2px rgba(13, 81, 146, 1),
+		inset 0 0 0 0px rgba(13, 81, 146, 1);
 }
 
-.c-radio > input:checked ~ label:before {
-	border-color: transparent;
-	box-shadow: 0 0 0 2px #0d5192;
-}
-
-.c-radio > input:focus ~ label:before {
-	border-color: transparent;
-	box-shadow: 0 0 0 4px #228BEC;
-}
-
-.c-radio > input:checked ~ label:after {
+.n-radio:checked {
 	border-color: #fff;
-	box-shadow: inset 0 0 0 5px #0d5192;
+	box-shadow:
+		0 0 0 2px rgba(34, 139, 236, 1),
+		inset 0 0 0 6px rgba(13, 81, 146, 1);
 }
 
-.c-radio > input[disabled] ~ label {
+.n-radio:checked:focus {
+	box-shadow:
+		0 0 0 3px rgba(34, 139, 236, 1),
+		inset 0 0 0 3px rgba(13, 81, 146, 1);
+}
+
+.n-radio[disabled] {
 	opacity: .5;
-}
-
-@media screen and (-ms-high-contrast: active) {
-	.c-radio > input:checked ~ label:before {
-		border: 6px solid;
-		box-shadow: none;
-		height: .5em;
-		width: .5em;
-	}
 }
