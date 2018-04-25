@@ -1,0 +1,20 @@
+# EditorConfig helps developers define and maintain consistent coding styles
+# between different editors and IDEs
+# editorconfig.org
+
+
+# Topmost EditorConfig file
+root = true
+
+# Overall defaults
+[*]
+
+# Tab style
+indent_style = tab
+indent_size = 4
+
+# File format and handling
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
