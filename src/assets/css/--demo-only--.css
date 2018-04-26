@@ -52,3 +52,11 @@ hr {
 .demo-details > h3 {
 	margin-top: 0;
 }
+
+.demo-nav {
+	border-top: 1px solid #888;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 1.5em 0 0 0;
+}

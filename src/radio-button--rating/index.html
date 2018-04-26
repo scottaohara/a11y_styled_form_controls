@@ -33,9 +33,12 @@
 				<p>
 					Pattern to restyle a radio button group into a star rating component.
 				</p>
-				<nav>
-					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of form controls</a>
+				<nav aria-label="Header">
+					<ul class="demo-nav">
+						<li><a rel="prev" href="/a11y_styled_form_controls/radio-button/index.html">Styled Radio Buttons</a></li>
+						<li><a rel="home" href="/a11y_styled_form_controls">Index of form controls</a></li>
+						<li><a rel="next" href="/a11y_styled_form_controls/radio-button--pill/index.html">Radio Button Pill</a></li>
+					</ul>
 				</nav>
 			</header>
 
@@ -210,6 +213,9 @@
 						</fieldset>
 					</form>
 
+					<p>
+						<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>
+					</p>
 
 					<section class="demo-details">
 						<h3>
@@ -222,26 +228,26 @@
 
 						<pre><code>&lt;fieldset class="r-radios">
   &lt;legend>
-    Rate my rating system:
+	Rate my rating system:
   &lt;/legend>
 
   &lt;input type="radio" name="r_input" id="r_input_0"
-    checked aria-label="No rating">
+	checked aria-label="No rating">
   &lt;label aria-hidden="true" for="r_input_0"
-    class="r-radio r-radio--none">
-    &lt;svg aria-hidden="true" focsable="false">
-      &lt;use xlink:href="#no_rating"/>
-    &lt;/svg>
-    &lt;span>No rating&lt;/span>
+	class="r-radio r-radio--none">
+	&lt;svg aria-hidden="true" focsable="false">
+	  &lt;use xlink:href="#no_rating"/>
+	&lt;/svg>
+	&lt;span>No rating&lt;/span>
   &lt;/label>
 
   &lt;input type="radio" name="r_input" id="r_input_1"
-    aria-label="1 star">
+	aria-label="1 star">
   &lt;label for="r_input_1" class="r-radio">
-    &lt;svg aria-hidden="true" focsable="false">
-      &lt;use aria-hidden="true" xlink:href="#star"/>
-    &lt;/svg>
-    &lt;span>1 Star&lt;/span>
+	&lt;svg aria-hidden="true" focsable="false">
+	  &lt;use aria-hidden="true" xlink:href="#star"/>
+	&lt;/svg>
+	&lt;span>1 Star&lt;/span>
   &lt;/label>
 
   &lt;!-- add more stars here! -->
@@ -276,6 +282,17 @@
 					</section> <!-- /.demo-details -->
 				</article> <!-- /.demo -->
 			</main>
+
+			<footer>
+				<nav aria-label="Footer">
+					<ul class="demo-nav">
+						<li><a rel="prev" href="/a11y_styled_form_controls/radio-button/index.html">Styled Radio Buttons</a></li>
+						<li><a rel="home" href="/a11y_styled_form_controls">Index of form controls</a></li>
+						<li><a rel="next" href="/a11y_styled_form_controls/radio-button--pill/index.html">Radio Button Pill</a></li>
+					</ul>
+				</nav>
+			</footer>
+
 		</div> <!-- /.demo-wrap -->
 
 	</body>

@@ -20,13 +20,16 @@
 		<div class="demo-wrap">
 
 			<header class="demo-wrap__header">
-				<h1>Styled Range Alider</h1>
+				<h1>Styled Range Slider</h1>
 				<p>
 					Cross-browser styling for the native range slider form control.
 				</p>
-				<nav>
-					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
-					<a href="/a11y_styled_form_controls">Index of form controls</a>
+				<nav aria-label="Header">
+					<ul class="demo-nav">
+						<li><a rel="prev" href="/a11y_styled_form_controls/file-upload/index.html">File Upload</a></li>
+						<li><a rel="home" href="/a11y_styled_form_controls">Index of form controls</a></li>
+						<li><a rel="next" href="/a11y_styled_form_controls/select/index.html">Select (single)</a></li>
+					</ul>
 				</nav>
 			</header>
 
@@ -59,11 +62,14 @@
 						step="10"
 						value="200">
 
+					<p>
+						<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>
+					</p>
+
 					<section class="demo-details">
 						<h3>
 							Demo Details
 						</h3>
-
 
 						<p>
 							To create a styled range slider form control, only the HTML for a native <code>input</code> is needed:
@@ -111,7 +117,19 @@
 
 					</section>
 				</article>
+
 			</main>
+
+			<footer>
+				<nav aria-label="Footer">
+					<ul class="demo-nav">
+						<li><a rel="prev" href="/a11y_styled_form_controls/file-upload/index.html">File Upload</a></li>
+						<li><a rel="home" href="/a11y_styled_form_controls">Index of form controls</a></li>
+						<li><a rel="next" href="/a11y_styled_form_controls/select/index.html">Select (single)</a></li>
+					</ul>
+				</nav>
+			</footer>
+
 		</div> <!-- /.demo-wrap -->
 
 	</body>
