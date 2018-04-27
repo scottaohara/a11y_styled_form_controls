@@ -69,9 +69,6 @@
 							Demo Details
 						</h3>
 
-						<p>
-							These custom checkbox styles require a specific markup pattern:
-						</p>
 						<pre><code>&lt;div class="c-cb"&gt;
   &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
   &lt;label for="c_input_1"&gt;
@@ -80,22 +77,27 @@
 &lt;/div&gt;</code></pre>
 
 						<p>
-							The <code>.c-cb</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child elements and pseudo elements, within the container.
+							Keeping the checkbox accessible to screen readers and keyboard users is essential. Because of this, a native checkbox input element is included in the pattern, but is visually hidden. Its inclusion ensures the pattern can remain accessible to screen reader's virtual cursors and standard keyboard focus.
 						</p>
 
 						<p>
-							The actual native checkbox is visually hidden but remains accessible to screen reader's virtual cursors and standard keyboard focus with the <kbd>tab</kbd> key. Keeping the checkbox accessible to screen readers and keyboard users is essential in continuing to utilize the native functionality of a checkbox. Otherwise all checkbox functionality would need to be rewritten with JavaScript and appropriate ARIA attributes, which unnecessarily balloons the development effort needed to code a custom checkbox style.
+							Without the visually hidden checkbox input, all checkbox functionality would need to be rewritten using JavaScript and <abbr>ARIA</abbr>. This would unnecessarily inflate the development effort needed to code a custom checkbox.
 						</p>
 
 						<p>
-							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible checkbox and "check" element.
+							The <code>.c-cb</code> container's main purpose is to be a styling hook. It utilizes <code>position: relative;</code> to keep child elements and pseudo elements that have absolute positioning applied to them within the container it provides.
 						</p>
 
 						<p>
-							The styling of the custom checkbox is determined by the state of the actual checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the <code>disabled</code> attribute on the <code>input</code> will all visually change the styling of the custom checkbox.
+							The pattern label's <code>:before</code> and <code>:after</code> pseudo elements are used to create a check effect that can be styled via <abbr>CSS</abbr>.
+						</p>
+
+						<p>
+							The appearance of the custom checkbox is determined by the state of the underlying native checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the <code>disabled</code> attribute on the input will all visually change the styling of the custom checkbox.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
+
 						<p>
 							There are no alterations to how a screen reader should announce styled checkboxes.
 						</p>
