@@ -35,7 +35,7 @@
 
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<p style="margin-bottom: .25em">
@@ -74,13 +74,12 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
-						<p>
-							The switch components consist of the following markup patterns:
-						</p>
 
-						<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
 &lt;label class="check-switch" for="switch_1">
   &lt;input type="checkbox" id="switch_1" role="switch">
   &lt;span tabindex="-1">Example Text:&lt;/span>
@@ -106,16 +105,20 @@
   &lt;/label>
   &lt;input type="checkbox" id="switchbox" role="switch">
 &lt;/div></code></pre>
+						</details>
 
 						<p>
 							Similar to the native checkbox example, a markup pattern reliant on a native checkbox form control can be used to create a custom switch control. It should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
 						</p>
+
 						<p>
 							A native checkbox should be used the switch component continues to function like a checkbox. Meaning that the "switch" should not change the state of a component or alter a global site or application setting, until after a user submits the form the "switch" is a child of. A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
 						</p>
+
 						<p>
 							If using a visually styled switch in a website or application, it should only adhere to one of the previously mentioned roles. It should announce itself as a "switch" or a "checkbox", and this announcement, and its behavior, should be consistent across all instances of the component.
 						</p>
+
 						<p>
 							A small script is used to progressively enhance a checkbox <code>input</code> with a <code>data-switch</code> into a <code>role="switch"</code>. The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
 						</p>

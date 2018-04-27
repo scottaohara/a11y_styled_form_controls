@@ -40,7 +40,7 @@
 
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<form method="post" action="#">
@@ -109,14 +109,12 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
-						<p>
-							Styling radio buttons into a pill-like component uses the following markup pattern:
-						</p>
-
-<pre><code>&lt;fieldset class="fieldset">
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>&lt;fieldset class="fieldset">
   &lt;legend>Group Title&lt;/legend>
 
   &lt;div class="r-group">
@@ -127,6 +125,7 @@
     &lt;label for="r2">Option 2&lt;/label>
   &lt;/div>
 &lt;/fieldset></code></pre>
+						</details>
 
 						<p>
 							As radio buttons do not have a native way to revert to a completely unchecked state, without usage of a form reset button or a user performing a hard refresh with their browser, there should always be a safe default option <code>checked</code>, so a user doesn't have to reset a form to remove an erroneous radio button selection.

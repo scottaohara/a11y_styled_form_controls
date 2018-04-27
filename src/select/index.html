@@ -33,7 +33,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<label for="ex_custom_select">
@@ -80,16 +80,12 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
-						<p>
-							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the examples presented here can provide consistent styling to the <code>select</code> wrapper, the <code>option</code> and <code>optgroup</code> elements within fare much different.
-						</p>
-
-						<p>The markup pattern used is as follows:</p>
-
-						<pre><code>&lt;label for="ex_custom_select">
+						<details open>
+							<summary>Pattern Markup</summary>
+							<pre><code>&lt;label for="ex_custom_select">
   Custom Style Select
 &lt;/label>
 &lt;div class="select">
@@ -99,6 +95,11 @@
     &lt;option>Option 3&lt;/option>
   &lt;/select>
 &lt;/div></code></pre>
+						</details>
+
+						<p>
+							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the examples presented here can provide consistent styling to the <code>select</code> wrapper, the <code>option</code> and <code>optgroup</code> elements within do not fare as well to custom styles.
+						</p>
 
 						<p>
 							The wrapping <code>div</code> is in place to provide a <code>position: relative</code> container, and to create/position the <code>:before</code> and <code>:after</code> pseudo elements, which compose the down arrow and its background. The wrapping element also handles the background color for the updated styling. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements would inconsistently render in different browsers, with the altered background coloring.

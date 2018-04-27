@@ -34,7 +34,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<form>
@@ -90,7 +90,7 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
 						<p>
@@ -98,13 +98,15 @@
 						</p>
 
 						<h4>The first pattern</h4>
-						<pre><code>&lt;!-- Visually Hidden Radio Style -->
-&lt;div class="c-radio">
+						<details open>
+							<summary>Pattern Markup: Visually Hidden Style</summary>
+						<pre><code>&lt;div class="c-radio">
   &lt;input type="radio" name="my_radios" id="unique_id">
   &lt;label for="unique_id">
     Label text here
   &lt;/label>
 &lt;/div></code></pre>
+						</details>
 
 						<p>
 							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child and pseudo elements relative to the container.
@@ -123,11 +125,13 @@
 						</p>
 
 						<h4>The second pattern</h4>
-						<pre><code>&lt;!-- Restyled Radio -->
-&lt;label class="n-radio-label">
+						<details open>
+							<summary>Pattern Markup: Restyled Radio</summary>
+						<pre><code>&lt;label class="n-radio-label">
   &lt;input type="radio" name="n_radio" id="native_r2">
   Label
 &lt;/label></code></pre>
+						</details>
 
 						<p>
 							The second pattern uses the <code>label</code> to wrap the radio button, but this pattern isn't reliant on it as part of the setup. Instead, the radio button is restyled, having its native styling completely removed by <code>appearance: none</code>. It is then restyled largely with CSS borders and box-shadows.

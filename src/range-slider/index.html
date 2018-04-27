@@ -33,7 +33,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<label for="range_input">
@@ -61,15 +61,13 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
 
-						<p>
-							To create a styled range slider form control, only the HTML for a native <code>input</code> is needed:
-						</p>
-
-						<pre><code>&lt;label for="range_input">
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>&lt;label for="range_input">
   Choose Amount:
 &lt;/label>
 &lt;input type="range"
@@ -79,6 +77,7 @@
   max="400"
   step="10"
   value="200"></code></pre>
+						</details>
 
 						<p>
 							The native <code>value</code>, <code>min</code>, <code>max</code>, and <code>step</code> attributes are used to provide the starting value, the minimum and maximum values of the range, and the increment in which a user can change the value, respectively.

@@ -33,7 +33,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<div class="file-up" data-file-input>
@@ -67,14 +67,12 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
-						<p>
-							To style <code>input[type="file"]</code>, a specific markup pattern is necessary:
-						</p>
-
-						<pre><code>&lt;div class="file-up" data-file-input>
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>&lt;div class="file-up" data-file-input>
   &lt;label class="file-up__label" for="file_upload">
     &lt;span class="file-up__label__text">
       Upload
@@ -82,6 +80,7 @@
     &lt;input type="file" id="file_upload">
   &lt;/label>
 &lt;/div></code></pre>
+						</details>
 
 						<p>
 							The containing <code>div[data-file-input]</code> provides the necessary selector hook for the JavaScript.

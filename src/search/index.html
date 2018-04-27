@@ -33,7 +33,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<p>Search form example:</p>
@@ -72,17 +72,11 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
-						<p>
-							Search forms can be one of the most important parts of a UI, as a good search interface can allow users to quickly find the content they are looking for without the need to parse through content or navigation links in hopes of finding what they need.
-						</p>
-
-						<p>
-							To help promote the existence of a search form, the search landmark (<code>role="search"</code>) should be applied to the wrapping <code>form</code> element of the search UI. Beyond that, the most basic of search forms might look like the following markup:
-						</p>
-
+						<details open>
+							<summary>Pattern Markup</summary>
 						<pre><code>&lt;form role="search" aria-label="unique identifier goes here">
   &lt;input type="search"
     id="srch"
@@ -101,6 +95,16 @@
     &lt;/svg>
   &lt;/button>
 &lt;/form></code></pre>
+						</details>
+
+						<p>
+							Search forms can be one of the most important parts of a UI, as a good search interface can allow users to quickly find the content they are looking for without the need to parse through content or navigation links in hopes of finding what they need.
+						</p>
+
+						<p>
+							To help promote the existence of a search form, the search landmark (<code>role="search"</code>) should be applied to the wrapping <code>form</code> element of the search UI. Beyond that, the most basic of search forms might look like the following markup:
+						</p>
+
 						<p>
 							In many search forms there may be no explicit <code>label</code>, as the presence of the search icon (within the submit button) gives the visual indicator to users that this is a search component. However, an <code>aria-label</code> should still be applied to the <code>input[type="search"]</code> to give the input an accessible name.
 						</p>
@@ -113,6 +117,8 @@
 						<p>
 							More complex search forms might contain additional form controls, or might utilize a <code>combobox</code> in place of, or in addition to, a standard <code>input[type="search"]</code> form control. Search forms should have a submit button as a consistent indicator in how a form can be submitted.
 						</p>
+
+						<h4>Affects on Screen Reader Announcements?</h4>
 					</section>
 				</article>
 			</main>
