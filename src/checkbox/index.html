@@ -22,7 +22,7 @@
 			<header class="demo-wrap__header">
 				<h1>Styled HTML Checkboxes</h1>
 				<p>
-					Cross-browser styling for the native checkboxes.
+					Cross-browser styling for native HTML checkboxes.
 				</p>
 				<nav>
 					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
@@ -33,7 +33,7 @@
 			<main>
 				<article class="demo">
 					<h2>
-						Demo
+						Pattern Demo
 					</h2>
 
 					<form>
@@ -66,34 +66,37 @@
 
 					<section class="demo-details">
 						<h3>
-							Demo Details
+							Pattern Details
 						</h3>
 
+						<details open>
+							<summary>Pattern Markup</summary>
 						<pre><code>&lt;div class="c-cb"&gt;
   &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
   &lt;label for="c_input_1"&gt;
     Option 1
   &lt;/label&gt;
 &lt;/div&gt;</code></pre>
+							</details>
 
 						<p>
-							Keeping the checkbox accessible to screen readers and keyboard users is essential. Because of this, a native checkbox input element is included in the pattern, but is visually hidden. Its inclusion ensures the pattern can remain accessible to screen reader's virtual cursors and standard keyboard focus.
+							When customizing any form control, it must remain accessible to assistive technology and keyboard users. To keep this custom style accessible, a visually hidden checkbox form control is the cornerstone of the custom style.
 						</p>
 
 						<p>
-							Without the visually hidden checkbox input, all checkbox functionality would need to be rewritten using JavaScript and <abbr>ARIA</abbr>. This would unnecessarily inflate the development effort needed to code a custom checkbox.
+							Without the visually hidden checkbox input, all checkbox functionality, including keyboard focus and appropriate announcements to screen readers, would need to be rewritten using JavaScript and necessary <abbr>ARIA</abbr> attributes. This would significantly inflate the development effort needed to code a custom checkbox.
 						</p>
 
 						<p>
-							The <code>.c-cb</code> container's main purpose is to be a styling hook. It utilizes <code>position: relative;</code> to keep child elements and pseudo elements that have absolute positioning applied to them within the container it provides.
+							The wrapping <code>div.c-cb</code>'s primary purpose is to act as a styling hook. It utilizes <code>position: relative;</code> to keep absolute positioned child and pseudo elements within the confines of the component.
 						</p>
 
 						<p>
-							The pattern label's <code>:before</code> and <code>:after</code> pseudo elements are used to create a check effect that can be styled via <abbr>CSS</abbr>.
+							The form control's label <code>:before</code> and <code>:after</code> pseudo elements are used to create a visual "check" effect that can be styled via <abbr>CSS</abbr>.
 						</p>
 
 						<p>
-							The appearance of the custom checkbox is determined by the state of the underlying native checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the <code>disabled</code> attribute on the input will all visually change the styling of the custom checkbox.
+							The appearance of the custom checkbox is determined by the state of the native checkbox. <code>:checked</code>, and <code>:focus</code> states, along with the form control's <code>disabled</code> attribute all serve as hooks to visually change the styling of the custom checkbox.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
