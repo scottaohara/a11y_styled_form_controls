@@ -83,6 +83,14 @@
 							Pattern Details
 						</h3>
 
+						<p>
+							Consistent select form control styling across different browsers has never been a straightforward task.
+						</p>
+
+						<p>
+							While the <code>select</code> wrapper can be consistently styled using the following technique, the the <code>option</code> and <code>optgroup</code> elements within do not fare as well. Poor cross-browser support means that it is currently impossible to create consistent styling for these two elements.
+						</p>
+
 						<details open>
 							<summary>Pattern Markup</summary>
 							<pre><code>&lt;label for="ex_custom_select">
@@ -98,29 +106,46 @@
 						</details>
 
 						<p>
-							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the examples presented here can provide consistent styling to the <code>select</code> wrapper, the <code>option</code> and <code>optgroup</code> elements within do not fare as well to custom styles.
+							The wrapping <code>div.select</code>'s primary purpose is to act as a styling hook. It utilizes <code>position: relative;</code> to keep absolute positioned child and pseudo elements within the confines of the component.
 						</p>
 
 						<p>
-							The wrapping <code>div</code> is in place to provide a <code>position: relative</code> container, and to create/position the <code>:before</code> and <code>:after</code> pseudo elements, which compose the down arrow and its background. The wrapping element also handles the background color for the updated styling. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements would inconsistently render in different browsers, with the altered background coloring.
+							It is also used to create and position the <code>:before</code> and :after pseudo elements that are used to compose the down arrow icon and the component's background.
 						</p>
 
 						<p>
-							The <code>select</code> element itself has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those styles have been removed, the element can be redesigned with CSS. Additional selectors for removing native styling from Microsoft browsers, and the focus ring from Firefox also exist.
+							The <code>select</code> element itself has much of its native <abbr>HTML</abbr> styling removed by the use of vendor-prefixed declarations. Once the vendor styles have been removed, the element can be redesigned with <abbr>CSS</abbr>.
+						</p>
+
+						<h4>Background color</h4>
+
+						<p>
+							Background color styling should also be controlled by this wrapping <code>div</code> element, and not the <code>select</code> element itself. This will mitigate issues with <code>option</code> and <code>optgroup</code> rendering inconsistently in different browsers and affecting the background color.
+						</p>
+
+						<h4><code>option</code> and <code>optgroup</code> styling</h4>
+
+						<p>
+							To maintain legibility and consistent design across browsers, the styling options for the <code>option</code> and <code>optgroup</code> elements are limited.
 						</p>
 
 						<p>
-							The <code>option</code> and <code>optgroup</code> elements can receive minor styling updates to their <code>color</code>, but outside of using this for indicating <code>disabled</code> states, the <code>option</code>s have been largely left in tact to maintain legibility and consistent design across browsers. For instance, Firefox would allow for background styling of the <code>option</code>s, but not the <code>optgroup</code>, which could lead to an unwanted grey bar behind the <code>optgroup</code> and illegible text if the <code>color</code> was not a good match. Internet Explorer and Edge do allow for some <code>option</code> and <code>optgroup</code> styling, such as <code>background</code>, <code>color</code> and <code>font-size</code> updates.  Chrome and Safari largely just ignored any attempt at styling the <code>option</code> or <code>optgroup</code>s, rendering them as browser defaults.
+							For example, Firefox will allow background styling for the <code>select</code>'s <code>option</code> elements, but not the <code>optgroup</code> element. Doing so will create an unwanted grey bar behind the <code>optgroup</code>, which may create illegible option text, if the color contrast is not sufficient.
 						</p>
 
 						<p>
-							In conclusion, to "style" a standard <code>select</code> element and give it consistent design across all browsers, its advised to keep the <code>option</code> and <code>optgroup</code> styling as close to browser defaults as possible.  If a fully styleable single-<code>select</code> form control is desired, an <a href="http://w3c.github.io/aria-practices/#Listbox">ARIA listbox</a> might be the way to go. Note, there's quite a bit to do to recreate native <code>select</code> functionality, and keeping small/touch screens in mind.
+							Internet Explorer and Edge do allow for some option and <code>optgroup</code> styling, including background, color, and font size adjustments. Chrome and Safari largely ignore any attempt at styling the <code>option</code> or <code>optgroup</code> elements, rendering them as browser defaults.
+						</p>
+
+						<p>
+							Because of this, it is recommended that color only be used to help indicate disabled states.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
 							There are no alterations to how a screen reader should announce styled select form controls.
 						</p>
+
 					</section>
 				</article>
 			</main>
