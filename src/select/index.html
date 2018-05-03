@@ -98,15 +98,19 @@
 						</details>
 
 						<p>
-							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the examples presented here can provide consistent styling to the <code>select</code> wrapper, the <code>option</code> and <code>optgroup</code> elements within do not fare as well to custom styles.
+							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the markup pattern outlined here can provide consistent custom styling for a <code>select</code>'s default and focused states, the <code>option</code> and <code>optgroup</code> elements within do not fare as well to custom styles.
 						</p>
 
 						<p>
-							The wrapping <code>div</code> is in place to provide a <code>position: relative</code> container, and to create/position the <code>:before</code> and <code>:after</code> pseudo elements, which compose the down arrow and its background. The wrapping element also handles the background color for the updated styling. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements would inconsistently render in different browsers, with the altered background coloring.
+							The wrapping <code>div.select</code> is in place to provide a <code>position: relative</code> container, and to create and position the <code>:before</code> and <code>:after</code> pseudo elements, which create the custom down arrow and its focus state background color.
 						</p>
 
 						<p>
-							The <code>select</code> element itself has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those styles have been removed, the element can be redesigned with CSS. Additional selectors for removing native styling from Microsoft browsers, and the focus ring from Firefox also exist.
+							The wrapping <code>div</code> also handles the background color to the <code>select</code>. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements inconsistently inherit background color styling of the <code>select</code> across browsers.
+						</p>
+
+						<p>
+							The <code>select</code> has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those native styles have been removed, the element can be redesigned with additional CSS. Additional selectors for removing native styling from Microsoft browsers, and the focus ring from Firefox also exist.
 						</p>
 
 						<p>
