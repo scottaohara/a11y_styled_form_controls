@@ -86,7 +86,7 @@
 						<details open>
 							<summary>Pattern Markup</summary>
 							<pre><code>&lt;label for="ex_custom_select">
-  Custom Style Select
+  Label Text
 &lt;/label>
 &lt;div class="select">
   &lt;select id="ex_custom_select">
@@ -98,23 +98,27 @@
 						</details>
 
 						<p>
-							Consistently styling <code>select</code> form controls across browsers has never been a straight forward task. While the markup pattern outlined here can provide consistent custom styling for a <code>select</code>'s default and focused states, the <code>option</code> and <code>optgroup</code> elements within do not fare as well to custom styles.
+							Consistent full styling of a <code>select</code> and its child elements across browsers has never been a straight forward task. The markup pattern outlined here can provide consistent custom styling for a <code>select</code>'s default and focused states. However, with some exceptions, browsers don't allow for much, if any, control over the styling of <code>option</code> and <code>optgroup</code> elements.
+						</p>
+
+						<h4>The default <code>select</code></h4>
+
+						<p>
+							The <code>select</code> has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those native styles have been removed, the element can be redesigned with additional CSS. Additional browser specific selectors for removing native styling from Microsoft browsers (<code>::-ms-value</code> and <code>::-ms-expand</code>), and the focus ring from Firefox (<code>:-moz-focusring</code>) are also needed.
 						</p>
 
 						<p>
-							The wrapping <code>div.select</code> is in place to provide a <code>position: relative</code> container, and to create and position the <code>:before</code> and <code>:after</code> pseudo elements, which create the custom down arrow and its focus state background color.
+							The wrapping <code>div.select</code> is in place to provide a <code>position: relative</code> container, and to create and position the <code>:before</code> and <code>:after</code> pseudo elements. These pseudo elements are used to recreate a custom down arrow for the <code>select</code>, and its focus state background color.
+						</p>
+
+						<h4>Background colors</h4>
+
+						<p>
+							The wrapping <code>div</code> also handles the background color to the <code>select</code>. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements inconsistently inherit background color styling of the <code>select</code> across browsers. For instance, in Firefox <code>option</code>s will inherit background styling from the <code>select</code>, but <code>optgroup</code>s will not, and there's no way to style the background of <code>optgroup</code>s in Firefox. This could result in Firefox having <code>option</code>s that match the background color of their parent <code>select</code>, while any <code>optgroup</code> being stuck with the default grey background.
 						</p>
 
 						<p>
-							The wrapping <code>div</code> also handles the background color to the <code>select</code>. The background styling should be done to this wrapping element, and not the <code>select</code> element itself, to mitigate issues with how <code>option</code> and <code>optgroup</code> elements inconsistently inherit background color styling of the <code>select</code> across browsers.
-						</p>
-
-						<p>
-							The <code>select</code> has much of its native HTML styling removed by use of vendor prefixed <code>appearance: none</code>. Once those native styles have been removed, the element can be redesigned with additional CSS. Additional selectors for removing native styling from Microsoft browsers, and the focus ring from Firefox also exist.
-						</p>
-
-						<p>
-							The <code>option</code> and <code>optgroup</code> elements can receive minor styling updates to their <code>color</code>, but outside of using this for indicating <code>disabled</code> states, the <code>option</code>s have been largely left in tact to maintain legibility and consistent design across browsers. For instance, Firefox would allow for background styling of the <code>option</code>s, but not the <code>optgroup</code>, which could lead to an unwanted grey bar behind the <code>optgroup</code> and illegible text if the <code>color</code> was not a good match. Internet Explorer and Edge do allow for some <code>option</code> and <code>optgroup</code> styling, such as <code>background</code>, <code>color</code> and <code>font-size</code> updates.  Chrome and Safari largely just ignored any attempt at styling the <code>option</code> or <code>optgroup</code>s, rendering them as browser defaults.
+							Internet Explorer and Edge have the best support for styling <code>option</code> and <code>optgroup</code>s. But Chrome, Safari and other Webkit based browsers do not provide any support for styling these elements.
 						</p>
 
 						<p>
