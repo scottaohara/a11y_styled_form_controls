@@ -75,14 +75,6 @@
 							Pattern Details
 						</h3>
 
-						<p>
-							Search forms can be one of the most important parts of a <abbr>UI</abbr>. A good search interface allows users to quickly find the content they are looking for without the need to dig through content or navigation links in hopes of stumbling across what they need.
-						</p>
-
-						<p>
-							To help communicate the presence of a search form to assistive technology, the search landmark (<code>role="search"</code>) should be applied to the form element that wraps the search <abbr>UI</abbr>.
-						</p>
-
 						<details open>
 							<summary>Pattern Markup</summary>
 						<pre><code>&lt;form role="search" aria-label="unique identifier goes here">
@@ -106,24 +98,38 @@
 						</details>
 
 						<p>
-							Many search forms do no have an explicit label set, as many authors mistakenly assume the presence of a search icon (within the submit button) giving a visual indicator of the component's purpose is sufficient. However, an <code>aria-label</code> attribute should still be applied to the <code>input[type="search"]</code> to give it an accessible name.
+							Search forms can be one of the most important parts of a <abbr>UI</abbr>. A good search interface can allow users to quickly find the content they are looking for without the need to pick through documents or navigations in hopes of coming across the link to what they're looking for.
 						</p>
 
 						<p>
-							<code>aria-label</code> is also used on the search's submit button to give it an accessible name. The icon's <abbr>SVG</abbr> code is hidden from screen readers and given an <code>focusable="false"</code> attribute to ensure that Internet Explorer won't allow keyboard focus to enter it, instead only reading and pronouncing the submit button's <code>aria-label</code> value.
-						</p>
-
-						<h4>Notes:</h4>
-
-						<p>
-							<code>input[type="search"]</code> and <code>role="search"</code> are not the same thing. <code>role="search"</code> surfaces the search form as a landmark, and should not be applied to the input. Doing so will stop the input as being announced as an editable "text field" by assistive technology.
+							To help promote the presence of a search form to assistive technologies, the search landmark (<code>role="search"</code>) should be applied to the <code>form</code> element that contains the search UI.
 						</p>
 
 						<p>
-							More complex search <abbr>UI</abbr> might contain additional form controls or might utilize a combobox in place of, or in addition to, a standard <code>input[type="search"]</code> form control. Regardless, search forms should have a submit button as a consistent indicator in how a form can be submitted.
+							Many search forms do no have an explicit label set, as many authors mistakenly assume the presence of a search icon to give a visual indicator of the component's purpose is sufficient. However, even though visually the search icon is well recognized, an <code>aria-label</code> should still be applied to the <code>input[type="search"]</code> to provide it an appropriate accessible name.
+						</p>
+
+						<p>
+							In the markup example, an <code>aria-label</code> is also used on the <code>button[type="submit"]</code> to provide it an accessible name as well. The SVG within is hidden from screen readers and given an <code>focusable="false"</code> attribute to help ensure that Internet Explorer won't allow keyboard focus to enter into the SVG itself, instead only reading and pronouncing the submit button's <code>aria-label</code> value, like other browsers.
+						</p>
+
+						<h4>Search form notes:</h4>
+
+						<p>
+							Be mindful that <code>input[type="search"]</code> and <code>role="search"</code> are <b>not</b> the same thing. <code>role="search"</code> surfaces the form as a landmark, and should not be applied to the <code>input</code>, as that would negate the <code>input</code> as being announced as an editable "text field".
+						</p>
+
+						<p>
+							More complex search forms might contain additional form controls, or might utilize a <code>combobox</code> in place of, or in addition to, a standard <code>input[type="search"]</code> form control. Regardless, search forms should have a submit button as a consistent indicator for how a form can be submitted.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
+						<p>
+							The addition of the <code>role="search"</code>, and any accessible name it is given, will expose this information to the accessibility <abbr>API</abbr> and convey that information to assistive technologies. Users will be able to find a search from via navigating by <kbd>tab</kbd> key, form controls, or landmarks/regions.
+						</p>
+						<p>
+							The use of the <code>input type="search"</code> will announce the <code>input</code> as an editable "search" element, in some manner, to screen readers (exact announcements vary between screen readers).
+						</p>
 					</section>
 				</article>
 			</main>
