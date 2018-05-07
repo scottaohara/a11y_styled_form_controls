@@ -128,7 +128,7 @@
 						</details>
 
 						<p>
-							When customizing any form control, it must remain accessible to assistive technology and keyboard users. To keep this custom style accessible, a series of visually hidden radio button form controls are included in the pattern. They allow keyboard and screen reader users to discover the control and select an option.
+							As with the <a href="https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button/">styled radio buttons</a> pattern, the radio button pills also utilize visually hidden native HTML radio buttons as the cornerstone for providing the necessary semantics and user experience for keyboard users, and the accessibility <abbr>API</abbr>.
 						</p>
 
 						<p>
@@ -136,29 +136,28 @@
 						</p>
 
 						<p>
-							If it makes sense for the grouping of radio buttons to be called out in the document outline, then the legend can incorporate a heading element.
+							If it makes sense for the grouping of radio buttons to be called out in the document outline, then the <code>legend</code> can incorporate an appropriately ranked heading element (e.g. <code>h3</code>).
 						</p>
 
 						<p>
-							The input with the <code>checked</code> attribute applied to it will trigger a <abbr>CSS</abbr> selector that visually updates the appearance of the sibling <code>label</code> associated with it, indicating that it is the selected option.
+							The form control with the <code>checked</code> attribute applied to it will trigger a <abbr>CSS</abbr> selector that visually updates the appearance of the sibling <code>label</code> associated with it, indicating that it is the selected option. As there is no way to deselect a radio button, without also resetting an entire form or including a radio button option specifically to indicate a "no selection", a radio button pill should always have a radio button set with a default <code>checked</code> attribute.
 						</p>
 
 						<p>
 							A selector targeting the last <code>label</code>'s <code>:after</code> pseudo-element will create an outline around the entire component to indicate it has keyboard focus and can be interacted with.
 						</p>
 
-						<h4>Note:</h4>
-
+						<h4>Usage note</h4>
 						<p>
-							Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document. It is considered a <a href="WCAG 3.2.2, On Input"><abbr>WCAG</abbr> 3.2.2, On Input violation</a> to change state of an interface when interacting with an input that is not announced as a "button" (e.g. a button or input with a type value of button, reset or submit).
+							Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document.
+							It is considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>).
 						</p>
 
 						<p>
-							This pattern may be perfectly acceptable to use in the context of a form or as a <abbr>UI</abbr> updating mechanism, so long as it is accompanied by an a "confirmation" or "submit" button.
+							This pattern may be perfectly acceptable to use in the context of a form, or as a <abbr>UI</abbr> changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component.
 						</p>
-
 						<p>
-							If a "confirmation" or "submit" button is not present, an alternative implementation of this pattern may be more appropriate. Consider using <abbr>ARIA</abbr> attributes such as <code>aria-pressed</code>, which will communicate current state on a grouping of interrelated button elements. This is commonly used on applications where state is immediately updated after being activated.
+							Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="https://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
