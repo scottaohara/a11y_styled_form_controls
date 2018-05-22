@@ -3,17 +3,12 @@
 	border: 1px solid #565656;
 	display: block;
 	overflow: hidden;
-	padding: .5em 0;
+	padding: .5em;
 	position: relative;
 }
 
 .check-switch:hover {
 	box-shadow: 0 0 2px 1px #2196f3;
-}
-
-.check-switch span {
-	padding: 0 .5em;
-	outline: none;
 }
 
 /* using the before/after pseudo elements of the span to create the "switch" */
@@ -46,15 +41,20 @@
 	width: 2.75em;
 }
 
-/* hide the actual checkbox from view, but not from keyboards or ATs */
+/* hide the actual checkbox from view, but not from keyboards or ATs.
+   Instead of standard visually hidden styling, instead set opacity to
+   almost 0 (not zero for ChomeVox legacy bug), pointer-events none, and
+   then set to full height/width of container element so that VO focus
+   ring outlines the component, instead of a tiny box within the component
+*/
 .check-switch input {
-	clip: rect(0 0 0 0);
-	clip-path: inset(100%);
-	height: 1px;
-	overflow: hidden;
+	height: 100%;
+	left: 0;
+	opacity: .0001;
+	pointer-events: none;
 	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+	top: 0;
+	width: 100%;
 }
 
 .check-switch input:focus + span:before {

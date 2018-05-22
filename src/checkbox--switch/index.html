@@ -42,20 +42,18 @@
 						Version: <code>[type="checkbox"]</code> styled to look like a switch
 					</p>
 					<label class="check-switch" for="switch_1">
+						Example Text 1:
 						<input type="checkbox" id="switch_1" data-switch>
-						<span tabindex="-1">Example Text 1:</span>
-						<!--
-							the tabindex="-1" is here to negate VO
-							from announcing the label twice
-						-->
+						<span aria-hidden="true"></span>
 					</label>
 
 					<p style="margin-bottom: .25em">
 						Version: <code>[type="checkbox"][role="switch"]</code>
 					</p>
 					<label class="check-switch" for="switch_2">
+						Example Text 2:
 						<input type="checkbox" id="switch_2" data-switch>
-						<span tabindex="-1">Example Text 2:</span>
+						<span aria-hidden="true"></span>
 					</label>
 
 					<p style="margin-bottom: .25em">
@@ -70,6 +68,21 @@
 						</label>
 						<input type="checkbox" id="switchbox" data-switch>
 					</div>
+					<p>
+						<details>
+							<summary>Visual design note</summary>
+							<div>
+								<p>
+									<code>-moz-appearance: none;</code> does not completely remove the styling
+									from the checkbox in Firefox ESR. (works as expected in Firefox 60+).
+								</p>
+								<p>
+									The <code>box-shadow</code> to provide an outline of the control does not
+									render as expected in IE11, but works as expected in Edge.
+								</p>
+							</div>
+						</details>
+					</p>
 
 
 					<section class="demo-details">
@@ -125,7 +138,11 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							Giving the <code>input type="checkbox"</code> a <code>role="switch"</code> announces the form control as a "switch" to screen readers that support the role, and indicate the element's state as "on" or "off"
+						</p>
+
+						<p>
+
 						</p>
 
 					</section> <!-- /.demo-details -->
