@@ -24,25 +24,7 @@
 		for ( i = 0; i < widget.length; i++ ) {
 			self = widget[i];
 
-			if ( self.getAttribute('data-switch') === 'button' ) {
-				self.setAttribute('role', 'button');
-
-				if ( self.hasAttribute('checked') ) {
-					self.setAttribute('aria-pressed', 'true');
-				}
-				else {
-					self.setAttribute('aria-pressed', 'false');
-				}
-			}
-			else {
-				self.setAttribute('role', 'switch');
-			}
-
-			self.addEventListener('click', function ( e ) {
-				if ( e.target.getAttribute('role') === 'button' ) {
-					this.setAttribute('aria-pressed', e.target.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-				}
-			});
+			self.setAttribute('role', 'switch');
 
 			self.addEventListener('keydown', function ( e ) {
 				keyCode = e.keyCode || e.which;

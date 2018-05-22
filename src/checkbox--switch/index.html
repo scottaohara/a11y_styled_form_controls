@@ -58,15 +58,6 @@
 						</label>
 
 						<p style="margin-bottom: .25em">
-							Version: <code>[type="checkbox"][role="button"]</code>
-						</p>
-						<label class="check-switch" for="switch_3">
-							Example Text 3:
-							<input type="checkbox" id="switch_3" data-switch="button">
-							<span aria-hidden="true"></span>
-						</label>
-
-						<p style="margin-bottom: .25em">
 							Version: <code>[type="checkbox"][role="switch"]</code> - Alternate Markup/Style
 						</p>
 						<!--
@@ -74,7 +65,7 @@
 						-->
 						<div class="switchbox">
 							<label for="switchbox">
-								Example Text 4:
+								Example Text 3:
 							</label>
 							<input type="checkbox" id="switchbox" data-switch>
 						</div>
@@ -103,7 +94,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code><!-- Version: [type="checkbox"] styled to look like a switch -->
+								<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
 &lt;label class="check-switch" for="switch_1">
   Example Text 1:
   &lt;input id="switch_1" type="checkbox">
@@ -117,17 +108,10 @@
   &lt;span aria-hidden="true">&lt;/span>
 &lt;/label>
 
-&lt;!-- Version: [type="checkbox"][role="button"] -->
-&lt;label class="check-switch" for="switch_3">
-  Example Text 3:
-  &lt;input id="switch_3" data-switch="button" role="button" aria-pressed="false" type="checkbox">
-  &lt;span aria-hidden="true">&lt;/span>
-&lt;/label>
-
 &lt;!-- Version: [type="checkbox"][role="switch"] - Alternate Markup/Style -->
 &lt;div class="switchbox">
   &lt;label for="switchbox">
-    Example Text 4:
+    Example Text 3:
   &lt;/label>
   &lt;input id="switchbox" data-switch="" role="switch" type="checkbox">
 &lt;/div></code></pre>
@@ -147,13 +131,10 @@
 
 						<h4>The JavaScript</h4>
 						<p>
-							There is little JavaScript that is needed for this component, but what is there is largely for progressive enhancement and fallback purposes.
+							There is little JavaScript that is needed for this component, but what is there is largely for progressive enhancement purposes.
 						</p>
 						<p>
-							Using the <code>data-switch</code> attribute as a hook, an <code>input</code> with this attribute will receive a <code>role="switch"</code> when the script runs.
-						</p>
-						<p>
-							If the <code>data-switch</code> has a value of "button", a <code>role="button"</code> and <code>aria-pressed</code> will be added to the checkbox. This is here due to varied support for <code>role="switch"</code>.  More information on this provided in "Affects on Screen Reader Announcements?"
+							Using the <code>data-switch</code> attribute as a hook, an <code>input</code> with this attribute will receive a <code>role="switch"</code> when the script runs. Without JavaScript, it will announce itself as a checkbox.
 						</p>
 						<p>
 							The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
