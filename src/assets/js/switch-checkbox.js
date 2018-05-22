@@ -14,7 +14,7 @@
 	A11YswitchCheck.LICENSE = 'https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE';
 
 	var widget = doc.querySelectorAll('[type="checkbox"][data-switch]');
-
+	document.getElementsByTagName('body')[0].setAttribute('style', 'background: #f00)'
 	A11YswitchCheck.init = function () {
 		var enterKey = 13;
 		var self;
