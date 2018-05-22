@@ -44,7 +44,7 @@
 }
 
 .switchbox label {
-	flex: 1 0;
+	flex: 1;
 	padding: .5em;
 }
 
