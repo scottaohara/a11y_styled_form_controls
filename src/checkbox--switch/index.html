@@ -44,7 +44,7 @@
 						</p>
 						<label class="check-switch" for="switch_1">
 							Example Text 1:
-							<input type="checkbox" id="switch_1" data-switch>
+							<input type="checkbox" id="switch_1">
 							<span aria-hidden="true"></span>
 						</label>
 
@@ -58,6 +58,15 @@
 						</label>
 
 						<p style="margin-bottom: .25em">
+							Version: <code>[type="checkbox"][role="button"]</code>
+						</p>
+						<label class="check-switch" for="switch_3">
+							Example Text 3:
+							<input type="checkbox" id="switch_3" data-switch="button">
+							<span aria-hidden="true"></span>
+						</label>
+
+						<p style="margin-bottom: .25em">
 							Version: <code>[type="checkbox"][role="switch"]</code> - Alternate Markup/Style
 						</p>
 						<!--
@@ -65,7 +74,7 @@
 						-->
 						<div class="switchbox">
 							<label for="switchbox">
-								Example Text 3:
+								Example Text 4:
 							</label>
 							<input type="checkbox" id="switchbox" data-switch>
 						</div>
@@ -94,48 +103,60 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
+								<pre><code><!-- Version: [type="checkbox"] styled to look like a switch -->
 &lt;label class="check-switch" for="switch_1">
-  &lt;input type="checkbox" id="switch_1" role="switch">
-  &lt;span tabindex="-1">Example Text:&lt;/span>
-  &lt;!--
-    the tabindex="-1" is here to negate VO
-    from announcing the "example" label twice
-  -->
+  Example Text 1:
+  &lt;input id="switch_1" type="checkbox">
+  &lt;span aria-hidden="true">&lt;/span>
 &lt;/label>
 
 &lt;!-- Version: [type="checkbox"][role="switch"] -->
 &lt;label class="check-switch" for="switch_2">
-  &lt;input type="checkbox" id="switch_2" role="switch">
-  &lt;span tabindex="-1">Example Text:&lt;/span>
+  Example Text 2:
+  &lt;input id="switch_2" data-switch="" role="switch" type="checkbox">
+  &lt;span aria-hidden="true">&lt;/span>
 &lt;/label>
 
-&lt;!--
-  Version: [type="checkbox"][role="switch"]
-  Alternate markup/style
--->
+&lt;!-- Version: [type="checkbox"][role="button"] -->
+&lt;label class="check-switch" for="switch_3">
+  Example Text 3:
+  &lt;input id="switch_3" data-switch="button" role="button" aria-pressed="false" type="checkbox">
+  &lt;span aria-hidden="true">&lt;/span>
+&lt;/label>
+
+&lt;!-- Version: [type="checkbox"][role="switch"] - Alternate Markup/Style -->
 &lt;div class="switchbox">
   &lt;label for="switchbox">
-    Label Text:
+    Example Text 4:
   &lt;/label>
-  &lt;input type="checkbox" id="switchbox" role="switch">
+  &lt;input id="switchbox" data-switch="" role="switch" type="checkbox">
 &lt;/div></code></pre>
 						</details>
 
 						<p>
-							Similar to the native checkbox example, a markup pattern reliant on a native checkbox form control can be used to create a custom switch control. It should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
+							Similar to the <a href="../checkbox/index.html">styled checkbox pattern</a>, similarly a checkbox can be used to create a custom switch control. It should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
 						</p>
 
 						<p>
-							A native checkbox should be used the switch component continues to function like a checkbox. Meaning that the "switch" should not change the state of a component or alter a global site or application setting, until after a user submits the form the "switch" is a child of. A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
+							Even if visually styled to resemble a switch, if a native checkbox is used without the <code>role="switch"</code>, the component should continue to function like a checkbox. Meaning that the "switch" should not change the state of a component or alter a global site or application setting, until after a user submits a form the "switch" is a child of. A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
 						</p>
 
 						<p>
-							If using a visually styled switch in a website or application, it should only adhere to one of the previously mentioned roles. It should announce itself as a "switch" or a "checkbox", and this announcement, and its behavior, should be consistent across all instances of the component.
+							If implementing visually styled switches within your project, they should be consistently implemented for each usage. Meaning that if a checkbox is visually designed to look like a switch (but continued to be announced as a checkbox), then there should be no instances where the same design is used for a <code>role="switch"</code>. This would create confusion in why two similar looking controls are announced differently (for sighted users who also may use screen readers), or perform actions immediately or delayed until form submission.
 						</p>
 
+						<h4>The JavaScript</h4>
 						<p>
-							A small script is used to progressively enhance a checkbox <code>input</code> with a <code>data-switch</code> into a <code>role="switch"</code>. The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
+							There is little JavaScript that is needed for this component, but what is there is largely for progressive enhancement and fallback purposes.
+						</p>
+						<p>
+							Using the <code>data-switch</code> attribute as a hook, an <code>input</code> with this attribute will receive a <code>role="switch"</code> when the script runs.
+						</p>
+						<p>
+							If the <code>data-switch</code> has a value of "button", a <code>role="button"</code> and <code>aria-pressed</code> will be added to the checkbox. This is here due to varied support for <code>role="switch"</code>.  More information on this provided in "Affects on Screen Reader Announcements?"
+						</p>
+						<p>
+							The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>

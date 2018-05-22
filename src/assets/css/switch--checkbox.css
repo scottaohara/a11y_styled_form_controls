@@ -51,10 +51,13 @@
 	height: 100%;
 	left: 0;
 	opacity: .0001;
-	pointer-events: none;
 	position: absolute;
 	top: 0;
 	width: 100%;
+}
+
+.check-switch input:not([role="button"]) {
+	pointer-events: none;
 }
 
 .check-switch input:focus + span:before {
