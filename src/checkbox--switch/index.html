@@ -140,11 +140,24 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Giving the <code>input type="checkbox"</code> a <code>role="switch"</code> announces the form control as a "switch" to screen readers that support the role, and indicate the element's state as "on" or "off"
+							Giving the <code>input type="checkbox"</code> a <code>role="switch"</code> announces the form control as a "switch" or "toggle button" to screen readers that support the role, and indicate the element's state as "on/checked" or "off/not checked".
 						</p>
 
 						<p>
+							Unfortunately, there are still some gaps in support for this <code>role</code>.  VoiceOver on iOS 11.3 and 11.3.1 doesn't understand the role and will fallback to announcing the component as a checkbox. However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
+						</p>
 
+						<p>
+							Similarly, JAWS2018 + IE11 will announce the form control as a <code>switch</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key.  If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.
+						</p>
+
+						<p>
+							NVDA 2018.1 and Chrome will announce the initial state of the <code>switch</code> as not "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control.  If a <code>switch</code> has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".
+						</p>
+
+						<h5>Usage note:</h5>
+						<p>
+							Until issues with <code>role="switch"</code> have been worked out, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>.
 						</p>
 
 					</section> <!-- /.demo-details -->
