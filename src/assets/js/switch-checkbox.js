@@ -24,7 +24,7 @@
 		for ( i = 0; i < widget.length; i++ ) {
 			self = widget[i];
 
-			self.setAttribute('role', 'switch');
+			self.setAttribute('role', 'switch checkbox');
 
 			self.addEventListener('keydown', function ( e ) {
 				keyCode = e.keyCode || e.which;
