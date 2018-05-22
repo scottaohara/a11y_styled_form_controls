@@ -24,13 +24,14 @@ Checkboxes can be be used for a single form option, or grouped to allow one or m
 4. [Radio Button Pill](src/radio-button--pill)  
 
 
-### Switches  
-Switches are a type of form control that is typically visually represented as an on/off toggle. 
+### Switches & Toggle Buttons 
+Switches are a type of form control that is typically visually represented as an on/off toggle. A toggle button may be styled similarly, or as a button that has a clear difference between the default and active (pressed) state.
 
-Unlike a checkbox, switches are meant to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element is progressively enhanced into a `switch` with the appropriate ARIA attributes.
+Unlike a checkbox, switches and toggle buttons are meant to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element is progressively enhanced into a `switch` with the appropriate ARIA attributes. Similarly with a toggle button, there is no native HTML attribute to indicate pressed vs default state, so `aria-pressed` is necessary to make a toggle button.
 
 1. [Switch Checkbox](src/checkbox--switch)
 2. [ARIA Switch Button (external repo)](https://scottaohara.github.io/aria-switch-button/)
+3. [ARIA Toggle Button - future link](#)
 
 
 ### File Upload
@@ -55,7 +56,7 @@ Styled single and multi-select patterns.
 Selects allow a user to pick one or more options from a menu of choices.
 
 1. [Select (single)](src/select)  
-2. [Select (multi)](src/select--multi)  
+2. [Select (multi) - future link](#src/select--multi)  
 
 
 ### Progress Bar
