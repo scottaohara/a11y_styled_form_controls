@@ -43,6 +43,16 @@
 		inset 0 0 0 3px rgba(13, 81, 146, 1);
 }
 
-.n-radio[disabled] {
-	opacity: .5;
+.n-radio[disabled],
+.n-radio[disabled] + span {
+	opacity: .4;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	.n-radio:checked {
+		border: 6px solid;
+		box-shadow: none;
+		height: calc(1.25em - 5px);
+		width: calc(1.25em - 5px);
+	}
 }
