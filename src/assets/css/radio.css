@@ -52,7 +52,5 @@
 	.n-radio:checked {
 		border: 6px solid;
 		box-shadow: none;
-		height: calc(1.25em - 5px);
-		width: calc(1.25em - 5px);
 	}
 }
