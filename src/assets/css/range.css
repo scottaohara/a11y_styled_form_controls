@@ -47,11 +47,17 @@ input[type=range]::-moz-range-track {
 input[type=range]::-ms-track {
 	background: transparent;
 	border-color: transparent;
-	/*border-width: 1em 0;*/
-	border: 0;
+	border-width: 1em 0;
 	color: transparent;
 	height: .4em;
 	width: 100%;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	input[type=range]::-ms-track {
+		border: 0;
+		height: 2.4em;
+	}
 }
 
 input[type=range]::-ms-fill-lower {
