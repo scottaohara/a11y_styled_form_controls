@@ -87,7 +87,7 @@
 						</fieldset>
 					</form>
 
-					<details style="margin-top: 1em;">
+					<details style="margin-top: 1em;" id="vdn">
 						<summary>Visual design note</summary>
 						<div>
 							<p>
@@ -108,10 +108,10 @@
 						</h3>
 
 						<p>
-							These custom radio button styles adhere to one of the two following markup patterns:
+							These custom radio button styles follow one of the two following markup patterns:
 						</p>
 
-						<h4>The first pattern</h4>
+						<h4>1. Visually Hidden Radios</h4>
 						<details open>
 							<summary>Pattern Markup: Visually Hidden Style</summary>
 						<pre><code>&lt;div class="c-radio">
@@ -123,32 +123,38 @@
 						</details>
 
 						<p>
-							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child and pseudo elements relative to the container.
+							The <code>div class="c-radio"</code> container serves as a styling hook, utilizing <code>position: relative;</code> to keep absolutely positioned child elements, and pseudo elements, relative to the <a href="https://drafts.csswg.org/css2/visuren.html#x9">block container box</a>.
 						</p>
 
 						<p>
-							The actual native radio button is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard focus. Otherwise all the native radio button functionality would need to be rewritten in JavaScript.
+							While the actual radio button is visually hidden from view, it remains essential to screen readers and keyboard user focus. Hiding it completely, with <code>display: none;</code>, for example, would require all the native radio button functionality to be rewritten in JavaScript. Allowing the native radio button to continue to receive focus ensures that the form control can lean on its native semantics.
 						</p>
 
 						<p>
-							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible radio button.
+							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreate the radio button in the new custom style. With the <code>:before</code> acting as the outer border of the radio button, and the <code>:after</code> as the visual indicator for the <code>checked</code> state.
 						</p>
 
 						<p>
-							The styling of the custom radio button is determined by the state of the native form control. The <code>:checked</code>, <code>disabled</code>, and <code>:focus</code> radio button states will all be reflected in the custom style.
+							The styling of the custom radio button is relayed from the state of the native form control. The <code>:checked</code>, <code>disabled</code>, and <code>:focus</code> radio button states will all be reflected in the custom style by the use of CSS sibling selectors. For example <code>input:checked ~ label:before {...}</code>
 						</p>
 
-						<h4>The second pattern</h4>
+						<h4>2. Radio Restyles</h4>
 						<details open>
 							<summary>Pattern Markup: Restyled Radio</summary>
 						<pre><code>&lt;label class="n-radio-label">
   &lt;input type="radio" name="n_radio" id="native_r2">
-  Label
+  &lt;span>Label&lt;/span>
 &lt;/label></code></pre>
 						</details>
 
 						<p>
-							The second pattern uses the <code>label</code> to wrap the radio button, but this pattern isn't reliant on it as part of the setup. Instead, the radio button is restyled, having its native styling completely removed by <code>appearance: none</code>. It is then restyled largely with CSS borders and box-shadows.
+							With this markup pattern the radio button is restyled, having its native styling completely removed by CSS <code>appearance: none</code>, and then restyled via use of <code>box-shadow</code>s and <code>border</code> styles.
+						</p>
+						<p>
+							The <code>span</code> element is used to wrap the radio button's text label so that a sibling selector can be used to modify the text's styling if the radio button is disabled.
+						</p>
+						<p>
+							Note, regarding the <a href="#vdn">visual design note</a>, there are issues with this styling technique in IE11 and Firefox ESR. If you need to support those browsers, then this pattern may not be sufficient.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
