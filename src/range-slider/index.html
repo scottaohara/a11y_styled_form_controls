@@ -20,7 +20,7 @@
 		<div class="demo-wrap">
 
 			<header class="demo-wrap__header">
-				<h1>Styled Range Alider</h1>
+				<h1>Styled Range Slider</h1>
 				<p>
 					Cross-browser styling for the native range slider form control.
 				</p>
@@ -89,13 +89,13 @@
 
 						<ul>
 							<li>
-								Each browser's implementation of the range form control requires different browser specific selectors to be written, which can lead to duplicative rule sets. Ideally you'd want to utilize CSS variables or variables in a preprocessor, like Sass, to make sure that any styling updates get made to all browsers.
+								Each browser's implementation of the range form control requires different browser specific selectors to be used, which can lead to duplicative rule sets. Ideally you'd want to utilize CSS variables or variables from a preprocessor, like Sass, to make sure that any styling updates get made to all browser specific selectors.
 							</li>
 							<li>
-								For whatever reason, Edge will render <code>::-webkit-slider-thumb</code> styles, which would be nice to cut down on browser specific styling, if it weren't for the fact that Webkit and Edge render the range a bit differently. Webkit needs a negative margin applied to its thumb, while Edge does not. Also, IE11 does not respect the Webkit's thumb styling, which means that the <code>::-ms-thumb</code> selector is still needed for both properly styling IE11, and negating the negative margin Edge inherits from the Webkit style.
+								For whatever reason, Edge will render <code>::-webkit-slider-thumb</code> styles, which would be nice to cut down on browser specific styling, if it weren't for the fact that Webkit and Edge render the form control a bit differently. Webkit needs a negative margin applied to the range's thumb, while Edge does not. Also, IE11 does not respect Webkit's thumb styling, which means that the <code>::-ms-thumb</code> selector is still needed to both properly style for IE11, and remove the negative margin Edge inherits from the Webkit style.
 							</li>
 							<li>
-								A range form control doesn't receive much (if anything) in the way of inherent styling when a <code>disabled</code> attribute is applied to it, unlike other form controls which visible look 'dimmed'. Since the range has so many browser specific selectors, to appropriately style the disabled range, disabled styling was taken into account for the following selectors:
+								A range form control doesn't receive much (if anything) in the way of inherent styling when a <code>disabled</code> attribute is applied to it, unlike other form controls which visually look 'dimmed'. Since the range has so many browser specific selectors, stying a disabled range requires the following:
 									<ul>
 										<li><code>input[type=range][disabled]</code></li>
 										<li><code>input[type=range][disabled]::-webkit-slider-thumb</code></li>
@@ -110,8 +110,10 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							Applying custom styles to a range does not alter its announcements by screen readers, as there are no alterations to the markup of the form control that would interfere with its semantics.
 						</p>
+
+
 
 					</section>
 				</article>

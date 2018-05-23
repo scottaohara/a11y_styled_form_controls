@@ -9,6 +9,7 @@
 input[type=range] {
 	-webkit-appearance: none;
 	appearance: none;
+	background: transparent;
 	font-size: inherit;
 	margin: 1em 0;
 	width: 100%;
