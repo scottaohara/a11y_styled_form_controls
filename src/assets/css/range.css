@@ -56,7 +56,7 @@ input[type=range]::-ms-track {
 @media screen and (-ms-high-contrast: active) {
 	input[type=range]::-ms-track {
 		border: 0;
-		height: 2.4em;
+		margin: 1em 0;
 	}
 }
 
