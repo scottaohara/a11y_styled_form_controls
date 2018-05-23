@@ -70,21 +70,20 @@
 							<input type="checkbox" id="switchbox" data-switch>
 						</div>
 					</form>
-					<p>
-						<details>
-							<summary>Visual design note</summary>
-							<div>
-								<p>
-									<code>-moz-appearance: none;</code> does not completely remove the styling
-									from the checkbox in Firefox ESR. (works as expected in Firefox 60+).
-								</p>
-								<p>
-									The <code>box-shadow</code> to provide an outline of the control does not
-									render as expected in IE11, but works as expected in Edge.
-								</p>
-							</div>
-						</details>
-					</p>
+
+					<details style="margin-top: 1em;">
+						<summary>Visual design note</summary>
+						<div>
+							<p>
+								<code>-moz-appearance: none;</code> does not completely remove the styling
+								from the checkbox in Firefox ESR. (works as expected in Firefox 60+).
+							</p>
+							<p>
+								The <code>box-shadow</code> to provide an outline of the control does not
+								render as expected in IE11, but works as expected in Edge.
+							</p>
+						</div>
+					</details>
 
 
 					<section class="demo-details">
