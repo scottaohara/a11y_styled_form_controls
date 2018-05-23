@@ -53,3 +53,8 @@ hr {
 .demo-details > h3 {
 	margin-top: 0;
 }
+
+/* IE + Edge need this to not treat as non-block element */
+details {
+	display: block;
+}
