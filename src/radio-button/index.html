@@ -74,18 +74,32 @@
 							</legend>
 							<label class="n-radio-label">
 								<input type="radio" id="native_r" name="n_radio" class="n-radio">
-								Restyle Option 1
+								<span>Restyle Option 1</span>
 							</label>
 							<label class="n-radio-label">
 								<input type="radio" id="native_r2" name="n_radio" class="n-radio" checked>
-								Restyle Option 2
+								<span>Restyle Option 2</span>
 							</label>
 							<label class="n-radio-label">
 								<input type="radio" id="native_r2" name="n_radio" class="n-radio" disabled>
-								Restyle Option 3 (disabled)
+								<span>Restyle Option 3 (disabled)</span>
 							</label>
 						</fieldset>
 					</form>
+
+					<details style="margin-top: 1em;">
+						<summary>Visual design note</summary>
+						<div>
+							<p>
+								<code>-moz-appearance: none;</code> does not completely remove the styling
+								from the radio button in Firefox ESR. (works as expected in Firefox 60+).
+							</p>
+							<p>
+								The styled radio button utilizes <code>box-shadow</code>es to visually indicate
+								state. However <code>box-shadow</code> does not render as expected in IE11. The radio button looks as expected in Edge.
+							</p>
+						</div>
+					</details>
 
 
 					<section class="demo-details">
