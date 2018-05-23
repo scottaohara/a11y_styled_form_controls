@@ -108,7 +108,19 @@
 						</h3>
 
 						<p>
-							These custom radio button styles adhere to one of the two following markup patterns:
+							When customizing any form control, it must remain accessible to assistive technology and keyboard users. To keep this custom pattern accessible, a visually hidden radio form control is the cornerstone of the custom style.
+						</p>
+
+						<p>
+							Without the visually hidden radio button, all radio functionality, including keyboard focus and appropriate announcements to screen readers, would need to be rewritten using JavaScript and necessary <abbr>ARIA</abbr> attributes. This would significantly inflate the development effort needed to code a custom radio button.
+						</p>
+
+						<p>
+							The appearance of the custom radio is determined by the state of the native radio button. <code>:checked</code>, and <code>:focus</code> states, along with the form control's <code>disabled</code> attribute all serve as hooks to visually change the styling of the custom radio button.
+						</p>
+
+						<p>
+							This pattern use one of two markup approaches:
 						</p>
 
 						<h4>The first pattern</h4>
@@ -123,19 +135,7 @@
 						</details>
 
 						<p>
-							The <code>.c-radio</code> container largely serves as the styling hook, and utilizes <code>position: relative;</code> to keep absolutely positioned child and pseudo elements relative to the container.
-						</p>
-
-						<p>
-							The actual native radio button is visually hidden from view. While visually hidden, it is essential for it to remain accessible to screen readers and keyboard focus. Otherwise all the native radio button functionality would need to be rewritten in JavaScript.
-						</p>
-
-						<p>
-							The <code>label</code>'s <code>:before</code> and <code>:after</code> pseudo elements are used to recreated the visible radio button.
-						</p>
-
-						<p>
-							The styling of the custom radio button is determined by the state of the native form control. The <code>:checked</code>, <code>disabled</code>, and <code>:focus</code> radio button states will all be reflected in the custom style.
+							This implementation relies on the wrapping <code>div.c-radio</code> container, whose primary purpose is to act as a styling hook. It utilizes <code>position: relative;</code> to keep absolutely positioned child and pseudo elements within the confines of the component.
 						</p>
 
 						<h4>The second pattern</h4>
@@ -148,7 +148,7 @@
 						</details>
 
 						<p>
-							The second pattern uses the <code>label</code> to wrap the radio button, but this pattern isn't reliant on it as part of the setup. Instead, the radio button is restyled, having its native styling completely removed by <code>appearance: none</code>. It is then restyled largely with CSS borders and box-shadows.
+							With this implementation, the form control's label <code>:before</code> and <code>:after</code> pseudo elements are used to create a visual "pressed radio button" effect that can be styled via <abbr>CSS</abbr>.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
