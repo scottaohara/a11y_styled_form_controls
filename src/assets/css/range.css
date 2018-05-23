@@ -9,7 +9,6 @@
 input[type=range] {
 	-webkit-appearance: none;
 	appearance: none;
-	background: transparent;
 	font-size: inherit;
 	margin: 1em 0;
 	width: 100%;
@@ -48,7 +47,8 @@ input[type=range]::-moz-range-track {
 input[type=range]::-ms-track {
 	background: transparent;
 	border-color: transparent;
-	border-width: 1em 0;
+	/*border-width: 1em 0;*/
+	border: 0;
 	color: transparent;
 	height: .4em;
 	width: 100%;
