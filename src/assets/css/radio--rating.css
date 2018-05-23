@@ -48,9 +48,7 @@
 	transition:
 		font-size .2s ease-in-out,
 		opacity .2s ease-in-out,
-		transform .2s ease-in-out,
-		visibility .2s ease-in-out;
-	visibility: hidden;
+		transform .2s ease-in-out;
 	white-space: nowrap;
 	width: 130%;
 }
@@ -64,7 +62,6 @@ input:focus + .r-radio span {
 	font-size: .75em;
 	opacity: 1;
 	transform: translateY(0%) translateX(-50%);
-	visibility: visible;
 }
 
 input:checked + .r-radio span {
