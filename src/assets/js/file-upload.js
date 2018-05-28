@@ -26,6 +26,7 @@
 			var output = doc.createElement('span');
 
 			output.classList.add('file-up__output');
+			output.setAttribute('aria-hidden', 'true');
 
 			label.appendChild(output);
 
