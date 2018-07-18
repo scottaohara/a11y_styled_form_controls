@@ -42,11 +42,11 @@
 	border: 0;
 	border-bottom: 4px solid #565656;
 	border-right: 4px solid #565656;
-	height: .75em;
-	left: .45em;
+	height: .825em;
+	left: .425em;
 	transform-origin: center center;
 	transform: rotate(45deg) scale(0);
-	width: .325em;
+	width: .5em;
 }
 
 .c-cb > input:checked ~ label:before {
