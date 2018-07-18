@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Switch Component: Toggle Button
+		</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
+		<link rel="stylesheet" href="../assets/css/--shared--.css">
+		<link rel="stylesheet" href="../assets/css/switch--toggle-button.css">
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+
+			<header class="demo-wrap__header">
+				<h1>Switch Component: Toggle Button</h1>
+				<p>
+					Pattern to create a toggle <code>button</code>,
+					visually styled to resemble a <code>switch</code> component.
+				</p>
+				<nav>
+					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
+					<a href="/a11y_styled_form_controls">Index of form controls</a>
+				</nav>
+			</header>
+
+			<main>
+
+				<article class="demo">
+					<h2>
+						Pattern Demo
+					</h2>
+
+					<a data-toggle-btn>
+						Fake button
+					</a>
+
+					<button type="button" data-toggle-btn disabled>
+						<span>
+							Real button
+						</span>
+					</button>
+
+
+					<details style="margin-top: 1em;">
+						<summary>Visual design note</summary>
+						<div>
+							<p>
+								...
+							</p>
+						</div>
+					</details>
+
+
+					<section class="demo-details">
+						<h3>
+							Pattern Details
+						</h3>
+
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>
+
+								</code></pre>
+						</details>
+
+						<p>
+							...
+						</p>
+
+						<h4>The JavaScript</h4>
+						<p>
+							Largely the JavaScript for this component is in place to modify the state of the toggle button, when a user engages with it.  Any additional functionality for a "switch toggle button" would be custom and unique to the interface it was used within, and thus needs to be added by the developer implementing the component.
+						</p>
+
+						<h4>Affects on Screen Reader Announcements?</h4>
+						<p>
+							...
+						</p>
+
+						<h5>Usage note:</h5>
+						<p>
+							Ideally a <code>button</code> or <code>input type="checkbox"</code> with a <code>role="switch"</code> would be used when creating a "switch" component. But until all popular browsers and assistive technologies correctly interpret <code>role="switch"</code>, it would be best to convey this component as a toggle button.
+						</p>
+
+					</section> <!-- /.demo-details -->
+				</article>
+			</main>
+		</div> <!-- /.demo-wrap -->
+
+		<script src="../assets/js/switch-toggle-button.js"></script>
+
+	</body>
+</html>

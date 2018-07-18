@@ -30,8 +30,8 @@ Switches are a type of form control that is typically visually represented as an
 Unlike a checkbox, switches and toggle buttons are meant to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element is progressively enhanced into a `switch` with the appropriate ARIA attributes. Similarly with a toggle button, there is no native HTML attribute to indicate pressed vs default state, so `aria-pressed` is necessary to make a toggle button.
 
 1. [Switch Checkbox](src/checkbox--switch)
-2. [ARIA Switch Button (external repo)](https://scottaohara.github.io/aria-switch-button/)
-3. [ARIA Toggle Button - future link](#)
+2. [ARIA Switch Button (external link)](https://scottaohara.github.io/aria-switch-button/)
+3. [ARIA Toggle Button](src/toggle-button-switch)
 
 
 ### File Upload
