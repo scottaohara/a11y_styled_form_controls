@@ -38,14 +38,12 @@
 						Pattern Demo
 					</h2>
 
-					<a data-toggle-btn data-toggle-btn-pressed>
+					<a data-toggle-btn>
 						ARIA
-						<span></span>
 					</a>
 
-					<button type="button" data-toggle-btn data-toggle-btn-labels disabled>
+					<button type="button" data-toggle-btn data-toggle-btn-pressed data-toggle-btn-labels disabled>
 						Native
-						<span></span>
 					</button>
 
 
@@ -53,7 +51,10 @@
 						<summary>Visual design note</summary>
 						<div>
 							<p>
-								...
+								Switch toggle buttons are commonly represented as a visual text label and a switch UI, or as a text label with a switch UI that has its own "On" and "Off" labeling.
+							</p>
+							<p>
+								By default, the component outputs the unlabeled knob UI.  Using the attribute <code>data-toggle-btn-labels</code> or manually adding a class of <code>toggle-switch--labels</code>, the component will add labels to the
 							</p>
 						</div>
 					</details>
@@ -66,9 +67,17 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>
+								<pre><code>&lt;a data-toggle-btn>
+  Progressively Enhanced Toggle
+&lt;/a>
 
-								</code></pre>
+&lt;button type="button"
+  data-toggle-btn
+  data-toggle-btn-labels
+  data-toggle-btn-pressed
+  disabled>
+  Native Button Toggle
+&lt;/button></code></pre>
 						</details>
 
 						<p>
@@ -82,7 +91,7 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							When a <code>button</code> or <code>role="button"</code> has an <code>aria-pressed</code> attribute, it will be announced by screen readers as a "toggle button".  While not
 						</p>
 
 						<h5>Usage note:</h5>

@@ -66,7 +66,6 @@
 				switchUI.classList.add('toggle-switch__ui');
 			}
 
-
 			/**
 			 * A toggle button is not particularly useful without JavaScript,
 			 * so ideally such a button would be set to disabled, if JS wasn't
