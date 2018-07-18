@@ -23,6 +23,11 @@
 	outline: none;
 }
 
+/* negate 'flash' of text color when pressing a button in some browsers */
+.toggle-switch:active {
+	color: inherit;
+}
+
 /* using the before/after pseudo elements of the span to create the "switch" */
 .toggle-switch__ui:before,
 .toggle-switch__ui:after {
@@ -54,13 +59,12 @@
 	width: 2.75em;
 }
 
-
 .toggle-switch span {
 	pointer-events: none;
 }
 
 .toggle-switch:focus .toggle-switch__ui:before {
-	outline: 2px solid;
+	outline: 2px solid #2196f3;
 }
 
 /* change the position of the knob to indicate it has been checked*/
@@ -71,4 +75,26 @@
 /* update the color of the "container" to further visually indicate state */
 .toggle-switch[aria-pressed="true"] .toggle-switch__ui:before {
 	background: #2196f3;
+}
+
+/**
+ * Toggle switch modifications for displaying On/Off labels
+ */
+.toggle-switch--labels span:before {
+	content: "Off";
+	color: rgba(10, 10, 10, 1);
+	line-height: 1.6;
+	text-indent: 1.625em;
+	width: 3.5em;
+}
+
+.toggle-switch--labels[aria-pressed="false"] span:after {
+	right: 2.2em;
+}
+
+.toggle-switch--labels[aria-pressed="true"] span:before {
+	color: rgba(255 ,255 ,255 ,1);
+	content: "On";
+	text-indent: .25em;
+	text-shadow: 0 0 1px #000;
 }

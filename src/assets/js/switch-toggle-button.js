@@ -15,14 +15,14 @@
 
 	var widget = doc.querySelectorAll('[data-toggle-btn]');
 
-	A11yToggleButton.create = function () {
+	A11yToggleButton.setup = function () {
 		var self;
-		var labelUI;
+		var switchUI;
 		var i;
 
 		for ( i = 0; i < widget.length; i++ ) {
 			self = widget[i];
-			labelUI = self.querySelector('span');
+			switchUI = self.querySelector('span');
 
 			/**
 			 * Check instances of the widget.
@@ -38,20 +38,34 @@
 				}
 			}
 
+			/**
+			 * If a button is missing an inner span to
+			 * wrap the accessible name and serve as the
+			 * basis for the switch UI, then take the contents
+			 * of the button and inject it into a newly created
+			 * span element.
+			 */
+			if ( !switchUI ) {
+				var newUI = doc.createElement('span');
+				self.append(newUI);
+				switchUI = self.querySelector('span');
+			}
+			switchUI.setAttribute('aria-hidden', 'true');
+
+			// if the default class for this component doesn't exist, add it
 			if ( !self.classList.contains('toggle-switch') ) {
 				self.classList.add('toggle-switch');
 			}
 
-			if ( !labelUI ) {
-				var getLabel = self.innerHTML;
-				self.innerHTML = '';
-				var newLabel = doc.createElement('span');
-				newLabel.innerHTML = getLabel;
-				self.append(newLabel);
-				labelUI = self.querySelector('span');
+			// if a switch ui should display the text 'on' and 'off'
+			if ( self.hasAttribute('data-toggle-btn-labels') ) {
+				self.classList.add('toggle-switch--labels');
 			}
 
-			labelUI.classList.add('toggle-switch__ui');
+			if ( !switchUI.classList.contains('toggle-switch__ui') ) {
+				switchUI.classList.add('toggle-switch__ui');
+			}
+
 
 			/**
 			 * A toggle button is not particularly useful without JavaScript,
@@ -66,10 +80,20 @@
 				self.removeAttribute('disabled');
 			}
 
+			if ( !self.hasAttribute('aria-pressed') ) {
+
+				if ( self.hasAttribute('data-toggle-btn-pressed') ) {
+					self.setAttribute('aria-pressed', 'true');
+				}
+				else {
+					self.setAttribute('aria-pressed', 'false');
+				}
+			}
+
 			self.addEventListener('click', A11yToggleButton.toggleState, false);
 			self.addEventListener('keypress', A11yToggleButton.keyEvents, false);
 		}
-	}; // A11yToggleButton.create
+	}; // A11yToggleButton.setup
 
 
 	A11yToggleButton.toggleState = function ( e ) {
@@ -107,7 +131,7 @@
    * initialize functions within here.
    */
   A11yToggleButton.init = function () {
-    A11yToggleButton.create();
+    A11yToggleButton.setup();
   };
 
 	// go go JavaScript
