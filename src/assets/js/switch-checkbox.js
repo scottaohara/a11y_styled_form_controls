@@ -24,15 +24,17 @@
 		for ( i = 0; i < widget.length; i++ ) {
 			self = widget[i];
 
-			self.setAttribute('role', 'switch checkbox');
+			self.setAttribute('role', 'switch');
 
 			self.addEventListener('keydown', function ( e ) {
 				keyCode = e.keyCode || e.which;
 
 				switch ( keyCode ) {
 					case enterKey:
+					case 32:
 						e.preventDefault();
 						e.target.click();
+						e.target.focus(); // fix for ie?
 					break;
 				}
 			});
