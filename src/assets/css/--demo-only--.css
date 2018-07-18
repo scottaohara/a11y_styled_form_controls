@@ -11,6 +11,12 @@ body {
 	padding: 0;
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 body {
 	line-height: 1.4;
 	padding: 2em 1em;
