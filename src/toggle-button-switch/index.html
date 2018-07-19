@@ -38,14 +38,14 @@
 						Pattern Demo
 					</h2>
 
-					<a data-toggle-btn>
+					<a data-toggle-btn hidden>
 						ARIA
+						<b data-toggle-btn-ui></b>
 					</a>
 
 					<button type="button" data-toggle-btn data-toggle-btn-pressed data-toggle-btn-labels disabled>
 						Native
 					</button>
-
 
 					<details style="margin-top: 1em;">
 						<summary>Visual design note</summary>
@@ -77,16 +77,31 @@
   data-toggle-btn-pressed
   disabled>
   Native Button Toggle
+&lt;/button>
+
+&lt;!-- Markup after JS runs -->
+&lt;!-- toggle-switch--labels is the class added to the second example -->
+&lt;button type="button"
+  class="toggle-switch toggle-switch--labels"
+  aria-pressed="true/false">
+  button text (label) here
+  &lt;span aria-hidden="true" class="toggle-switch__ui">&lt;/span>
 &lt;/button></code></pre>
 						</details>
 
 						<p>
-							...
+							The baseline markup for this component is simply a <code>button</code> or an element that can be progressively enhanced into a <code>role=button</code>. The different <code>data-</code> attributes fire off different hooks in the setup script. Ideally a toggle button would be hidden or disabled by default, and then revealed or enabled when the script runs. Doing so would ensure users without JavaScript wouldn't be able to interact with toggle buttons that didn't do anything.
 						</p>
 
 						<h4>The JavaScript</h4>
 						<p>
 							Largely the JavaScript for this component is in place to modify the state of the toggle button, when a user engages with it.  Any additional functionality for a "switch toggle button" would be custom and unique to the interface it was used within, and thus needs to be added by the developer implementing the component.
+						</p>
+						<p>
+							During the setup process for a toggle button, the JavaScript will progressively enhance a <code>button</code> (or a non-<code>button</code> element) into a toggle button.
+						</p>
+						<p>
+							The necessary attributes will be added to the element, and a child element to serve as the switch UI will be created, if such an element does not already exist and is identified by having the <code>data-toggle-btn-ui</code> attribute.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
@@ -99,6 +114,66 @@
 						</p>
 
 						<dl>
+							<dt>JAWS 18 / 2018 + Internet Explorer 11</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible Name] toggle button</q>
+								</p>
+								<p>
+									If activated, the word "pressed" is announced after "toggle button".
+								</p>
+								<p>
+									<b>JAWS 18:</b> when actively toggling the button, JAWS will only announce the name of the key that was pressed (space or enter).
+								</p>
+								<p>
+									<b>JAWS 2018:</b> when toggling the button for the first time, JAWS will announce: <q>[Key used to toggle button] [Pressed or Not Pressed], [Accessible Name]</q>. Subsequent toggles will drop the announcement of the accessible name.
+								</p>
+							</dd>
+							<dt>JAWS 18 + Firefox ESR, JAWS 2018 + Firefox ESR + 63 (nightly)</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible Name] toggle button</q>.
+								</p>
+								<p>
+									If activated, the word "pressed" is announced after "toggle button". When actively toggling the button, JAWS will announce the name of the key that was pressed (space or enter), "toggle button pressed/not pressed" and then the accessible name of the toggle button.
+								</p>
+								<p>
+									Note: for the second example, where "on" and "off" are part of the switch UI, JAWS 18 &amp; 2018 + FireFox ESR will announce this CSS content as part of the accessible name of the toggle button, even though "on" and "off" are contained within a <code>span aria-hidden="true"</code>.  JAWS 2018 + FireFox 63 (nightly) correctly do not announce the <code>aria-hidden</code> content.
+								</p>
+							</dd>
+							<dt>JAWS 18 / 2018 + Chrome (latest)</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible Name] toggle button</q>.
+								</p>
+								<p>
+									If activated, the word "pressed" is announced after "toggle button". When actively toggling the button, JAWS will announce the name of the key that was pressed (space or enter), "toggle button pressed/not pressed" and then the accessible name of the toggle button.
+								</p>
+							</dd>
+
+							<dt>NVDA 2018.2.1 + Firefox ESR + 63 (nightly) and Chrome (latest)</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible name] toggle button, not pressed.</q>
+								</p>
+								<p>
+									If activated, it will instead announce as "pressed".
+									When actively toggling the button, NVDA will announce "pressed" or "not pressed" to match the updated state of the toggle button.
+								</p>
+							</dd>
+
 							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
 							<dd>
 								<p>
@@ -108,7 +183,7 @@
 									<q>[Accessible Name], toggle button. To select or deselect this checkbox, press control-option-space.</q>
 								</p>
 								<p>
-									If activated, the word "selected" will be announced prior to the accessible name of the toggle button.  When actively toggling the toggle button, VoiceOver will announce "selected" or "deselected" prior to "toggle button".
+									If activated, the word "selected" will be announced prior to the accessible name of the toggle button.  When actively toggling the button, VoiceOver will announce "selected" or "deselected" prior to "toggle button".
 								</p>
 								<p>
 									Note: the announcement of "checkbox" by VoiceOver is odd.
@@ -123,7 +198,7 @@
 									<q>[Accessible Name], toggle button. Not Pressed. Double tap to toggle setting.</q>
 								</p>
 								<p>
-									If activated, the word "Pressed" will be announced instead of "Not Pressed".  When actively toggling the toggle button, VoiceOver will make a clicking sound effect when the state changes, and announce "checked" when <code>aria-pressed="true"</code>. Beyond the sound effect, VoiceOver will make no announcement when the toggle button is set to <code>aria-pressed="false"</code>.
+									If activated, the word "Pressed" will be announced instead of "Not Pressed".  When actively toggling the button, VoiceOver will make a clicking sound effect when the state changes, and announce "checked" when <code>aria-pressed="true"</code>. Beyond the sound effect, VoiceOver will make no announcement when the toggle button is set to <code>aria-pressed="false"</code>.
 								</p>
 							</dd>
 
@@ -136,7 +211,7 @@
 									<q>[Accessible Name], not checked, toggle button. Double-tap to toggle.</q>
 								</p>
 								<p>
-									If activated, "not checked" will be replaced with "checked".  When actively toggling the toggle button, TalkBack will simply announce "on" or "off" correlating to the current state.
+									If activated, "not checked" will be replaced with "checked".  When actively toggling the button, TalkBack will simply announce "on" or "off" correlating to the current state.
 								</p>
 							</dd>
 						</dl>
@@ -152,6 +227,5 @@
 		</div> <!-- /.demo-wrap -->
 
 		<script src="../assets/js/switch-toggle-button.js"></script>
-
 	</body>
 </html>
