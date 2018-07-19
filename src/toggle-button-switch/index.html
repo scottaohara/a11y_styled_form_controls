@@ -102,20 +102,48 @@
 							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
 							<dd>
 								<p>
-									When not selected, the toggle button is announced as:<br> <q>[Accessible Name], toggle button. To select or deselect this checkbox, press control-option-space.</q>
+									When not selected, the toggle button is announced as:
 								</p>
 								<p>
-									If activated, the word "selected" will be announced prior to the accessible name of the toggle button.  When toggling the toggle button, VoiceOver will announce "selected" or "deselected" prior to "toggle button".
+									<q>[Accessible Name], toggle button. To select or deselect this checkbox, press control-option-space.</q>
+								</p>
+								<p>
+									If activated, the word "selected" will be announced prior to the accessible name of the toggle button.  When actively toggling the toggle button, VoiceOver will announce "selected" or "deselected" prior to "toggle button".
 								</p>
 								<p>
 									Note: the announcement of "checkbox" by VoiceOver is odd.
+								</p>
+							</dd>
+							<dt>VoiceOver + Safari on iOS 11.x</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible Name], toggle button. Not Pressed. Double tap to toggle setting.</q>
+								</p>
+								<p>
+									If activated, the word "Pressed" will be announced instead of "Not Pressed".  When actively toggling the toggle button, VoiceOver will make a clicking sound effect when the state changes, and announce "checked" when <code>aria-pressed="true"</code>. Beyond the sound effect, VoiceOver will make no announcement when the toggle button is set to <code>aria-pressed="false"</code>.
+								</p>
+							</dd>
+
+							<dt>TalkBack (Android Accessibility Suite 6.2) + Android Chrome</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:
+								</p>
+								<p>
+									<q>[Accessible Name], not checked, toggle button. Double-tap to toggle.</q>
+								</p>
+								<p>
+									If activated, "not checked" will be replaced with "checked".  When actively toggling the toggle button, TalkBack will simply announce "on" or "off" correlating to the current state.
 								</p>
 							</dd>
 						</dl>
 
 						<h5>Usage note:</h5>
 						<p>
-							Ideally a <code>button</code> or <code>input type="checkbox"</code> with a <code>role="switch"</code> would be used when creating a "switch" component. But until all popular browsers and assistive technologies correctly interpret <code>role="switch"</code>, it would be best to convey this component as a toggle button.
+							Ideally a <code>button</code> or <code>input type="checkbox"</code> with a <code>role="switch"</code> would be used when creating a "switch" component. But until all popular browsers and assistive technologies correctly interpret <code>role="switch"</code>, it would be best to rely on the consistent behavior (regardless of varied announcements) of toggle buttons.
 						</p>
 
 					</section> <!-- /.demo-details -->
