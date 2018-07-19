@@ -91,8 +91,27 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							When a <code>button</code> or <code>role="button"</code> has an <code>aria-pressed</code> attribute, it will be announced by screen readers as a "toggle button".  While not
+							When a <code>button</code> or <code>role="button"</code> has an <code>aria-pressed</code> attribute, it will be announced by screen readers as a "toggle button".  While not the same as announcing "Switch", the general concept of these two components is similar, and the <code>aria-pressed</code> attribute has far better support across all browsers and screen readers.
 						</p>
+
+						<p>
+							Along with the shift in announcement from <q>button</q> to <q>toggle button</q>, screen readers will also announce the current state of the element. The following definition list details the announcements for each screen reader and browser pairing:
+						</p>
+
+						<dl>
+							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
+							<dd>
+								<p>
+									When not selected, the toggle button is announced as:<br> <q>[Accessible Name], toggle button. To select or deselect this checkbox, press control-option-space.</q>
+								</p>
+								<p>
+									If activated, the word "selected" will be announced prior to the accessible name of the toggle button.  When toggling the toggle button, VoiceOver will announce "selected" or "deselected" prior to "toggle button".
+								</p>
+								<p>
+									Note: the announcement of "checkbox" by VoiceOver is odd.
+								</p>
+							</dd>
+						</dl>
 
 						<h5>Usage note:</h5>
 						<p>
