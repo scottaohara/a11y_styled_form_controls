@@ -3,13 +3,10 @@
 }
 
 .c-cb > input[type="checkbox"] {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
+	opacity: 0;
 	position: absolute;
 	top: auto;
 	white-space: nowrap;
-	width: 1px;
 }
 
 .c-cb > label {
