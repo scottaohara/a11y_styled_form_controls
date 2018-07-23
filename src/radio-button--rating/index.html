@@ -261,12 +261,8 @@
 							The actual radio button <code>input</code> elements are visually hidden, but maintain the ability to be focused and found by keyboard and screen reader users.  The <code>label</code> for each radio button contains an inline SVG of a star, so the SVG can be manipulated by CSS. A text string is also contained within the label and is visible on <code>:hover</code> and <code>:focus</code> of the SVG and <code>input</code>, respectively.
 						</p>
 
-						<!-- <p>
-							What may seem odd, and it is, is the usage of a <code>label</code>, as well as <code>aria-label</code>s on the checkbox <code>input</code>s themselves.  This was done to mitigate some screen readers from announcing a rating multiple times when navigating through the content with the virtual cursor (<kbd>up</kbd> and <kbd>down</kbd> arrow keys).  The <code>aria-label</code> on the radio button ensures that the accessible name of the <code>input</code> will be announced to screen readers.  The text string within the <code>label</code> is still needed for the <code>:hover</code> and <code>:focus</code> states, to provide users with a quick reference for the star they're on, without having to actually count them out (especially for instances of many stars). Additionally, if CSS were to ever fail or be purposefully turned off, these labels would then become visible, providing necessary context to the radio buttons in their less than ideal visual layout.
-						</p> -->
-
 						<p>
-							Note that the <code>svg</code> elements have the following attributes:
+							Note that the <code>SVG</code> elements have the following attributes:
 						</p>
 
 						<ul>
