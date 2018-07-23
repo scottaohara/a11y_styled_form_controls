@@ -38,12 +38,12 @@
 						Pattern Demo
 					</h2>
 
-					<a data-toggle-btn hidden>
+					<a data-switch-btn hidden>
 						ARIA
-						<b data-toggle-btn-ui></b>
+						<b data-switch-btn-ui></b>
 					</a>
 
-					<button type="button" data-toggle-btn data-toggle-btn-pressed data-toggle-btn-labels disabled>
+					<button type="button" data-switch-btn data-switch-btn-pressed data-switch-btn-labels disabled>
 						Native
 					</button>
 
@@ -54,7 +54,7 @@
 								Switch toggle buttons are commonly represented as a visual text label and a switch UI, or as a text label with a switch UI that has its own "On" and "Off" labeling.
 							</p>
 							<p>
-								By default, the component outputs the unlabeled knob UI.  Using the attribute <code>data-toggle-btn-labels</code> or manually adding a class of <code>toggle-switch--labels</code>, the component will add labels to the
+								By default, the component outputs the unlabeled switch UI. Using the attribute <code>data-switch-btn-labels</code> or manually adding a class of <code>toggle-switch--labels</code>, the component will add "on" and "off" labels to the switch UI.
 							</p>
 						</div>
 					</details>
@@ -67,14 +67,14 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;a data-toggle-btn>
+								<pre><code>&lt;a data-switch-btn>
   Progressively Enhanced Toggle
 &lt;/a>
 
 &lt;button type="button"
-  data-toggle-btn
-  data-toggle-btn-labels
-  data-toggle-btn-pressed
+  data-switch-btn
+  data-switch-btn-labels
+  data-switch-btn-pressed
   disabled>
   Native Button Toggle
 &lt;/button>
@@ -101,7 +101,7 @@
 							During the setup process for a toggle button, the JavaScript will progressively enhance a <code>button</code> (or a non-<code>button</code> element) into a toggle button.
 						</p>
 						<p>
-							The necessary attributes will be added to the element, and a child element to serve as the switch UI will be created, if such an element does not already exist and is identified by having the <code>data-toggle-btn-ui</code> attribute.
+							The necessary attributes will be added to the element, and a child element to serve as the switch UI will be created, if such an element does not already exist and is identified by having the <code>data-switch-btn-ui</code> attribute.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
@@ -218,14 +218,26 @@
 
 						<h5>Usage note:</h5>
 						<p>
+							Using a "switch" toggle button vs a <a href="../checkbox--switch">"switch" checkbox</a>, or even a <a href="../radio--switch"></a> will depend on the context of which the component is used, and if toggle button vs checkbox announcements would be more appropriate.
+						</p>
+						<p>
 							Ideally a <code>button</code> or <code>input type="checkbox"</code> with a <code>role="switch"</code> would be used when creating a "switch" component. But until all popular browsers and assistive technologies correctly interpret <code>role="switch"</code>, it would be best to rely on the consistent behavior (regardless of varied announcements) of toggle buttons.
 						</p>
-
 					</section> <!-- /.demo-details -->
 				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
 
-		<script src="../assets/js/switch-toggle-button.js"></script>
+		<script src="../assets/js/switch-toggle-buttons.js"></script>
+		<script>
+			// some other file.js
+			var selector = '[data-switch-btn]';
+			var elList = document.querySelectorAll(selector);
+
+			elList.forEach( function ( el ) {
+				var a11ybtn = new A11yToggleButton();
+				a11ybtn.init(el);
+			});
+		</script>
 	</body>
 </html>

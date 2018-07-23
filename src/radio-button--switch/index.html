@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Switch Component: Radio Buttons
+		</title>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>
+			// remove no-js and add 'js' to the HTML
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
+		<link rel="stylesheet" href="../assets/css/--shared--.css">
+		<link rel="stylesheet" href="../assets/css/switch--radio-buttons.css">
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+
+			<header class="demo-wrap__header">
+				<h1>Switch Component: Radio Buttons</h1>
+				<p>
+					Pattern to create a two option radio button group,
+					visually styled to resemble a <code>switch</code> component.
+				</p>
+				<nav>
+					<a href="https://github.com/scottaohara/a11y_styled_form_controls">See source on GitHub</a>,
+					<a href="/a11y_styled_form_controls">Index of form controls</a>
+				</nav>
+			</header>
+
+			<main>
+
+				<article class="demo">
+					<h2>
+						Pattern Demo
+					</h2>
+
+					<fieldset class="radio-switch">
+						<legend>
+							Settings
+						</legend>
+
+						<input type="radio" name="lol" id="public" checked="">
+						<label for="public">
+							On
+						</label>
+
+						<input type="radio" name="lol" id="private">
+						<label for="private">
+							Off
+						</label>
+					</fieldset>
+
+					<details style="margin-top: 1em;">
+						<summary>Visual design note</summary>
+						<div>
+							<p>
+								The inclusion of two labels makes this switch pattern unique from other single label switch components. The design tends to fall apart a bit if it can't fully fit on a narrow screen, so that should be taken into consideration if implementing this in your own projects.
+							</p>
+							<p>
+								Ideally there would be a visible overarching label (a <code>legend</code>)
+							</p>
+						</div>
+					</details>
+
+
+					<section class="demo-details">
+						<h3>
+							Pattern Details
+						</h3>
+
+						<details open>
+							<summary>Pattern Markup</summary>
+								<pre><code>&lt;fieldset class="radio-switch">
+  &lt;legend>
+    Something
+  &lt;/legend>
+
+  &lt;input type="radio" name="lol" id="public">
+  &lt;label for="public">
+    On
+  &lt;/label>
+
+  &lt;input type="radio" name="lol" id="private">
+  &lt;label for="private">
+    Off
+  &lt;/label>
+&lt;/fieldset></code></pre>
+						</details>
+
+						<p>
+							The markup for this component relies on a standard radio button group setup. A <code>fieldset</code> surrounds the radio buttons to provide context as to what these two options refer to. Each <code>input</code> is placed before its <code>label</code> so sibling selectors can be used to modify the state of the switch UI, based on whether the <code>input</code> is <code>:checked</code> or not.
+						</p>
+
+						<h4>Affects on Screen Reader Announcements?</h4>
+						<p>
+							Merely being a custom styled radio button group, there's not much for screen readers to get tripped up on here. This particular design also doesn't produce any abnormal announcements (for radio button groups) one must be aware of.
+						</p>
+						<p>
+							The only minor concern for a component like this is that it visually looks like a switch component, and switches have slightly different UX behavior associated with them. For example, a visual switch could be an actual <code>role="switch"</code>, a checkbox, or a toggle button, all depending on the context in which it is used. Each of these implementations would have a consistent single label, and the state of the component is what changes. This particular pattern doesn't adhere to those setups.
+						</p>
+
+						<h5>Usage note:</h5>
+						<p>
+							This type of a switch UI is heavily reliant on the idea that there are two visible labels that represent the opposing ends of the switch. Being that the switch has two labels, it would be expected that each label could receive mouse click or a tap to change the state of the switch.
+						</p>
+						<p>
+							Ideally the switch itself would also allow for mouse click or finger tap to freely toggle the state as well, as that's an expected interaction for a switch UI.
+						</p>
+						<p>
+							For single label switches, typically a user can focus the switch and toggle it with either <kbd>Space</kbd> or <kbd>Enter</kbd> keys.  With a radio button switch, arrow keys would be used instead, and <kbd>Space</kbd> or <kbd>Enter</kbd> keys would be largely irrelevant, beyond a screen reader first focusing a radio button in this component, and using such keys to enter forms mode, if their screen reader hadn't  entered forms mode already.
+						</p>
+
+					</section> <!-- /.demo-details -->
+				</article>
+			</main>
+		</div> <!-- /.demo-wrap -->
+
+		<script>
+			// some other file.js
+			var selector = '[data-switch-btn]';
+			var elList = document.querySelectorAll(selector);
+
+			elList.forEach( function ( el ) {
+				var a11ybtn = new A11yToggleButton();
+				a11ybtn.init(el);
+			});
+		</script>
+	</body>
+</html>
