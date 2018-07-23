@@ -7,13 +7,10 @@
  * allowing them to receive keyboard focus.
  */
 .r-radios input[type="radio"] {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
+	opacity: 0;
 	position: absolute;
 	top: auto;
 	white-space: nowrap;
-	width: 1px;
 }
 
 .r-radio {
@@ -50,11 +47,10 @@
 		opacity .2s ease-in-out,
 		transform .2s ease-in-out;
 	white-space: nowrap;
-	width: 130%;
 }
 
 .r-radio--none span {
-	width: 172%;
+	width: 250%;
 }
 
 .r-radio:hover span,
