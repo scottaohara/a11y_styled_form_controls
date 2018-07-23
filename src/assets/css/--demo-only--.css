@@ -5,6 +5,7 @@
  */
 html,
 body {
+	background: #fcfcfc;
 	font-family: arial;
 	font-size: 100%;
 	margin: 0;
@@ -19,7 +20,6 @@ body {
 
 body {
 	line-height: 1.4;
-	padding: 2em 1em;
 }
 
 h4, h5 {
@@ -27,10 +27,24 @@ h4, h5 {
 	line-height: 1.2;
 }
 
+h2, h3, h4, h5, h6 {
+	margin-top: 2em;
+}
+
 main {
-	border-top: 1px solid #888;
-	margin-top: 1.5em;
-	padding-top: .25em;
+	padding-top: .75em;
+}
+
+.demo > header {
+	border-bottom: 1px solid #aaa;
+}
+
+a:hover,
+a:focus {
+	box-shadow: none;
+	outline: 2px solid;
+	outline-offset: 2px;
+	text-decoration: none;
 }
 
 pre {
@@ -46,14 +60,35 @@ hr {
 }
 
 .demo-wrap {
-	margin: 2em auto;
-	max-width: 580px;
+	background: #fff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	margin: 0 auto;
+	max-width: 660px;
+	padding: 0 1.5em 3em;
+	overflow-x: hidden;
+}
+
+.demo-wrap__header {
+	background: #1a2a1a;
+	color: #fefefe;
+	margin: -1em -1.5em 0;
+	padding: 3em 1.5em 2em;
+	position: relative;
+}
+
+.demo-wrap__header a {
+	color: #fff;
+}
+
+.demo-wrap__header__title {
+	font-size: 1.3em;
+	margin-bottom: .5em;
+	margin-top: .5em;
 }
 
 .demo-details {
-	border-top: 1px solid #888;
-	margin-top: 2em;
-	padding-top: 2em;
+	margin-top: 3em
 }
 
 .demo-details > h3 {
