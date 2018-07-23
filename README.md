@@ -10,7 +10,7 @@ Largely, many of these form controls can be copied and pasted into your pattern 
 
 
 ## The Form Controls
-introy
+The following controls each have demo pages with additional documentation pertaining to implementation, UX, and screen reader announcements.
 
 
 ### Checkboxes and Radio Buttons
@@ -32,6 +32,7 @@ Unlike a checkbox, switches and toggle buttons are meant to perform an instant c
 1. [Switch Checkbox](src/checkbox--switch)
 2. [ARIA Switch Button (external link)](https://scottaohara.github.io/aria-switch-button/)
 3. [ARIA Toggle Button](src/toggle-button-switch)
+4. [Switch Radio Button Group](src/radio-button--switch)
 
 
 ### File Upload
