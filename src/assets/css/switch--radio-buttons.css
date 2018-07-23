@@ -1,0 +1,133 @@
+/*
+	get rid of the fieldset styling and keep
+	this all on a single line
+*/
+.radio-switch {
+	border: none;
+	padding: 0;
+	white-space: nowrap;
+}
+
+/*
+	radio button groups often benefit from a legend to
+	provide context as to what the different
+	options pertain to. Ideally this would be visible to all
+	users, but you know...
+*/
+.radio-switch legend {
+	font-size: 2px;
+	opacity: 0;
+	position: absolute;
+}
+
+/*
+	relative labels to help position the pseudo elements
+	the z-index will be handy later, when the labels that
+	overlap the visual switch UI need to be adjusted
+	to allow for a user to toggle the switch without
+	having to move their mouse/finger to the different
+	sides of the UI
+*/
+.radio-switch label {
+	display: inline-block;
+	line-height: 2;
+	position: relative;
+	z-index: 2;
+}
+
+/*
+	inputs set to opcacity 0 are still accessible.
+	Apparently there can be issues targetting inputs with
+	Dragon speech recognition software if you use the typical
+	'visually-hidden' class...so might as well just avoid that issue...
+*/
+.radio-switch input {
+	opacity: 0;
+	position: absolute;
+}
+
+/*
+	a 2 option toggle can only have 2 options...so instead of
+	adding more classes, i'm just going to use some
+	structural pseudo-classes to target them...
+	cause why let all that good work go to waste?!
+
+  the large padding is used to position the labels
+  on top of the visual UI, so the switch UI itself
+  can be mouse clicked or finger tapped to toggle
+  the current option
+*/
+.radio-switch label:first-of-type {
+	padding-right: 5em;
+}
+
+.radio-switch label:last-child {
+	margin-left: -4.25em;
+	padding-left: 5em;
+}
+
+/*
+	oh focus within, I can't wait for you to have even more support.
+	But you'll never be in IE11, so we're going to need a
+	polyfill for you for a bit...
+ */
+.radio-switch:focus-within label:first-of-type:after {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+}
+
+/* polyfill class*/
+.radio-switch.focus-within label:first-of-type:after {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+}
+
+/* making the switch UI.  */
+.radio-switch label:first-of-type:before,
+.radio-switch label:first-of-type:after {
+	border: 1px solid #aaa;
+	content: "";
+	height: 2em;
+	overflow: hidden;
+	pointer-events: none;
+	position: absolute;
+	vertical-align: middle;
+}
+
+.radio-switch label:first-of-type:before {
+	background: #fff;
+	border: 1px solid #aaa;
+	border-radius: 100%;
+	position: absolute;
+	right: 0;
+	transform: translateX(0em);
+	transition: transform .2s ease-in-out;
+	width: 2em;
+	z-index: 2;
+}
+
+.radio-switch label:first-of-type:after {
+	background: #222;
+	border-radius: 1em;
+	margin: 0 1em;
+	transition: background .2s ease-in-out;
+	width: 4em;
+}
+
+/*
+	Visually change the switch UI to match the
+	checked state of the first radio button
+*/
+.radio-switch input:first-of-type:checked ~ label:first-of-type:after {
+	background: #2196f3;
+}
+
+.radio-switch input:first-of-type:checked ~ label:first-of-type:before {
+	transform: translateX(-2em);
+}
+
+/* Move the 2nd label to have a lower z-index, so when that
+   option is toggled, the first label will overlay on top of the
+   Switch ui, and the switch can be pressed again to toggle back
+   to the prevoius state. */
+.radio-switch input:last-of-type:checked ~ label:last-of-type {
+	z-index: 1;
+}

@@ -14,13 +14,13 @@
 	A11yToggleButton.LICENSE = 'https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE';
 
 	A11yToggleButton.init = function ( customSelector, buttonLabel ) {
-		var selectors = '[data-toggle-btn], ' + customSelector;
+		var selectors = '[data-switch-btn], ' + customSelector;
 		var self = doc.querySelectorAll(selectors);
 		var switchUI;
 	  var i = self.length;
 
 	  for ( i = 0; i < self.length; i++ ) {
-	  	switchUI = self[i].querySelector('[data-toggle-btn-ui]') || self[i].querySelector('.toggle-switch__ui');
+	  	switchUI = self[i].querySelector('[data-switch-btn-ui]') || self[i].querySelector('.toggle-switch__ui');
 	    setup(self[i], switchUI, buttonLabel);
 	  }
 	} // A11yToggleButton.init
@@ -60,7 +60,7 @@
 		}
 
 		// if a switch ui should display the text 'on' and 'off'
-		if ( self.hasAttribute('data-toggle-btn-labels') ) {
+		if ( self.hasAttribute('data-switch-btn-labels') ) {
 			self.classList.add('toggle-switch--labels');
 		}
 
@@ -77,7 +77,7 @@
 		 * when JS is available, remove the disabled attribute so these
 		 * buttons can be used.
 		 */
-		if ( self.disabled && self.getAttribute('data-toggle-btn') !== "disabled" ) {
+		if ( self.disabled && self.getAttribute('data-switch-btn') !== "disabled" ) {
 			self.removeAttribute('disabled');
 		}
 
@@ -100,10 +100,10 @@
 		 * checks to determine if this button should be set to true or false by default.
 		 */
 		if ( !self.hasAttribute('aria-pressed') ) {
-			self.setAttribute('aria-pressed', self.hasAttribute('data-toggle-btn-pressed'))
+			self.setAttribute('aria-pressed', self.hasAttribute('data-switch-btn-pressed'))
 		}
 
-		self.removeAttribute('data-toggle-btn')
+		self.removeAttribute('data-switch-btn')
 
 		/**
 		 * Event listeners for toggle buttons
@@ -120,11 +120,10 @@
 
 	var keyEvents = function ( e ) {
 		var keyCode = e.keyCode || e.which;
-
 		/**
 		 * If the element is not a real button, then
-		 * map the appropriate key commands.  If it is,
-		 * well buttons' already know how to do this then :)
+		 * map the appropriate key commands. If it is,
+		 * well native buttons already know how to keyboard...
 		 */
 		if ( e.target.tagName !== 'BUTTON' ) {
 			switch ( keyCode ) {
