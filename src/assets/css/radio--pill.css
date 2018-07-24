@@ -1,10 +1,10 @@
-.fieldset {
+.radio-pill {
 	border: 0;
 	padding: 0;
 	margin: 0;
 }
 
-.fieldset legend {
+.radio-pill legend {
 	display: block;
 	font-size: inherit;
 	font-weight: bold;
@@ -13,7 +13,7 @@
 	width: 100%;
 }
 
-.fieldset input {
+.radio-pill input {
 	clip: rect(0 0 0 0);
 	clip-path: inset(100%);
 	height: 1px;
@@ -23,7 +23,7 @@
 	width: 1px;
 }
 
-.r-group {
+.radio-pill__group {
 	background: #fafafa;
 	border: 1px solid #083851;
 	border-radius: 2em;
@@ -32,7 +32,7 @@
 	position: relative;
 }
 
-.r-group label {
+.radio-pill__group label {
 	border-radius: 2em;
 	border: 2px solid transparent;
 	color: #083851;
@@ -40,18 +40,18 @@
 	padding: .25em .75em;
 }
 
-.r-group label:hover {
+.radio-pill__group label:hover {
 	background: #E2F1FD;
 	border-color: #2196f3;
 }
 
-.fieldset[disabled] .r-group input:checked + label:hover,
-.r-group input:checked + label {
+.radio-pill[disabled] .radio-pill__group input:checked + label:hover,
+.radio-pill__group input:checked + label {
 	background: #2196f3;
 	color: #fff;
 }
 
-.r-group label:last-of-type:after {
+.radio-pill__group label:last-of-type:after {
 	border-radius: 2em;
 	bottom: -.35em;
 	content: "";
@@ -66,7 +66,7 @@
 	*/
 }
 
-.r-group input:focus ~ label:last-of-type:after  {
+.radio-pill__group input:focus ~ label:last-of-type:after  {
 	border: 2px solid #2196f3;
 }
 
@@ -74,13 +74,13 @@
 /**
  * Disabled
  */
-.fieldset[disabled],
-.r-group input[disabled] + label {
+.radio-pill[disabled],
+.radio-pill__group input[disabled] + label {
 	opacity: .5;
 }
 
-.r-group input[disabled] + label:hover,
-.fieldset[disabled] label:hover {
+.radio-pill__group input[disabled] + label:hover,
+.radio-pill[disabled] label:hover {
 	background: transparent;
 	border-color: transparent;
 	cursor: not-allowed;
@@ -92,21 +92,21 @@
  * if they are all checked in high contrast mode.
  */
 @media screen and (-ms-high-contrast: active) {
-	.r-group label {
+	.radio-pill__group label {
 		border: 0;
 		margin: 2px;
 	}
 
-	.r-group input:checked + label {
+	.radio-pill__group input:checked + label {
 		border: 2px solid;
 		margin: 0;
 	}
 
-	.r-group label:hover {
+	.radio-pill__group label:hover {
 		text-decoration: underline;
 	}
 
-	.fieldset[disabled] .r-group label:hover {
+	.radio-pill[disabled] .radio-pill__group label:hover {
 		text-decoration: none
 	}
 }
