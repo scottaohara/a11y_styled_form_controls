@@ -79,4 +79,6 @@ Unless noted, these components were written by [Scott O'Hara](https://twitter.co
 
 Everything here is under an [MIT license](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md).
 
+Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review many of these components.
+
 Enjoy :)
