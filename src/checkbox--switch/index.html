@@ -59,7 +59,7 @@
 						</p>
 						<label class="check-switch" for="switch_2">
 							Example Text 2:
-							<input type="checkbox" id="switch_2" data-switch>
+							<input type="checkbox" id="switch_2" data-check-switch>
 							<span aria-hidden="true"></span>
 						</label>
 
@@ -73,7 +73,7 @@
 							<label for="switchbox">
 								Example Text 3:
 							</label>
-							<input type="checkbox" id="switchbox" data-switch>
+							<input type="checkbox" id="switchbox" data-check-switch>
 						</div>
 					</form>
 
@@ -109,7 +109,7 @@
 &lt;!-- Version: [type="checkbox"][role="switch"] -->
 &lt;label class="check-switch" for="switch_2">
   Example Text 2:
-  &lt;input id="switch_2" data-switch="" role="switch" type="checkbox">
+  &lt;input id="switch_2" data-check-switch="" role="switch" type="checkbox">
   &lt;span aria-hidden="true">&lt;/span>
 &lt;/label>
 
@@ -118,7 +118,7 @@
   &lt;label for="switchbox">
     Example Text 3:
   &lt;/label>
-  &lt;input id="switchbox" data-switch="" role="switch" type="checkbox">
+  &lt;input id="switchbox" data-check-switch="" role="switch" type="checkbox">
 &lt;/div></code></pre>
 						</details>
 
@@ -139,7 +139,7 @@
 							There is little JavaScript that is needed for this component, but what is there is largely for progressive enhancement purposes.
 						</p>
 						<p>
-							Using the <code>data-switch</code> attribute as a hook, an <code>input</code> with this attribute will receive a <code>role="switch"</code> when the script runs. Without JavaScript, it will announce itself as a checkbox.
+							Using the <code>data-check-switch</code> attribute as a hook, an <code>input</code> with this attribute will receive a <code>role="switch"</code> when the script runs. Without JavaScript, it will announce itself as a checkbox.
 						</p>
 						<p>
 							The script also allows for the <kbd>Enter</kbd> key to be used to toggle the state of the switch, as checkboxes would otherwise only allow for the <kbd>Space</kbd> key to toggle their state.
@@ -173,6 +173,15 @@
 		</div> <!-- /.demo-wrap -->
 
 		<script src="../assets/js/switch-checkbox.js"></script>
+		<script>
+			// some other file.js
+			var selector = '[data-check-switch]';
+			var elList = document.querySelectorAll(selector);
 
+			elList.forEach( function ( el ) {
+				var a11ySwitchCheck = new A11YswitchCheck();
+				a11ySwitchCheck.init(el);
+			});
+		</script>
 	</body>
 </html>

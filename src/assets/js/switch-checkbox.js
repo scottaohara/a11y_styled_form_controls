@@ -1,46 +1,64 @@
-;(function ( w, doc, undefined ) {
+(function ( w, doc, undefined ) {
 	'use strict';
+	var A11YswitchCheck;
 
-	/**
-	 * Local object for method references
-	 * and define script meta-data
-	 */
-	var A11YswitchCheck = {};
-	w.A11YswitchCheck   = A11YswitchCheck;
+	A11YswitchCheck = function ( ) {
+		/**
+		 * Author: Scott O'Hara
+		 * Version: 0.1.0
+		 * License: https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE
+		 */
+		var el;
 
-	A11YswitchCheck.NS      = 'A11YswitchCheck';
-	A11YswitchCheck.AUTHOR  = 'Scott O\'Hara';
-	A11YswitchCheck.VERION  = '0.1.0';
-	A11YswitchCheck.LICENSE = 'https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE';
+		/**
+		 * Initialize the instance, run all setup functions
+		 * and attach the necessary events.
+		 */
+		this.init = function ( elm ) {
+			el = elm;
+			setRole ( el );
+			attachEvents ( el );
+		};
 
-	var widget = doc.querySelectorAll('[type="checkbox"][data-switch]');
+		/**
+		 * Check default state of element:
+		 * A toggle button is not particularly useful without JavaScript,
+		 * so ideally such a button would be set to hidden or disabled, if JS wasn't
+		 * around to make it function.
+		 */
+		var setRole = function ( el ) {
+			if ( el.getAttribute('type') === 'checkbox' ) {
+				el.setAttribute('role', 'switch');
+			}
+			else {
+				console.error(el.id + ' is not a checkbox...')
+			}
+		};
 
-	A11YswitchCheck.init = function () {
-		var self;
-		var i;
+		/**
+		 * Attach keyEvents to toggle buttons
+		 */
+		var keyEvents = function ( e ) {
+			var keyCode = e.keyCode || e.which;
 
-		for ( i = 0; i < widget.length; i++ ) {
-			self = widget[i];
-			self.setAttribute('role', 'switch');
+			switch ( keyCode ) {
+				case 13:
+					e.preventDefault();
+					e.target.click();
+				break;
+			}
+		};
 
-			self.addEventListener('keypress', A11YswitchCheck.keyEvents, false);
-		}
-	}; // A11YswitchCheck.init()
+		/**
+		 * Events for toggle buttons
+		 * @return none
+		 */
+		var attachEvents = function ( el ) {
+			el.addEventListener('keypress', keyEvents, false);
+		};
 
-	A11YswitchCheck.keyEvents = function ( e ) {
-		var enterKey = 13;
-		var keyCode = e.keyCode || e.which;
+		return this;
+	}; // A11YswitchCheck()
 
-		switch ( keyCode ) {
-			case enterKey:
-			case 32:
-				e.preventDefault();
-				e.target.click();
-			break;
-		}
-	}
-
-	// go go JavaScript
-	A11YswitchCheck.init();
-
+	w.A11YswitchCheck = A11YswitchCheck;
 })( window, document );

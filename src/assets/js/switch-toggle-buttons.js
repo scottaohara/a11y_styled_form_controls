@@ -1,16 +1,19 @@
 (function ( w, doc, undefined ) {
 	'use strict';
-
 	var A11yToggleButton;
 
-	// A11yToggleButton.NS      = 'A11yToggleButton';
-	// A11yToggleButton.AUTHOR  = 'Scott O\'Hara';
-	// A11yToggleButton.VERION  = '0.1.0';
-	// A11yToggleButton.LICENSE = 'https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE';
-
 	A11yToggleButton = function ( ) {
+		/**
+		 * Author: Scott O'Hara
+		 * Version: 0.1.0
+		 * License: https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE
+		 */
 		var el;
 
+		/**
+		 * Initialize the instance, run all setup functions
+		 * and attach the necessary events.
+		 */
 		this.init = function ( elm ) {
 			el = elm;
 			checkState ( el );
@@ -96,8 +99,7 @@
 		};
 
 		/**
-		 * [setClasses description]
-		 * @param {[type]} el [description]
+		 * Setup the classes for the toggle buttons
 		 */
 		var setClasses = function ( el ) {
 			// if the default class for this component doesn't exist, add it
@@ -108,13 +110,11 @@
 			// if a switch ui should display the text 'on' and 'off'
 			if ( el.hasAttribute('data-switch-btn-labels') || el.classList.contains('toggle-switch--labels') ) {
 				el.classList.add('toggle-switch--labels');
-			}
+			};
 		}
 
 		/**
-		 * [toggleState description]
-		 * @param  {[type]} e [description]
-		 * @return {[type]}   [description]
+		 * Toggle the Button's state (aria-pressed=t/f)
 		 */
 		var toggleState = function ( e ) {
 			this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
@@ -122,8 +122,6 @@
 
 		/**
 		 * Attach keyEvents to toggle buttons
-		 * @param  {[type]} e [description]
-		 * @return {[type]}   [description]
 		 */
 		var keyEvents = function ( e ) {
 			var keyCode = e.keyCode || e.which;
@@ -135,16 +133,16 @@
 			 */
 			if ( e.target.tagName !== 'BUTTON' ) {
 				switch ( keyCode ) {
-		      case 32:
-		      case 13:
-		      	e.stopPropagation();
-		        e.preventDefault();
-		        e.target.click();
-		        break;
+					case 32:
+					case 13:
+						e.stopPropagation();
+						e.preventDefault();
+						e.target.click();
+						break;
 
-		      default:
-		        break;
-		    }
+					default:
+						break;
+				}
 			}
 		};
 
