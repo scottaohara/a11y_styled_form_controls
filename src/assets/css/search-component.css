@@ -81,8 +81,11 @@ input[type="search"]::-webkit-search-cancel-button {
 @media screen and (-ms-high-contrast: active) {
 	[role="search"] > input[type="search"] {
 		border: 1px solid #565656;
-		padding: .5em;
-		width: 100%;
+		position: relative;
+	}
+
+	[role="search"] > input[type="search"]:focus {
+		z-index: 4;
 	}
 
 	[role="search"] svg {
@@ -91,7 +94,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
 	[role="search"] > [type="search"][disabled],
 	[role="search"] > [type="submit"][disabled] {
-		border: 1px solid rgba(255,255,255,.5);
 		opacity: .325;
 	}
 }
