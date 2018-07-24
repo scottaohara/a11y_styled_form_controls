@@ -246,11 +246,12 @@
 			// some other file.js
 			var selector = '[data-switch-btn]';
 			var elList = document.querySelectorAll(selector);
+			var i;
 
-			elList.forEach( function ( el ) {
+			for ( i = 0; i < elList.length; i++ ) {
 				var a11ybtn = new A11yToggleButton();
-				a11ybtn.init(el);
-			});
+				a11ybtn.init( elList[i] );
+			};
 		</script>
 	</body>
 </html>

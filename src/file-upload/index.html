@@ -118,11 +118,12 @@
 			// some other file.js
 			var selector = '[data-file-input]';
 			var elList = document.querySelectorAll(selector);
+			var i;
 
-			elList.forEach( function ( el ) {
+			for ( i = 0; i < elList.length; i++ ) {
 				var a11yFUP = new A11yFileUpload();
-				a11yFUP.init( el );
-			});
+				a11yFUP.init( elList[i] );
+			};
 		</script>
 	</body>
 </html>

@@ -177,11 +177,12 @@
 			// some other file.js
 			var selector = '[data-check-switch]';
 			var elList = document.querySelectorAll(selector);
+			var i;
 
-			elList.forEach( function ( el ) {
-				var a11ySwitchCheck = new A11YswitchCheck();
-				a11ySwitchCheck.init(el);
-			});
+			for ( i = 0; i < elList.length; i++ ) {
+				var a11ySwitch = new A11YswitchCheck();
+				a11ySwitch.init( elList[i] );
+			};
 		</script>
 	</body>
 </html>
