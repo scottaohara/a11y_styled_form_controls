@@ -79,8 +79,13 @@ input[type="search"]::-webkit-search-cancel-button {
 
 
 @media screen and (-ms-high-contrast: active) {
+	[role="search"] {
+		border: none;
+	}
+
 	[role="search"] > input[type="search"] {
-		border: 1px solid #565656;
+		border: 1px solid;
+		border-right: 1px solid;
 		position: relative;
 	}
 
@@ -94,6 +99,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
 	[role="search"] > [type="search"][disabled],
 	[role="search"] > [type="submit"][disabled] {
-		opacity: .325;
+		opacity: .5;
 	}
 }
