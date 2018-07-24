@@ -153,10 +153,20 @@
 							A selector targeting the last <code>label</code>'s <code>:after</code> pseudo-element will create an outline around the entire component to indicate it has keyboard focus and can be interacted with.
 						</p>
 
+						<h4>Affects on Screen Reader Announcements?</h4>
+						<p>
+							Being these are just styled radio button labels, the announcement of this radio group hasn't been altered in a significant way.  Screen readers like JAWS and NVDA may automatically go into forms mode, or require a user to hit <kbd>Enter</kbd> or <kbd>Space</kbd> to focus into the radio button. Then arrow keys can be used to select the different radio buttons, as expected.
+						</p>
+						<p>
+							VoiceOver on macOS may begin to focus the radio button labels when using arrow keys to change the selected radio button. This issue does not exist in VoiceOver + Chrome and is not necessarily unique to this particular styling of radio buttons.
+						</p>
+
 						<h4>Usage note</h4>
 						<p>
 							Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document.
-							It is considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>).
+						</p>
+						<p>
+							It may be considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>), without giving adequate notice of what change will occur, and depending on if the change can be easily reversed.
 						</p>
 
 						<p>
