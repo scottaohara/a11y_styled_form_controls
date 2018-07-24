@@ -96,7 +96,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
 	[role="search"] > [type="submit"]:focus {
 		border: 1px solid;
-		position: relative;
 	}
 
 	[role="search"] svg {
