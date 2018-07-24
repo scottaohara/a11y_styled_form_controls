@@ -27,6 +27,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 [role="search"] svg {
 	display: block;
+	fill: #000;
 }
 
 [role="search"] > input[type="search"] {
@@ -75,4 +76,12 @@ input[type="search"]::-webkit-search-cancel-button {
 [role="search"] > [type="submit"][disabled] {
 	background: #fafafa;
 	opacity: .5;
+}
+
+
+@media screen and (-ms-high-contrast: active) {
+	[role="search"] > [type="search"][disabled],
+	[role="search"] > [type="submit"][disabled] {
+		opacity: .25;
+	}
 }
