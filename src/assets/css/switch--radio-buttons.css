@@ -131,3 +131,12 @@
 .radio-switch input:last-of-type:checked ~ label:last-of-type {
 	z-index: 1;
 }
+
+
+/* 'color in' the switch knob in high contrast mode by giving it
+   a large border */
+@media screen and (-ms-high-contrast: active) {
+	.radio-switch label:first-of-type:before {
+		border: .75em solid;
+	}
+}

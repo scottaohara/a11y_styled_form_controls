@@ -131,5 +131,6 @@ input[disabled] + .r-radio:hover {
 
 input[disabled] + .r-radio svg {
 	fill: #ccc;
-	transform: scale(.625);
+	transform: scale(.5);
+	opacity: .3;
 }

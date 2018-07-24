@@ -73,3 +73,11 @@
 .check-switch input:checked + span:before {
 	background: #2196f3;
 }
+
+/* 'color in' the switch knob in high contrast mode by giving it
+   a large border */
+@media screen and (-ms-high-contrast: active) {
+	.check-switch span:after {
+		border: .75em solid;
+	}
+}

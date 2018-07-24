@@ -61,7 +61,5 @@
 	.c-radio > input:checked ~ label:before {
 		border: 6px solid;
 		box-shadow: none;
-		height: .5em;
-		width: .5em;
 	}
 }
