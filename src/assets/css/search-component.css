@@ -85,13 +85,13 @@ input[type="search"]::-webkit-search-cancel-button {
 		width: 100%;
 	}
 
-
-
 	[role="search"] svg {
 		fill: #fff;
 	}
+
 	[role="search"] > [type="search"][disabled],
 	[role="search"] > [type="submit"][disabled] {
-		opacity: .25;
+		border: 1px solid rgba(255,255,255,.5);
+		opacity: .325;
 	}
 }
