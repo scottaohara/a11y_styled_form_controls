@@ -113,7 +113,16 @@
 		</div> <!-- /.demo-wrap -->
 
 		<script src="../assets/js/file-upload.js"></script>
+		<script>
+			// some other file.js
+			var selector = '[data-file-input]';
+			var elList = document.querySelectorAll(selector);
 
+			elList.forEach( function ( el ) {
+				var a11yFUP = new A11yFileUpload();
+				a11yFUP.init( el );
+			});
+		</script>
 	</body>
 </html>
 
