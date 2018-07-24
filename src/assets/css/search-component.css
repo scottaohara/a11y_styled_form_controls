@@ -89,8 +89,14 @@ input[type="search"]::-webkit-search-cancel-button {
 		position: relative;
 	}
 
+	[role="search"] > [type="submit"],
 	[role="search"] > input[type="search"]:focus {
 		z-index: 4;
+	}
+
+	[role="search"] > [type="submit"]:focus {
+		border: 1px solid;
+		position: relative;
 	}
 
 	[role="search"] svg {
