@@ -9,28 +9,67 @@
 		 * License: https://github.com/scottaohara/a11y_styled_form_controls/blob/master/LICENSE
 		 */
 		var el;
+		var isThisChrome;
 
 		/**
 		 * Initialize the instance, run all setup functions
 		 * and attach the necessary events.
 		 */
 		this.init = function ( elm ) {
+			isThisChrome = checkChrome( isThisChrome );
 			el = elm;
-			setupPattern( el );
+			setupPattern( el, isThisChrome );
 			checkDisabled( el );
 			attachEvents( el );
 		};
 
 		/**
+		 * Google Chrome (July 2018) does not announce the name or # of
+		 * uploaded files to a file upload input. To provide a better
+		 * experience, check to see if the browser is Chrome, and
+		 * if so DO NOT add the aria-hidden="true" to the styled
+		 * file name output (which is necessary for other browsers
+		 * to not have duplicate file name announcements)
+		 *
+		 * For more info on this function, see:
+		 * https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
+		 */
+		var checkChrome = function ( isThisChrome ) {
+			var isChromium = w.chrome;
+			var winNav = w.navigator;
+			var vendorName = winNav.vendor;
+			var isOpera = typeof w.opr !== "undefined";
+			var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+			var isIOSChrome = winNav.userAgent.match("CriOS");
+
+			if ( isIOSChrome ) {
+			   // is Google Chrome on IOS
+			} else if(
+			  isChromium !== null &&
+			  typeof isChromium !== "undefined" &&
+			  vendorName === "Google Inc." &&
+			  isOpera === false &&
+			  isIEedge === false
+			) {
+			   return true;
+			} else {
+			   return false;
+			}
+		}
+
+		/**
 		 * Setup the instance with n
 		 */
-		var setupPattern = function ( el ) {
+		var setupPattern = function ( el, isThisChrome ) {
 			var label = el.querySelector('label');
 			label.classList.add('file-up__label');
 
 			var output = doc.createElement('span');
 			output.classList.add('file-up__output');
-			output.setAttribute('aria-hidden', 'true');
+
+			if ( !isThisChrome ) {
+				output.setAttribute('aria-hidden', 'true');
+			}
 
 			if ( el.getAttribute('data-file-input') === 'compact' ) {
 				el.classList.add('file-up--compact');
