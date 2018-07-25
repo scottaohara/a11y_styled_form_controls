@@ -25,7 +25,8 @@
 		 * Setup the instance with n
 		 */
 		var setupPattern = function ( el ) {
-			var label = el.querySelector('.file-up__label');
+			var label = el.querySelector('label');
+			label.classList.add('file-up__label');
 
 			var output = doc.createElement('span');
 			output.classList.add('file-up__output');

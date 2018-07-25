@@ -4,7 +4,7 @@
 
 .file-up__label {
 	display: inline-block; /* for browsers that don't understand flexbox */
-	display: flex;
+	display: inline-flex; /* don't want to allow clicks in white space */
 	position: relative;
 	vertical-align: middle;
 }
