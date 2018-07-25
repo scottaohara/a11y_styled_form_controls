@@ -18,9 +18,13 @@
 		this.init = function ( elm ) {
 			isThisChrome = checkChrome( isThisChrome );
 			el = elm;
-			setupPattern( el, isThisChrome );
+
+			var input = el.querySelector('[type="file"]');
+			var output = el.querySelector('.file-up__output');
+
+			setupPattern( el, isThisChrome, input );
 			checkDisabled( el );
-			attachEvents( el );
+			attachEvents( el, input, output );
 		};
 
 		/**
@@ -58,17 +62,21 @@
 		}
 
 		/**
-		 * Setup the instance with n
+		 * Setup the instance with the necessary
+		 * attributes, classes, and output area.
 		 */
-		var setupPattern = function ( el, isThisChrome ) {
+		var setupPattern = function ( el, isThisChrome, input ) {
 			var label = el.querySelector('label');
 			label.classList.add('file-up__label');
 
 			var output = doc.createElement('span');
 			output.classList.add('file-up__output');
+			output.setAttribute('aria-hidden', 'true');
 
-			if ( !isThisChrome ) {
-				output.setAttribute('aria-hidden', 'true');
+			if ( isThisChrome ) {
+				var getID = input.id || 'o_' + Math.floor(Math.random() * 999);
+				output.id = getID + '_output';
+				input.setAttribute('aria-describedby', output.id);
 			}
 
 			if ( el.getAttribute('data-file-input') === 'compact' ) {
@@ -97,9 +105,7 @@
 		 * Events for toggle buttons
 		 * @return none
 		 */
-		var attachEvents = function ( el ) {
-			var input = el.querySelector('[type="file"]');
-			var output = el.querySelector('.file-up__output');
+		var attachEvents = function ( el, input, output ) {
 
 			input.addEventListener('change', function () {
 				el.classList.remove('file-up--compact');
