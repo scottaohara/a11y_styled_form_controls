@@ -78,6 +78,6 @@
    a large border */
 @media screen and (-ms-high-contrast: active) {
 	.check-switch span:after {
-		border: .75em solid;
+		background-color: windowText;
 	}
 }

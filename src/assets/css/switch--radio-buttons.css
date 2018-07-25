@@ -137,6 +137,17 @@
    a large border */
 @media screen and (-ms-high-contrast: active) {
 	.radio-switch label:first-of-type:before {
-		border: .75em solid;
+		background-color: windowText;
+	}
+
+	.radio-switch:focus-within label:first-of-type:after {
+		outline: 2px solid windowText;
+		outline-offset: 3px;
+	}
+
+	/* polyfill class*/
+	.radio-switch.focus-within label:first-of-type:after {
+		outline: 2px solid windowText;
+		outline-offset: 3px;
 	}
 }
