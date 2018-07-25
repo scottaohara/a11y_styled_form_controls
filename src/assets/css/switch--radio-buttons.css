@@ -120,7 +120,7 @@
 }
 
 .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
-	right: -2em;
+	right: 2em;
 }
 
 /* Move the 2nd label to have a lower z-index, so when that
