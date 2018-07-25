@@ -81,7 +81,7 @@
 						<summary>Visual design note</summary>
 						<div>
 							<p>
-								...
+								If a file name is too long, the element that contains the file name or number of files will wrap to another line.  This is different than a native file upload, but is done to provide better responsive behavior.
 							</p>
 						</div>
 					</details>
@@ -104,11 +104,11 @@
 						</details>
 
 						<p>
-							The baseline markup for this component is a <cod>div</cod> wrapper. Note that the <code>div</code> could be removed and the JavaScript adjust to account for that, but it can be nice to use a <code>div</code> or <code>p</code> as an outer wrapper to a form control, especially if you don't want to set your <code>label</code> to be <code>display: block</code>.
+							The baseline markup for this component is a <cod>div</cod> wrapper. The <code>div</code> serves as an outer wrapper to the form control, and uses flexbox to position the <code>label</code>, which is a parent to the visually hidden input, and selected file output <code>span</code>.
 						</p>
 
 						<p>
-							Use appropriate labeling to match any native attributes used on the form control; such as <code>accept</code> or <code>multiple</code>.
+							Note: if using the <code>accept</code> attribute, or <code>multiple</code> attribute, it'd be good to provide context to the user that only certain file types, or that multiple files can be uploaded, respectively.
 						</p>
 
 						<h4>The JavaScript</h4>
@@ -125,9 +125,95 @@
 							If the form control should be set to <code>disabled</code>, the JavaScript will add a class to the wrapping element, to add a visual style to promote the disabled state. (The actual <code>input</code> is hidden, so it can't be relied on to visually convey state, but it will announce it's state to screen reader users that happen upon it, when navigating with the virtual cursor, for example.)
 						</p>
 
-						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							If the <code>data-file-input</code> attribute has a value of "compact", then the class <code>.file-up--compact</code> will be added to the wrapper. This class will collapse the "no file selected" area until a user has selected a file or files to upload.
+						</p>
+
+						<h4>Affects on Screen Reader Announcements?</h4>
+						<dl>
+							<dt>JAWS 2018 + Internet Explorer 11</dt>
+							<dd>
+								<p>
+									Native file uploads consist of two focusable elements in Internet Explorer 11, so for sighted users interacting with this pattern, there will be two focus stops.
+								</p>
+								<p>
+									Focusing the input (with <kbd>tab</kbd> key) announces:<br>
+									<q>[Accessible Name] file upload edit. Enter a name of a file to upload.</q>
+								</p>
+								<p>
+									Focusing the browse button (with <kbd>tab</kbd> key) announces:<br>
+									<q>[Accessible Name] file upload edit. Browse...</q>.
+								</p>
+								<p>
+									If using the virtual cursor to navigate, JAWS will announce "Upload an image" when focus is on the label, and File upload edit" and "Browse... button" when virtual cursor focus is on each element, respectively.
+								</p>
+								<p>
+									When an image, or images have been selected for upload, JAWS will append the file name or names to the announcements.
+								</p>
+							</dd>
+
+							<dt>JAWS 2018 + Firefox 63 (nightly)</dt>
+							<dd>
+								<p>
+									Native file uploads have a single focus stop in tested, non-Microsoft browsers. Styled or unstyled, JAWS will announce the following:
+								</p>
+								<p>
+									<q>[Accessible Name], browse. No file selected (dot) frame. Browse button</q>.
+								</p>
+								<p>
+									When a file has been uploaded, JAWS will announce: <q>[Accessible Name], browse. [file name] frame. Browse button</q>.
+								</p>
+								<p>
+									If multiple files have been uploaded JAWS will announce: <q>[Accessible Name], browse. [# files selected] (dot) frame. Browse button</q>.
+								</p>
+							</dd>
+
+							<dt>JAWS 2018 or NVDA 2018.2.1 + Chrome (latest)</dt>
+							<dd>
+								<p>
+									While Chrome has a visually similar native file upload style to Firefox, the announcement of the element differs. Styled or unstyled, JAWS and NVDA will announce the following:
+								</p>
+								<p>
+									<q>[Accessible Name] button</q>.
+								</p>
+								<p>
+									After uploading a file or files, JAWS and NVDA + Chrome will not announce the name or number of any selected files. To provide an experience that is similar to other browser announcements, this script will add an <code>aria-describedby</code> to the file upload <code>input</code> and unique <code>ID</code> to the <code>span</code> the file name or number of files is printed in.  Resulting in:
+								</p>
+								<p>
+									<q>[Accessible Name] button. [text contents of the output area]</q>.
+								</p>
+							</dd>
+
+							<dt>NVDA 2018.2.1 + Firefox 63 (nightly)</dt>
+							<dd>
+								<p>
+									File upload form controls have some serious issues with NVDA. The accessible name is not announced at all, nor is the default "no file selected" message. Firefox + NVDA announce the following when a styled or unstyled file upload is focued:
+								</p>
+								<p>
+									<q>Clickable browse button</q>
+								</p>
+								<p>
+									After uploading a file or files, tabbing to the control sill only produces the previous announcement.  If using the virtual cursor, NVDA will announce the label and uploaded file name or number of files, if those text nodes are highlighted.
+								</p>
+							</dd>
+
+							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
+							<dd>
+								<p>
+									The ordering in which VoiceOver announces a file upload control differs from how JAWS or NVDA announce the control.  Instead of starting with the accessible name, VoiceOver announces a styled or unstyled file upload control in the following order:
+								</p>
+								<p>
+									<q>[No file announcement (or) file name/number] [Accessible Name], file upload button</q>.
+								</p>
+								<p>
+									For the styled upload controls, if navigating with <kbd>VO</kbd> and <kbd>left</kbd> or <kbd>right</kbd> arrow keys, it will seem as if there are two focus stops on the control. However this is merely VoiceOver focusing the label and then the file upload control itself, and is only odd due to the fact that the styled control is visually conveyed as a single element.
+								</p>
+							</dd>
+						</dl>
+
+						<h4>Usage note:</h4>
+						<p>
+							Due to browsers exposing native file uploads in different ways (both visually and with what's announced), a single design for a file upload may be confusing for some users if the visual style doesn't match expected announcements.
 						</p>
 
 					</section>
