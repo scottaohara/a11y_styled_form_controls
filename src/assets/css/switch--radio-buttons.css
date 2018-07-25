@@ -123,6 +123,10 @@
 	right: 2em;
 }
 
+*::-ms-backdrop .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
+	right: 2.2em;
+}
+
 /* Move the 2nd label to have a lower z-index, so when that
    option is toggled, the first label will overlay on top of the
    Switch ui, and the switch can be pressed again to toggle back
