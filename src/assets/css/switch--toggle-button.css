@@ -98,3 +98,11 @@
 	text-indent: .25em;
 	text-shadow: 0 0 1px #000;
 }
+
+@media screen and (-ms-high-contrast: active) {
+	.toggle-switch__ui:after {
+		background-color: windowText;
+		border: 1em solid transparent;
+		/* firefox doesn't respect the bg color, so this fills the knob */
+	}
+}

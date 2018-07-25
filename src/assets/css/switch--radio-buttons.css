@@ -103,6 +103,8 @@
 	z-index: 2;
 }
 
+/* IE11 has some weirdness in how it's calculating the right positioning
+   of the switch knob.  this hacky workaround is fitting for the hacky browser :) */
 _:-ms-fullscreen, :root .radio-switch label:first-of-type:before {
 	right: -.2em;
 }
@@ -127,6 +129,7 @@ _:-ms-fullscreen, :root .radio-switch label:first-of-type:before {
 	right: 2em;
 }
 
+/* IE11 hack for correct positioning */
 _:-ms-fullscreen, :root .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
 	right: 1.8em;
 }
