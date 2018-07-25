@@ -118,6 +118,17 @@
 					output.innerHTML = this.value.replace(/(\w+:?[\\\/])/g, '');
 				}
 			});
+
+			/*
+				the output is outside of the label to not mess with the accessible name
+				in VoiceOver. But the output is typically mouse clickable to open the
+				file selection dialog.
+				No need for additional semantics, as the file upload control itself
+				should receive focus and is actionable.
+			*/
+			output.addEventListener('click', function () {
+				input.click();
+			});
 		};
 
 		return this;

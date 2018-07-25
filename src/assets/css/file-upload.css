@@ -1,17 +1,19 @@
 .file-up {
+	display: flex;
+	flex-wrap: wrap;
 	margin-bottom: 1.25em;
 }
 
 .file-up__label {
-	display: inline-block; /* for browsers that don't understand flexbox */
-	display: inline-flex; /* don't want to allow clicks in white space */
+	display: inline-block;
 	position: relative;
 	vertical-align: middle;
 }
 
+
 .file-up__label__text {
 	border: 1px solid #666;
-	display: inline-block; /* for browsers that don't understand flexbox */
+	display: inline-block;
 	padding: .5em;
 }
 
@@ -37,6 +39,7 @@
 .file-up__output {
 	display: inline-block;
 	font-size: .825em;
+	max-width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
