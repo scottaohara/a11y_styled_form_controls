@@ -86,7 +86,7 @@
 				output.innerHTML = 'no file selected...';
 			}
 
-			label.appendChild(output);
+			el.appendChild(output);
 		};
 
 		/**
