@@ -32,6 +32,11 @@
 			output.classList.add('file-up__output');
 			output.setAttribute('aria-hidden', 'true');
 
+			if ( el.getAttribute('data-file-input') === 'expanded' ) {
+				el.classList.add('file-up--expanded');
+				output.innerHTML = 'no file selected...';
+			}
+
 			label.appendChild(output);
 		};
 
