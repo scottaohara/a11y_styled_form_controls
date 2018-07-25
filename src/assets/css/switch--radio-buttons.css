@@ -98,8 +98,7 @@
 	border-radius: 100%;
 	position: absolute;
 	right: 0;
-	transform: translateX(0em);
-	transition: transform .2s ease-in-out;
+	transition: right .2s ease-in-out;
 	width: 2em;
 	z-index: 2;
 }
@@ -121,7 +120,7 @@
 }
 
 .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
-	transform: translateX(-2em);
+	right: -2em;
 }
 
 /* Move the 2nd label to have a lower z-index, so when that
