@@ -42,10 +42,14 @@
 	white-space: nowrap;
 }
 
-.file-up__output:not(:empty) {
+.file-up__output {
 	border: 1px solid #ddd;
 	padding: .75em;
 	vertical-align: top;
+}
+
+.file-up--compact .file-up__output {
+	display: none;
 }
 
 

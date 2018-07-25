@@ -32,8 +32,10 @@
 			output.classList.add('file-up__output');
 			output.setAttribute('aria-hidden', 'true');
 
-			if ( el.getAttribute('data-file-input') === 'expanded' ) {
-				el.classList.add('file-up--expanded');
+			if ( el.getAttribute('data-file-input') === 'compact' ) {
+				el.classList.add('file-up--compact');
+			}
+			else {
 				output.innerHTML = 'no file selected...';
 			}
 
@@ -50,7 +52,7 @@
 			if ( el.querySelector('[disabled]') ) {
 				el.classList.add('is-disabled');
 			}
-		}
+		};
 
 		/**
 		 * Events for toggle buttons
@@ -58,13 +60,16 @@
 		 */
 		var attachEvents = function ( el ) {
 			var input = el.querySelector('[type="file"]');
+			var output = el.querySelector('.file-up__output');
 
 			input.addEventListener('change', function () {
+				el.classList.remove('file-up--compact');
+
 				if ( this.hasAttribute('multiple') && this.files.length > 1 ) {
-					this.parentNode.querySelector('.file-up__output').innerHTML = this.files.length + ' files selected.';
+					output.innerHTML = this.files.length + ' files selected.';
 				}
 				else {
-					this.parentNode.querySelector('.file-up__output').innerHTML = this.value.replace(/(\w+:?[\\\/])/g, '');
+					output.innerHTML = this.value.replace(/(\w+:?[\\\/])/g, '');
 				}
 			});
 		};
