@@ -20,11 +20,11 @@
 			el = elm;
 
 			var input = el.querySelector('[type="file"]');
-			var output = el.querySelector('.file-up__output');
+
 
 			setupPattern( el, isThisChrome, input );
 			checkDisabled( el );
-			attachEvents( el, input, output );
+			attachEvents( el, input );
 		};
 
 		/**
@@ -106,6 +106,7 @@
 		 * @return none
 		 */
 		var attachEvents = function ( el, input, output ) {
+			var output = el.querySelector('.file-up__output');
 
 			input.addEventListener('change', function () {
 				el.classList.remove('file-up--compact');
