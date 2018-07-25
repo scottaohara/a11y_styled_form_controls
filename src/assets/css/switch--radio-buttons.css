@@ -103,6 +103,10 @@
 	z-index: 2;
 }
 
+_:-ms-fullscreen, :root .radio-switch label:first-of-type:before {
+	right: -.2em;
+}
+
 .radio-switch label:first-of-type:after {
 	background: #222;
 	border-radius: 1em;
@@ -123,8 +127,8 @@
 	right: 2em;
 }
 
-*::-ms-backdrop .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
-	right: 2.2em;
+_:-ms-fullscreen, :root .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
+	right: 1.8em;
 }
 
 /* Move the 2nd label to have a lower z-index, so when that
