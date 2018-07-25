@@ -51,7 +51,7 @@
 					<hr>
 
 					<div class="file-up" data-file-input>
-						<label class="file-up__label" for="file_upload">
+						<label for="file_upload">
 							<span class="file-up__label__text">
 								Upload an Image
 							</span>
@@ -61,7 +61,7 @@
 
 
 					<div class="file-up" data-file-input>
-						<label class="file-up__label" for="file_upload_d">
+						<label for="file_upload_d">
 							<span class="file-up__label__text">
 								Disabled Upload
 							</span>
@@ -71,13 +71,22 @@
 
 
 					<div class="file-up" data-file-input>
-						<label class="file-up__label" for="file_upload_m">
+						<label for="file_upload_m">
 							<span class="file-up__label__text">
 								Multi-Upload
 							</span>
 							<input type="file" id="file_upload_m" multiple>
 						</label>
 					</div>
+
+					<details style="margin-top: 1em;">
+						<summary>Visual design note</summary>
+						<div>
+							<p>
+								...
+							</p>
+						</div>
+					</details>
 
 					<section class="demo-details">
 						<h3>
@@ -87,7 +96,7 @@
 						<details open>
 							<summary>Pattern Markup</summary>
 								<pre><code>&lt;div class="file-up" data-file-input>
-  &lt;label class="file-up__label" for="file_upload">
+  &lt;label for="file_upload">
     &lt;span class="file-up__label__text">
       Upload
     &lt;/span>
@@ -97,10 +106,26 @@
 						</details>
 
 						<p>
-							The containing <code>div[data-file-input]</code> provides the necessary selector hook for the JavaScript.
+							The baseline markup for this component is a <cod>div</cod> wrapper. Note that the <code>div</code> could be removed and the JavaScript adjust to account for that, but it can be nice to use a <code>div</code> or <code>p</code> as an outer wrapper to a form control, especially if you don't want to set your <code>label</code> to be <code>display: block</code>.
 						</p>
 
-						...
+						<p>
+							Use appropriate labeling to match any native attributes used on the form control; such as <code>accept</code> or <code>multiple</code>.
+						</p>
+
+						<h4>The JavaScript</h4>
+
+						<p>
+							The containing <code>div[data-file-input]</code> provides the necessary selector hook for the JavaScript. An <code>input[type="file"]</code> can't be styled directly, due to what makes up this component living in the Shadow DOM. Access to the Shadow DOM is still not widely supported at this time. Instead the JavaScript creates a <code>span</code>, injects some classes, and listens for a change event to the file input.
+						</p>
+
+						<p>
+							If using the <code>multiple</code> attribute, instead of the uploaded file name, the number of attached files will instead be visually printed on screen.
+						</p>
+
+						<p>
+							If the form control should be set to <code>disabled</code>, the JavaScript will add a class to the wrapping element, to add a visual style to promote the disabled state. (The actual <code>input</code> is hidden, so it can't be relied on to visually convey state, but it will announce it's state to screen reader users that happen upon it, when navigating with the virtual cursor, for example.)
+						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
