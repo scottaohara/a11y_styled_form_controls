@@ -43,11 +43,6 @@
 						Pattern Demo
 					</h2>
 
-					<label for="file_upload_n">
-						Upload
-						<input type="file" id="file_upload_n">
-					</label>
-
 					<div class="file-up" data-file-input>
 						<label for="file_upload">
 							<span class="file-up__label__text">
@@ -207,6 +202,35 @@
 								</p>
 								<p>
 									For the styled upload controls, if navigating with <kbd>VO</kbd> and <kbd>left</kbd> or <kbd>right</kbd> arrow keys, it will seem as if there are two focus stops on the control. However this is merely VoiceOver focusing the label and then the file upload control itself, and is only odd due to the fact that the styled control is visually conveyed as a single element.
+								</p>
+							</dd>
+
+							<dt>VoiceOver + Safari on iOS 11.x</dt>
+							<dd>
+								<p>
+									It should be noted that, though they're named the same, VoiceOver for iOS should be treated as a different screen reader than it's desktop counterpart. Both styled and unstyled file upload controls have the following default state announcement:
+								</p>
+								<p>
+									<q>[Accessible name], no file selected, button</q>
+								</p>
+								<p>
+									Testing with photos and videos, regardless of whether it's a single or multi file upload control, after a user selects a file or files, VoiceOver will replace the "no file selected" announcement with "# Photo/video" or "# Photo and # Video" if both file types are chosen.  The file name is not announced.
+								</p>
+							</dd>
+
+							<dt>TalkBack (Android Accessibility Suite 6.2) + Android Chrome</dt>
+							<dd>
+								<p>
+									Like Chrome on desktop, regardless of if files are selected or not, native file upload controls are only announced as the following:
+								</p>
+								<p>
+									<q>[Accessible Name] button. Double-tap to activate.</q>
+								</p>
+								<p>
+									Due to sniffing for Chrome, the <code>aria-describedby</code> gets added to the file upload control, so the styled control adds the text from the output <code>span</code> as an accessible description. This results in either "no file selected", or a file name being announced prior to the "Double-tap to activate" announcement.
+								</p>
+								<p>
+									Interestingly, multi file uploading doesn't appear to work with Chrome on Android. Or at least when testing, I could determine how to do it as selecting the first file automatically selected and closed the choose file UI.
 								</p>
 							</dd>
 						</dl>
