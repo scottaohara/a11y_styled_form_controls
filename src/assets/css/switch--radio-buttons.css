@@ -138,16 +138,18 @@
 @media screen and (-ms-high-contrast: active) {
 	.radio-switch label:first-of-type:before {
 		background-color: windowText;
+		border: 1em solid transparent;
+		/* firefox doesn't respect the bg color, so this fills the knob */
 	}
 
 	.radio-switch:focus-within label:first-of-type:after {
-		outline: 2px solid windowText;
+		outline: 2px solid;
 		outline-offset: 3px;
 	}
 
 	/* polyfill class*/
 	.radio-switch.focus-within label:first-of-type:after {
-		outline: 2px solid windowText;
+		outline: 2px solid;
 		outline-offset: 3px;
 	}
 }
