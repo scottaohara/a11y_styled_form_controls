@@ -55,14 +55,20 @@
 
 						<p>Demo 2: use with <code>aria-valuetext</code>.</p>
 						<div class="progress-meter-example">
-							<progress aria-valuetext="Collection status" value="25" max="100">25%</progress>
+							<progress
+								aria-valuetext="Collection status"
+								value="25"
+								max="100"
+								aria-valuenow="25"
+								aria-valuemin="0"
+								aria-valuemax="100">25%</progress>
 						</div>
 
 						<hr>
 
 						<p>Demo 3: use with <code>aria-label</code>.</p>
 						<div class="progress-meter-example">
-							<progress aria-label="Collection status" value="20" max="100">20%</progress>
+							<progress aria-label="Collection status" value="20" max="100"></progress>
 						</div>
 
 						<hr>
@@ -72,7 +78,7 @@
 							<p>
 								<span id="diskspace">Diskspace:</span>
 							</p>
-							<progress aria-labelledby="diskspace" value="30" max="100">30%</progress>
+							<progress aria-labelledby="diskspace" value="30" max="100"></progress>
 						</div>
 
 					</details>
