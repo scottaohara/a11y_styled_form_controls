@@ -50,34 +50,31 @@
 						<progress id="profile" value="50" max="100">50%</progress>
 					</div>
 
-
 					<details style="margin-bottom: 2em;">
 						<summary>Additional static <code>progress</code> demos</summary>
 
-						<p>Demo 2: use with <code>aria-label</code>.</p>
+						<p>Demo 2: use with <code>aria-valuetext</code>.</p>
 						<div class="progress-meter-example">
-							<progress aria-label="Collection status" value="25" max="100">25%</progress>
+							<progress aria-valuetext="Collection status" value="25" max="100">25%</progress>
 						</div>
 
 						<hr>
 
-						<p>Demo 3: use with <code>aria-labelledby</code>.</p>
+						<p>Demo 3: use with <code>aria-label</code>.</p>
+						<div class="progress-meter-example">
+							<progress aria-label="Collection status" value="20" max="100">20%</progress>
+						</div>
+
+						<hr>
+
+						<p>Demo 4: use with <code>aria-labelledby</code>.</p>
 						<div class="progress-meter-example">
 							<p>
 								<span id="diskspace">Diskspace:</span>
 							</p>
-							<progress aria-labelledby="diskspace" value="20" max="100">20%</progress>
+							<progress aria-labelledby="diskspace" value="30" max="100">30%</progress>
 						</div>
 
-						<hr>
-
-						<p>Demo 4: use within context of a paragraph.</p>
-						<div class="progress-meter-example">
-							<p>
-								<span>DVR Capacity:</span>
-								<progress value="15" max="100">15 of 100</progress>
-							</p>
-						</div>
 					</details>
 
 					<section class="demo-details">
@@ -134,6 +131,9 @@
 
 						PROVIDE BREAKDOWN OF SCREEN READER ANNOUNCEMENTS HERE
 
+
+
+						using aria-label / aria-labelledby on a progress turns it into a "group" with voiceover.  the label will be applied to the progress element, but it will then require a separate focus stop to announce the progress, after the accessible name.
 
 					</section>
 				</article> <!-- /.demo -->
