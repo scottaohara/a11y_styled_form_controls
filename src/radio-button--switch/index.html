@@ -80,7 +80,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;fieldset class="radio-switch">
+								<pre><code class="language-html">&lt;fieldset class="radio-switch">
   &lt;legend>
     Something
   &lt;/legend>
@@ -134,5 +134,19 @@
 		</div> <!-- /.demo-wrap -->
 
 		<script src="../assets/js/global--focus-within.js"></script>
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
+
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

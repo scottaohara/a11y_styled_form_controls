@@ -77,7 +77,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-						<pre><code>&lt;div class="c-cb"&gt;
+						<pre><code class="language-html">&lt;div class="c-cb"&gt;
   &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
   &lt;label for="c_input_1"&gt;
     Option 1
@@ -120,6 +120,19 @@
 				</article> <!-- /.demo -->
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

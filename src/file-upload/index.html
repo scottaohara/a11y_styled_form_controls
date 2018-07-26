@@ -88,7 +88,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;div class="file-up" data-file-input>
+								<pre><code class="language-html">&lt;div class="file-up" data-file-input>
   &lt;label for="file_upload">
     &lt;span class="file-up__label__text">
       Upload
@@ -258,6 +258,20 @@
 				a11yFUP.init( elList[i] );
 			};
 		</script>
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
+
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>
 

@@ -74,7 +74,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;label for="range_input">
+								<pre><code class="language-html">&lt;label for="range_input">
   Choose Amount:
 &lt;/label>
 &lt;input type="range"
@@ -124,6 +124,19 @@
 				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

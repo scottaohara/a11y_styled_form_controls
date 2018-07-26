@@ -87,7 +87,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-							<pre><code>&lt;progress
+							<pre><code class="language-html">&lt;progress
   aria-label="Collection status"
   value="25"
   max="100">
@@ -139,6 +139,19 @@
 				</article> <!-- /.demo -->
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

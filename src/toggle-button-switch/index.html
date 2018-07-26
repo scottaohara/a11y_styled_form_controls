@@ -74,7 +74,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;a data-switch-btn>
+								<pre><code class="language-html">&lt;a data-switch-btn>
   Progressively Enhanced Toggle
 &lt;/a>
 
@@ -254,5 +254,19 @@
 				a11ybtn.init( elList[i] );
 			};
 		</script>
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
+
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

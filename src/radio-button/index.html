@@ -120,7 +120,7 @@
 						<h4>1. Visually Hidden Radios</h4>
 						<details open>
 							<summary>Pattern Markup: Visually Hidden Style</summary>
-						<pre><code>&lt;div class="c-radio">
+						<pre><code class="language-html">&lt;div class="c-radio">
   &lt;input type="radio" name="my_radios" id="unique_id">
   &lt;label for="unique_id">
     Label text here
@@ -147,7 +147,7 @@
 						<h4>2. Radio Element Restyles</h4>
 						<details open>
 							<summary>Pattern Markup: Restyled Radio</summary>
-						<pre><code>&lt;label class="n-radio-label">
+						<pre><code class="language-html">&lt;label class="n-radio-label">
   &lt;input type="radio" name="n_radio" id="native_r2">
   &lt;span>Label&lt;/span>
 &lt;/label></code></pre>
@@ -179,6 +179,19 @@
 				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

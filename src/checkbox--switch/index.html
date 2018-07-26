@@ -99,7 +99,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
+								<pre><code class="language-html">&lt;!-- Version: [type="checkbox"] styled to look like a switch -->
 &lt;label class="check-switch" for="switch_1">
   Example Text 1:
   &lt;input id="switch_1" type="checkbox">
@@ -194,5 +194,19 @@
 				a11ySwitch.init( elList[i] );
 			};
 		</script>
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
+
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

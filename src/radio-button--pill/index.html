@@ -119,7 +119,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code>&lt;fieldset class="radio-pill">
+								<pre><code class="language-html">&lt;fieldset class="radio-pill">
   &lt;legend>Group Title&lt;/legend>
 
   &lt;div class="radio-pill__group">
@@ -187,7 +187,20 @@
 				</article> <!-- /.demo -->
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>
 

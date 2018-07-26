@@ -92,7 +92,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-							<pre><code>&lt;label for="ex_custom_select">
+							<pre><code class="language-html">&lt;label for="ex_custom_select">
   Label Text
 &lt;/label>
 &lt;div class="select">
@@ -129,7 +129,7 @@
 						</p>
 
 						<p>
-							In conclusion, to "style" a standard <code>select</code> element and give it consistent design across all browsers, its advised to keep the <code>option</code> and <code>optgroup</code> styling as close to browser defaults as possible.  If a fully styleable single-<code>select</code> form control is desired, an <a href="http://w3c.github.io/aria-practices/#Listbox">ARIA listbox</a> might be the way to go. Note, there's quite a bit to do to recreate native <code>select</code> functionality, and keeping small/touch screens in mind.
+							In conclusion, to "style" a standard <code>select</code> element and give it consistent design across all browsers, its advised to keep the <code>option</code> and <code>optgroup</code> styling as close to browser defaults as possible.  If a fully styleable single-<code>select</code> form control is desired, an <a href="https://w3c.github.io/aria-practices/#Listbox">ARIA listbox</a> might be the way to go. Note, there's quite a bit to do to recreate native <code>select</code> functionality, and keeping small/touch screens in mind.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
@@ -141,5 +141,19 @@
 			</main>
 		</div> <!-- /.demo-wrap -->
 
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
+
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>

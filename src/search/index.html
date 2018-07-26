@@ -83,7 +83,7 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-						<pre><code>&lt;form role="search" aria-label="unique identifier goes here">
+						<pre><code class="language-html">&lt;form role="search" aria-label="unique identifier goes here">
   &lt;input type="search"
     id="srch"
     name="srch"
@@ -140,6 +140,19 @@
 				</article>
 			</main>
 		</div> <!-- /.demo-wrap -->
+		<script>
+			var highlighterCSS = function () {
+			  var head = document.head;
+			  var link = document.createElement('link');
 
+			  link.rel = 'stylesheet';
+			  link.href = '../assets/vendor/prism.css';
+
+			  head.appendChild(link);
+			}
+
+			highlighterCSS();
+		</script>
+		<script src="../assets/vendor/prism.js"></script>
 	</body>
 </html>
