@@ -40,7 +40,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Radio Button Pills</h1>
-						<p>Last updated: <time>July 23, 2018</time></p>
+						<p>Last updated: <time>July 26, 2018</time></p>
 						<p>
 							Pattern to restyle a radio button group into a selection pill.
 						</p>
@@ -153,8 +153,13 @@
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
+
 						<p>
-							Being these are just styled radio button labels, the announcement of this radio group hasn't been altered in a significant way.  Screen readers like JAWS and NVDA may automatically go into forms mode, or require a user to hit <kbd>Enter</kbd> or <kbd>Space</kbd> to focus into the radio button. Then arrow keys can be used to select the different radio buttons, as expected.
+							Since the native radio buttons remains in the DOM, and are used as the focusable elements that control the state of their custom visualization, there are no alterations to how a screen reader announces styled radio buttons.
+						</p>
+
+						<p>
+							Note that screen readers, like JAWS and NVDA, may automatically go into forms mode, or require a user to hit <kbd>Enter</kbd> or <kbd>Space</kbd> to change form the virtual cursor to forms mode, when a radio button is highlighted. Once in forms mode the arrow keys can be used to select the different radio buttons, as expected.
 						</p>
 
 						<p>
@@ -167,15 +172,15 @@
 						</p>
 
 						<p>
-							It may be considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>), without giving adequate notice of what change will occur, and depending on if the change can be easily reversed.
+							It may be considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>), without giving adequate notice of what change will occur, and depending on if the change cannot be easily reversed.
 						</p>
 
 						<p>
-							This pattern may be perfectly acceptable to use in the context of a form, or as a <abbr>UI</abbr> changing mechanism as long as activation of a "confirmation" or "submit" button accompanies this component.
+							This pattern may be perfectly acceptable to use in the context of a form, or outside of a form as a <abbr>UI</abbr> changing component, as long as reverting state is a simple process for the user, and the user is aware of the effect the state change will have on the UI.
 						</p>
 
 						<p>
-							Otherwise, a grouping of <code>button</code> elements, that are aware of each other's state, and utilize <code>aria-pressed</code> to indicate their own present state, or other <a href="https://w3c.github.io/aria-practices/">type of ARIA pattern</a> may be more appropriate to use as an instant document state-changing component.
+							Alternatively, a grouping of <code>button</code> elements that are aware of each other's state, and utilize <code>aria-pressed="true/false"</code> to indicate their own state, may be more appropriate to use as an instant document state-changing component.
 						</p>
 
 					</section> <!-- /.demo-details -->
