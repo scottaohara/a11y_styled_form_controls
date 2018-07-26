@@ -33,7 +33,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Progress Bar</h1>
-						<p>Last updated: <time>July 23, 2018</time></p>
+						<p>Last updated: <time>July 26, 2018</time></p>
 						<p>
 							Cross-browser styling for the HTML progress bar.
 						</p>
@@ -55,20 +55,14 @@
 
 						<p>Demo 2: use with <code>aria-valuetext</code>.</p>
 						<div class="progress-meter-example">
-							<progress
-								aria-valuetext="Collection status"
-								value="25"
-								max="100"
-								aria-valuenow="25"
-								aria-valuemin="0"
-								aria-valuemax="100">25%</progress>
+							<progress aria-valuetext="Collection status" value="25" max="100">25%</progress>
 						</div>
 
 						<hr>
 
 						<p>Demo 3: use with <code>aria-label</code>.</p>
 						<div class="progress-meter-example">
-							<progress aria-label="Collection status" value="20" max="100"></progress>
+							<progress aria-label="Collection status" value="20" max="100">20%</progress>
 						</div>
 
 						<hr>
@@ -78,7 +72,7 @@
 							<p>
 								<span id="diskspace">Diskspace:</span>
 							</p>
-							<progress aria-labelledby="diskspace" value="30" max="100"></progress>
+							<progress aria-labelledby="diskspace" value="30" max="100">30%</progress>
 						</div>
 
 					</details>
@@ -132,7 +126,11 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Styling a <code>progress</code> element should have no affect on a screen reader's announcement of it. However the manner in which you provide context to the element, e.g. by providing it an accessible name or not, will alter how it is exposed to screen reader users.
+							Styling a <code>progress</code> element should have no affect on a screen reader's announcement of it. However the manner in which you provide context to the element, e.g. by providing it an accessible name, or using <abbr>ARIA</abbr> attributes, or not, will alter how it is announced to screen reader users.
+						</p>
+
+						<p>
+							T
 						</p>
 
 						PROVIDE BREAKDOWN OF SCREEN READER ANNOUNCEMENTS HERE
@@ -140,6 +138,10 @@
 
 
 						using aria-label / aria-labelledby on a progress turns it into a "group" with voiceover.  the label will be applied to the progress element, but it will then require a separate focus stop to announce the progress, after the accessible name.
+
+
+
+						VO + Chrome on macOS needs aria to convey progress bar status
 
 					</section>
 				</article> <!-- /.demo -->
