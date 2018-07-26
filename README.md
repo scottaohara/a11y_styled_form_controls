@@ -2,7 +2,7 @@
 A repository of stylized, accessible, form control patterns. 
 
 ## Why?
-Form controls are commonly used in many interfaces, but are often considered annoying to style. The markup patterns presented here can help ensure these form controls can look (objectively) attractive without excluding users who may rely on assistive technology to get things done.     
+Form controls are necessary in many interfaces, but are often considered annoying, if not donwnright difficult, to style. The markup patterns presented here can help ensure these form controls can look (objectively) attractive without excluding users who may rely on assistive technology to get things done.     
 
 
 ## How to use?
