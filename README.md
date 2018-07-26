@@ -1,4 +1,4 @@
-# Accessible Styled Form Controls
+# Accessible Styled Form Controls & Friends
 A repository of stylized, accessible, form control patterns. 
 
 ## Why?
@@ -7,6 +7,10 @@ Form controls are commonly used in many interfaces, but are often considered ann
 
 ## How to use?
 Largely, many of these form controls can be copied and pasted into your pattern library, project, or pattern library project. Each form control has its own CSS file, and only when needed, JavaScript file. Each form control shares the *--demo-only--.css* and *--shared--.css* files, but these are largely for purposes of presenting on these demo pages, and much of the shared styles are merely ports of a few [normalize.css](https://necolas.github.io/normalize.css/) selectors.  
+
+
+### Wait, JavaScript?
+Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript to function and correctly convey state. 
 
 
 ## The Form Controls
@@ -74,11 +78,12 @@ A search component offers users an easily discoverable way to find information i
 1. [Search Component](src/search)  
 
 
-## License & Such
-Unless noted, these components were written by [Scott O'Hara](https://twitter.com/scottohara).  
-
+## License, Thanks, and such
 Everything here is under an [MIT license](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md).
 
-Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review many of these components.
+Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review many of these components. 
 
-Enjoy :)
+While I was unaware of [WTFForms](http://wtfforms.com/) when starting this project, it is still a great example of what can be done without CSS, and served as an excellent baseline to compare against. Thank you <a href="https://twitter.com/mdo">mdo</a> and to those involved with that project.
+
+Additional thanks to [Adrian Roselli](http://adrianroselli.com/), [Sara Soueidan](https://www.sarasoueidan.com/), [Heydon Pickering](https://inclusive-components.design/), [Richard Keizer](https://codepen.io/rakeizer) and [Alexander Farkas](https://github.com/aFarkas). They have each provided inspiration or excellent resources that have been quite helpful in the building of these components.
+
