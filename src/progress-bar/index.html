@@ -14,18 +14,6 @@
 		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
 		<link rel="stylesheet" href="../assets/css/--shared--.css">
 		<link rel="stylesheet" href="../assets/css/progress-bar.css">
-
-		<style>
-			.progress-example:not(:first-of-type) {
-				margin-top: 2em;
-			}
-
-			.progress-example label:after {
-				content: "";
-				display: block;
-				margin-bottom: .5em;
-			}
-		</style>
 	</head>
 	<body>
 
@@ -52,33 +40,45 @@
 					</header>
 
 					<h2>
-						Pattern Demo
+						Pattern Demos
 					</h2>
 
-					<div class="progress-example">
+					<div class="progress-meter-example">
 						<label for="profile">
 							Profile Completed:
 						</label>
 						<progress id="profile" value="50" max="100">50%</progress>
 					</div>
 
-					<div class="progress-example">
-						<progress aria-label="Collection status" value="25" max="100">25%</progress>
-					</div>
 
-					<div class="progress-example">
-						<p>
-							<span id="dvr">DVR Capacity:</span>
-						</p>
-						<progress aria-labelledby="dvr" value="20" max="100">20%</progress>
-					</div>
+					<details style="margin-bottom: 2em;">
+						<summary>Additional static <code>progress</code> demos</summary>
 
-					<div class="progress-example">
-						<p>
-							<span>DVR Capacity:</span>
-							<progress value="15" max="100">15 of 100</progress>
-						</p>
-					</div>
+						<p>Demo 2: use with <code>aria-label</code>.</p>
+						<div class="progress-meter-example">
+							<progress aria-label="Collection status" value="25" max="100">25%</progress>
+						</div>
+
+						<hr>
+
+						<p>Demo 3: use with <code>aria-labelledby</code>.</p>
+						<div class="progress-meter-example">
+							<p>
+								<span id="diskspace">Diskspace:</span>
+							</p>
+							<progress aria-labelledby="diskspace" value="20" max="100">20%</progress>
+						</div>
+
+						<hr>
+
+						<p>Demo 4: use within context of a paragraph.</p>
+						<div class="progress-meter-example">
+							<p>
+								<span>DVR Capacity:</span>
+								<progress value="15" max="100">15 of 100</progress>
+							</p>
+						</div>
+					</details>
 
 					<section class="demo-details">
 						<h3>
@@ -87,17 +87,53 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-							hi
+							<pre><code>&lt;progress
+  aria-label="Collection status"
+  value="25"
+  max="100">
+  25%
+ &lt;/progress></code></pre>
+
 						</details>
 
 						<p>
-							...
+							Unlike many other form controls, a <code>progress</code> element is not directly interactive by a user. Instead it is meant to indicate the current status of a particular task. Tasks can refer to user tasks, like their current progress in a sign up flow, or a task being performed by an application or server. For example, using a progress bar to indicate the application updating after a form submission, or indicating the progress of a file upload within an application's UI.
+						</p>
+
+						<p>
+							For indicating the state of a gauge, such as available diskspace, a <a href="../meter"><code>meter</code></a> would be more appropriate.
+						</p>
+
+						<h4>Styling a <code>progress</code> element</h4>
+
+						<p>
+							The <code>progress</code> element has support in all modern browsers, including Internet Explorer. The only catch to using it is some of the vendor prefixed selectors that must be used to style it. However compared to the <a href="../range-slider"><code>range</code> element</a>, there aren't that many to worry about.
+						</p>
+
+						<p>Largely the prefixed selectors to be concerned with are the following:</p>
+
+						<dl>
+							<dt><code>::-webkit-progress-bar</code></dt>
+							<dd>why...</dd>
+							<dt><code>::-ms-fill</code></dt>
+							<dd>why...</dd>
+							<dt><code>::-moz-progress-bar</code></dt>
+							<dd>why...</dd>
+							<dt><code>::-webkit-progress-value</code></dt>
+							<dd>why...</dd>
+						</dl>
+
+						<p>
+							Additionally there are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-inner-element" title="on MDN web docs"><code>::-webkit-progress-inner-element</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate" title="on MDN web docs"><code>:indeterminate</code></a> selectors. But they are not used for the styled <code>progress</code> elements shown here.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							Styling a <code>progress</code> element should have no affect on a screen reader's announcement of it. However the manner in which you provide context to the element, e.g. by providing it an accessible name or not, will alter how it is exposed to screen reader users.
 						</p>
+
+						PROVIDE BREAKDOWN OF SCREEN READER ANNOUNCEMENTS HERE
+
 
 					</section>
 				</article> <!-- /.demo -->

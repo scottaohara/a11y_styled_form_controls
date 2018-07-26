@@ -108,3 +108,13 @@ details {
 p code {
 	white-space: nowrap;
 }
+
+
+.progress-meter-example {
+	margin-bottom: 2em;
+}
+
+.progress-meter-example label:after {
+	content: "";
+	display: block;
+}

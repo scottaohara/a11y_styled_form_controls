@@ -1,3 +1,15 @@
+/**
+ * Default styling
+ * 1. Needed for ::-webkit-progress-value to work in older Webkit.
+ * 		This is a duplicate declaration with the global styles, and likely will be for many others.
+ * 		Including it just to be safe, but can likely be removed in the context of other projects
+ * 		that already declare box-sizing: border-box more globally.
+ * 2. Needed to keep bar the same height in Firefox vs Webkit
+ * 3. Webkit will need ::-webkit-progress-bar to set background
+ * 4. Set overflow hidden so as to not have to re-do border-radius
+ *    again for
+ */
+
 progress {
 	box-sizing: border-box; /* 1 */
 	-webkit-appearance: none; /* 2 */
@@ -6,24 +18,17 @@ progress {
 	border-radius: 4px;
 	height: 8px;
 	overflow: hidden; /* 4 */
+	transition: all .2s ease-in-out;
 }
 
+/* webkit requires a separate background declaration */
 ::-webkit-progress-bar {
-	background: #ddd; /* 3 */
+	background: #ddd;
 }
 
-/**
- * 1. Needed for ::-webkit-progress-value to work in older Webkit
- * 2. Needed to keep bar the same height in Firefox vs Webkit
- * 3. Webkit will need ::-webkit-progress-bar to set background
- * 4. Set overflow hidden so as to not have to re-do border-radius
- *    again for
- */
-
-
-
-
-
+::-ms-fill {
+	background: #3f87a6;
+}
 
 
 /**
@@ -35,26 +40,17 @@ progress {
 
 ::-webkit-progress-value {
 	background: #3f87a6;
-
-}
-::-webkit-progress-inner-element {
-
-	/*
-		Additional styling to the webkit
-		value indicator goes here.
-	*/
 }
 
-
-::-ms-fill {
-	background: #3f87a6;
-}
+/*
+	can be used for additional styling in webkit browsers,
+	but is not necessary
+ */
+::-webkit-progress-inner-element {}
 
 
 /**
  * If no value is set, use :indeterminate
  * as a styling hook for that state.
  */
-progress:indeterminate {
-
-}
+progress:indeterminate {}
