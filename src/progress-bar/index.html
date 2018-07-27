@@ -44,26 +44,6 @@
 					</h2>
 
 					<div class="progress-meter-example">
-						<label for="tasks_comp">
-							Tasks Completed:
-							<progress id="tasks_comp" value="50" max="100"></progress>
-						</label>
-					</div>
-
-					<div class="progress-meter-example">
-						<span id="file_status">
-							File Uploaded:
-						</span>
-						<progress aria-labelledby="file_status" value="70" max="100"></progress>
-					</div>
-
-					<div class="progress-meter-example">
-						<progress aria-label="Delivery Status" value="80" max="100"></progress>
-					</div>
-
-					<hr>
-
-					<div class="progress-meter-example">
 						<label for="tasks_comp2">
 							Tasks Completed:
 							<progress class="progress-bar" id="tasks_comp2" value="50" max="100"></progress>
@@ -88,17 +68,23 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-							<pre><code class="language-html">&lt;label for="tasks_comp">
-	Tasks Completed:
-	&lt;progress id="tasks_comp" value="50" max="100">&lt;/progress>
+							<pre><code class="language-html">&lt;label for="tasks_comp2">
+  Tasks Completed:
+  &lt;progress class="progress-bar"
+    id="tasks_comp2"
+    value="50" max="100">&lt;/progress>
 &lt;/label>
 
-&lt;span id="file_status">
-	File Uploaded:
+&lt;span id="file_status2">
+  File Uploaded:
 &lt;/span>
-&lt;progress aria-labelledby="file_status" value="70" max="100">&lt;/progress>
+&lt;progress class="progress-bar"
+  aria-labelledby="file_status2"
+  value="70" max="100">&lt;/progress>
 
-&lt;progress aria-label="Delivery Status" value="80" max="100">&lt;/progress></code></pre>
+&lt;progress class="progress-bar"
+  aria-label="Delivery Status"
+  value="80" max="100">&lt;/progress></code></pre>
 
 						</details>
 
@@ -139,13 +125,8 @@
 						<h4>Affects on Screen Reader Announcements?</h4>
 
 						<p>
-							Styling a <code>progress</code> element will alter the way a progress bar is announced by VoiceOver on macOS High Sierra + Safari. It doesn't seem to matter what rules are applied to it, but once the visual style is altered from the default, VoiceOver will dissociate an accessible name, provided by a <code>label</code> element. If an accessible name is set via <code>aria-label</code>, VoiceOver will announce a progress bar as a <code>role="group</code>, and then require a second focus stop to access the state of the progress bar.
+							Even though the <code>progress</code> element has <a href="https://www.html5accessibility.com/">good accessibility support and feature implementation</a>, not all screen readers have full support for the element, and styling a <code>progress</code> element can have detrimental affects in some instances.
 						</p>
-
-						<p>
-							macOS VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
-						</p>
-
 
 						<p>
 							Note: progress bars are not meant to be focusable elements, so the following tests were performed with the virtual cursor.
@@ -153,24 +134,55 @@
 
 						<dl>
 							<dt>
+								JAWS 2018 + Internet Explorer 11
+							</dt>
+							<dd>
+								<p>
+									A styled or unstyled <code>progress</code> element is not announced when using JAWS with Internet Explorer.
+								</p>
+								<p>
+									JAWS will read the visible text next to the progress bar, but will skip over the progress bar when navigating with the virtual cursor.
+								</p>
+							</dd>
+
+							<dt>
 								JAWS 2018 + Firefox 63 (nightly)
 							</dt>
 							<dd>
-								A styled progress bar with
+								<p>
+									A styled or unstyled <code>progress</code> element is announced the same way when using JAWS with Firefox.
+								</p>
+								<p>
+									The virtual cursor first stops on the visible label of the progress bar and announces the content. The virtual cursor then announces the progress bar and it's current value, <q>##% progress bar.</q>.
+								</p>
 							</dd>
 
 							<dt>
 								JAWS 2018 + Chrome (latest)
 							</dt>
 							<dd>
-								Regardless of the pattern, a styled progress bar is completely ignored by JAWS + Chrome.
+								<p>
+									Unstyled progress bars do not convey their accessible name, and styled progress bars convey no information at all, with JAWS and Chrome.
+								</p>
 							</dd>
 
 							<dt>
 								NVDA 2018.2.1 + Firefox 63 (nightly)
 							</dt>
 							<dd>
-								A styled progress bar with
+								<p>
+									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
+								</p>
+								<p>
+									<q>Clickable [Accessible name (from visible label)], progress bar ##%</q>
+								</p>
+
+								<p>
+									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by <code>aria-labelledby</code> or <code>aria-label</code>, NVDA will announce:
+								</p>
+								<p>
+									<q>[Accessible name (from visible label)], progress bar ##%</q>
+								</p>
 							</dd>
 
 							<dt>
@@ -178,20 +190,18 @@
 							</dt>
 							<dd>
 								<p>
-									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
+									When NVDA virtual cursor focuses a styled or unstyled progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
 								</p>
 								<p>
-									<q>[Accessible name (from visible label)], progress bar 50</q>
+									<q>[Accessible name (from visible label)], progress bar [Accessible name]</q>
 								</p>
 								<p>
 									If an accessible name is provided by an <code>aria-label</code> or <code>aria-labelledby</code> then NVDA will ignore the current value and announce the accessible name in place of the value.
 								</p>
 								<p>
-									<q>[Accessible name (from visible label)], progress bar [Accessible name (from <code>aria-label</code> or <code>aria-labelledby</code>)]</q>
+									<q>[Accessible name (if there's a visible label)], progress bar [Accessible name (from <code>aria-label</code> or <code>aria-labelledby</code>)]</q>
 								</p>
 							</dd>
-
-
 
 							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
 							<dd>
@@ -228,8 +238,11 @@
 									<br>
 									Focus stop 3: <q>end of [Accessible name], group</q>
 								</p>
-							</dd>
 
+								<p>
+									Note that VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
+								</p>
+							</dd>
 
 							<dt>VoiceOver + Safari on iOS 11.4</dt>
 							<dd>
@@ -257,7 +270,7 @@
 							<dt>TalkBack (Android Accessibility Suite 6.2) + Android Chrome</dt>
 							<dd>
 								<p>
-									Styled progress bars
+									TalkBack has no issues with announcing the accessible name of a progress bar, however regardless of a progress bar being styled or not, TalkBack paired with Chrome does not announce the current value of a progress bar.
 								</p>
 							</dd>
 						</dl>
