@@ -10,7 +10,7 @@
  *    again for
  */
 
-progress {
+progress.style {
 	box-sizing: border-box; /* 1 */
 	-webkit-appearance: none; /* 2 */
 	background: #ddd; /* 3 */
@@ -18,7 +18,6 @@ progress {
 	border-radius: 4px;
 	height: 8px;
 	overflow: hidden; /* 4 */
-	transition: all .2s ease-in-out;
 }
 
 /* webkit requires a separate background declaration */
