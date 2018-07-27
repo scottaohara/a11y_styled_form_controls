@@ -16,6 +16,16 @@ Yes, while many of these form controls can be styled with some thoughtful maneuv
 ## The Different Form Elements
 The following controls and elements each have demo pages with additional documentation pertaining to implementation, UX, and screen reader announcements.
 
+<details>
+    <summary>Regarding screen reader announcements...</summary>
+    <p>
+        Note that documentation of announcements is based on using the noted versions of each screen reader and browser, and final testing was performed in July 2018.  Things may change, so please refer to these as a snapshot in time, rather than being set in stone.  
+    </p>
+    <p>
+        If you find that announcements have changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
+    </p>
+</details>
+
 
 ### Checkboxes and Radio Buttons
 Styled HTML checkboxes, and radio button patterns.  
