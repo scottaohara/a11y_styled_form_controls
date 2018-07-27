@@ -74,9 +74,9 @@
 					<hr>
 
 					<div class="progress-meter-example">
-						<label for="tasks_comp">
+						<label for="tasks_comp2">
 							Tasks Completed:
-							<progress class="style" id="tasks_comp" value="50" max="100"></progress>
+							<progress class="style" id="tasks_comp2" value="50" max="100"></progress>
 						</label>
 					</div>
 
@@ -156,6 +156,71 @@
 							macOS VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
 						</p>
 
+
+						<p>
+							Note: progress bars are not meant to be focusable elements, so the following tests were performed with the virtual cursor.
+						</p>
+
+						<dl>
+							<dt>
+								JAWS 2018 + Firefox 63 (nightly)
+							</dt>
+							<dd>
+								A styled progress bar with
+							</dd>
+
+							<dt>
+								JAWS 2018 + Chrome (latest)
+							</dt>
+							<dd>
+								Regardless of the pattern, a styled progress bar is completely ignored by JAWS + Chrome.
+							</dd>
+
+							<dt>
+								NVDA 2018.2.1 + Firefox 63 (nightly)
+							</dt>
+							<dd>
+								A styled progress bar with
+							</dd>
+
+							<dt>
+								NVDA 2018.2.1 + Chrome (latest)
+							</dt>
+							<dd>
+								<p>
+									When NVDA virtual cursor focuses a progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
+								</p>
+								<p>
+									<q>[Accessible name (from visible label)], progress bar 50</q>
+								</p>
+								<p>
+									If an accessible name is provided by an <code>aria-label</code> or <code>aria-labelledby</code> then NVDA will ignore the current value and announce the accessible name in place of the value.
+								</p>
+								<p>
+									<q>[Accessible name (from visible label)], progress bar [Accessible name (from <code>aria-label</code> or <code>aria-labelledby</code>)]</q>
+								</p>
+							</dd>
+
+
+
+							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
+							<dd>...</dd>
+
+
+							<dt>VoiceOver + Safari on iOS 11.4</dt>
+							<dd>
+								Regardless of the pattern, a styled progress bar is completely ignored by JAWS + Chrome.
+							</dd>
+						</dl>
+
+
+						<h4>Usage note:</h4>
+						<p>
+							Though the <code>progress</code> element is reporting the correct information to browsers, screen readers have quite a few kinks in how they announce that information to users.
+						</p>
+						<p>
+							At the time of testing, it appears the best manner in which to provide a progress bar an accessible name is by using the native <code>label</code> element.
+						</p>
 
 
 					</section>
