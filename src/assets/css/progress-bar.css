@@ -25,9 +25,9 @@ progress.style::-webkit-progress-bar {
 	background: #ddd;
 }
 
-progress.style::-ms-fill {
+/*progress.style::-ms-fill {
 	background: #000;
-}
+}*/
 
 
 /**
@@ -38,7 +38,7 @@ progress.style::-moz-progress-bar {
 }
 
 progress.style::-webkit-progress-value {
-	background: #3f87a6;
+	background: #f00;
 }
 
 /*
