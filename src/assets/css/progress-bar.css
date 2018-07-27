@@ -21,11 +21,11 @@ progress.style {
 }
 
 /* webkit requires a separate background declaration */
-::-webkit-progress-bar {
+progress.style::-webkit-progress-bar {
 	background: #ddd;
 }
 
-::-ms-fill {
+progress.styleprogress.style::-ms-fill {
 	background: #3f87a6;
 }
 
@@ -33,11 +33,11 @@ progress.style {
 /**
  * Progress Bar Value Indicator
  */
-::-moz-progress-bar {
+progress.style::-moz-progress-bar {
 	background: #3f87a6;
 }
 
-::-webkit-progress-value {
+progress.style::-webkit-progress-value {
 	background: #3f87a6;
 }
 
@@ -45,7 +45,7 @@ progress.style {
 	can be used for additional styling in webkit browsers,
 	but is not necessary
  */
-::-webkit-progress-inner-element {}
+progress.style::-webkit-progress-inner-element {}
 
 
 /**
