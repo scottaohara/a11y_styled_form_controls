@@ -10,7 +10,7 @@
  *    again for
  */
 
-progress.style {
+.progress-bar {
 	box-sizing: border-box; /* 1 */
 	-webkit-appearance: none; /* 2 */
 	background: #ddd; /* 3 */
@@ -21,35 +21,35 @@ progress.style {
 }
 
 /* webkit requires a separate background declaration */
-progress.style::-webkit-progress-bar {
+.progress-bar::-webkit-progress-bar {
 	background: #ddd;
 }
 
-/*progress.style::-ms-fill {
-	background: #000;
-}*/
+.progress-bar::-ms-fill {
+	background: #3f87a6;
+}
 
 
 /**
  * Progress Bar Value Indicator
  */
-progress.style::-moz-progress-bar {
+.progress-bar::-moz-progress-bar {
 	background: #3f87a6;
 }
 
-progress.style::-webkit-progress-value {
-	background: #f00;
+.progress-bar::-webkit-progress-value {
+	background: #3f87a6;
 }
 
 /*
 	can be used for additional styling in webkit browsers,
 	but is not necessary
  */
-progress.style::-webkit-progress-inner-element {}
+.progress-bar::-webkit-progress-inner-element {}
 
 
 /**
  * If no value is set, use :indeterminate
  * as a styling hook for that state.
  */
-progress:indeterminate {}
+.progress-bar:indeterminate {}

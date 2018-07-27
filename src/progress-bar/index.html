@@ -62,21 +62,11 @@
 					</div>
 
 					<hr>
-					ARIA
-					<div role="progressbar"
-						aria-valuenow="20"
-						aria-valuemin="0"
-						aria-valuetext="Step 2: Copying files... "
-						aria-valuemax="100">
-					  Step 2: Copying files...
-					</div>
-
-					<hr>
 
 					<div class="progress-meter-example">
 						<label for="tasks_comp2">
 							Tasks Completed:
-							<progress class="style" id="tasks_comp2" value="50" max="100"></progress>
+							<progress class="progress-bar" id="tasks_comp2" value="50" max="100"></progress>
 						</label>
 					</div>
 
@@ -84,11 +74,11 @@
 						<span id="file_status2">
 							File Uploaded:
 						</span>
-						<progress class="style" aria-labelledby="file_status2" value="70" max="100"></progress>
+						<progress class="progress-bar" aria-labelledby="file_status2" value="70" max="100"></progress>
 					</div>
 
 					<div class="progress-meter-example">
-						<progress class="style" aria-label="Delivery Status" value="80" max="100"></progress>
+						<progress class="progress-bar" aria-label="Delivery Status" value="80" max="100"></progress>
 					</div>
 
 					<section class="demo-details">
@@ -133,13 +123,13 @@
 
 						<dl>
 							<dt><code>::-webkit-progress-bar</code></dt>
-							<dd>why...</dd>
+							<dd>Setting the background style for Webkit</dd>
 							<dt><code>::-ms-fill</code></dt>
-							<dd>why...</dd>
+							<dd>Style for progress indicator in MicroSoft browsers</dd>
 							<dt><code>::-moz-progress-bar</code></dt>
-							<dd>why...</dd>
+							<dd>Style for progress indicator in Firefox</dd>
 							<dt><code>::-webkit-progress-value</code></dt>
-							<dd>why...</dd>
+							<dd>Style for progress indicator in webkit browsers</dd>
 						</dl>
 
 						<p>
@@ -188,7 +178,7 @@
 							</dt>
 							<dd>
 								<p>
-									When NVDA virtual cursor focuses a progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
+									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
 								</p>
 								<p>
 									<q>[Accessible name (from visible label)], progress bar 50</q>
@@ -204,12 +194,64 @@
 
 
 							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
-							<dd>...</dd>
+							<dd>
+								<p>
+									Styling progress bars causes their announcement with VoiceOver to be altered and result in more focus stops for a user. A styled progress bar will no longer recognize its accessible name from a <code>label</code>.  If using an <code>aria-label</code> or <code>aria-labelledby</code> with a progress bar, VoiceOver will announce the element as a <code>group</code>. A user will then need to enter the "group" to hear the accessible name and current value of the progress bar. An unstyled progress bar has no "group" announcements, regardless of how the accessible name is applied to the progress bar.
+								</p>
+								<p>
+									A styled progress bar, with a visible <code>label</code>, will be announced as:
+								</p>
+								<p>
+									Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
+									Focus stop 2: <q>## percent, progress indicator</q>
+								</p>
+
+								<p>
+									A styled progress bar, with an <code>aria-labelledby</code>, will be announced as:
+								</p>
+								<p>
+									Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
+									Focus stop 2: <q>[Accessible name], group</q>
+									<br>
+									Focus stop 3: <q>## percent, progress indicator</q>
+									<br>
+									Focus stop 4: <q>end of [Accessible name], group</q>
+								</p>
+
+								<p>
+									A styled progress bar, with an <code>aria-label</code>, will be announced as:
+								</p>
+								<p>
+									Focus stop 1: <q>[Accessible name], group</q>
+									<br>
+									Focus stop 2: <q>[Accessible name], ## percent, progress indicator</q>
+									<br>
+									Focus stop 3: <q>end of [Accessible name], group</q>
+								</p>
+							</dd>
 
 
 							<dt>VoiceOver + Safari on iOS 11.4</dt>
 							<dd>
-								Regardless of the pattern, a styled progress bar is completely ignored by JAWS + Chrome.
+								<p>
+									Regardless of styled or not, VoiceOver does not announce the role of a progress bar when it receives focus.
+								</p>
+								<p>
+									Unstyled progress bars will announce their accessible name and current value if they are focused by VoiceOver. Styled progress bars will not announce their accessible name, unless they explicitly have an <code>aria-label</code>, and they will become undiscoverable when searching by touch.
+								</p>
+								<p>
+									A styled progress bar, with a visible label, will be announced as:
+								</p>
+								<p>
+									Focus stop 1: <q>[Accessible name (visible text)]</q><br>
+									Focus stop 2: <q>##%</q>
+								</p>
+								<p>
+									A styled progress bar, with an <code>aria-label</code>, will be announced as:
+								</p>
+								<p>
+									<q>[Accessible name], ##%</q>
+								</p>
 							</dd>
 						</dl>
 
