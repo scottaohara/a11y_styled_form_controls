@@ -25,8 +25,8 @@ progress.style::-webkit-progress-bar {
 	background: #ddd;
 }
 
-progress.styleprogress.style::-ms-fill {
-	background: #3f87a6;
+progress.style::-ms-fill {
+	background: #000;
 }
 
 
