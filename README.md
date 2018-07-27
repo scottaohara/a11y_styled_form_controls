@@ -84,7 +84,7 @@ Everything here is under an [MIT license](https://github.com/scottaohara/accessi
 
 Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review many of these components. 
 
-While I was unaware of [WTFForms](http://wtfforms.com/) when starting this project, it is still a great example of what can be done without CSS, and served as an excellent baseline to compare against. Thank you <a href="https://twitter.com/mdo">mdo</a> and to those involved with that project.
+While I was unaware of [WTFForms](http://wtfforms.com/) when starting this project, it is still a great example of what can be done with only CSS, and served as an excellent baseline to compare against. Thank you <a href="https://twitter.com/mdo">mdo</a> and to those involved with that project.
 
 Additional thanks to [Adrian Roselli](http://adrianroselli.com/), [Sara Soueidan](https://www.sarasoueidan.com/), [Heydon Pickering](https://inclusive-components.design/), [Richard Keizer](https://codepen.io/rakeizer) and [Alexander Farkas](https://github.com/aFarkas). They have each provided inspiration or excellent resources that have been quite helpful in the building of these components.
 
