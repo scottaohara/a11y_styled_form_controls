@@ -40,7 +40,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Radio Button Pills</h1>
-						<p>Last updated: <time>July 26, 2018</time></p>
+						<p>Last updated: <time>July 27, 2018</time></p>
 						<p>
 							Pattern to restyle a radio button group into a selection pill.
 						</p>
@@ -168,19 +168,11 @@
 
 						<h4>Usage note</h4>
 						<p>
-							Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document.
+							Radio buttons are meant to indicate a group of single choice options, typically part of a larger form area of a document. It may be acceptable to a pattern like this outside of the context of a form, as long as reverting state is a simple process for the user, and the user is aware of the effect the state change will have on the UI. Be mindful of <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>.
 						</p>
 
 						<p>
-							It may be considered a <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html"><abbr>WCAG</abbr> 3.2.2, On Input</a>, violation to change state of an interface when interacting with an <code>input</code> that is not announced as a "button" (e.g. <code>button</code> or <code>input</code> with a <code>type</code> value of <code>button</code>, <code>reset</code> or <code>submit</code>), without giving adequate notice of what change will occur, and depending on if the change cannot be easily reversed.
-						</p>
-
-						<p>
-							This pattern may be perfectly acceptable to use in the context of a form, or outside of a form as a <abbr>UI</abbr> changing component, as long as reverting state is a simple process for the user, and the user is aware of the effect the state change will have on the UI.
-						</p>
-
-						<p>
-							Alternatively, a grouping of <code>button</code> elements that are aware of each other's state, and utilize <code>aria-pressed="true/false"</code> to indicate their own state, may be more appropriate to use as an instant document state-changing component.
+							Alternatively, a grouping of <code>button</code> elements that are aware of each other's state, and utilize <code>aria-pressed="true/false"</code> to indicate their own state, may be more appropriate and understandable to users.
 						</p>
 
 					</section> <!-- /.demo-details -->
