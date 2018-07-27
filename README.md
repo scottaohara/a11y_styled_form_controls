@@ -13,8 +13,8 @@ Largely, many of these form controls can be copied and pasted into your pattern 
 Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript to function and correctly convey state. 
 
 
-## The Form Controls
-The following controls each have demo pages with additional documentation pertaining to implementation, UX, and screen reader announcements.
+## The Different Form Elements
+The following controls and elements each have demo pages with additional documentation pertaining to implementation, UX, and screen reader announcements.
 
 
 ### Checkboxes and Radio Buttons
@@ -53,6 +53,7 @@ A styled range form control that takes multiple browser quirks (re: varied imple
 Range sliders allow users to select a point or a scoped range from a series of data.
 
 1. [Range Slider](src/range-slider)  
+2. [Range Slider (with output - future link)](#)
 
 
 ### Select Boxes
@@ -61,7 +62,7 @@ Styled single and multi-select patterns.
 Selects allow a user to pick one or more options from a menu of choices.
 
 1. [Select (single)](src/select)  
-2. [Select (multi) - future link](#src/select--multi)  
+2. [Select (multi) - future link](#)  
 
 
 ### Progress Bar & Meters
