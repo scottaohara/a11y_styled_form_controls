@@ -30,6 +30,16 @@
 				</nav>
 			</header>
 
+			<style>
+				.meter {
+					height: .75em;
+					border-radius: 8px;
+					background: none;
+					border: 1px solid;
+					overflow: hidden;
+				}
+			</style>
+
 			<main aria-label="content">
 				<article class="demo">
 					<header>
@@ -45,7 +55,24 @@
 					</h2>
 
 					<div class="progress-meter-example">
-						<meter></meter>
+
+						<meter low="0" high="70" max="100" value="84">70</meter>
+					</div>
+					<div class="progress-meter-example">
+						<label for="meter_no">Lowest</label>
+						<meter id="meter_no" low="0" value="0" high="70" max="100"></meter>
+					</div>
+					<hr>
+					<div class="progress-meter-example">
+						<meter class="meter" low="0" high="70" max="100" value="84">70</meter>
+					</div>
+					<div class="progress-meter-example">
+						<label for="meter_no">Lowest</label>
+						<meter class="meter" id="meter_no" low="0" value="0" high="70" max="100"></meter>
+					</div>
+
+					<div class="progress-meter-example">
+						<meter aria-label="test" class="meter" id="meter_no" low="0" value="0" high="70" max="100"></meter>
 					</div>
 
 
@@ -66,7 +93,7 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							...
+							macOS Safari + VO will completely ignore a styled meter element unless it has an accessible name set by <code>aria-label</code> or <code>aria-labelledby</code>. But even then, VoiceOver will only announce the accessible name and none of the <code>meter</code>'s current state.
 						</p>
 
 						<h4>Usage note:</h4>
