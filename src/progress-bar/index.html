@@ -139,23 +139,14 @@
 						<h4>Affects on Screen Reader Announcements?</h4>
 
 						<p>
-							Styling a <code>progress</code> element should have no affect on a screen reader's announcement of it. Though the markup you use to setup your progress bar may alter how the progress bar is announced.  The patterns showcased here present the best support for screen readers.
+							Styling a <code>progress</code> element will alter the way a progress bar is announced by VoiceOver on macOS High Sierra + Safari. It doesn't seem to matter what rules are applied to it, but once the visual style is altered from the default, VoiceOver will dissociate an accessible name, provided by a <code>label</code> element. If an accessible name is set via <code>aria-label</code>, VoiceOver will announce a progress bar as a <code>role="group</code>, and then require a second focus stop to access the state of the progress bar.
 						</p>
 
 						<p>
-							It's best to just use the native element as is,
+							macOS VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
 						</p>
 
-						PROVIDE BREAKDOWN OF SCREEN READER ANNOUNCEMENTS HERE
 
-
-
-						using aria-label / aria-labelledby on a progress turns it into a "group" with voiceover.  the label will be applied to the progress element, but it will then require a separate focus stop to announce the progress, after the accessible name.
-
-						VO + Chrome on macOS needs aria to convey progress bar status
-
-
-						Note: if a <code>progress</code> element contains a fallback value, e.g. <code>&lt;progress value="50" max="100">50%&lt;/progress></code>, then Safari + VoiceOver on macOS will announce the progress bar as a <code>role="group"</code>, if you give it an <code>aria-label</code> or <code>aria-labelledby</code>. If it contains no fallback value, VoiceOver will not announce it as a group.
 
 					</section>
 				</article> <!-- /.demo -->
