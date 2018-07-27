@@ -103,7 +103,7 @@
 						</details>
 
 						<p>
-							Unlike many other form controls, a <code>progress</code> element is cannot be directly modified by a user, though a <code>progress</code> element is often used to indicate the completion status of a task initiated by a user.
+							Unlike many other form elements, a <code>progress</code> element is read-only, and the progress bar is modified by the completion of tasks by a user, or the application itself.
 						</p>
 						<p>
 							A task can refer to user flows, like a user's current progress in a sign up flow, or a task being performed by an application, or server. For example, using a progress bar to indicate the application updating after a form submission, or indicating the progress of a file upload within an application's UI.
@@ -253,6 +253,13 @@
 									<q>[Accessible name], ##%</q>
 								</p>
 							</dd>
+
+							<dt>TalkBack (Android Accessibility Suite 6.2) + Android Chrome</dt>
+							<dd>
+								<p>
+									Styled progress bars
+								</p>
+							</dd>
 						</dl>
 
 
@@ -261,8 +268,16 @@
 							Though the <code>progress</code> element is reporting the correct information to browsers, screen readers have quite a few kinks in how they announce that information to users.
 						</p>
 						<p>
-							At the time of testing, it appears the best manner in which to provide a progress bar an accessible name is by using the native <code>label</code> element.
+							At the time of testing, it doesn't appear a styled progress bar alone will be fully accessible in all screen reader and browser pairings. Instead it may be more appropriate to simply treat the progress bar as a visual decoration, hide it from screen readers, and provide visually hidden text as a means to consistently convey the information.
 						</p>
+
+						<!-- <pre><code class="language-html"> -->
+<div class="progress-meter-example">
+	Progress Label:
+	<span class="visually-hidden">50%</span>
+	<progress class="progress-bar" value="50" max="100" aria-hidden="true"></progress>
+</div>
+						<!-- </code></pre> -->
 
 
 					</section>
