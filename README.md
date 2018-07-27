@@ -76,9 +76,11 @@ Selects allow a user to pick one or more options from a menu of choices.
 
 
 ### Progress Bar & Meters
-Progress bars indicate the current status of a particular task, or tasks, on a scale of 0 to completion. 
+Progress bars indicate the current status of a particular task, or tasks, on a scale of 0 to completion. Meters indicate a value within a finite value set. 
 
-The <code>progress</code> element is part of the specification for form elements, but they are not focusable form control.
+The <code>progress</code> and <code>meter</code> elements are considered form elements, but they are not focusable form controls.
+
+Unfortunately, neither of these elements are consistently accessible to screen readers, unstyled. Styling each can actually make them even more inaccessible.
 
 1. [Progress Bar](src/progress-bar)  
 2. [Meter](src/meter)
