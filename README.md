@@ -2,7 +2,7 @@
 A repository of stylized, accessible, form control patterns. 
 
 ## Why?
-Form controls are necessary in many interfaces, but are often considered annoying, if not donwnright difficult, to style. The markup patterns presented here can help ensure these form controls can look (objectively) attractive without excluding users who may rely on assistive technology to get things done.     
+Form controls are necessary in many interfaces, but are often considered annoying, if not downright difficult, to style. The markup patterns presented here can help ensure these form controls can look (objectively) attractive without excluding users who may rely on assistive technology to get things done.     
 
 
 ## How to use?
@@ -10,7 +10,7 @@ Largely, many of these form controls can be copied and pasted into your pattern 
 
 
 ### Wait, JavaScript?
-Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript to function and correctly convey state. 
+Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript (and sometime <abbr title="accessible rich internet applications">ARIA</abbr>) to function and correctly convey state. 
 
 
 ## The Different Form Elements
@@ -86,7 +86,7 @@ Unfortunately, neither of these elements are consistently accessible to screen r
 2. [Meter](src/meter)
 
 
-## Search Component
+### Search Component
 A search component offers users an easily discoverable way to find information in a website or application.   
 
 1. [Search Component](src/search)  
