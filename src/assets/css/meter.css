@@ -1,3 +1,62 @@
-meter {
+/**
+ * 1. Adding a border directly to the meter element provides a border
+ * for Firefox and Safari, but not for Chrome. Using ::-webkit-meter-bar
+ * will add a border for Chrome, but will double up a border for Safari.
+ * Using a box-shadow will allow all to have a similar "border"
+ * 2. A transparent border is still added for high contrast mode.
+ */
+.meter {
+  background: #efefef;
+  border-radius: 8px;
+  border: 1px solid transparent; /* 2 */
+  box-shadow:
+  	0 1px 3px 1px rgba(0,0,0,0.15) inset,
+  	0 0 0 1px #333; /* 1 */
+  height: .75em;
+  max-width: 10em;
+  overflow: hidden;
+  width: 100%;
+}
 
+/* WebKit */
+.meter::-webkit-meter-bar {
+  background: #efefef;
+  border: 1px solid transparent; /* 2 */
+  border-radius: 8px;
+}
+
+.meter::-webkit-meter-optimum-value,
+.meter::-webkit-meter-suboptimum-value,
+.meter::-webkit-meter-even-less-good-value {
+  border-radius: 8px;
+}
+
+.meter::-webkit-meter-optimum-value {
+  background: #3C5C00;
+}
+
+.meter::-webkit-meter-suboptimum-value {
+  background: #F5D000;
+}
+
+.meter::-webkit-meter-even-less-good-value  {
+  background: #D14900;
+}
+
+
+/* Firefox */
+.meter::-moz-meter-bar {
+  border-radius: 8px;
+}
+
+.meter:-moz-meter-optimum::-moz-meter-bar {
+  background: #3C5C00;
+}
+
+.meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: #F5D000;
+}
+
+.meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: #D14900;
 }

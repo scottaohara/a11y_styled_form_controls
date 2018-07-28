@@ -30,16 +30,6 @@
 				</nav>
 			</header>
 
-			<style>
-				.meter {
-					height: .75em;
-					border-radius: 8px;
-					background: none;
-					border: 1px solid;
-					overflow: hidden;
-				}
-			</style>
-
 			<main aria-label="content">
 				<article class="demo">
 					<header>
@@ -55,24 +45,53 @@
 					</h2>
 
 					<div class="progress-meter-example">
-
-						<meter low="0" high="70" max="100" value="84">70</meter>
+						Test 1<br>
+						<meter low="69" high="80" max="100" value="84"></meter>
 					</div>
 					<div class="progress-meter-example">
-						<label for="meter_no">Lowest</label>
-						<meter id="meter_no" low="0" value="0" high="70" max="100"></meter>
+						<label for="meter_2">
+							Test 2<br>
+							<meter low="0" value="0" high="70" max="100"></meter>
+						</label>
 					</div>
+
+					<div class="progress-meter-example">
+						<label for="meter_n3">
+							Test 3<br>
+							<meter low="10" value="100" high="80" max="100"></meter>
+						</label>
+					</div>
+
+					<div class="progress-meter-example">
+						<label>
+							<meter aria-label="test 4" value="20" high="70" max="100"></meter>
+						</label>
+					</div>
+
 					<hr>
+
 					<div class="progress-meter-example">
-						<meter class="meter" low="0" high="70" max="100" value="84">70</meter>
+						Test 1<br>
+						<meter class="meter" low="69" high="80" max="100" value="84"></meter>
 					</div>
 					<div class="progress-meter-example">
-						<label for="meter_no">Lowest</label>
-						<meter class="meter" id="meter_no" low="0" value="0" high="70" max="100"></meter>
+						<label for="meter_2">
+							Test 2<br>
+							<meter class="meter" low="0" value="0" high="70" max="100"></meter>
+						</label>
 					</div>
 
 					<div class="progress-meter-example">
-						<meter aria-label="test" class="meter" id="meter_no" low="0" value="20" high="70" max="100"></meter>
+						<label for="meter_n3">
+							Test 3<br>
+							<meter class="meter" low="10" value="100" high="80" max="100"></meter>
+						</label>
+					</div>
+
+					<div class="progress-meter-example">
+						<label>
+							<meter aria-label="test 4" class="meter" value="20" high="70" max="100"></meter>
+						</label>
 					</div>
 
 
@@ -94,6 +113,22 @@
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
 							macOS Safari + VO will completely ignore a styled meter element unless it has an accessible name set by <code>aria-label</code> or <code>aria-labelledby</code>. But even then, VoiceOver will only announce the accessible name and none of the <code>meter</code>'s current state.
+						</p>
+
+						<p>
+							Chrome + NVDA do not have issues with announcing styled meters unless they are given an accessible name via <code>aria-label</code> or <code>aria-labelledby</code>. Doing so will result in NVDA only announcing the accessible name and none of the <code>meter</code>'s current state.
+						</p>
+
+						<p>
+							Firefox + NVDA do not announce anything but an accessible name to <code>meter</code> elements, regardless of if they are styled or not.
+						</p>
+
+						<p>
+							Firefox + JAWS 2018 do not announce the presence of <code>meter</code> elements.
+						</p>
+
+						<p>
+							Chrome + JAWS will announce both styled and unstyled <code>meter</code> elements and their current value, with no indication of their low, high, or max values.  If a <code>meter</code> is provided an accessible name by <code>aria-label</code> or <code>aria-labelledby</code>, it will be completely ignored by JAWS.
 						</p>
 
 						<h4>Usage note:</h4>
