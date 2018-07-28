@@ -34,7 +34,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Meter</h1>
-						<p>Last updated: <time>July 26, 2018</time></p>
+						<p>Last updated: <time>July 28, 2018</time></p>
 						<p>
 							Cross-browser styling for the HTML meter element.
 						</p>
@@ -46,34 +46,9 @@
 
 					<div class="progress-meter-example">
 						Test 1<br>
-						<meter low="69" high="80" max="100" value="84"></meter>
-					</div>
-					<div class="progress-meter-example">
-						<label for="meter_2">
-							Test 2<br>
-							<meter low="0" value="0" high="70" max="100"></meter>
-						</label>
+						<meter class="meter" low="64" high="80" max="100" value="84"></meter>
 					</div>
 
-					<div class="progress-meter-example">
-						<label for="meter_n3">
-							Test 3<br>
-							<meter low="10" value="100" high="80" max="100"></meter>
-						</label>
-					</div>
-
-					<div class="progress-meter-example">
-						<label>
-							<meter aria-label="test 4" value="20" high="70" max="100"></meter>
-						</label>
-					</div>
-
-					<hr>
-
-					<div class="progress-meter-example">
-						Test 1<br>
-						<meter class="meter" low="69" high="80" max="100" value="84"></meter>
-					</div>
 					<div class="progress-meter-example">
 						<label for="meter_2">
 							Test 2<br>
@@ -102,38 +77,150 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-							<pre><code class="language-html">&lt;
-&gt;</code></pre>
+							<pre><code class="language-html">&lt;p>
+  Test 1<br>
+  &lt;meter class="meter"
+    low="64"
+    high="80"
+    max="100"
+    value="84">&lt;/meter>
+&lt;p></code></pre>
 						</details>
 
 						<p>
-							...
+							The <code>meter</code> element can be styled by use of the following selectors:
 						</p>
+
+						<dl>
+							<dt><code>meter</code></dt>
+							<dd>
+								<p>Styling with the element selector is respected by all browsers without the need for <code>appearance: none;</code>. Though Firefox and Webkit / Edge browsers differ a bit in how styling the element will either affect the "background" of the element, or the visual indicator of the <code>meter</code>'s value.</p>
+							</dd>
+
+							<dt><code>::-moz- and ::-webkit-meter-bar</code></dt>
+							<dd>
+								<p>
+									Firefox uses this selector to style the visual indicator of the <code>meter</code>'s value. Webkit seems to use this to style the "background" of the element.
+								</p>
+							</dd>
+
+							<dt>
+								<code>::-webkit-meter-optimum-value</code><br>
+								<code>:-moz-meter-optimum::-moz-meter-bar</code>
+							</dt>
+							<dd>
+								<p>
+									Styling for the optimum value of the element.
+								</p>
+							</dd>
+
+							<dt>
+								<code>::-webkit-meter-suboptimum-value</code><br>
+								<code>:-moz-meter-sub-optimum::-moz-meter-bar</code>
+							</dt>
+							<dd>
+								<p>
+									Styling for a suboptimal value of the element.
+								</p>
+							</dd>
+
+							<dt>
+								<code>::-webkit-meter-even-less-good-value</code><br>
+								<code>:-moz-meter-sub-sub-optimum::-moz-meter-bar</code>
+							</dt>
+							<dd>
+								<p>
+									Styling for a less than suboptimal value for the element.
+								</p>
+							</dd>
+
+						</dl>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							macOS Safari + VO will completely ignore a styled meter element unless it has an accessible name set by <code>aria-label</code> or <code>aria-labelledby</code>. But even then, VoiceOver will only announce the accessible name and none of the <code>meter</code>'s current state.
+							The <code>meter</code> element has no support in Internet Explorer, but is supported in Microsoft Edge. The element has different levels of support in other major browsers, and screen readers can vary quite a bit in how they interpret the element, if at all.
 						</p>
 
-						<p>
-							Chrome + NVDA do not have issues with announcing styled meters unless they are given an accessible name via <code>aria-label</code> or <code>aria-labelledby</code>. Doing so will result in NVDA only announcing the accessible name and none of the <code>meter</code>'s current state.
-						</p>
+						<dl>
+							<dt>
+								JAWS 2018 + Edge (latest) and Firefox 63 (nightly)
+							</dt>
+							<dd>
+								<p>
+									JAWS will completely ignore the existence of <code>meter</code> elements, regardless of if they are styled or not.
+								</p>
+							</dd>
 
-						<p>
-							Firefox + NVDA do not announce anything but an accessible name to <code>meter</code> elements, regardless of if they are styled or not.
-						</p>
+							<dt>
+								JAWS 2018 + Chrome (latest)
+							</dt>
+							<dd>
+								<p>
+									Chrome + JAWS will announce both styled and unstyled <code>meter</code> elements and their current value, with no indication of their low, high, or max values.  If a <code>meter</code> is provided an accessible name by <code>aria-label</code> or <code>aria-labelledby</code>, it will be completely ignored by JAWS.
+								</p>
+							</dd>
 
-						<p>
-							Firefox + JAWS 2018 do not announce the presence of <code>meter</code> elements.
-						</p>
+							<dt>
+								NVDA 2018.2.1 + Edge (latest)
+							</dt>
+							<dd>
+								<p>
+									NVDA will announce a styled <code>meter</code> as <q>progress bar [current value]</q>.
+								</p>
+								<p>
+									NVDA will not announce an accessible name for the <code>meter</code>, so <code>aria-label</code> and <code>aria-labelledby</code> are ignored.
+								</p>
+							</dd>
 
-						<p>
-							Chrome + JAWS will announce both styled and unstyled <code>meter</code> elements and their current value, with no indication of their low, high, or max values.  If a <code>meter</code> is provided an accessible name by <code>aria-label</code> or <code>aria-labelledby</code>, it will be completely ignored by JAWS.
-						</p>
+							<dt>
+								NVDA 2018.2.1 + Firefox 63 (nightly)
+							</dt>
+							<dd>
+								<p>
+									NVDA will announce nothing but the accessible name to <code>meter</code> elements, regardless of if they are styled or not.
+								</p>
+							</dd>
+
+							<dt>
+								NVDA 2018.2.1 + Chrome (latest)
+							</dt>
+							<dd>
+								<p>
+									Chrome + NVDA do not have issues with announcing styled meters unless they are given an accessible name via <code>aria-label</code> or <code>aria-labelledby</code>. Doing so will result in NVDA only announcing the accessible name and none of the <code>meter</code>'s current state.
+								</p>
+							</dd>
+
+							<dt>
+								VoiceOver + Safari 11.1.1 on macOS High Sierra
+							</dt>
+							<dd>
+								<p>
+									VoiceOver will completely ignore a styled <code>meter</code> element unless it has an accessible name set by <code>aria-label</code> or <code>aria-labelledby</code>. But even then, VoiceOver will only announce the accessible name and none of the <code>meter</code>'s current state.
+								</p>
+							</dd>
+
+							<dt>
+								VoiceOver + Safari on iOS 11.4
+							</dt>
+							<dd>
+								<p>
+									VoiceOver will completely ignore the existence of <code>meter</code> elements, regardless of if they are styled or not.
+								</p>
+							</dd>
+
+							<dt>
+								TalkBack (Android Accessibility Suite 6.2) + Android Chrome
+							</dt>
+							<dd>
+								<p>
+									Chrome + TalkBack will completely ignore <code>meter</code> elements without an accessible name provided by <cod>aria-label</cod> or <code>aria-labelledby</code>. However, even when focusing such an instance, TalkBack will announce <q>[accessible name], meter</q> with no further announcements of the current values of the element.
+								</p>
+							</dd>
+						</dl>
 
 						<h4>Usage note:</h4>
 						<p>
-
+							As with the <a href="../progress-bar/index.html"><code>progress</code> element</a>, the <code>meter</code> element can be restyled with some browser prefixed selectors, but doing so can have significantly adverse affects on how the elements are interpreted by screen readers. Coupled with the fact that Internet Explorer 11 doesn't support <code>meter</code> at all, and even the unstyled element doesn't have the best screen reader support in the browsers that do render it, it's probably best to not rely on this element alone (or at all).
 						</p>
 
 					</section>
