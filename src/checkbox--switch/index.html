@@ -164,17 +164,20 @@
 
 							<dt>JAWS 2018 + IE11</dt>
 							<dd>
-								This pairing will announce the form control as a <code>switch</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.
+								This pairing will announce the form control as a <code>role="switch"</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.
 							</dd>
 						</dl>
 
 						<p>
-							Note that NVDA 2018.1 and Chrome will announce the initial state of the <code>switch</code> as "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control. If a <code>switch</code> has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".  This isn't necessarily bugged behavior though, as there are other examples of controls changing state in this manner.
+							Note that NVDA 2018.1 and Chrome will announce the initial state of the switch as "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control. If a switch has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".  This isn't necessarily bugged behavior though, as there are other examples of controls changing state in this manner.
 						</p>
 
 						<h4>Usage note:</h4>
 						<p>
 							Until issues with <code>role="switch"</code> have been worked out, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>. Or stick with a <code>input type="checkbox"</code> if the usage of a checkbox would be an expected user experience.
+						</p>
+						<p>
+							It's important to remember that switches have an expectation to perform an instant update or change to a user's settings or the UI of an application. It's best to leave checkboxes visually styled to look like checkboxes when in the context of a form, where a change wouldn't be expected until form submission.
 						</p>
 
 					</section> <!-- /.demo-details -->
