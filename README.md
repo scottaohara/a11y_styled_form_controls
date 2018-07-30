@@ -66,7 +66,6 @@ A styled `input type="range"` form control that takes multiple browser's CSS imp
 Range sliders allow users to select a point, or a scoped range, from a series of data.
 
 1. [Range Slider](src/range-slider)  
-2. [Range Slider (with output - future link)](#)
 
 
 ### Select Boxes
@@ -75,7 +74,6 @@ Styled single and multi-select patterns.
 Selects allow a user to pick one or more options from a menu of choices.
 
 1. [Select (single)](src/select)  
-2. [Select (multi) - future link](#)  
 
 
 ### Progress Bar & Meter
