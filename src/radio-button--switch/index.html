@@ -44,18 +44,34 @@
 						Pattern Demo
 					</h2>
 
-					<fieldset class="radio-switch">
+					<fieldset class="radio-switch radio-switch--hide-legend">
 						<legend>
-							Settings
+							Away message
 						</legend>
 
-						<input type="radio" name="lol" id="public" checked="">
-						<label for="public">
+						<input type="radio" name="ex" id="on1" checked="">
+						<label for="on1">
 							On
 						</label>
 
-						<input type="radio" name="lol" id="private">
-						<label for="private">
+						<input type="radio" name="ex" id="on2">
+						<label for="on2">
+							Off
+						</label>
+					</fieldset>
+
+					<fieldset class="radio-switch">
+						<legend>
+							Signature
+						</legend>
+
+						<input type="radio" name="ex2" id="on2" checked="">
+						<label for="on2">
+							On
+						</label>
+
+						<input type="radio" name="ex2" id="off2">
+						<label for="off2">
 							Off
 						</label>
 					</fieldset>
@@ -67,7 +83,10 @@
 								The inclusion of two labels makes this switch pattern unique from other single label switch components. The design tends to fall apart a bit if it can't fully fit on a narrow screen, so that should be taken into consideration if implementing this in your own projects.
 							</p>
 							<p>
-								Ideally there would be a visible overarching label (a <code>legend</code>)
+								Ideally there would be a visible overarching label (a <code>legend</code>) to provide better context as to what the switch was for.
+							</p>
+							<p>
+								Use an appropriate heading element (<code>h1</code> to <code>h6</code>) within a <code>legend</code> to surface this group as part of the document outline.
 							</p>
 						</div>
 					</details>
@@ -103,7 +122,7 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Merely being a custom styled radio button group, there's not much for screen readers to get tripped up on here. This particular design also doesn't produce any abnormal announcements (for radio button groups) one must be aware of.
+							Being a custom styled radio button group, there's not much for screen readers to get tripped up on here, and testing revealed no abnormal announcements from screen readers.
 						</p>
 						<p>
 							The only minor concern for a component like this is that it visually looks like a switch component, and switches have slightly different UX behavior associated with them. For example, a visual switch could be an actual <code>role="switch"</code>, a checkbox, or a toggle button, all depending on the context in which it is used. Each of these implementations would have a consistent single label, and the state of the component is what changes. This particular pattern doesn't adhere to those setups.

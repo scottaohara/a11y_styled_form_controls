@@ -103,7 +103,7 @@
 							</li>
 							<li>
 								A range form control doesn't receive much (if anything) in the way of inherent styling when a <code>disabled</code> attribute is applied to it, unlike other form controls which visually look 'dimmed'. Since the range has so many browser specific selectors, stying a disabled range requires the following:
-									<ul>
+									<ul style="margin-top: 1em">
 										<li><code>input[type=range][disabled]</code></li>
 										<li><code>input[type=range][disabled]::-webkit-slider-thumb</code></li>
 										<li><code>input[type=range][disabled]::-moz-range-thumb</code></li>
@@ -117,7 +117,7 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Applying custom styles to a range does not alter its announcements by screen readers, as there are no alterations to the markup of the form control that would interfere with its semantics.
+							Applying custom styles to an <code>input type="range"</code> does not alter its announcements by screen readers.
 						</p>
 
 					</section>

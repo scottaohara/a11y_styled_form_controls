@@ -4,6 +4,7 @@
 */
 .radio-switch {
 	border: none;
+	margin-bottom: 2em; /* demo value */
 	padding: 0;
 	white-space: nowrap;
 }
@@ -14,7 +15,7 @@
 	options pertain to. Ideally this would be visible to all
 	users, but you know...
 */
-.radio-switch legend {
+.radio-switch--hide-legend legend {
 	font-size: 2px;
 	opacity: 0;
 	position: absolute;
