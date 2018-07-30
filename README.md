@@ -19,7 +19,10 @@ The following controls and elements each have demo pages with additional documen
 <details>
     <summary>Regarding screen reader announcements...</summary>
     <p>
-        Note that documentation of announcements is based on using the noted versions of each screen reader and browser, and final testing was performed in July 2018.  Things may change, so please refer to these as a snapshot in time, rather than being set in stone.  
+        Note that documentation of announcements is based on using the noted versions of each screen reader and browser, and testing was information is up to date per the indicated date on each test page.
+    </p>
+    <p>
+        Things may change as browsers and screen readers are updated, so please refer to these as a snapshot in time, rather than being definitive results.  
     </p>
     <p>
         If you find that announcements have changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
@@ -30,7 +33,7 @@ The following controls and elements each have demo pages with additional documen
 ### Checkboxes and Radio Buttons
 Styled HTML checkboxes, and radio button patterns.  
 
-Checkboxes can be be used for a single form option, or grouped to allow one or more selections to be made by the user. In contrast, radio buttons provide users a series of options to choose from, but only one option may be chosen from a single radio button grouping.
+Checkboxes can be used as a single form option, or grouped with similar checkboxes. Within a group, one or more checkboxes may be checked by the user. In contrast, radio buttons provide users two or more options to choose from, but only one option may be chosen from a single radio button grouping.
 
 1. [Styled Checkboxes](src/checkbox)
 2. [Styled Radio Buttons](src/radio-button)  
@@ -39,9 +42,9 @@ Checkboxes can be be used for a single form option, or grouped to allow one or m
 
 
 ### Switches & Toggle Buttons 
-Switches are a type of form control that are often visually represented as an on/off toggle. A toggle button may be styled similarly, or as a button that has a clear difference between the default and active (pressed) state.
+Switches are a type of form control that are often visually represented as an on/off toggle. A toggle button may be styled similarly, or as a button that has a clear difference between the default and active (pressed) state. A toggle button is created when a `button` has the `aria-pressed` attribute set to `true` or `false`.
 
-Unlike checkboxes, which are largely used in the context of forms where a user submits data after filling out all necessary information, switches and toggle buttons can be used to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element is progressively enhanced into a `switch` with the appropriate ARIA attributes. Similarly with a toggle button, there is no native HTML attribute to indicate pressed vs default state, so `aria-pressed="true/false"` is necessary to make a toggle button.
+Unlike checkboxes, which are largely used in the context of forms where a user submits data after filling out all necessary information, switches and toggle buttons can be used to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element can be progressively enhanced into a `switch`, with the appropriate ARIA attributes. 
 
 1. [Switch Checkbox](src/checkbox--switch)
 2. [ARIA Switch Button (external link)](https://scottaohara.github.io/aria-switch-button/)
@@ -50,17 +53,17 @@ Unlike checkboxes, which are largely used in the context of forms where a user s
 
 
 ### File Upload
-A styled file upload form control that relies upon the native HTML input for providing the appropriate announcements to screen readers.
+A styled file upload form control that relies on the native HTML `input type="file"` for providing the appropriate announcements to screen readers.
 
-A file upload allows users to add one, or more, files to upload on form submission.  
+A file upload allows users to add one, or more, file(s) to submit with a form.  
 
 1. [File Upload](src/file-upload)  
 
 
 ### Range Slider
-A styled range form control that takes multiple browser quirks (re: varied implementations) into consideration.  
+A styled `input type="range"` form control that takes multiple browser's CSS implementations into consideration.  
 
-Range sliders allow users to select a point or a scoped range from a series of data.
+Range sliders allow users to select a point, or a scoped range, from a series of data.
 
 1. [Range Slider](src/range-slider)  
 2. [Range Slider (with output - future link)](#)
@@ -75,12 +78,12 @@ Selects allow a user to pick one or more options from a menu of choices.
 2. [Select (multi) - future link](#)  
 
 
-### Progress Bar & Meters
-Progress bars indicate the current status of a particular task, or tasks, on a scale of 0 to completion. Meters indicate a value within a finite value set. 
+### Progress Bar & Meter
+Progress bars indicate the current status of a particular task, or tasks, on a scale of 0 to completion. A meter acts as a gauge and indicates a value within a finite value set. 
 
 The <code>progress</code> and <code>meter</code> elements are considered form elements, but they are not focusable form controls.
 
-Unfortunately, neither of these elements are consistently accessible to screen readers, unstyled. Styling each can actually make them even more inaccessible.
+Unfortunately, neither of these elements are consistently accessible to screen readers. Styling each can actually make them even more inaccessible...
 
 1. [Progress Bar](src/progress-bar)  
 2. [Meter](src/meter)
