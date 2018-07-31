@@ -1,12 +1,14 @@
-# Accessible Styled Form Controls & Friends
-A repository of stylized, accessible, form control patterns. 
+# The Accessibility of Styled Form Controls & Friends
+A repository of styled and "styled" form control patterns, and the they are announced by screen readers. 
 
 ## Why?
-Form controls are necessary in many interfaces, but are often considered annoying, if not downright difficult, to style. The markup patterns presented here can help ensure these form controls can look (objectively) attractive without excluding users who may rely on assistive technology to get things done.     
+Form controls are necessary in many interfaces, but are often considered annoying, if not downright difficult, to style. Many of the markup patterns presented here can serve as a baseline for building more attractive form controls without having to exclude users who may rely on assistive technology to get things done. 
+
+In some cases, there may be a lack of support, or complications that arise when controls are styled. Those instances will be noted as well.
 
 
 ## How to use?
-Largely, many of these form controls can be copied and pasted into your pattern library, project, or pattern library project. Each form control has its own CSS file, and only when needed, JavaScript file. Each form control shares the *--demo-only--.css* and *--shared--.css* files, but these are largely for purposes of presenting on these demo pages, and much of the shared styles are merely ports of a few [normalize.css](https://necolas.github.io/normalize.css/) selectors.  
+Largely, many of these form controls can be copied and pasted into your pattern library, project, or pattern library project. Each form control has its own CSS file, and only when needed, JavaScript file. Each form control shares the *--demo-only--.css* and *--shared--.css* files. These files are largely only needed for presenting on these demo pages, and much of the shared styles are merely ports of a few [normalize.css](https://necolas.github.io/normalize.css/) selectors.  
 
 
 ### Wait, JavaScript?
