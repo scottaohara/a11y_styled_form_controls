@@ -1,5 +1,5 @@
 # The Accessibility of Styled Form Controls & Friends
-A repository of styled and "styled" form control patterns, and the they are announced by screen readers. 
+A repository of styled and "styled" form control patterns, and how they are announced by screen readers. 
 
 ## Why?
 Form controls are necessary in many interfaces, but are often considered annoying, if not downright difficult, to style. Many of the markup patterns presented here can serve as a baseline for building more attractive form controls without having to exclude users who may rely on assistive technology to get things done. 
