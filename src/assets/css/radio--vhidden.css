@@ -50,6 +50,7 @@
 
 .c-radio > input:checked ~ label:after {
 	border-color: #fff;
+	border-width: 4px;
 	box-shadow: inset 0 0 0 5px #0d5192;
 }
 
@@ -59,7 +60,8 @@
 
 @media screen and (-ms-high-contrast: active) {
 	.c-radio > input:checked ~ label:before {
-		border: 6px solid;
+		background: window;
+		border: 6px solid buttonface;
 		box-shadow: none;
 	}
 }
