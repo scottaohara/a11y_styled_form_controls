@@ -21,7 +21,6 @@
 
 			var input = el.querySelector('[type="file"]');
 
-
 			setupPattern( el, isThisChrome, input );
 			checkDisabled( el );
 			attachEvents( el, input );
@@ -103,7 +102,6 @@
 
 		/**
 		 * Events for toggle buttons
-		 * @return none
 		 */
 		var attachEvents = function ( el, input, output ) {
 			var output = el.querySelector('.file-up__output');
