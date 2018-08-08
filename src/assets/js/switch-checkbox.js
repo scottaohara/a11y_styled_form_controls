@@ -51,7 +51,6 @@
 
 		/**
 		 * Events for toggle buttons
-		 * @return none
 		 */
 		var attachEvents = function ( el ) {
 			el.addEventListener('keypress', keyEvents, false);
