@@ -148,7 +148,6 @@
 
 		/**
 		 * Events for toggle buttons
-		 * @return none
 		 */
 		var attachEvents = function ( el ) {
 			el.addEventListener('click', toggleState, false);
