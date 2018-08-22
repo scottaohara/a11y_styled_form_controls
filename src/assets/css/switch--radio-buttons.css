@@ -73,6 +73,9 @@
 .radio-switch input:last-of-type {
 	right: 0;
 }
+
+.radio-switch input:not(:checked):hover + label {
+	text-decoration: underline;
 }
 
 /*
