@@ -43,7 +43,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Radio Button Star Rating Component</h1>
-						<p>Last updated: <time>July 23, 2018</time></p>
+						<p>Last updated: <time>August 27, 2018</time></p>
 						<p>
 							Pattern to restyle a radio button group into a star rating component.
 						</p>
@@ -272,8 +272,17 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Being these are just styled radio button labels, the announcement of this radio group hasn't been altered in a significant way.  Screen readers like JAWS and NVDA may automatically go into forms mode, or require a user to hit <kbd>Enter</kbd> or <kbd>Space</kbd> to focus into the radio button. Then arrow keys can be used to select the different radio buttons, as expected.
+							Since the native radio buttons remain in the DOM, and are used as the focusable elements that control the state of their custom visualization, there are no alterations to how a screen reader announces keyboard focused styled radio buttons.
 						</p>
+
+						<p>
+							Using standard visually hidden CSS to hide the native radio button off screen, or as a single pixel in the document, will mean that certain screen reader users might be unable to locate the radio button. For instance, those searching by touch, or using a mouse while a screen reader announces what is being hovered. To mitigate this, the radio buttons have been positioned on top of their styled <code>label</code>s, yet still styled to be visually hidden. Note that NVDA does not announce the radio button role when hovered by mouse, regardless of it being styled or not, unless default NVDA settings are changed.
+						</p>
+
+						<p>
+							When a radio button is receives keyboard focus, screen readers like JAWS and NVDA may automatically go into forms mode, or require a user to hit <kbd>Enter</kbd> or <kbd>Space</kbd> to focus into the radio button, depending on the user's settings. Then arrow keys can be used to select the different radio buttons, as expected in forms mode.
+						</p>
+
 						<p>
 							VoiceOver on macOS may begin to focus the radio button labels when using arrow keys to change the selected radio button. This issue does not exist in VoiceOver + Chrome and is not necessarily unique to this particular styling of radio buttons.
 						</p>

@@ -8,10 +8,15 @@
  * allowing them to receive keyboard focus.
  */
 .r-radios input[type="radio"] {
-	opacity: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: 2em;
+	opacity: .0001;
 	position: absolute;
 	top: auto;
-	white-space: nowrap;
+	width: 1.75em;
+	z-index: 2;
 }
 
 .r-radio {
@@ -54,6 +59,7 @@
 	width: 250%;
 }
 
+fieldset:not([disabled]) input:not([disabled]):hover + .r-radio span,
 .r-radio:hover span,
 input:focus + .r-radio span {
 	font-size: .75em;
