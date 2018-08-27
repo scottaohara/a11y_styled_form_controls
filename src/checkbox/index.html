@@ -33,7 +33,7 @@
 				<article class="demo">
 					<header>
 						<h1>Styled HTML Checkboxes</h1>
-						<p>Last updated: <time>July 26, 2018</time></p>
+						<p>Last updated: <time>August 14, 2018</time></p>
 						<p>
 							Cross-browser styling for native HTML checkboxes.
 						</p>
@@ -108,7 +108,11 @@
 						<h4>Affects on Screen Reader Announcements?</h4>
 
 						<p>
-							Since the native checkbox remains in the DOM, and is used as the focusable element that controls the state of the custom visualization, there are no alterations to how a screen reader announces styled checkboxes.
+							Since the native checkbox remains in the DOM, and is used as the focusable element that controls the state of the custom visualization, there are no alterations to how a screen reader announces styled checkboxes when focused by the <kbd>Tab</kbd> key or virtual cursor.
+						</p>
+
+						<p>
+							Using standard visually hidden CSS to hide the native checkboxes off screen, or as a single pixel in the document, will mean that some screen reader users might be unable to locate a checkbox. For instance, those searching by touch, or using a mouse while a screen reader announces what is being hovered. To mitigate this, the checkboxes have been positioned on top of their pseudo element styled counterparts, yet remain visually hidden. Note that NVDA does not announce the checkbox role when hovered by mouse, regardless of it being styled or not, unless default NVDA settings are changed.
 						</p>
 					</section>
 

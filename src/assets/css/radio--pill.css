@@ -1,10 +1,12 @@
-.radio-pill {
+/* parent container <fieldset> */
+.r-pill {
 	border: 0;
 	padding: 0;
 	margin: 0;
 }
 
-.radio-pill legend {
+/* radio groups need a legend */
+.r-pill legend {
 	display: block;
 	font-size: inherit;
 	font-weight: bold;
@@ -13,74 +15,102 @@
 	width: 100%;
 }
 
-.radio-pill input {
-	clip: rect(0 0 0 0);
-	clip-path: inset(100%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-}
-
-.radio-pill__group {
+/*
+	Optional inner wrapper (<div>) to provide additional styling.
+*/
+.r-pill__group {
 	background: #fafafa;
 	border: 1px solid #083851;
 	border-radius: 2em;
+	display: inline-block;
 	padding: .25em;
+}
+
+.r-pill__item {
 	display: inline-block;
 	position: relative;
 }
 
-.radio-pill__group label {
+.r-pill input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: 2px solid;
+	height: 100%;
+	left: 0;
+	opacity: .00001;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.r-pill__item label {
 	border-radius: 2em;
 	border: 2px solid transparent;
 	color: #083851;
-	display: inline-block;
+	display: block;
 	padding: .25em .75em;
 }
 
-.radio-pill__group label:hover {
+.r-pill__item input:hover ~ label,
+.r-pill__item label:hover {
 	background: #E2F1FD;
 	border-color: #2196f3;
 }
 
-.radio-pill[disabled] .radio-pill__group input:checked + label:hover,
-.radio-pill__group input:checked + label {
+.r-pill[disabled] .r-pill__item input:checked + label:hover,
+.r-pill__item input:checked + label {
 	background: #2196f3;
 	color: #fff;
 }
 
-.radio-pill__group label:last-of-type:after {
+.r-pill__item label:after {
+	border: 2px solid;
+	border-color: rgba(0,0,0,0);
 	border-radius: 2em;
-	bottom: -.35em;
+	bottom: 0;
 	content: "";
-	left: -.35em;
+	left: 0;
 	pointer-events: none; /* 1 */
 	position: absolute;
-	right: -.35em;
-	top: -.35em;
+	right: 0;
+	top: 0;
+	transition:
+		bottom .2s ease-in-out,
+		border-color .2s ease-in-out,
+		left .2s ease-in-out,
+		right .2s ease-in-out,
+		top .2s ease-in-out;
 	/*
 		1. Don't like pointer-events?
 			 then use z-index: -1;
+			 but we don't want this getting in the way
+			 of touch / mouse clicks.
 	*/
 }
 
-.radio-pill__group input:focus ~ label:last-of-type:after  {
-	border: 2px solid #2196f3;
+.r-pill__item input:focus ~ label:after  {
+	border-color: #2196f3;
+	bottom: -.25em;
+	left: -.25em;
+	right: -.25em;
+	top: -.25em;
 }
 
 
 /**
  * Disabled
  */
-.radio-pill[disabled],
-.radio-pill__group input[disabled] + label {
+.r-pill[disabled],
+.r-pill__item input[disabled] + label {
 	opacity: .5;
 }
 
-.radio-pill__group input[disabled] + label:hover,
-.radio-pill[disabled] label:hover {
+.r-pill__item input[disabled] ~ label,
+.r-pill__item input[disabled] ~ label:hover,
+.r-pill[disabled] label:hover {
 	background: transparent;
 	border-color: transparent;
 	cursor: not-allowed;
@@ -92,21 +122,23 @@
  * if they are all checked in high contrast mode.
  */
 @media screen and (-ms-high-contrast: active) {
-	.radio-pill__group label {
+	.r-pill__item label {
 		border: 0;
 		margin: 2px;
 	}
 
-	.radio-pill__group input:checked + label {
+	.r-pill__item input:checked + label {
 		border: 2px solid;
 		margin: 0;
 	}
 
-	.radio-pill__group label:hover {
+	.r-pill__item input:hover ~ label,
+	.r-pill__item label:hover {
 		text-decoration: underline;
 	}
 
-	.radio-pill[disabled] .radio-pill__group label:hover {
+	.r-pill[disabled] .r-pill__item label:hover,
+	.r-pill[disabled] .r-pill__item input:hover ~ label {
 		text-decoration: none
 	}
 }

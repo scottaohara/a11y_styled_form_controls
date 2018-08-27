@@ -9,6 +9,17 @@
 	white-space: nowrap;
 }
 
+/**
+ * Inner wrapper to set a position relative for the inputs
+ * that need to be position absolute.
+ * display inline-block kees the wrapper only as wide
+ * as the radio switch within.
+ */
+.radio-switch__inner {
+	display: inline-block;
+	position: relative;
+}
+
 /*
 	radio button groups often benefit from a legend to
 	provide context as to what the different
@@ -43,8 +54,28 @@
 	'visually-hidden' class...so might as well just avoid that issue...
 */
 .radio-switch input {
-	opacity: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background: none;
+	height: 100%;
+	opacity: .00001;
 	position: absolute;
+	top: 0;
+	width: 30%;
+	z-index: 3;
+}
+
+.radio-switch input:first-of-type {
+	left: 0;
+}
+
+.radio-switch input:last-of-type {
+	right: 0;
+}
+
+.radio-switch input:not(:checked):hover + label {
+	text-decoration: underline;
 }
 
 /*
@@ -150,7 +181,8 @@ _:-ms-fullscreen, :root .radio-switch input:first-of-type:checked ~ label:first-
 	.radio-switch label:first-of-type:before {
 		background-color: windowText;
 		border: 1em solid transparent;
-		/* firefox doesn't respect the bg color, so this fills the knob */
+		/* firefox doesn't respect the bg color,
+		   so the border fills the knob */
 	}
 
 	.radio-switch:focus-within label:first-of-type:after {

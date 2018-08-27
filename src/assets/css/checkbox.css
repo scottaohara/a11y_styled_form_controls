@@ -3,10 +3,12 @@
 }
 
 .c-cb > input[type="checkbox"] {
-	opacity: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	opacity: .00001;
 	position: absolute;
-	top: auto;
-	white-space: nowrap;
+	z-index: 2;
 }
 
 .c-cb > label {
@@ -15,11 +17,18 @@
 }
 
 .c-cb > label:before,
+.c-cb > input[type="checkbox"] {
+	height: 1.125em;
+	left: .125em;
+	top: .825em;
+	width: 1.125em;
+}
+
+.c-cb > label:before,
 .c-cb > label:after {
 	border: 1px solid;
 	content: " ";
 	position: absolute;
-	top: .825em;
 	transition:
 		border-color .2s ease-in-out,
 		box-shadow .2s ease-in-out,
@@ -41,6 +50,7 @@
 	border-right: 4px solid #565656;
 	height: .825em;
 	left: .425em;
+	top: .825em;
 	transform-origin: center center;
 	transform: rotate(45deg) scale(0);
 	width: .5em;

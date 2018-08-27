@@ -34,7 +34,7 @@
 				<article class="demo">
 					<header>
 						<h1>Switch Component: Radio Buttons</h1>
-						<p>Last updated: <time>July 25, 2018</time></p>
+						<p>Last updated: <time>August 21, 2018</time></p>
 						<p>
 							Pattern to create a two option radio button group,
 							visually styled to resemble a <code>switch</code> component.
@@ -48,32 +48,34 @@
 						<legend>
 							Away message
 						</legend>
+						<div class="radio-switch__inner">
+							<input type="radio" name="ex" id="on1" checked="">
+							<label for="on1">
+								On
+							</label>
 
-						<input type="radio" name="ex" id="on1" checked="">
-						<label for="on1">
-							On
-						</label>
-
-						<input type="radio" name="ex" id="off1">
-						<label for="off1">
-							Off
-						</label>
+							<input type="radio" name="ex" id="off1">
+							<label for="off1">
+								Off
+							</label>
+						</div>
 					</fieldset>
 
 					<fieldset class="radio-switch">
 						<legend>
 							Signature
 						</legend>
+						<div class="radio-switch__inner">
+							<input type="radio" name="ex2" id="on2" checked="">
+							<label for="on2">
+								On
+							</label>
 
-						<input type="radio" name="ex2" id="on2" checked="">
-						<label for="on2">
-							On
-						</label>
-
-						<input type="radio" name="ex2" id="off2">
-						<label for="off2">
-							Off
-						</label>
+							<input type="radio" name="ex2" id="off2">
+							<label for="off2">
+								Off
+							</label>
+						</div>
 					</fieldset>
 
 					<details style="margin-top: 1em;">
@@ -103,16 +105,17 @@
   &lt;legend>
     Something
   &lt;/legend>
+  &lt;div class="radio-switch__inner">
+    &lt;input type="radio" name="lol" id="public">
+    &lt;label for="public">
+      On
+    &lt;/label>
 
-  &lt;input type="radio" name="lol" id="public">
-  &lt;label for="public">
-    On
-  &lt;/label>
-
-  &lt;input type="radio" name="lol" id="private">
-  &lt;label for="private">
-    Off
-  &lt;/label>
+    &lt;input type="radio" name="lol" id="private">
+    &lt;label for="private">
+      Off
+    &lt;/label>
+  &lt;/div>
 &lt;/fieldset></code></pre>
 						</details>
 
@@ -122,26 +125,33 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							Being a custom styled radio button group, there's not much for screen readers to get tripped up on here, and testing revealed no abnormal announcements from screen readers.
+							Being a custom styled radio button group, there's not much for screen readers to get tripped up on here. When testing with standard keyboard tabbing, and screen reader virtual cursor, there were no abnormal announcements from screen readers.
 						</p>
+
 						<p>
-							The only minor concern for a component like this is that it visually looks like a switch component, and switches have slightly different UX behavior associated with them. For example, a visual switch could be an actual <code>role="switch"</code>, a checkbox, or a toggle button, all depending on the context in which it is used. Each of these implementations would have a consistent single label, and the state of the component is what changes. This particular pattern doesn't adhere to those setups.
+							It should be noted that using standard visually hidden CSS to hide the native radio buttons off screen, or as a single pixel in the document, will mean that certain screen reader users might be unable to locate the radio button. For instance, those searching by touch, or using a mouse while a screen reader announces what is being hovered. To mitigate this, the radio buttons have been positioned on top of their styled <code>label</code>s (in this case the on and off visual labels). The radio buttons are still styled to be visually hidden, but with a very low opacity level. Note that NVDA does not announce the radio button role when hovered by mouse, regardless of it being styled or not, unless default NVDA settings are changed.
+						</p>
+
+						<p>
+							One bit of concern for the visual switch treatment is that there is implied UX that accompanies a switch. For example, a visual switch could be an actual <code>role="switch"</code>, a checkbox, or a toggle button, all depending on the context in which it is used. Each of these implementations would have a consistent single label, and the state of the component is what changes. This particular pattern doesn't adhere to those setups.
 						</p>
 
 						<h4>Usage note:</h4>
 						<p>
 							This type of a switch UI is heavily reliant on the idea that there are two visible labels that represent the opposing ends of the switch. Being that the switch has two labels, it would be expected that each label could receive mouse click or a tap to change the state of the switch.
 						</p>
+
 						<p>
 							Ideally the switch itself would also allow for mouse click or finger tap to freely toggle the state as well, as that's an expected interaction for a switch UI.
 						</p>
+
 						<p>
 							For single label switches, typically a user can focus the switch and toggle it with either <kbd>Space</kbd> or <kbd>Enter</kbd> keys.  With a radio button switch, arrow keys would be used instead, and <kbd>Space</kbd> or <kbd>Enter</kbd> keys would be largely irrelevant, beyond a screen reader first focusing a radio button in this component, and using such keys to enter forms mode, if their screen reader hadn't  entered forms mode already.
 						</p>
-						<p>
-							<b>Note:</b> due to <code>:focus-within</code> not having full support for older browsers, a pollyfill has been added to this demo.
-						</p>
 
+						<p>
+							<b>Note:</b> due to <code>:focus-within</code> not having full support for older browsers, a polyfill has been added to this demo.
+						</p>
 					</section> <!-- /.demo-details -->
 
 					<h3>Continue reading</h3>
