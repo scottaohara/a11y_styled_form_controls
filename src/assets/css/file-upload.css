@@ -1,17 +1,17 @@
-.file-up {
+.js .file-up {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 1.25em;
 }
 
-.file-up__label {
+.js .file-up__label {
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
 }
 
 
-.file-up__label__text {
+.js .file-up__label__text {
 	border: 1px solid #666;
 	display: inline-block;
 	padding: .5em;
@@ -26,7 +26,7 @@
  * form control (e.g. VO will not announce
  * whether there are files selected or not.)
  */
-.file-up [type="file"] {
+.js .file-up [type="file"] {
 	font-size: .1px;
 	height: 100%;
 	left: 0;
@@ -36,7 +36,7 @@
 	top: 0;
 }
 
-.file-up__output {
+.js .file-up__output {
 	display: inline-block;
 	font-size: .825em;
 	max-width: 100%;
@@ -45,13 +45,13 @@
 	white-space: nowrap;
 }
 
-.file-up__output {
+.js .file-up__output {
 	border: 1px solid #ddd;
 	padding: .75em;
 	vertical-align: top;
 }
 
-.file-up--compact .file-up__output {
+.js .file-up--compact .file-up__output {
 	display: none;
 }
 
@@ -63,8 +63,8 @@
  * indicator when the hidden form control has
  * received keyboard focus.
  */
-.file-up__label:hover .file-up__label__text,
-.file-up__label.focus-within .file-up__label__text {
+.js .file-up__label:hover .file-up__label__text,
+.js .file-up__label.focus-within .file-up__label__text {
 	border: 1px solid #111;
 	outline: 2px solid #333;
 	outline-offset: 2px;
