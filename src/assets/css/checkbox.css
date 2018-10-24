@@ -1,5 +1,6 @@
 .c-cb {
 	position: relative;
+	padding-left: 2em;
 }
 
 .c-cb > input[type="checkbox"] {
@@ -7,20 +8,24 @@
 	-webkit-appearance: none;
 	appearance: none;
 	opacity: .00001;
-	position: absolute;
+	margin-left: -2em;
+	margin-top: .75em;
+	vertical-align: top;
+	position: relative;
 	z-index: 2;
 }
 
 .c-cb > label {
-	display: block;
-	padding: .75em .5em .75em 2em;
+	display: inline-block;
+	vertical-align: top;
+	/*padding: .75em .5em .75em 2em;*/
+	padding: .75em .5em;
 }
 
 .c-cb > label:before,
 .c-cb > input[type="checkbox"] {
 	height: 1.125em;
 	left: .125em;
-	top: .825em;
 	width: 1.125em;
 }
 
@@ -41,6 +46,7 @@
 	box-shadow: 0 0 0 1px #565656;
 	height: 1.125em;
 	left: .125em;
+	top: .825em;
 	width: 1.125em;
 }
 
@@ -75,5 +81,5 @@
 }
 
 .c-cb > input[disabled] ~ label {
-	opacity: .5;
+	opacity: .625;
 }
