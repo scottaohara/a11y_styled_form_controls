@@ -119,12 +119,13 @@
 							This issue doesn't occur with unstyled checkboxes in Firefox + NVDA. This <code>position: absolute</code> behavior also does not occur in Chrome + NVDA.
 						</p>
 						<p>
-							a user can hit the up or down arrow to navigate between checkboxes and have the accessible name announced.  But in Firefox + NVDA, when navigating with the down arrow key, NVDA will announce "checkbox [check or unchecked]". A second press of the down arrow key will announce "clickable [accessible name of the checkbox]".  <b>Note</b> this separation of the form control from its accessible name does not occur when navigating by <kbd>X</kbd> or <kbd>F</kbd> keys, nor when using the <kbd>Tab</kbd> key for navigating the controls.
+							A user can hit the <kbd>up</kbd> or <kbd>down arrow</kbd> keys to navigate between checkboxes and have their accessible names announced.  But in Firefox + NVDA, when navigating with the <kbd>down arrow</kbd> key NVDA will announce "checkbox [check or unchecked]". A second press of <kbd>down arrow</kbd> will announce "clickable [accessible name of the checkbox]".  <b>Note</b> this separation of the form control from its accessible name does not occur when navigating by <kbd>X</kbd> or <kbd>F</kbd> keys, nor when using the <kbd>Tab</kbd> key to navigate the controls.
 						</p>
 
 						<p>
 							Along with the NVDA + <code>position: absolute</code> announcement oddity, using standard visually hidden CSS to hide native checkboxes off screen, or as a single pixel in the document, will mean that some screen reader users might be unable to locate a checkbox.
 						</p>
+
 						<p>
 							For instance, people searching by touch, or using a mouse while a screen reader announces what is being hovered (NVDA Mouse setting, "Report role when mouse enters object" turned on). To mitigate a checkbox role not being announced to these people, the checkboxes have been positioned on top of their pseudo element styled counterparts (<code>position: relative;</code> with a <code>z-index</code>), yet remain visually hidden.
 						</p>
