@@ -1,27 +1,42 @@
 .c-cb {
-	position: relative;
 	padding-left: 2em;
+	position: relative;
 }
 
 .c-cb > input[type="checkbox"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	opacity: .00001;
 	margin-left: -2em;
 	margin-top: .75em;
-	vertical-align: top;
+	opacity: .00001;
 	position: relative;
+	vertical-align: top;
 	z-index: 2;
 }
 
+/**
+ * Make sure the label is only as wide as the
+ * inner text requires it to be.
+ * The label should not be a block element
+ * or run 100% width of its container.
+ * Why would someone expect to click
+ * white space on the opposite side of the
+ * screen to have a checkbox checked?
+ */
 .c-cb > label {
 	display: inline-block;
-	vertical-align: top;
-	/*padding: .75em .5em .75em 2em;*/
 	padding: .75em .5em;
+	vertical-align: top;
 }
 
+
+/**
+ * Note, the :before pseudo-element is the new
+ * "bounds" or "box" of the checkbox.
+ * It must be the same height, width and
+ * position of the native checkbox element.
+ */
 .c-cb > label:before,
 .c-cb > input[type="checkbox"] {
 	height: 1.125em;
@@ -29,6 +44,10 @@
 	width: 1.125em;
 }
 
+/**
+ * Base styles for use on both
+ * pseudo elements.
+ */
 .c-cb > label:before,
 .c-cb > label:after {
 	border: 1px solid;
@@ -40,6 +59,9 @@
 		transform .2s ease-in-out;
 }
 
+/**
+ * Styles for the custom box boundary.
+ */
 .c-cb > label:before {
 	border-color: #565656;
 	border-radius: 2px;
@@ -50,6 +72,9 @@
 	width: 1.125em;
 }
 
+/**
+ * This recreates the "check" mark.
+ */
 .c-cb > label:after {
 	border: 0;
 	border-bottom: 4px solid #565656;
@@ -62,6 +87,10 @@
 	width: .5em;
 }
 
+
+/**
+ * ** Defining States **
+ */
 .c-cb > input:checked ~ label:before {
 	border-color: transparent;
 	box-shadow: 0 0 0 2px #0d5192;
