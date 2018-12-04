@@ -1,6 +1,6 @@
 ---
 name: Issue report
-about: Create a report to help us improve
+about: Found a bug in how a pattern functions? File an issue!
 
 ---
 
@@ -28,4 +28,4 @@ If applicable, add screenshots, transcript, video, or audio to help explain the 
  - Versions [of OS / browser / Assistive Technology]
 
 ## Additional context
-Add any other context about the problem here.
+Add any other information about the issue here.
