@@ -98,6 +98,11 @@ input[type=range]:focus::-moz-range-track {
 	background: #168be8;
 }
 
+::-ms-ticks-after,
+::-ms-ticks-before {
+	color: transparent;
+}
+
 input[type=range]:focus::-ms-fill-lower {
 	background: #168be8;
 }
