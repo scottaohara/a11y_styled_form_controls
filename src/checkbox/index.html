@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="../assets/css/--demo-only--.css">
 		<link rel="stylesheet" href="../assets/css/--shared--.css">
 		<link rel="stylesheet" href="../assets/css/checkbox.css">
+		<link rel="stylesheet" href="../assets/css/checkbox-alt.css">
 	</head>
 	<body>
 
@@ -34,37 +35,63 @@
 					<header>
 						<h1>Styled HTML Checkboxes</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>November 29, 2018</time></p>
+						<p>Last updated: <time>December 12, 2018</time></p>
 						<p>
 							Cross-browser styling for native HTML checkboxes.
 						</p>
 					</header>
 					<h2>
-						Pattern Demo
+						Pattern Demos
 					</h2>
 
 					<form>
 						<fieldset>
 							<legend>
-								My related checkboxes
+								Visually Hidden checkboxes
 							</legend>
 							<div class="c-cb">
-								<input type="checkbox" name="c_input" id="c_input_1" checked>
+								<input type="checkbox" id="c_input_1" checked>
 								<label for="c_input_1">
 									Option 1
 								</label>
 							</div>
 							<div class="c-cb">
-								<input type="checkbox" name="c_input" id="c_input_2" disabled>
+								<input type="checkbox" id="c_input_2" disabled>
 								<label for="c_input_2">
 									Option 2
 									(this option is disabled)
 								</label>
 							</div>
 							<div class="c-cb">
-								<input type="checkbox" name="c_input" id="c_input_3">
+								<input type="checkbox" id="c_input_3" required="">
 								<label for="c_input_3">
-									Option 3...
+									Option 3 is required
+									<span aria-hidden="true">*</span>
+								</label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>
+								Single Element Checkboxes
+							</legend>
+							<div class="s-cb">
+								<input type="checkbox" id="s_input_1" checked>
+								<label for="s_input_1">
+									Option 1
+								</label>
+							</div>
+							<div class="s-cb">
+								<input type="checkbox" id="s_input_2" disabled>
+								<label for="s_input_2">
+									Option 2
+									(this option is disabled)
+								</label>
+							</div>
+							<div class="s-cb">
+								<input type="checkbox" id="s_input_3" required="">
+								<label for="s_input_3">
+									Option 3 is required
 								</label>
 							</div>
 						</fieldset>
@@ -77,26 +104,41 @@
 						</h3>
 
 						<details open>
-							<summary>Pattern Markup</summary>
-						<pre><code class="language-html">&lt;div class="c-cb"&gt;
-  &lt;input type="checkbox" name="c_input" id="c_input_1" checked&gt;
+							<summary>Pattern Markup: Visually Hidden Checkbox</summary>
+						<pre><code class="language-html">&lt;!-- visually hidden -->
+&lt;div class="c-cb"&gt;
+  &lt;input type="checkbox" id="c_input_1" checked&gt;
   &lt;label for="c_input_1"&gt;
     Option 1
   &lt;/label&gt;
 &lt;/div&gt;</code></pre>
 							</details>
 
+						<details closed>
+							<summary>Pattern Markup: Restyled Checkbox</summary>
+						<pre><code class="language-html">&lt;!-- restyled input -->
+&lt;div class="s-cb">
+  &lt;input type="checkbox" id="s_input_1" checked>
+  &lt;label for="s_input_1">
+    Option 1
+  &lt;/label>
+&lt;/div></code></pre>
+							</details>
+
 						<p>
-							When customizing any form control, it must remain accessible to assistive technology and keyboard users. To keep this custom style accessible, a visually hidden checkbox form control is the cornerstone of the custom style.
+							When customizing any form control, it must remain accessible to assistive technology and keyboard users. To keep this custom style accessible, a visually hidden checkbox, or restyling the checkbox directly are the cornerstones of maintaining the accessibility of this form control.
 						</p>
 
 						<p>
-							Without the visually hidden checkbox, all checkbox functionality, including keyboard focus and appropriate announcements to screen readers, would need to be rewritten using JavaScript and necessary <abbr>ARIA</abbr> attributes. This would significantly inflate the development effort needed to create a custom styled checkbox.
+							Without the utilizing the native checkbox, all expected functionality, including keyboard focus and appropriate announcements to screen readers, would need to be rewritten using JavaScript and necessary <abbr>ARIA</abbr> attributes. This would significantly inflate the development effort needed to create a custom styled checkbox.
 						</p>
 
+
+						<h4>Visually hidden checkbox details</h4>
 						<p>
-							The primary purpose of the wrapping element (<code>div</code> with the <code>.c-cb</code> class) is to act as a styling hook. The element utilizes <code>position: relative;</code> to keep absolute positioned pseudo elements within the bounds of the wrapping element, and not affected by another potential parent element's position property.
+							For the visually hidden checkboxes, the primary purpose of the wrapping element (<code>div</code> with the <code>.c-cb</code> class) is to act as a styling hook. The element utilizes <code>position: relative;</code> to keep absolute positioned pseudo elements within the bounds of the wrapping element, and not affected by another potential parent element's position property.
 						</p>
+
 
 						<p>
 							The form control's <code>label</code> <code>:before</code> and <code>:after</code> pseudo elements are used to create a visual "checkbox" element that can be styled via <abbr>CSS</abbr>. This example merely recreates a recognizable, but custom, checkbox design.
@@ -106,6 +148,11 @@
 							The appearance of the custom checkbox is determined by the current state of the native checkbox. <code>:checked</code>, and <code>:focus</code> states, along with a potential <code>disabled</code> state all serve as hooks to visually change the styling of the custom checkbox.
 						</p>
 
+						<h4>Directly styled checkbox details</h4>
+						<p>
+							The most important thing to note about directly styling checkbox controls is that their inherent appearance needs to be reset by vendor prefixed <code>appearance: none</code>.  Since Internet Explorer and Edge do not support this prefixed property, their direct styling of checkboxes will be limited.  The Microsoft browsers do support a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-check"><code>::-ms-check</code> selector</a>, which can provide some help in styling for these browsers.
+						</p>
+
 						<h4>Affects on Screen Reader Announcements?</h4>
 
 						<p>
@@ -113,11 +160,11 @@
 						</p>
 
 						<p>
-							Often, people might think to hide their checkbox with a standard "visually-hidden" or "sr-only" CSS ruleset.  These popular rulesets often include <code>position: absolute</code> and squish the native <code>input</code> down to a 1px by 1px invisible dot on the screen.  Using this standard method to visually hide the checkbox will retain its keyboard accessibility, but impose screen reader quirks that should be avoided.
+							Specifically for the visually hidden checkbox, people might think to hide it with a standard "visually-hidden" or "sr-only" CSS ruleset.  These popular rulesets often include <code>position: absolute</code> and squish the native <code>input</code> down to a 1px by 1px invisible dot on the screen.  Using this standard method to visually hide the checkbox will retain its keyboard accessibility, but impose screen reader quirks that should be avoided.
 						</p>
 
 						<p>
-							For instance, with NVDA 2018.3.2 and Firefox 62 / 64 Nightly, using <code>position: absolute</code> to remove checkboxes from the normal DOM flow creates a separate focus stop when navigating with the virtual cursor. This means that where using the <kbd>down arrow</kbd> key to navigate through the document would typically highlight (virtually focus) a native checkbox once, it instead highlights it twice.
+							For instance, with NVDA 2018.3.2 and Firefox 62 to 64, using <code>position: absolute</code> to remove checkboxes from the normal DOM flow creates a separate focus stop when navigating with the virtual cursor. This means that where using the <kbd>down arrow</kbd> key to navigate through the document would typically highlight (virtually focus) a native checkbox once, it instead highlights it twice.
 						</p>
 
 						<p>
@@ -139,7 +186,7 @@
 							To mitigate a checkbox role not being announced to these people, the checkboxes have been positioned on top of their pseudo element styled counterparts (<code>position: relative;</code> with a <code>z-index</code>). The native checkbox remains visually hidden, but is announces as if it were not (as expected).
 						</p>
 
-						<h3>VoiceOver on macOS 10.13.6 + Safari 12</h3>
+						<h3>VoiceOver on macOS 10.13.6 + Safari 12.0.2</h3>
 						<p>
 							When re-checking the checkboxes after the latest releases of macOS and Safari, if navigating by <kbd>Tab</kbd> key or <kbd>VO</kbd> cursor, checkboxes will double announce their label.  For instance: <q>Option 1. Option 1.</q>. This only occurs if the checkbox precedes its <code>label</code>. If the checkbox comes after the <code>label</code>, or within it, in the DOM order, this bug will not occur.  This bug does not occur when using Chrome + VoiceOver.  (Bug filed: 45506356)
 						</p>

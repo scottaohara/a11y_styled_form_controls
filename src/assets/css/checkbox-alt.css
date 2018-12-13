@@ -1,0 +1,139 @@
+.s-cb input {
+  -moz-appearance: none;
+  -o-apperance: none;
+  -webkit-appearance: none;
+
+  border-radius: 4px;
+  border: 2px solid #666;
+  font-size: inherit;
+  height: 2em;
+  line-height: 1;
+  margin: .5em 0 0 0;
+  position: relative;
+  vertical-align: bottom;
+  width: 2em;
+}
+
+.s-cb input:before,
+.s-cb input:after {
+  content: "";
+  position: absolute;
+  transition: transform .2s ease-in-out;
+}
+
+.s-cb input:before,
+.s-cb input:after {
+  border-bottom: 3px solid rgba(34, 139, 236, 1);
+  border-right: 3px solid rgba(34, 139, 236, 1);
+  bottom: 0;
+  height: 1em;
+  margin: auto;
+  right: .5em;
+  top: -.5em;
+  transform: rotate(45deg) scale(0);
+  width: .625em;
+}
+
+.s-cb input:checked {
+  border-color: #0d5192;
+  box-shadow: inset 0 0 20px 3px rgba(34, 139, 236, .05);
+}
+
+.s-cb input:checked:before {
+  transform: rotate(45deg) scale(1);
+}
+
+.s-cb input:focus {
+  box-shadow: 0 0 0 1px rgba(34, 139, 236, 1);
+  border: 2px solid rgba(34, 139, 236, 1);
+  outline: 1px dotted rgba(34, 139, 236, 1);
+  outline-offset: 3px;
+}
+
+
+/**
+ * Disabled styles
+ */
+.s-cb input[disabled] {
+  opacity: .45
+}
+
+.s-cb input[disabled] + label {
+  opacity: .75;
+}
+
+
+/* close the whitespace gap between the input and the label
+   allow for a required visual indicator to be absolutely positioned
+*/
+.s-cb label {
+  position: relative;
+  left: -.25em;
+  padding-left: .75em;
+}
+
+/* if a checkbox is required, make some space for the
+   CSS generated visual indicator. */
+.s-cb input[required] + label {
+  padding-right: .9em;
+}
+
+
+/**
+ * Styling for invalid (aka unchecked required checkbox)
+ */
+.s-cb input:invalid {
+  box-shadow: 0 0 0 1px rgba(20, 20, 20, 1);
+  border: 2px solid rgba(20, 20, 20, 1);
+}
+
+.s-cb input:invalid:focus {
+  box-shadow: 0 0 0 1px rgba(220, 20, 20, 1);
+  border-color: rgba(220, 20, 20, 1);
+}
+
+
+/**
+ * Create a visual indicator for the requiredness
+ * of this checkbox
+ */
+.s-cb input[required] + label:after,
+.s-cb input[required] + label:before {
+  border-left: .35em solid transparent;
+  border-right: .35em solid transparent;
+  content: " ";
+  position: absolute;
+  right: 0;
+}
+
+.s-cb input[required] + label:after {
+ border-bottom: .6em solid red;
+ top: -.2em;
+}
+
+.s-cb input[required] + label:before {
+ border-top: .6em solid red;
+ top: 0
+}
+
+/* when checked, ease up on the "error" feel to the indicator */
+.s-cb input[required]:checked + label:after {
+  border-bottom-color: rgba(34, 139, 236, .8);
+}
+
+.s-cb input[required]:checked + label:before {
+  border-top-color: rgba(34, 139, 236, .8);
+}
+
+
+
+/**
+ * IE11 / Edge
+ *
+ * Note that -ms-check will apply to radio button
+ * styles as well.
+ */
+.s-cb input::-ms-check {
+  border-color: rgba(34, 139, 236, 1);
+  color: rgba(34, 139, 236, 1);
+}

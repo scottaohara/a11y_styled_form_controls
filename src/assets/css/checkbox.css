@@ -112,3 +112,9 @@
 .c-cb > input[disabled] ~ label {
 	opacity: .625;
 }
+
+/* placeholder design until a better required
+   design pattern can be created */
+.c-cb [aria-hidden="true"] {
+	color: #f00;
+}
