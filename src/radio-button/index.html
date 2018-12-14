@@ -47,7 +47,7 @@
 					<form>
 						<fieldset>
 							<legend>
-								Visually Hidden Radios
+								Visually Hidden Radio Buttons
 							</legend>
 							<div class="c-radio">
 								<input type="radio" name="r_input" id="r_input_1" checked>
@@ -77,7 +77,7 @@
 					<form>
 						<fieldset>
 							<legend>
-								Radio Element Restyles
+								Radio Button Restyles
 							</legend>
 							<label class="n-radio-label">
 								<input type="radio" id="native_r" name="n_radio" class="n-radio">
@@ -99,7 +99,7 @@
 						<div>
 							<p>
 								<code>-moz-appearance: none;</code> does not completely remove the styling
-								from the radio button in Firefox ESR. (works as expected in Firefox 60+).
+								from the radio button in Firefox prior to version 60.
 							</p>
 							<p>
 								The styled radio button utilizes <code>box-shadow</code>es to visually indicate
@@ -167,7 +167,7 @@
 						</p>
 
 						<p>
-							Note, regarding the <a href="#vdn">visual design note</a>, there are issues with this styling technique in IE11 and Firefox ESR. If you need to support those browsers, then this pattern may not be sufficient, and the visually hidden technique should be considered instead.
+							Note, regarding the <a href="#vdn">visual design note</a>, there are issues with this styling technique in IE11 and Firefox pre-v60. If you need to support those browsers, then this pattern may not be sufficient, and the visually hidden technique should be considered instead.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
