@@ -94,8 +94,7 @@
 
 
 /**
- * Create a visual indicator for the requiredness
- * of this checkbox
+ * Create a visual indicator for the required checkbox
  */
 .s-cb input[required] + label:after,
 .s-cb input[required] + label:before {
