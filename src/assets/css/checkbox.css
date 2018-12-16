@@ -115,6 +115,49 @@
 
 /* placeholder design until a better required
    design pattern can be created */
-.c-cb [aria-hidden="true"] {
+.c-cb > input:invalid ~ label:before {
+	border-color: #f00;
+	box-shadow: 0 0 0 1px #f00;
+}
+
+.c-cb > input:invalid:focus ~ label:before {
+	box-shadow: 0 0 0 2px #f00;
+}
+
+.c-cb input:invalid ~ [aria-hidden="true"] {
 	color: #f00;
+}
+
+
+.c-cb input[required] ~ label .req-star {
+	position: relative;
+	right: -1em;
+}
+
+.c-cb input[required] ~ label .req-star:after,
+.c-cb input[required] ~ label .req-star:before {
+  border-left: .35em solid transparent;
+  border-right: .35em solid transparent;
+  content: " ";
+  position: absolute;
+  right: 0;
+}
+
+.c-cb input[required] ~ label .req-star:after {
+ border-bottom: .6em solid red;
+ top: -.2em;
+}
+
+.c-cb input[required] ~ label .req-star:before {
+ border-top: .6em solid red;
+ top: 0
+}
+
+/* when checked, ease up on the "error" feel to the indicator */
+.c-cb input[required]:checked + label .req-star:after {
+  border-bottom-color: rgba(34, 139, 236, .8);
+}
+
+.c-cb input[required]:checked + label .req-star:before {
+  border-top-color: rgba(34, 139, 236, .8);
 }
