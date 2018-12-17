@@ -35,7 +35,7 @@
 					<header>
 						<h1>Styled Radio Buttons</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>August 14, 2018</time></p>
+						<p>Last updated: <time>December 17, 2018</time></p>
 						<p>
 							Cross-browser styling for HTML radio buttons.
 						</p>
@@ -79,18 +79,24 @@
 							<legend>
 								Radio Button Restyles
 							</legend>
-							<label class="n-radio-label">
-								<input type="radio" id="native_r" name="n_radio" class="n-radio">
-								<span>Restyle Option 1</span>
-							</label>
-							<label class="n-radio-label">
-								<input type="radio" id="native_r2" name="n_radio" class="n-radio" checked>
-								<span>Restyle Option 2</span>
-							</label>
-							<label class="n-radio-label">
-								<input type="radio" id="native_r2" name="n_radio" class="n-radio" disabled>
-								<span>Restyle Option 3 (disabled)</span>
-							</label>
+							<div> <!-- div used for vertically stacking radio buttons -->
+								<label class="n-radio-label">
+									<input type="radio" id="native_r" name="n_radio" class="n-radio">
+									<span>Restyle Option 1</span>
+								</label>
+							</div>
+							<div>
+								<label class="n-radio-label">
+									<input type="radio" id="native_r2" name="n_radio" class="n-radio" checked>
+									<span>Restyle Option 2</span>
+								</label>
+							</div>
+							<div>
+								<label class="n-radio-label">
+									<input type="radio" id="native_r2" name="n_radio" class="n-radio" disabled>
+									<span>Restyle Option 3 (disabled)</span>
+								</label>
+							</div>
 						</fieldset>
 					</form>
 
@@ -168,6 +174,10 @@
 
 						<p>
 							Note, regarding the <a href="#vdn">visual design note</a>, there are issues with this styling technique in IE11 and Firefox pre-v60. If you need to support those browsers, then this pattern may not be sufficient, and the visually hidden technique should be considered instead.
+						</p>
+
+						<p>
+							IE11 and Edge can use <code>::-ms-check</code> to restyle both radio buttons and checkboxes. If using this vendor prefixed selector, make sure the checkbox and radio button styles don't clash.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
