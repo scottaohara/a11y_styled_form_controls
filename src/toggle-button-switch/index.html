@@ -35,7 +35,7 @@
 					<header>
 						<h1>Switch Component: Toggle Button</h1>
 						<p>Published: <time>July 24, 2018</time></p>
-						<p>Last updated: <time>October 23, 2018</time></p>
+						<p>Last updated: <time>December 17, 2018</time></p>
 						<p>
 							Pattern to create a toggle <code>button</code>,
 							visually styled to resemble a <code>switch</code> component.
@@ -46,12 +46,12 @@
 						Pattern Demo
 					</h2>
 
-					<a data-switch-btn hidden>
+					<a data-switch-toggle hidden>
 						ARIA
-						<b data-switch-btn-ui></b>
+						<b data-switch-toggle-ui></b>
 					</a>
 
-					<button type="button" data-switch-btn data-switch-btn-pressed data-switch-btn-labels disabled>
+					<button type="button" data-switch-toggle data-switch-toggle-pressed data-switch-toggle-labels disabled>
 						Native
 					</button>
 
@@ -62,7 +62,7 @@
 								Switch toggle buttons are commonly represented as a visual text label and a switch UI, or as a text label with a switch UI that has its own "On" and "Off" labeling.
 							</p>
 							<p>
-								By default, the component outputs the unlabeled switch UI. Using the attribute <code>data-switch-btn-labels</code> or manually adding a class of <code>toggle-switch--labels</code>, the component will add "on" and "off" labels to the switch UI.
+								By default, the component outputs the unlabeled switch UI. Using the attribute <code>data-switch-toggle-labels</code> or manually adding a class of <code>toggle-switch--labels</code>, the component will add "on" and "off" labels to the switch UI.
 							</p>
 						</div>
 					</details>
@@ -75,14 +75,14 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-								<pre><code class="language-html">&lt;a data-switch-btn>
+								<pre><code class="language-html">&lt;a data-switch-toggle>
   Progressively Enhanced Toggle
 &lt;/a>
 
 &lt;button type="button"
-  data-switch-btn
-  data-switch-btn-labels
-  data-switch-btn-pressed
+  data-switch-toggle
+  data-switch-toggle-labels
+  data-switch-toggle-pressed
   disabled>
   Native Button Toggle
 &lt;/button>
@@ -109,7 +109,7 @@
 							During the setup process for a toggle button, the JavaScript will progressively enhance a <code>button</code> (or a non-<code>button</code> element) into a toggle button.
 						</p>
 						<p>
-							The necessary attributes will be added to the element, and a child element to serve as the switch UI will be created, if such an element does not already exist and is identified by having the <code>data-switch-btn-ui</code> attribute.
+							The necessary attributes will be added to the element, and a child element to serve as the switch UI will be created, if such an element does not already exist and is identified by having the <code>data-switch-toggle-ui</code> attribute.
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
@@ -247,7 +247,7 @@
 		<script src="../assets/js/switch-toggle-buttons.js"></script>
 		<script>
 			// some other file.js
-			var selector = '[data-switch-btn]';
+			var selector = '[data-switch-toggle]';
 			var elList = document.querySelectorAll(selector);
 			var i;
 

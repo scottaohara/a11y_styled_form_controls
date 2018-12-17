@@ -1,12 +1,11 @@
 /* containing label */
-.toggle-switch {
+.switch-toggle {
 	background: none;
 	border: 1px solid transparent;
 	box-shadow: 0 0 0px #2196f3;
 	display: block;
 	font-size: inherit;
 	line-height: 1;
-	overflow: hidden;
 	margin: 1em 0 0;
 	padding: .5em;
 	position: relative;
@@ -15,32 +14,31 @@
 	width: 100%;
 }
 
-.toggle-switch:hover {
+.switch-toggle:hover {
 	box-shadow: 0 0 2px #2196f3;
 }
 
-.toggle-switch:focus {
+.switch-toggle:focus {
 	outline: none;
 }
 
 /* negate 'flash' of text color when pressing a button in some browsers */
-.toggle-switch:active {
+.switch-toggle:active {
 	color: inherit;
 }
 
 /* using the before/after pseudo elements of the span to create the "switch" */
-.toggle-switch__ui:before,
-.toggle-switch__ui:after {
+.switch-toggle__ui:before,
+.switch-toggle__ui:after {
 	border: 1px solid #565656;
 	content: "";
-	display: block;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 /* styling specific to the knob of the switch */
-.toggle-switch__ui:after {
+.switch-toggle__ui:after {
 	background: #fff;
 	border-radius: 100%;
 	height: 1.5em;
@@ -50,7 +48,7 @@
 }
 
 /* styling specific to the knob "container" */
-.toggle-switch__ui:before {
+.switch-toggle__ui:before {
 	background: #eee;
 	border-radius: 1.75em;
 	height: 1.75em;
@@ -59,28 +57,29 @@
 	width: 2.75em;
 }
 
-.toggle-switch span {
+.switch-toggle span {
 	pointer-events: none;
 }
 
-.toggle-switch:focus .toggle-switch__ui:before {
+.switch-toggle:focus .switch-toggle__ui:before {
 	outline: 2px solid #2196f3;
+	outline-offset: 2px;
 }
 
 /* change the position of the knob to indicate it has been checked*/
-.toggle-switch[aria-pressed="true"] .toggle-switch__ui:after {
+.switch-toggle[aria-pressed="true"] .switch-toggle__ui:after {
 	right: .25em;
 }
 
 /* update the color of the "container" to further visually indicate state */
-.toggle-switch[aria-pressed="true"] .toggle-switch__ui:before {
+.switch-toggle[aria-pressed="true"] .switch-toggle__ui:before {
 	background: #2196f3;
 }
 
 /**
  * Toggle switch modifications for displaying On/Off labels
  */
-.toggle-switch--labels span:before {
+.switch-toggle--labels span:before {
 	content: "Off";
 	color: rgba(10, 10, 10, 1);
 	line-height: 1.6;
@@ -88,11 +87,11 @@
 	width: 3.5em;
 }
 
-.toggle-switch--labels[aria-pressed="false"] span:after {
+.switch-toggle--labels[aria-pressed="false"] span:after {
 	right: 2.2em;
 }
 
-.toggle-switch--labels[aria-pressed="true"] span:before {
+.switch-toggle--labels[aria-pressed="true"] span:before {
 	color: rgba(255 ,255 ,255 ,1);
 	content: "On";
 	text-indent: .25em;
@@ -100,7 +99,7 @@
 }
 
 @media screen and (-ms-high-contrast: active) {
-	.toggle-switch__ui:after {
+	.switch-toggle__ui:after {
 		background-color: windowText;
 	}
 }

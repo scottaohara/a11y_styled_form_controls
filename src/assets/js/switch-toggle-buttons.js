@@ -34,7 +34,7 @@
 			// Unless a toggle button is specifically meant to be disabled,
 			// when JS is available, remove the disabled attribute so these
 			// buttons can be used.
-			if ( el.getAttribute('data-toggle-btn') !== "disabled" ) {
+			if ( el.getAttribute('data-switch-toggle') !== "disabled" ) {
 				el.removeAttribute('disabled');
 			}
 
@@ -54,7 +54,7 @@
 		 */
 		var setPressed = function ( el ) {
 			if ( !el.hasAttribute('aria-pressed') ) {
-				el.setAttribute('aria-pressed', el.hasAttribute('data-toggle-btn-pressed'))
+				el.setAttribute('aria-pressed', el.hasAttribute('data-switch-toggle-pressed'))
 			}
 		}
 
@@ -82,7 +82,7 @@
 		 * and append it to the button element.
 		 */
 		var setSwitchUI = function ( el ) {
-			var switchUI = el.querySelector('[data-toggle-btn-ui]') || el.querySelector('.toggle-switch__ui');
+			var switchUI = el.querySelector('[data-switch-toggle-ui]') || el.querySelector('.switch-toggle__ui');
 
 			if ( !switchUI ) {
 				var newUI = doc.createElement('span');
@@ -90,8 +90,8 @@
 				switchUI = el.querySelector('span');
 			}
 
-			if ( !switchUI.classList.contains('toggle-switch__ui') ) {
-				switchUI.classList.add('toggle-switch__ui');
+			if ( !switchUI.classList.contains('switch-toggle__ui') ) {
+				switchUI.classList.add('switch-toggle__ui');
 			}
 
 			// after confirming a switchUI element exists:
@@ -103,13 +103,13 @@
 		 */
 		var setClasses = function ( el ) {
 			// if the default class for this component doesn't exist, add it
-			if ( !el.classList.contains('toggle-switch') ) {
-				el.classList.add('toggle-switch');
+			if ( !el.classList.contains('switch-toggle') ) {
+				el.classList.add('switch-toggle');
 			}
 
 			// if a switch ui should display the text 'on' and 'off'
-			if ( el.hasAttribute('data-switch-btn-labels') || el.classList.contains('toggle-switch--labels') ) {
-				el.classList.add('toggle-switch--labels');
+			if ( el.hasAttribute('data-switch-toggle-labels') || el.classList.contains('switch-toggle--labels') ) {
+				el.classList.add('switch-toggle--labels');
 			};
 		}
 
