@@ -74,9 +74,15 @@
 
 
 @media screen and (-ms-high-contrast: active) {
-	/* allow IE to see SOMETHING */
+	/*
+		allow IE to see SOMETHING
+	*/
 	.switchbox input::-ms-check {
 		opacity: 1;
+	}
+
+	_:-ms-lang(x), _:-webkit-full-screen, .switchbox input::-ms-check {
+		opacity: 0;
 	}
 
 	/* don't want this showing up in MS browsers */
