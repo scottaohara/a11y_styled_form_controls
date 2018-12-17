@@ -9,14 +9,14 @@
 .c-radio > input[type="radio"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	appearance: none;
+	appearance: none; /* in case this ever gets supported */
 	background: none;
 	opacity: .00001;
 	z-index: 2;
 }
 
 .c-radio > label {
-	display: block;
+	display: inline-block;
 	padding: .75em .5em .75em 2em;
 }
 
@@ -36,7 +36,7 @@
 .c-radio > label:before,
 .c-radio > label:after {
 	border-radius: 100%;
-	content: "";
+	content: " ";
 	transition:
 		border-color .2s ease-in-out,
 		box-shadow .2s ease-in-out;

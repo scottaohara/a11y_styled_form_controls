@@ -1,13 +1,12 @@
 .n-radio-label {
 	display: inline-block;
 	padding: .5em 0;
-	width: 100%;
 }
 
 .n-radio {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	appearance: none;
+	appearance: none; /* in case this ever gets supported */
 	background: #fff;
 	border-radius: 100%;
 	border: 1px solid transparent;
