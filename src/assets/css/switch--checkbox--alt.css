@@ -68,7 +68,7 @@
 	width: 1.325em;
 }
 
-.switchbox input:after:checked {
+.switchbox input:checked:after {
 	right: 0;
 }
 
