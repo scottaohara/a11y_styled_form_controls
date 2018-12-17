@@ -53,23 +53,34 @@
 }
 
 
+/**
+ * High contrast mode styles
+ */
+
+
+/* high contrast style for firefox */
+.switchbox input:after {
+	border-radius: 100%;
+	border: 11px solid transparent;
+	content: "";
+	height: 1.325em;
+	position: absolute;
+	width: 1.325em;
+}
+
+.switchbox input:after:checked {
+	right: 0;
+}
+
+
 @media screen and (-ms-high-contrast: active) {
 	/* allow IE to see SOMETHING */
 	.switchbox input::-ms-check {
 		opacity: 1;
 	}
 
-
+	/* don't want this showing up in MS browsers */
 	.switchbox input:after {
-		border-radius: 100%;
-		border: 11px solid transparent;
-		content: "";
-		height: 1.325em;
-		position: absolute;
-		width: 1.325em;
-	}
-
-	.switchbox input:after:checked {
-		right: 0;
+		display: none;
 	}
 }
