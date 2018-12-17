@@ -60,11 +60,16 @@
 	}
 
 
-	.switchbox input:checked:after {
-		border: 6px solid rgba(0, 2, 120, 1);
+	.switchbox input:after {
+		border-radius: 100%;
+		border: 11px solid transparent;
 		content: "";
-		height: 2em;
-		width: 2em;
-		border-radius: 100%
+		height: 1.325em;
+		position: absolute;
+		width: 1.325em;
+	}
+
+	.switchbox input:after:checked {
+		right: 0;
 	}
 }
