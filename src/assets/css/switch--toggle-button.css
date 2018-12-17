@@ -1,7 +1,8 @@
 /* containing label */
 .switch-toggle {
 	background: none;
-	border: 1px solid transparent;
+	border: none;
+	border-bottom: 1px solid transparent;
 	box-shadow: 0 0 0px #2196f3;
 	display: block;
 	font-size: inherit;
