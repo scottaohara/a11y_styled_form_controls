@@ -99,6 +99,8 @@
 .c-cb > input:focus ~ label:before {
 	border-color: transparent;
 	box-shadow: 0 0 0 3px #228BEC;
+	outline-offset: 2px;
+	outline: 2px solid transparent;
 }
 
 .c-cb > input:checked ~ label:after {
