@@ -51,3 +51,20 @@
 .switchbox > * {
 	align-self: center;
 }
+
+
+@media screen and (-ms-high-contrast: active) {
+	/* allow IE to see SOMETHING */
+	.switchbox input::-ms-check {
+		opacity: 1;
+	}
+
+
+	.switchbox input:checked:after {
+		border: 6px solid rgba(0, 2, 120, 1);
+		content: "";
+		height: 2em;
+		width: 2em;
+		border-radius: 100%
+	}
+}
