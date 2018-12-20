@@ -34,7 +34,7 @@
 					<header>
 						<h1>Styled Single Selects</h1>
 						<p>Published: <time>July 23, 2018</time></p>
-						<p>Last updated: <time>December 18, 2018</time></p>
+						<p>Last updated: <time>December 20, 2018</time></p>
 						<p>
 							Cross-browser styling for the default select element.
 						</p>
@@ -117,6 +117,14 @@
 
 						<p>
 							The wrapping <code>div.select</code> is in place to provide a <code>position: relative</code> container, and to create and position the <code>:before</code> and <code>:after</code> pseudo elements. These pseudo elements are used to recreate a custom down arrow for the <code>select</code>, and its focus state background color.
+						</p>
+
+						<h4>Right to left support</h4>
+						<p>
+							Native <code>select</code> elements support right-to-left languages, and so should custom styled <code>select</code>s.
+						</p>
+						<p>
+							The CSS for this custom style has support for the <code>dir="rtl"</code> attribute, as well as <code>lang="ar"</code> and <code>lang="iw"</code>. You may wish to support <a href="https://en.wikipedia.org/wiki/Right-to-left">additional right-to-left languages</a> as well.
 						</p>
 
 						<h4>Background colors</h4>
