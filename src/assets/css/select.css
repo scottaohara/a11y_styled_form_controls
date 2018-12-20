@@ -102,3 +102,29 @@
 .select optgroup[disabled] {
   color: rgba(50,50,50,.75);
 }
+
+
+/**
+ * Support for rtl text, explicit support for Arabic and Hebrew
+ * credit: https://twitter.com/aardrian/status/1075587790656675840
+ */
+*[dir="rtl"] .select:before ,
+:root:lang(ar) .select:before,
+:root:lang(iw) .select:before {
+  left: 0;
+  right: auto;
+}
+
+*[dir="rtl"] .select:after ,
+:root:lang(ar) .select:after,
+:root:lang(iw) .select:after {
+  left: .5em;
+  right: auto;
+}
+
+
+*[dir="rtl"] .select select,
+:root:lang(ar) .select select,
+:root:lang(iw) .select select {
+  padding: .75em .75em .75em 2em;
+}
