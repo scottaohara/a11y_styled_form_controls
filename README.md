@@ -1,4 +1,4 @@
-# The Accessibility of Styled Form Controls & Friends
+# The Accessibility of Styled Form Controls
 A repository of styled and "styled" form control elements and markup patterns, and how they are announced by screen readers. 
 
 ## Why?
