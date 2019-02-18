@@ -6,7 +6,7 @@
 			Switch Component: Checkbox
 		</title>
 		<meta name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			content="width=device-width, initial-scale=1">
 		<script>
 			// remove no-js and add 'js' to the HTML
 			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -36,7 +36,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>December 17, 2018</time></p>
+						<p>Last updated: <time>February 18, 2019</time></p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -159,22 +159,47 @@
 						</p>
 
 						<dl>
-							<dt>VoiceOver + Safari on iOS 11.3, 11.4, & 12.0</dt>
+							<dt>JAWS 2019 + Firefox 65.0.1 &amp; Chrome 72</dt>
+							<dd>
+								<p>Announces as a "switch".  Each announce "on" and "off" when toggling state.  Chrome alone will announce "pressed on" for the on state.
+							</dd>
+
+							<dt>VoiceOver + Safari on iOS 11.3, 11.4, 12.0, &amp; 12.1.4</dt>
 							<dd>
 								<p>
 									Unfortunately mobile VoiceOver doesn't understand <code>role="switch"</code> and will fallback to announcing the component as a "checkbox". However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
 								</p>
 							</dd>
 
-							<dt>JAWS 2018 + IE11</dt>
+							<dt>Narrator &amp; NVDA 2018.4.1 + IE11</dt>
+							<dd>
+								This pairing will ignore the <code>role="switch"</code>, and continue to announce the component as a checkbox.  Checkbox state will be accurately announced on toggle.
+							</dd>
+
+							<dt>JAWS 2018 &amp; 2019 + IE11</dt>
 							<dd>
 								This pairing will announce the form control as a <code>role="switch"</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.
 							</dd>
+
+							<dt>NVDA 2018.4.1 + Chrome 72</dt>
+							<dd>
+								<code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "pressed checked" and "not pressed" for their respective states.
+							</dd>
+
+							<dt>NVDA 2018.4.1 + Firefox 65.0.1</dt>
+							<dd>
+								<code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.
+							</dd>
 						</dl>
 
-						<p>
-							Note that NVDA 2018.1 and Chrome will announce the initial state of the switch as "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control. If a switch has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".  This isn't necessarily bugged behavior though, as there are other examples of controls changing state in this manner.
-						</p>
+						<details>
+							<summary>NVDA 2018.1 notes</summary>
+							<p>
+								Note that NVDA 2018.1 and Chrome will announce the initial state of the switch as "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control. If a switch has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".  This isn't necessarily bugged behavior though, as there are other examples of controls changing state in this manner.
+							</p>
+						</details>
+
+
 
 						<h4>Usage note:</h4>
 						<p>
