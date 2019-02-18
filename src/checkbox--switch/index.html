@@ -195,15 +195,29 @@
 							<dd>
 								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.</p>
 							</dd>
+
+							<dt>
+								TalkBack 7.2 (on Android 8.1) + Firefox 64.0.2 &amp; Chrome 71
+							</dt>
+							<dd>
+								<p>
+									Announces as a "switch."  Toggling announces as "checked" and "not checked" for their respective states.</p>
+								</p>
+							</dd>
 						</dl>
 
+
 						<details>
-							<summary>NVDA 2018.1 notes</summary>
+							<summary>NVDA 2018.1 and 2018.2.1 notes</summary>
 							<p>
-								Note that NVDA 2018.1 and Chrome will announce the initial state of the switch as "toggle button not pressed" and will only announce the "checked" state, making no announcement if unchecking the form control. If a switch has been set to checked, and a user navigates back to it, NVDA + Chrome and Firefox ESR will announce "toggle button not pressed, checked".  This isn't necessarily bugged behavior though, as there are other examples of controls changing state in this manner.
+								These versions of NVDA paired with FireFox and Chrome will announce elements with <code>role="switch"</code> as "not pressed" and then announce whether they are checked or not.</p>
+							<p>
+								It doesn't matter the current state of whether the switch is checked or not, with this version of NVDA the switch would always announce "not pressed."
+							</p>
+							<p>
+								This issue appears to have been fixed after testing with NVDA 2018.4.1.
 							</p>
 						</details>
-
 
 
 						<h4>Usage note:</h4>
