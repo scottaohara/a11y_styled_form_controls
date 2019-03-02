@@ -33,7 +33,8 @@
 				<article class="demo">
 					<header>
 						<h1>Styled Progress Bar</h1>
-						<p>Last updated: <time>July 28, 2018</time></p>
+						<p>Published: <time>July 28, 2018</time></p>
+						<p>Last updated: <time>March 2, 2019</time></p>
 						<p>
 							Cross-browser styling for the HTML progress bar.
 						</p>
@@ -134,7 +135,7 @@
 
 						<dl>
 							<dt>
-								JAWS 2018 + Internet Explorer 11
+								JAWS 2018, 2019 + Internet Explorer 11
 							</dt>
 							<dd>
 								<p>
@@ -146,7 +147,7 @@
 							</dd>
 
 							<dt>
-								JAWS 2018 + Firefox 63 (nightly)
+								JAWS 2018, 2019 + Firefox 63, 65.0.2
 							</dt>
 							<dd>
 								<p>
@@ -155,38 +156,43 @@
 								<p>
 									The virtual cursor first stops on the visible label of the progress bar and announces the content. The virtual cursor then announces the progress bar and it's current value, <q>##% progress bar.</q>.
 								</p>
+
+								<p>When retesting with JAWS 2019 and Firefox 65.0.2, a progress bar will not announce an accessible name provided by an <code>aria-label</code>.</p>
 							</dd>
 
 							<dt>
-								JAWS 2018 + Chrome (latest)
+								JAWS 2018, 2019 + Chrome (latest)
 							</dt>
 							<dd>
 								<p>
-									Unstyled progress bars do not convey their accessible name, and styled progress bars convey no information at all, with JAWS and Chrome.
+									Unstyled progress bars do not announce their accessible name, and styled progress bars convey no information at all.
 								</p>
 							</dd>
 
 							<dt>
-								NVDA 2018.2.1 + Firefox 63 (nightly)
+								NVDA 2018.4.1 + Firefox 65.0.2
 							</dt>
 							<dd>
 								<p>
 									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by a <code>label</code>, NVDA will announce:
 								</p>
 								<p>
-									<q>Clickable [Accessible name (from visible label)], progress bar ##%</q>
+									First stop is the label element:<br>
+									<q>Clickable [Accessible name]</q> <br>
+									Second stop is the progress element:<br>
+									<q>progress bar ##%</q>
 								</p>
 
 								<p>
-									When NVDA virtual cursor focuses a styled progress bar with an accessible name provided by <code>aria-labelledby</code> or <code>aria-label</code>, NVDA will announce:
+									When NVDA virtual cursor focuses a styled progress with an accessible name from <code>aria-labelledby</code> or <code>aria-label</code>, NVDA will announce:
 								</p>
 								<p>
-									<q>[Accessible name (from visible label)], progress bar ##%</q>
+									<q>[Accessible name (from aria labeling method)], progress bar ##%</q>
 								</p>
 							</dd>
 
 							<dt>
-								NVDA 2018.2.1 + Chrome (latest)
+								NVDA 2018.2.1 + Chrome (latest at time of testing)
 							</dt>
 							<dd>
 								<p>
@@ -201,9 +207,20 @@
 								<p>
 									<q>[Accessible name (if there's a visible label)], progress bar [Accessible name (from <code>aria-label</code> or <code>aria-labelledby</code>)]</q>
 								</p>
+								<p>
+									The current value of the progress bar is not announced
+								</p>
+							</dd>
+
+							<dt>
+								NVDA 2018.4.1 + Chrome (72)
+							</dt>
+							<dd>
+								<p>Similar to 2018.2.1, the primary difference is that now styled progress bars will announce as "half checked", regardless of what their actual value is.</p>
 							</dd>
 
 							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
+							<dt>VoiceOver + Safari 12.0.3 on macOS Mojave</dt>
 							<dd>
 								<p>
 									Styling progress bars causes their announcement with VoiceOver to be altered and result in more focus stops for a user. A styled progress bar will no longer recognize its accessible name from a <code>label</code>.  If using an <code>aria-label</code> or <code>aria-labelledby</code> with a progress bar, VoiceOver will announce the element as a <code>group</code>. A user will then need to enter the "group" to hear the accessible name and current value of the progress bar. An unstyled progress bar has no "group" announcements, regardless of how the accessible name is applied to the progress bar.
@@ -244,7 +261,7 @@
 								</p>
 							</dd>
 
-							<dt>VoiceOver + Safari on iOS 11.4</dt>
+							<dt>VoiceOver + Safari on iOS 11.4 & 12.1.4</dt>
 							<dd>
 								<p>
 									Regardless of styled or not, VoiceOver does not announce the role of a progress bar when it receives focus.
