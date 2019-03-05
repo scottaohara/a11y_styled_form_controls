@@ -6,7 +6,7 @@
  *    search input has padding (& `textfield` appearance).
  */
 input[type="search"] {
-	-webkit-appearance: textfield; /* 1 */
+	-webkit-appearance: none; /* 1 */
 }
 
 input[type="search"]::-webkit-search-decoration,
