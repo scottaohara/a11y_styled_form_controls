@@ -2,11 +2,8 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8">
-		<title>
-			Switch Component: Checkbox
-		</title>
-		<meta name="viewport"
-			content="width=device-width, initial-scale=1">
+		<title>Switch Component: Checkbox</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script>
 			// remove no-js and add 'js' to the HTML
 			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -36,7 +33,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>February 18, 2019</time></p>
+						<p>Last updated: <time>March 8, 2019</time></p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -191,9 +188,10 @@
 								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "pressed checked" and "not pressed" for their respective states.</p>
 							</dd>
 
-							<dt>NVDA 2018.4.1 + Firefox 65.0.1</dt>
+							<dt>NVDA 2018.4.1 & 2019.1beta + Firefox 65.0.1</dt>
 							<dd>
 								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.</p>
+								<p>If "pressed" NVDA will announce initial state as "toggle button not pressed, checked".  Toggling state will only announce "not checked" and "checked".  (<a href="https://github.com/nvaccess/nvda/issues/9187">Open bug</a>)
 							</dd>
 
 							<dt>
