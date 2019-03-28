@@ -33,7 +33,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>March 8, 2019</time></p>
+						<p>Last updated: <time>March 28, 2019</time></p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -166,10 +166,20 @@
 								<p>Announces as a "toggle switch". Announces "on" and "off" when toggling state.</p>
 							</dd>
 
-							<dt>VoiceOver + Safari on iOS 11.3, 11.4, 12.0, &amp; 12.1.4</dt>
+							<dt>VoiceOver + Safari on iOS 12.2</dt>
 							<dd>
 								<p>
-									Unfortunately mobile VoiceOver doesn't understand <code>role="switch"</code> and will fallback to announcing the component as a "checkbox". However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
+									iOS VoiceOver continues to announce <code>role="switch"</code> as a "checkbox". However, with the release of iOS 12.2 (Mach 2019) the announcement of state has been fixed and "switches" will announce a "checked" or "unchecked" state.
+								</p>
+								<p>
+									Until iOS 12.2+ has wide adoption, one should still be wary of using <code>role="switch"</code>.
+								</p>
+							</dd>
+
+							<dt>VoiceOver + Safari on iOS 11.3 (at least) through 12.1.4</dt>
+							<dd>
+								<p>
+									iOS VoiceOver doesn't understand <code>role="switch"</code> and will fallback to announcing the component as a "checkbox". However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
 								</p>
 							</dd>
 
@@ -220,7 +230,7 @@
 
 						<h4>Usage note:</h4>
 						<p>
-							Until issues with <code>role="switch"</code> have been worked out, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>. Or stick with a <code>input type="checkbox"</code> if the usage of a checkbox would be an expected user experience.
+							Until issues with <code>role="switch"</code> have been worked out, and have wide support, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>. Or stick with a <code>input type="checkbox"</code> if the usage of a checkbox would be an expected user experience.
 						</p>
 						<p>
 							It's important to remember that switches have an expectation to perform an instant update or change to a user's settings or the UI of an application. It's best to leave checkboxes visually styled to look like checkboxes when in the context of a form, where a change wouldn't be expected until form submission.
@@ -228,8 +238,8 @@
 
 
 						<h3>Continue Reading</h3>
-						<p>For an alternate minimal pattern to create switch checkboxes, 
-						and support for intermediate state, check out 
+						<p>For an alternate minimal pattern to create switch checkboxes,
+						and support for intermediate state, check out
 						<a href="https://codepen.io/aardrian/pen/WPWVvw">Adrian Roselli's Togglish Checkboxen CodePen</a>, and
 							his much longer write-up <a href="http://adrianroselli.com/2019/03/under-engineered-toggles.html">Under Engineered toggles</a>.
 
