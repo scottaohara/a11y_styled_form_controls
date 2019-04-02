@@ -7,6 +7,7 @@
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
+	background: none; /* ios */
 	margin-left: -2em;
 	margin-top: .75em;
 	opacity: .00001;
