@@ -2,7 +2,7 @@
   -moz-appearance: none;
   -o-apperance: none;
   -webkit-appearance: none;
-
+  background: none; /* ios */
   border-radius: 4px;
   border: 2px solid #666;
   font-size: inherit;
