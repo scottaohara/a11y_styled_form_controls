@@ -21,13 +21,13 @@ The following controls and elements each have demo pages with additional documen
 <details>
     <summary>Regarding screen reader announcements...</summary>
     <p>
-        Note the documentation of screen reader announcements is based on using the indicated versions of each screen reader and browser, per test. The test results are up to date per the "updated" date on each test page.
+        Note the documentation of screen reader announcements is based on using the indicated versions of each screen reader and browser, per test. The test results are up to date per the "updated" date on each test page. Documentation is noted as "updated" when new testing or techniques have changed.  Editorial updates may not constitute a change in the noted updated date. 
     </p>
     <p>
         Things may change as browsers and screen readers are updated, so please refer to these as a snapshot in time, rather than being definitive results.  
     </p>
     <p>
-        If you find that announcements have changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
+        If you find that announcements and/or support as changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
     </p>
 </details>
 
@@ -49,7 +49,7 @@ Switches are a type of form control that are often visually represented as an on
 Unlike checkboxes, which are largely used in the context of forms where a user submits data after filling out all necessary information, switches and toggle buttons can be used to perform an instant change to a component or application's state. As there is no "switch" in HTML, a `checkbox` or `button` element can be progressively enhanced into a `switch`, with the appropriate ARIA attributes. 
 
 1. [Switch Checkbox](src/checkbox--switch)
-2. [ARIA Switch Button (external link)](https://scottaohara.github.io/aria-switch-button/)
+2. [ARIA Switch Controls (external repo)](https://scottaohara.github.io/aria-switch-control/)
 3. [ARIA Toggle Button](src/toggle-button-switch)
 4. [Switch Radio Button Group](src/radio-button--switch)
 
