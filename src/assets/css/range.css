@@ -6,7 +6,7 @@
  * input, [range], can instead be the selector to specifically
  * target the form control.
  */
-input[type=range] {
+input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none;
 	font-size: inherit;
@@ -14,7 +14,7 @@ input[type=range] {
 	width: 100%;
 }
 
-input[type=range][disabled] {
+input[type="range"][disabled] {
 	opacity: .625;
 }
 
@@ -22,7 +22,7 @@ input[type=range][disabled] {
 /**
  * Track
  */
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
 	background: #eee;
 	border: 1px solid #999;
 	border-radius: 4px;
@@ -33,7 +33,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	width: 100%;
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
 	background: #eee;
 	border: 1px solid #999;
 	border-radius: 4px;
@@ -44,7 +44,7 @@ input[type=range]::-moz-range-track {
 	width: 100%;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
 	background: transparent;
 	border-color: transparent;
 	border-width: 1em 0;
@@ -54,13 +54,13 @@ input[type=range]::-ms-track {
 }
 
 @media screen and (-ms-high-contrast: active) {
-	input[type=range]::-ms-track {
+	input[type="range"]::-ms-track {
 		border: 0;
 		margin: 1em 0;
 	}
 }
 
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
 	background: #eee;
 	border: 1px solid #999;
 	border-radius: 4px;
@@ -69,7 +69,7 @@ input[type=range]::-ms-fill-lower {
 		0 0 0 0px #333;
 }
 
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
 	background: #eee;
 	border: 1px solid #999;
 	border-radius: 4px;
@@ -82,19 +82,19 @@ input[type=range]::-ms-fill-upper {
 /**
  * Focus Styles
  */
-input[type=range]:focus {
+input[type="range"]:focus {
 	outline: 0;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
 	background: #168be8;
 }
 
-input[type=range]::-moz-focus-outer {
+input[type="range"]::-moz-focus-outer {
 	border: 0;
 }
 
-input[type=range]:focus::-moz-range-track {
+input[type="range"]:focus::-moz-range-track {
 	background: #168be8;
 }
 
@@ -103,34 +103,40 @@ input[type=range]:focus::-moz-range-track {
 	color: transparent;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
 	background: #168be8;
 }
 
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
 	background: #168be8;
 }
 
-input[type=range]:focus::-webkit-slider-thumb {
+input[type="range"]:focus::-webkit-slider-thumb {
 	background: #fff;
 	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
 }
 
-input[type=range]:focus::-moz-range-thumb {
+input[type="range"]:focus::-moz-range-thumb {
 	background: #fff;
 	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
 }
 
-input[type=range]:focus::-ms-thumb {
+input[type="range"]:focus::-ms-thumb {
 	background: #fff;
 	box-shadow: 0 0 0 2px rgba(60,60,60,.8);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
 }
 
 
 /**
  * Thumbs
  */
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	background: #eee;
 	border: 1px solid rgba(0,0,0,.5);
@@ -144,11 +150,11 @@ input[type=range]::-webkit-slider-thumb {
 	z-index: 3;
 }
 
-input[type=range][disabled]::-webkit-slider-thumb {
+input[type="range"][disabled]::-webkit-slider-thumb {
 	cursor: not-allowed;
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
 	background: #eee;
 	border: 1px solid rgba(0,0,0,.5);
 	border-radius: 2px;
@@ -160,7 +166,7 @@ input[type=range]::-moz-range-thumb {
 	z-index: 3;
 }
 
-input[type=range][disabled]::-moz-range-thumb {
+input[type="range"][disabled]::-moz-range-thumb {
 	cursor: not-allowed;
 }
 
@@ -171,7 +177,7 @@ input[type=range][disabled]::-moz-range-thumb {
  * and the negative margin of the webkit styling
  * needs to be removed.
  */
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
 	background: #eee;
 	border: 1px solid rgba(0,0,0,.5);
 	border-radius: 2px;
@@ -184,7 +190,7 @@ input[type=range]::-ms-thumb {
 	z-index: 3;
 }
 
-input[type=range][disabled]::-ms-thumb {
+input[type="range"][disabled]::-ms-thumb {
 	cursor: not-allowed;
 }
 
@@ -194,12 +200,12 @@ input[type=range][disabled]::-ms-thumb {
  * thumb/knob/whatever, change the cursor
  * to the active state.
  */
-input[type=range]:not([disabled])::-webkit-slider-thumb:active {
+input[type="range"]:not([disabled])::-webkit-slider-thumb:active {
 	cursor: grabbing;
 }
-input[type=range]:not([disabled])::-moz-range-thumb:active {
+input[type="range"]:not([disabled])::-moz-range-thumb:active {
 	cursor: grabbing;
 }
-input[type=range]:not([disabled])::-ms-thumb:active {
+input[type="range"]:not([disabled])::-ms-thumb:active {
 	cursor: grabbing; /* ms doesn't currently support */
 }
