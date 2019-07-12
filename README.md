@@ -95,12 +95,15 @@ A search component offers users an easily discoverable way to find information i
 1. [Search Component](src/search)  
 
 
+## Contribute?
+There are still patterns to make and test, as well as retesting of current patterns to ensure nothing gets stale. [File or check out available issues](https://github.com/scottaohara/a11y_styled_form_controls/issues) for some of the stuff that needs working on :)
+
 ## License, Thanks, and such
 Everything here is under an [MIT license](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md).
 
-Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review many of these components. 
+Special thanks to [Eric Bailey](https://github.com/ericwbailey) for helping me review the content written for many of these components. 
 
 While I was unaware of [WTFForms](http://wtfforms.com/) when starting this project, it is still a great example of what can be done with only CSS, and served as an excellent baseline to compare against. Thank you <a href="https://twitter.com/mdo">mdo</a> and to those involved with that project.
 
-Additional thanks to [Josh Drumm](https://twitter.com/wwnjp), [James Curd](https://github.com/aminimalanimal), [Adrian Roselli](http://adrianroselli.com/), [Sara Soueidan](https://www.sarasoueidan.com/), [Heydon Pickering](https://inclusive-components.design/), [Richard Keizer](https://codepen.io/rakeizer), [Chris O'Brien](https://github.com/a11ycob) and [Alexander Farkas](https://github.com/aFarkas). They have each provided inspiration or excellent resources that have been quite helpful in the building of these components.
+Additional thanks to [Josh Drumm](https://twitter.com/wwnjp), [James Curd](https://github.com/aminimalanimal), [Adrian Roselli](http://adrianroselli.com/), [Sara Soueidan](https://www.sarasoueidan.com/), [Heydon Pickering](https://inclusive-components.design/), [Richard Keizer](https://codepen.io/rakeizer), [Chris O'Brien](https://github.com/a11ycob) and [Alexander Farkas](https://github.com/aFarkas). They have each provided inspiration and/or excellent resources that have been quite helpful in the building of these components.
 
