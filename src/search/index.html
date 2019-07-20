@@ -179,7 +179,7 @@
 						</p>
 
 						<p>
-							Regarding the text field, there is little practical benefit from using an <code>input type="text"</code> vs <code>input type="search"</code>, especially when contained within a search landmark region.  The primary differences between the two are that on mobile devices a "search" input will change the on-screen mobile keyboard's "Go" (iOS) or "Right Arrow" (Android) buttons into a "Search" (iOS) or "Search Icon" (Android) buttons.  Webkit browsers additionally have some visual styling and an quick delete button (inaccessible to keyboard/screen readers) for the search text field.  Additional notes in the "Affects on Screen Reader Announcements".
+							Regarding the input field, there are a few distinctions between using an <code>input type="text"</code> vs <code>input type="search"</code>.  The primary differences between the two are that on mobile devices a "search" input will change the on-screen mobile keyboard's "Go" (iOS) or "Right Arrow" (Android) buttons into a "Search" (iOS) or "Search Icon" (Android) buttons.  Webkit browsers additionally have some visual styling and an quick delete button (inaccessible to keyboard/screen readers) for the search text field. Some browsers allow for the <kbd>Esc</kbd> key to clear the text from a search input. Additional notes in the "Affects on Screen Reader Announcements".
 						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
@@ -191,7 +191,7 @@
 							Beyond the mobile and visual changes between a standard text field and a search text field, screen readers often announce the search text input as an editable "search" field, as opposed to an editable "text" field. (exact announcements will vary depending on the navigation method used to reach an input field, and the screen reader used).
 						</p>
 						<p>
-							When used outside of a search landmark, the distinction between the two fields could be helpful.  However, in context the context to a search component, its use <strong>will</strong> result in redundant "search" announcements.
+							When used outside of a search landmark, the distinction between the two fields can be helpful.  However, in context of a search component, its use <strong>will</strong> result in redundant "search" announcements.
 						</p>
 						<p>
 							For example, testing the patterns on this page will result in announcements like "Search region, Search for..., search" when navigating into the search component and focusing the search input.  In contrast, the example that uses a standard text field will announce like: "Search region, Search for..., edit text."  For additional thoughts on this topic, read <a href="http://adrianroselli.com/2019/07/ignore-typesearch.html">Adrian Roselli's article "Ignore type=search"</a> to decide for yourself on the best path forward for your implementations.
