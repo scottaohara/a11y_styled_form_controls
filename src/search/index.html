@@ -32,7 +32,7 @@
 					<header>
 						<h1>Styled Search Component</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>July 30, 2018</time></p>
+						<p>Last updated: <time>July 20, 2019</time></p>
 						<p>
 							Cross-browser styling for a search component.
 						</p>
@@ -43,7 +43,7 @@
 					</h2>
 
 					<p>Search form example:</p>
-					<form role="search" aria-label="Site">
+					<form role="search">
 						<div class="search-widget">
 							<input type="search"
 								id="srch"
@@ -61,8 +61,27 @@
 
 					<hr>
 
+					<p>Search form example:</p>
+					<form role="search">
+						<div class="search-widget">
+							<input type="text"
+								id="srch_txt"
+								name="srch_txt"
+								aria-label="Search for...">
+							<button type="submit"
+								id="srch_btn"
+								aria-label="Submit Search">
+								<svg viewBox="50 461 23 23" aria-hidden="true" focusable="false">
+									<path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z" id="icon_search" stroke="none" fill-rule="evenodd"></path>
+								</svg>
+							</button>
+						</div>
+					</form>
+
+					<hr>
+
 					<p>Search form with visible label</p>
-					<form role="search" aria-label="Site">
+					<form role="search">
 						<label for="srch_v">
 							Search for
 						</label>
@@ -108,9 +127,9 @@
 
 						<details open>
 							<summary>Pattern Markup</summary>
-						<pre><code class="language-html">&lt;form role="search" aria-label="unique identifier goes here">
+						<pre><code class="language-html">&lt;form role="search" aria-label="unique identifier could go here">
 	&lt;div class="search-widget">
-    &lt;input type="search"
+    &lt;input type="search" &lt;!-- or type="text" -->
       id="srch"
       name="srch"
       aria-label="Search for...">
@@ -135,11 +154,11 @@
 						</p>
 
 						<p>
-							To help promote the presence of a search form to assistive technologies, the search landmark (<code>role="search"</code>) should be applied to the <code>form</code> element that contains the search UI.
+							To help promote the presence of a search form to assistive technologies, the search landmark (<code>role="search"</code>) should be applied to the <code>form</code> element that contains the search UI.  An <code>aria-label</code> for the landmark <em>could</em> be useful in the event there are multiple search landmarks in the current document.  If there is only one, an <code>aria-label</code> (or other means to provide an accessible name) may be unnecessary, making the region more verbose than helpful.
 						</p>
 
 						<p>
-							Many search forms do no have an explicit label set, as many designers and developers mistakenly assume the presence of a search icon to give a visual indicator of the component's purpose is sufficient. However, even though visually the search icon is well recognized, an accessible name should still be applied to the <code>input[type="search"]</code>.
+							Many search forms do no have an explicit label set, as many designers and developers mistakenly assume the presence of a search icon to give a visual indicator of the component's purpose is sufficient. However, even though visually the search icon is well recognized, an accessible name should still be applied to the text field of the search component.
 						</p>
 
 						<p>
@@ -159,13 +178,23 @@
 							More complex search forms might contain additional form controls, or might utilize a <code>combobox</code> in place of, or in addition to, a standard <code>input[type="search"]</code> form control. Regardless, search forms should have a submit button as a consistent indicator for how a form can be submitted.
 						</p>
 
+						<p>
+							Regarding the text field, there is little practical benefit from using an <code>input type="text"</code> vs <code>input type="search"</code>, especially when contained within a search landmark region.  The primary differences between the two are that on mobile devices a "search" input will change the on-screen mobile keyboard's "Go" (iOS) or "Right Arrow" (Android) buttons into a "Search" (iOS) or "Search Icon" (Android) buttons.  Webkit browsers additionally have some visual styling and an quick delete button (inaccessible to keyboard/screen readers) for the search text field.  Additional notes in the "Affects on Screen Reader Announcements".
+						</p>
+
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
 							The addition of the <code>role="search"</code>, and any accessible name it is given, will expose this information to the accessibility <abbr>API</abbr> and convey that information to assistive technologies. Users should be able to find a search form by navigating with the <kbd>tab</kbd> key. Screen reader users should be able to find the search form when navigating by form controls, or landmarks/regions.
 						</p>
 
 						<p>
-							The use of the <code>input type="search"</code> will announce the <code>input</code> as an editable "search" element to screen readers (exact announcements vary between screen readers).
+							Beyond the mobile and visual changes between a standard text field and a search text field, screen readers often announce the search text input as an editable "search" field, as opposed to an editable "text" field. (exact announcements will vary depending on the navigation method used to reach an input field, and the screen reader used).
+						</p>
+						<p>
+							When used outside of a search landmark, the distinction between the two fields could be helpful.  However, in context the context to a search component, its use <strong>will</strong> result in redundant "search" announcements.
+						</p>
+						<p>
+							For example, testing the patterns on this page will result in announcements like "Search region, Search for..., search" when navigating into the search component and focusing the search input.  In contrast, the example that uses a standard text field will announce like: "Search region, Search for..., edit text."  For additional thoughts on this topic, read <a href="http://adrianroselli.com/2019/07/ignore-typesearch.html">Adrian Roselli's article "Ignore type=search"</a> to decide for yourself on the best path forward for your implementations.
 						</p>
 					</section>
 				</article>
