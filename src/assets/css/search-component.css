@@ -29,7 +29,8 @@ input[type="search"]::-webkit-search-cancel-button {
 	display: block;
 }
 
-.search-widget > input[type="search"] {
+.search-widget > input[type="search"],
+.search-widget > input[type="text"] {
 	border: 0;
 	border-right: 1px solid #565656;
 	padding: .5em;
@@ -47,6 +48,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .search-widget > input[type="search"]:focus,
+.search-widget > input[type="text"]:focus,
 .search-widget > [type="submit"]:not([disabled]):hover,
 .search-widget > [type="submit"]:focus {
 	box-shadow: inset 0 0 0 1px #4184F3;
@@ -54,7 +56,8 @@ input[type="search"]::-webkit-search-cancel-button {
 	outline-offset: 0;
 }
 
-.search-widget > input[type="search"]:focus {
+.search-widget > input[type="search"]:focus,
+.search-widget > input[type="text"]:focus {
 	border-right-color: #4184F3;
 }
 
@@ -72,6 +75,7 @@ input[type="search"]::-webkit-search-cancel-button {
  * Disabled
  */
 .search-widget > [type="search"][disabled],
+.search-widget > [type="text"][disabled],
 .search-widget > [type="submit"][disabled] {
 	background: #fafafa;
 	cursor: not-allowed;
@@ -84,14 +88,16 @@ input[type="search"]::-webkit-search-cancel-button {
 		border: none;
 	}
 
-	.search-widget > input[type="search"] {
+	.search-widget > input[type="search"],
+	.search-widget > input[type="text"] {
 		border: 1px solid;
 		border-right: 1px solid;
 		position: relative;
 	}
 
 	.search-widget > [type="submit"],
-	.search-widget > input[type="search"]:focus {
+	.search-widget > input[type="search"]:focus,
+	.search-widget > input[type="text"]:focus {
 		z-index: 4;
 	}
 
@@ -104,6 +110,7 @@ input[type="search"]::-webkit-search-cancel-button {
 	}
 
 	.search-widget > [type="search"][disabled],
+	.search-widget > [type="text"][disabled],
 	.search-widget > [type="submit"][disabled] {
 		opacity: .5;
 	}
