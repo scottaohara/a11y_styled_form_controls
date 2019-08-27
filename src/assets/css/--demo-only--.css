@@ -96,7 +96,7 @@ hr {
 	margin-top: 3em
 }
 
-.demo-details > h3 {
+.demo-details > h3:first-of-type {
 	margin-top: 0;
 }
 
