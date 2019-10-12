@@ -7,7 +7,7 @@
  * 2. Needed to keep bar the same height in Firefox vs Webkit
  * 3. Webkit will need ::-webkit-progress-bar to set background
  * 4. Set overflow hidden so as to not have to re-do border-radius
- *    again for
+ *    again for the progress indicator
  */
 
 .progress-bar {
