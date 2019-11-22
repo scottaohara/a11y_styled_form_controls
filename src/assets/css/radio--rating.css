@@ -103,7 +103,7 @@ input:not(:checked) ~ .r-radio--none svg {
  */
 .r-radio svg,
 input:checked + .r-radio svg {
-	fill: #ccac00;
+	fill: #e26718;
 	transform: scale(1);
 }
 
