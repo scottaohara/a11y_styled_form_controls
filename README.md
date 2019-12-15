@@ -21,7 +21,7 @@ The following controls and elements each have demo pages with additional documen
 <details>
     <summary>Regarding screen reader announcements...</summary>
     <p>
-        Note the documentation of screen reader announcements is based on using the indicated versions of each screen reader and browser, per test. The test results are up to date per the "updated" date on each test page. Documentation is noted as "updated" when new testing or techniques have changed.  Editorial updates may not constitute a change in the noted updated date. 
+        Note the documentation of screen reader announcements is based on using the indicated versions of each screen reader and browser, as indicated in each test. The test results are as up to date as indicated on each test page. Documentation is noted as "updated" when new testing or techniques have changed.  Editorial updates may not constitute a change in the noted updated date. 
     </p>
     <p>
         Things may change as browsers and screen readers are updated, so please refer to these as a snapshot in time, rather than being definitive results.  
