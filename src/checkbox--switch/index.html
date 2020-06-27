@@ -33,7 +33,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>March 28, 2019</time></p>
+						<p>Last updated: <time>June 27, 2020</time></p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -156,7 +156,7 @@
 						</p>
 
 						<dl>
-							<dt>JAWS 2019 + Firefox 65.0.1 &amp; Chrome 72</dt>
+							<dt>JAWS 2020 + Firefox 77 &amp; Chrome and Edge 83</dt>
 							<dd>
 								<p>Announces as a "switch".  Each announce "on" and "off" when toggling state.  Chrome alone will announce "pressed on" for the on state.
 							</dd>
@@ -185,13 +185,16 @@
 
 							<dt>Narrator &amp; NVDA 2018.4.1 + IE11</dt>
 							<dd>
-								<p>This pairing will ignore the <code>role="switch"</code>, and continue to announce the component as a checkbox.  Checkbox state will be accurately announced on toggle.</p>
+								<p>This pairing will ignore the <code>role="switch"</code>, and continue to announce the component as a checkbox. Checkbox state will be accurately announced on toggle.</p>
 							</dd>
 
-							<dt>JAWS 2018 &amp; 2019 + IE11</dt>
+							<dt>JAWS 2018, 2019, 2020 + IE11</dt>
 							<dd>
 								<p>This pairing will announce the form control as a <code>role="switch"</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.</p>
 							</dd>
+
+							<dt>NVDA 2020.1 + Firefox 77, IE11, Chrome 82 and Edge 83</dt>
+							<dd><code>role="switch"</code> is ignored and the control is announced as a checkbox. State is accurately announced in regards to being announced as a checkbox.</dd>
 
 							<dt>NVDA 2018.4.1 + Chrome 72</dt>
 							<dd>
@@ -201,7 +204,7 @@
 							<dt>NVDA 2018.4.1 & 2019.1beta + Firefox 65.0.1</dt>
 							<dd>
 								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.</p>
-								<p>If "pressed" NVDA will announce initial state as "toggle button not pressed, checked".  Toggling state will only announce "not checked" and "checked".  (<a href="https://github.com/nvaccess/nvda/issues/9187">Open bug</a>)
+								<p>If "pressed" NVDA will announce initial state as "toggle button not pressed, checked".  Toggling state will only announce "not checked" and "checked".  (<a href="https://github.com/nvaccess/nvda/issues/9187">Closed bug</a> where apparently NVDA decided to forgo announcing <code>role=switch</code> and expose it as a checkbox.)
 							</dd>
 
 							<dt>
@@ -232,17 +235,15 @@
 						<p>
 							Until issues with <code>role="switch"</code> have been worked out, and have wide support, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>. Or stick with a <code>input type="checkbox"</code> if the usage of a checkbox would be an expected user experience.
 						</p>
-						<p>
-							It's important to remember that switches have an expectation to perform an instant update or change to a user's settings or the UI of an application. It's best to leave checkboxes visually styled to look like checkboxes when in the context of a form, where a change wouldn't be expected until form submission.
-						</p>
 
 
 						<h3>Continue Reading</h3>
-						<p>For an alternate minimal pattern to create switch checkboxes,
-						and support for intermediate state, check out
-						<a href="https://codepen.io/aardrian/pen/WPWVvw">Adrian Roselli's Togglish Checkboxen CodePen</a>, and
-							his much longer write-up <a href="http://adrianroselli.com/2019/03/under-engineered-toggles.html">Under Engineered toggles</a>.
-
+						<p>
+							For an alternate minimal pattern to create switch checkboxes,
+							and support for intermediate state, check out
+							<a href="https://codepen.io/aardrian/pen/WPWVvw">Adrian Roselli's Togglish Checkboxen CodePen</a>, and his much longer write-up
+							<a href="http://adrianroselli.com/2019/03/under-engineered-toggles.html">Under Engineered toggles</a>.
+						</p>
 					</section> <!-- /.demo-details -->
 				</article>
 			</main>
