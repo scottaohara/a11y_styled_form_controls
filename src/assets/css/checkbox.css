@@ -133,7 +133,9 @@
 
 .c-cb input[required] ~ label .req-star {
 	position: relative;
-	right: -1em;
+	display: inline-block;
+	right: -.7em;
+	top: -1em;
 }
 
 .c-cb input[required] ~ label .req-star:after,
