@@ -33,7 +33,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>June 27, 2020</time></p>
+						<p>Last updated: <time>August 6, 2020</time></p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -84,10 +84,14 @@
 							</p>
 							<p>
 								The <code>box-shadow</code> to provide an outline of the control does not
-								render as expected in IE11, but works as expected in Edge (legacy).
+								render as expected in IE11, did work as expected in Edge (legacy).
 							</p>
 							<p>
-								IE and Edge (legacy) don't respect the box-shadow in High Contrast mode.  In this mode, the <code>::-ms-check</code> is re-enabled so that people will at least see a checkmark when the switch is on, and an empty oval when off.
+								IE and Edge (legacy) don't respect the box-shadow in High Contrast mode.  
+								Previously, the <code>::-ms-check</code> was re-enabled so that people will at least see 
+								a checkmark when the switch is on, and an empty oval when off.  Chromium Edge does respect the 
+								box-shadow fill, so this has been updated.  I no longer have Legacy Edge to verify if
+								this introduces an issue there or not.
 							</p>
 						</div>
 					</details>
