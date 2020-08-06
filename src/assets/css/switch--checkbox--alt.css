@@ -59,7 +59,7 @@
 
 
 /* high contrast style for firefox */
-.switchbox input:after {
+.switchbox input::after {
 	border-radius: 100%;
 	border: 11px solid transparent;
 	content: "";
@@ -82,7 +82,7 @@
 	}
 
 	/* don't want this showing up in MS browsers */
-	.switchbox input:after {
+/* 	.switchbox input:after {
 		display: none;
-	}
+	} */
 }
