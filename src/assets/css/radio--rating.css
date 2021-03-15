@@ -39,7 +39,6 @@
 .r-radio span {
 	background: #333;
 	border-radius: 3px;
-	bottom: 100%;
 	color: #fff;
 	font-size: .25em;
 	left: 50%;
@@ -47,6 +46,7 @@
 	padding: .75em;
 	position: absolute;
 	text-align: center;
+	top: 90%;
 	transform: translateY(50%) translateX(-50%);
 	transition:
 		font-size .2s ease-in-out,
