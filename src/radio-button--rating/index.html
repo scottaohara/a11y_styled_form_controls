@@ -42,7 +42,7 @@
 					<header>
 						<h1>Styled Radio Button Star Rating Component</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>November 22, 2019</time></p>
+						<p>Last updated: <time>March 15, 2021</time></p>
 						<p>
 							Pattern to restyle a radio button group into a star rating component.
 						</p>
@@ -213,6 +213,8 @@
 								<span role="presentation">5 Stars</span>
 							</label>
 						</fieldset>
+
+						<script src="../assets/js/radio-ratings.js"></script>
 					</form>
 
 
@@ -261,13 +263,17 @@
 						</p>
 
 						<p>
-							Note that the <code>SVG</code> elements have the following attributes:
+							The <code>SVG</code> elements have the following attributes:
 						</p>
 
 						<ul>
 							<li><code>aria-hidden="true"</code> to hide the SVG from screen readers.</li>
 							<li><code>focusable="false"</code> to ensure that Internet Explorer does not allow keyboard focus to attempt to traverse the SVG.</li>
 						</ul>
+
+						<p>
+							<strong>Note:</strong> to meet WCAG Success Criterion 1.4.13 Content on Hover or Focus, a small script has been written to listen for the <kbd>Esc</kbd> key. If pressed, a <code>hide-label</code> class is added to the <code>input</code> element.  On blur, the class is removed.  A design change to ensure the label doesn't float atop other content, or to place it in a static location and update based on the currently selected "star" could be other ways around needing to accommodate this SC.
+						</p>
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
@@ -290,7 +296,7 @@
 
 					<h3>Continue Reading</h3>
 					<p>
-						WCAG's Understanding Success Criterion 1.4.11: Non-text Contrast document specifically looks at rating stars with examples of passing and failing contrast examples. <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html#figure-two-star-ratings">1.4.11: Non-text Contrast - star rating examples</a>. 
+						WCAG's Understanding Success Criterion 1.4.11: Non-text Contrast document specifically looks at rating stars with examples of passing and failing contrast examples. <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html#figure-two-star-ratings">1.4.11: Non-text Contrast - star rating examples</a>.
 					</p>
 					<p>
 						For another take on star rating radio groups, with a bunch of style variants, check out the <a href="https://lunarlogic.github.io/starability/">Starability project by Lunar Logic</a>.
