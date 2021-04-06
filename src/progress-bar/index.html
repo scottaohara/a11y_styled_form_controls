@@ -34,7 +34,7 @@
 					<header>
 						<h1>Styled Progress Bar</h1>
 						<p>Published: <time>July 28, 2018</time></p>
-						<p>Last updated: <time>March 2, 2019</time></p>
+						<p>Last updated: <time>April 6, 2021</time></p>
 						<p>
 							Cross-browser styling for the HTML progress bar.
 						</p>
@@ -44,7 +44,7 @@
 						Pattern Demo
 					</h2>
 
-					<div>
+					<div class="progress-meter-example">
 						<label>
 							Unstyled Example:
 							<progress value=40 max=100></progress>
@@ -226,47 +226,61 @@
 								<p>Similar to 2018.2.1, the primary difference is that now styled progress bars will announce as "half checked", regardless of what their actual value is.</p>
 							</dd>
 
-							<dt>VoiceOver + Safari 11.1.1 on macOS High Sierra</dt>
-							<dt>VoiceOver + Safari 12.0.3 on macOS Mojave</dt>
+							<dt>VoiceOver + Safari 13.1.2 on macOS Catalina</dt>
 							<dd>
 								<p>
-									Styling progress bars causes their announcement with VoiceOver to be altered and result in more focus stops for a user. A styled progress bar will no longer recognize its accessible name from a <code>label</code>.  If using an <code>aria-label</code> or <code>aria-labelledby</code> with a progress bar, VoiceOver will announce the element as a <code>group</code>. A user will then need to enter the "group" to hear the accessible name and current value of the progress bar. An unstyled progress bar has no "group" announcements, regardless of how the accessible name is applied to the progress bar.
+									An unstyled progress bar will receive its accessible name from a <code>&lt;label></code> element. If styled, the association between the label and the progress indicator will break, resulting in the progress bar having no accessible name.
 								</p>
 								<p>
-									A styled progress bar, with a visible <code>label</code>, will be announced as:
-								</p>
-								<p>
-									Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
-									Focus stop 2: <q>## percent, progress indicator</q>
+									If using <code>aria-label</code> or <code>aria-labelledby</code> to add an accessible name to a styled progress bar, it will be announced as a "group". A user will then need to navigate into the named "group" to hear the "progress indicator" role and value announcement.
 								</p>
 
-								<p>
-									A styled progress bar, with an <code>aria-labelledby</code>, will be announced as:
-								</p>
-								<p>
-									Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
-									Focus stop 2: <q>[Accessible name], group</q>
-									<br>
-									Focus stop 3: <q>## percent, progress indicator</q>
-									<br>
-									Focus stop 4: <q>end of [Accessible name], group</q>
-								</p>
+								<details style="margin-bottom: 1em;">
+									<summary>Previous results</summary>
+									<p>VoiceOver + Safari 11.1.1 on macOS High Sierra</p>
+									<p>VoiceOver + Safari 12.0.3 on macOS Mojave</p>
+									<div>
+										<p>
+											Styling progress bars causes their announcement with VoiceOver to be altered and result in more VO focus stops for a user. A styled progress bar will no longer recognize its accessible name from a <code>label</code>.  If using an <code>aria-label</code> or <code>aria-labelledby</code> with a progress bar, VoiceOver will announce the element as a <code>group</code>. A user will then need to enter the "group" to hear the accessible name and current value of the progress bar. An unstyled progress bar has no "group" announcements, regardless of how the accessible name is applied to the progress bar.
+										</p>
+										<p>
+											A styled progress bar, with a visible <code>label</code>, will be announced as:
+										</p>
+										<p>
+											Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
+											Focus stop 2: <q>## percent, progress indicator</q>
+										</p>
 
-								<p>
-									A styled progress bar, with an <code>aria-label</code>, will be announced as:
-								</p>
-								<p>
-									Focus stop 1: <q>[Accessible name], group</q>
-									<br>
-									Focus stop 2: <q>[Accessible name], ## percent, progress indicator</q>
-									<br>
-									Focus stop 3: <q>end of [Accessible name], group</q>
-								</p>
+										<p>
+											A styled progress bar, with an <code>aria-labelledby</code>, will be announced as:
+										</p>
+										<p>
+											Focus stop 1: <q>[Accessible name (visible <code>label</code>)]</q><br>
+											Focus stop 2: <q>[Accessible name], group</q>
+											<br>
+											Focus stop 3: <q>## percent, progress indicator</q>
+											<br>
+											Focus stop 4: <q>end of [Accessible name], group</q>
+										</p>
 
-								<p>
-									Note that VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
-								</p>
+										<p>
+											A styled progress bar, with an <code>aria-label</code>, will be announced as:
+										</p>
+										<p>
+											Focus stop 1: <q>[Accessible name], group</q>
+											<br>
+											Focus stop 2: <q>[Accessible name], ## percent, progress indicator</q>
+											<br>
+											Focus stop 3: <q>end of [Accessible name], group</q>
+										</p>
+
+										<p>
+											Note that VoiceOver + Chrome doesn't fair much better, as styled progress bars do not become groups, but are announced as "indeterminate progress indicator" regardless of their set <code>value</code>.
+										</p>
+									</div>
+								</details>
 							</dd>
+
 
 							<dt>VoiceOver + Safari on iOS 11.4, 12.1.4, 14.4.2</dt>
 							<dd>
@@ -274,7 +288,10 @@
 									Regardless of if they are styled or not, VoiceOver does not announce the role of a progress bar when it receives VO focus.
 								</p>
 								<p>
-									Unstyled progress bars will announce their accessible name and current value if they are focused by VoiceOver. Styled progress bars will not announce their accessible name, unless they explicitly have an <code>aria-label</code>, and they will become undiscoverable when searching by touch.
+									Unstyled progress bars will announce their accessible name and current value if they are swiped to with VoiceOver enabled.  If using a <code>&lt;label></code> element to provide the progress bar its accessible name, VoiceOver will purposefully skip over the text label and instead directly focus the progress bar and announce its name and value as a single VO focus stop.
+								</p>
+								<p>
+									In contrast, styled progress bars will not behave as described above, even if they are properly associated with a <code>&lt;label</code>. Rather VO will announce the label and the progress value as separate swipe stops. A <code>&lt;progress></code> can be forced to announce an accessible name, by giving it an <code>aria-label</code>, however this will oddly make the element unable to be discovered when searching by touch (i.e., dragging your finger around the screen to move VO focus).
 								</p>
 								<p>
 									A styled progress bar, with a visible label, will be announced as:
@@ -284,7 +301,13 @@
 									Focus stop 2: <q>##%</q>
 								</p>
 								<p>
-									A styled progress bar, with an <code>aria-label</code>, will be announced as:
+									A styled progress bar, with an <code>aria-label</code>, will be announced as (when swiped to):
+								</p>
+								<p>
+									<q>[Accessible name], ##%</q>
+								</p>
+								<p>
+									An unstyled progress bar with an associated <code>&lt;label></code> will be announced as:</p>
 								</p>
 								<p>
 									<q>[Accessible name], ##%</q>
