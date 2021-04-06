@@ -44,6 +44,13 @@
 						Pattern Demo
 					</h2>
 
+					<div>
+						<label>
+							Unstyled Example:
+							<progress value=40 max=100></progress>
+						</label>
+					</div>
+
 					<div class="progress-meter-example">
 						<label for="tasks_comp2">
 							Tasks Completed:
@@ -261,10 +268,10 @@
 								</p>
 							</dd>
 
-							<dt>VoiceOver + Safari on iOS 11.4 & 12.1.4</dt>
+							<dt>VoiceOver + Safari on iOS 11.4, 12.1.4, 14.4.2</dt>
 							<dd>
 								<p>
-									Regardless of styled or not, VoiceOver does not announce the role of a progress bar when it receives focus.
+									Regardless of if they are styled or not, VoiceOver does not announce the role of a progress bar when it receives VO focus.
 								</p>
 								<p>
 									Unstyled progress bars will announce their accessible name and current value if they are focused by VoiceOver. Styled progress bars will not announce their accessible name, unless they explicitly have an <code>aria-label</code>, and they will become undiscoverable when searching by touch.
