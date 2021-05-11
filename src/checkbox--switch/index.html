@@ -76,11 +76,11 @@
 					</form>
 
 					<details style="margin-top: 1em;">
-						<summary>Visual design note</summary>
+						<summary>Visual design notes</summary>
 						<div>
+							<p>These notes were last updated in August 2020.</p>
 							<p>
-								<code>-moz-appearance: none;</code> does not completely remove the styling
-								from the checkbox in Firefox ESR. (works as expected in Firefox 60+).
+								<code>-moz-appearance: none;</code> did not completely remove the styling in earlier versions of Firefox. But it should work as expected in Firefox 60+.
 							</p>
 							<p>
 								The <code>box-shadow</code> to provide an outline of the control does not
@@ -128,15 +128,18 @@
 						</details>
 
 						<p>
-							Similar to the <a href="../checkbox/index.html">styled checkbox pattern</a>, similarly a checkbox can be used to create a custom switch control. It should be noted that a form control with the role of <code>switch</code> vs a <code>checkbox</code> role have different expectations to screen reader users.
+							Similar to the <a href="../checkbox/index.html">styled checkbox pattern</a>, an <code>input type=checkbox</code> can be used to create a custom switch control. A <code>switch</code> and <code>checkbox</code> behave similarly.
 						</p>
+						<p>As the ARIA specification notes:</p>
+						<blockquote>
+A <code>switch</code> provides approximately the same functionality as a <code>checkbox</code> and toggle <code>button</code>, but makes it possible for assistive technologies to present the widget in a fashion consistent with its on-screen appearance.
+						</blockquote>
 
 						<p>
-							Even if visually styled to resemble a switch, if a native checkbox is used without the <code>role="switch"</code>, the component should continue to function like a checkbox. Meaning that the "switch" should not change the state of a component or alter a global site or application setting, until after a user submits a form the "switch" is a child of. A <code>role="switch"</code> should be applied to the native checkbox if activating the form control will perform an instant state change, without the need for a form submission.
-						</p>
+							That said, a <code>switch</code> can often be found in "settings" UI, where toggling the switch's state can immediately cause a function or state change to occur.  A checkboxes are commonly used (have a very long history) within forms – where toggling its state is not expected to result in an immediate function until the form itself is submitted.  That's not to say that toggling checkboxes cannot also be used to cause an immediate action to occur. For instance, using checkboxes as controls to filter search results on an e-commerce site. But, this is not an "official" difference between the controls – more just me trying to point to common use to indicate a reason as to why the heck we'd need two toggle controls aside from aesthetic reasons...</p>
 
 						<p>
-							If implementing visually styled switches within your project, they should be consistently implemented for each usage. Meaning that if a checkbox is visually designed to look like a switch (but continued to be announced as a checkbox), then there should be no instances where the same design is used for a <code>role="switch"</code>. This would create confusion in why two similar looking controls are announced differently (for sighted users who also may use screen readers), or perform actions immediately or delayed until form submission.
+							That all said, if implementing visually styled switches within your project, their implementation should be consistent across instances. Meaning that if a checkbox is visually designed to look like a switch (but continued to be announced as a checkbox), then there should be no instances where the same design is used for a <code>role="switch"</code>. This would create confusion in why two similar looking controls are announced differently (for sighted users who also may use screen readers), or perform actions immediately or delayed until form submission.
 						</p>
 
 						<h4>The JavaScript</h4>
