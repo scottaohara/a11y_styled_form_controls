@@ -33,7 +33,7 @@
 					<header>
 						<h1>Switch Component: Checkbox</h1>
 						<p>Published: <time>July 26, 2018</time></p>
-						<p>Last updated: <time>August 6, 2020</time></p>
+						<p>Last updated: May 11, 2021</p>
 						<p>
 							Pattern to modify a <code>checkbox</code> into a <code>switch</code> component.
 						</p>
@@ -87,9 +87,9 @@
 								render as expected in IE11, did work as expected in Edge (legacy).
 							</p>
 							<p>
-								IE and Edge (legacy) don't respect the box-shadow in High Contrast mode.  
-								Previously, the <code>::-ms-check</code> was re-enabled so that people will at least see 
-								a checkmark when the switch is on, and an empty oval when off.  Chromium Edge does respect the 
+								IE and Edge (legacy) don't respect the box-shadow in High Contrast mode.
+								Previously, the <code>::-ms-check</code> was re-enabled so that people will at least see
+								a checkmark when the switch is on, and an empty oval when off.  Chromium Edge does respect the
 								box-shadow fill, so this has been updated.  I no longer have Legacy Edge to verify if
 								this introduces an issue there or not.
 							</p>
@@ -152,93 +152,130 @@
 
 						<h4 id="affects_on_sr" tabindex="-1">Affects on Screen Reader Announcements?</h4>
 						<p>
-							Giving the <code>input type="checkbox"</code> a <code>role="switch"</code> announces the form control as a "switch" or "toggle button" to screen readers that support the role, and indicate the element's state as either "on/checked" or "off/not checked".
+							Giving the <code>input type="checkbox"</code> a <code>role="switch"</code> announces the form control as a "switch", "toggle button" or continues to announce the control as a "checkbox" depending on the screen reader and platform in question.
 						</p>
 
 						<p>
-							Unfortunately, there are still some gaps in support for this <code>role</code>.
+							The following is a break down of how this is handled by modern browsers and screen reader pairings.
 						</p>
 
 						<dl>
-							<dt>JAWS 2020 + Firefox 77 &amp; Chrome and Edge 83</dt>
-							<dd>
-								<p>Announces as a "switch".  Each announce "on" and "off" when toggling state.  Chrome alone will announce "pressed on" for the on state.
+							<dt>
+								Firefox 88.0.1
+							</dt>
+							<dd>With VoiceOver on macOS 11.2.3: announces "switch" role and initial state. Activating the switch will produce a "clicking" noise, but no "on" or "off" announcement is explicitly made.</dd>
+							<dd>With NVDA 2020.4: announces "checkbox" role and initial state. Activating the 'switch' will announce the new state ("checked" or "not checked"). - <strong>Note:</strong> NVDA
 							</dd>
-
-							<dt>Narrator &amp; Edge (legacy)</dt>
-							<dd>
-								<p>Announces as a "toggle switch". Announces "on" and "off" when toggling state.</p>
-							</dd>
-
-							<dt>VoiceOver + Safari on iOS 12.2</dt>
-							<dd>
-								<p>
-									iOS VoiceOver continues to announce <code>role="switch"</code> as a "checkbox". However, with the release of iOS 12.2 (Mach 2019) the announcement of state has been fixed and "switches" will announce a "checked" or "unchecked" state.
-								</p>
-								<p>
-									Until iOS 12.2+ has wide adoption, one should still be wary of using <code>role="switch"</code>.
-								</p>
-							</dd>
-
-							<dt>VoiceOver + Safari on iOS 11.3 (at least) through 12.1.4</dt>
-							<dd>
-								<p>
-									iOS VoiceOver doesn't understand <code>role="switch"</code> and will fallback to announcing the component as a "checkbox". However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
-								</p>
-							</dd>
-
-							<dt>Narrator &amp; NVDA 2018.4.1 + IE11</dt>
-							<dd>
-								<p>This pairing will ignore the <code>role="switch"</code>, and continue to announce the component as a checkbox. Checkbox state will be accurately announced on toggle.</p>
-							</dd>
-
-							<dt>JAWS 2018, 2019, 2020 + IE11</dt>
-							<dd>
-								<p>This pairing will announce the form control as a <code>role="switch"</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.</p>
-							</dd>
-
-							<dt>NVDA 2020.1 + Firefox 77, IE11, Chrome 82 and Edge 83</dt>
-							<dd><p><code>role="switch"</code> is ignored and the control is announced as a checkbox. State is accurately announced in regards to being announced as a checkbox.</p></dd>
-
-							<dt>NVDA 2018.4.1 + Chrome 72</dt>
-							<dd>
-								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "pressed checked" and "not pressed" for their respective states.</p>
-							</dd>
-
-							<dt>NVDA 2018.4.1 & 2019.1beta + Firefox 65.0.1</dt>
-							<dd>
-								<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.</p>
-								<p>If "pressed" NVDA will announce initial state as "toggle button not pressed, checked".  Toggling state will only announce "not checked" and "checked".  (<a href="https://github.com/nvaccess/nvda/issues/9187">Closed bug</a> where apparently NVDA decided to forgo announcing <code>role=switch</code> and expose it as a checkbox.)
-							</dd>
+							<dd>With JAWS 2020: announces "switch" role and initial state. Activating the switch will announce the new state ("on" or "off").</dd>
+							<dd>With TalkBack Android 11: announces "switch" role and initial state. Activating the switch will produce a sound effect, and the new state ("checked", "not checked") will be announced, oddly followed by a "loading" announcement.</dd>
 
 							<dt>
-								TalkBack 7.2 (on Android 8.1) + Firefox 64.0.2 &amp; Chrome 71
+								Chrome / Edge
 							</dt>
-							<dd>
-								<p>
-									Announces as a "switch."  Toggling announces as "checked" and "not checked" for their respective states.</p>
-								</p>
+							<dd>With VoiceOver on macOS 11.2.3: announces "switch" role and initial state. Activating the switch will produce a "clicking" noise and the new state ("on" or "off") will be announced.</dd>
+							<dd>With NVDA 2020.4: announces "checkbox" role and initial state. Activating the 'switch' will announce the new state ("checked" or "not checked").
 							</dd>
+							<dd>With JAWS 2020: announces "switch" role and initial state. Activating the switch will announce the new state ("on" or "off"). When switching to the "on" state, JAWS will announce "pressed on". JAWS does not announce "pressed" when changing to the "off" state.</dd>
+							<dd>With TalkBack Android 11: announces "switch" role and initial state. Activating the switch will produce a sound effect, and the new state ("checked", "not checked") will be announced.</dd>
+
+							<dt>
+								Edge
+							</dt>
+							<dd>With Narrator: announces "switch" role and initial state. Activating the switch will announce the new state ("on" or "off"), along with a repeat of the switch's accessible name.</dd>
+
+							<dt>
+								Safari
+							</dt>
+							<dd>With VoiceOver on macOS 11.2.3 (Safari 14.0.3): announces "switch" role and initial state. Activating the switch will produce a "clicking" noise and the new state ("on" or "off") will be announced, along with a repeat of the switch's accessible name. </dd>
+							<dd>With VoiceOver on iOS 14.4.2: announces as "checkbox" role and initial state. Activating will produce a "clicking" noise and the new state ("checked" or "unchecked") will be announced.</dd>
 						</dl>
-
-
-						<details>
-							<summary>NVDA 2018.1 and 2018.2.1 notes</summary>
-							<p>
-								These versions of NVDA paired with FireFox and Chrome will announce elements with <code>role="switch"</code> as "not pressed" and then announce whether they are checked or not.</p>
-							<p>
-								It doesn't matter the current state of whether the switch is checked or not, with this version of NVDA the switch would always announce "not pressed."
-							</p>
-							<p>
-								This issue appears to have been fixed after testing with NVDA 2018.4.1.
-							</p>
-						</details>
 
 
 						<h4>Usage note:</h4>
 						<p>
-							Until issues with <code>role="switch"</code> have been worked out, and have wide support, it may be better to use a <code>button</code> element, with state indicated by <code>aria-pressed="true/false"</code>. Or stick with a <code>input type="checkbox"</code> if the usage of a checkbox would be an expected user experience.
+							Things have improved with switches since my initial testing of this role back in 2018, where state announcements were quirky if not missing all together (archived testing results below).  NVDA and iOS Safari/VoiceOver are the hold outs on respecting the <code>switch</code> role, but at least these announce the switch as a checkbox with proper states.
 						</p>
+
+
+						<details>
+							<summary>Archived Screen Reader Breakdowns</summary>
+							<dl>
+								<dt>JAWS 2020 + Firefox 77 &amp; Chrome and Edge 83</dt>
+								<dd>
+									<p>Announces as a "switch".  Each announce "on" and "off" when toggling state.  Chrome alone will announce "pressed on" for the on state.
+								</dd>
+
+								<dt>Narrator &amp; Edge (legacy)</dt>
+								<dd>
+									<p>Announces as a "toggle switch". Announces "on" and "off" when toggling state.</p>
+								</dd>
+
+								<dt>VoiceOver + Safari on iOS 12.2</dt>
+								<dd>
+									<p>
+										iOS VoiceOver continues to announce <code>role="switch"</code> as a "checkbox". However, with the release of iOS 12.2 (Mach 2019) the announcement of state has been fixed and "switches" will announce a "checked" or "unchecked" state.
+									</p>
+									<p>
+										Until iOS 12.2+ has wide adoption, one should still be wary of using <code>role="switch"</code>.
+									</p>
+								</dd>
+
+								<dt>VoiceOver + Safari on iOS 11.3 (at least) through 12.1.4</dt>
+								<dd>
+									<p>
+										iOS VoiceOver doesn't understand <code>role="switch"</code> and will fallback to announcing the component as a "checkbox". However, this fallback is bugged, as the state of the checkbox will not be announced to users on toggle of the component.
+									</p>
+								</dd>
+
+								<dt>Narrator &amp; NVDA 2018.4.1 + IE11</dt>
+								<dd>
+									<p>This pairing will ignore the <code>role="switch"</code>, and continue to announce the component as a checkbox. Checkbox state will be accurately announced on toggle.</p>
+								</dd>
+
+								<dt>JAWS 2018, 2019, 2020 + IE11</dt>
+								<dd>
+									<p>This pairing will announce the form control as a <code>role="switch"</code>, but is inconsistent with announcing the state of the component. Largely only announcing state on a user first focusing the form control with by the virtual cursor navigation or <kbd>tab</kbd> key. If activating the form control repeatedly, focus will be lost and return to an element higher up in the DOM.</p>
+								</dd>
+
+								<dt>NVDA 2020.1 + Firefox 77, IE11, Chrome 82 and Edge 83</dt>
+								<dd><p><code>role="switch"</code> is ignored and the control is announced as a checkbox. State is accurately announced in regards to being announced as a checkbox.</p></dd>
+
+								<dt>NVDA 2018.4.1 + Chrome 72</dt>
+								<dd>
+									<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "pressed checked" and "not pressed" for their respective states.</p>
+								</dd>
+
+								<dt>NVDA 2018.4.1 & 2019.1beta + Firefox 65.0.1</dt>
+								<dd>
+									<p><code>role="switch"</code> is announced as a "toggle button."  Toggling announces as "checked" and "not checked" for their respective states.</p>
+									<p>If "pressed" NVDA will announce initial state as "toggle button not pressed, checked".  Toggling state will only announce "not checked" and "checked".  (<a href="https://github.com/nvaccess/nvda/issues/9187">Closed bug</a> where apparently NVDA decided to forgo announcing <code>role=switch</code> and expose it as a checkbox.)
+								</dd>
+
+								<dt>
+									TalkBack 7.2 (on Android 8.1) + Firefox 64.0.2 &amp; Chrome 71
+								</dt>
+								<dd>
+									<p>
+										Announces as a "switch."  Toggling announces as "checked" and "not checked" for their respective states.</p>
+									</p>
+								</dd>
+							</dl>
+
+
+							<details>
+								<summary>NVDA 2018.1 and 2018.2.1 notes</summary>
+								<p>
+									These versions of NVDA paired with FireFox and Chrome will announce elements with <code>role="switch"</code> as "not pressed" and then announce whether they are checked or not.</p>
+								<p>
+									It doesn't matter the current state of whether the switch is checked or not, with this version of NVDA the switch would always announce "not pressed."
+								</p>
+								<p>
+									This issue appears to have been fixed after testing with NVDA 2018.4.1.
+								</p>
+							</details>
+						</details>
+
+
 
 
 						<h3>Continue Reading</h3>
