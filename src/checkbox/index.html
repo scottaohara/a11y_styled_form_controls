@@ -39,6 +39,13 @@
             <p>
               Cross-browser styling for native HTML checkboxes.
             </p>
+            
+            <div class=note>
+              <p><strong>Note:</strong>
+                This article is currently missing information about the accessibility of the indeterminiate / 'mixed' state of checkboxes.
+                This information is being written and will be posted asap. - sept 25, 2021.
+              </p>
+            </div>
           </header>
           <h2>
             Pattern Demos
@@ -62,7 +69,7 @@
               </label>
             </div>
             <div class="s-cb">
-              <input type="checkbox" id="s_input_3" required="">
+              <input type="checkbox" id="s_input_3" required>
               <label for="s_input_3">
                 Option 3 is required
               </label>
@@ -89,7 +96,7 @@
               </label>
             </div>
             <div class="c-cb">
-              <input type="checkbox" id="c_input_3" required="">
+              <input type="checkbox" id="c_input_3" required>
               <label for="c_input_3">
                 Option 3 is required
                 <span aria-hidden="true" class="req-star"></span>
@@ -171,7 +178,7 @@
             </p>
 
             <h4>Ensure proper styling for all states and situations</h4>
-            <p>Regardless of which restyling method you choose (directly styling the native checkbox, or using a visually hidden checkbox) you will need to consider all the various states (checked, unchecked, focus) as well as media query styling adjustments (high contrast, dark mode, etc.) that restyling these controls will require.  Note that restyling the checkbox directly will make some of these tasks easier (e.g., Windows High Contrast will be more likely to color the checkbox as expected when changing themes. But creating a faux custom checkbox will require additional effort to ensure the proper colors theme colors are respected).</p>
+            <p>Regardless of which restyling method you choose (directly styling the native checkbox, or using a visually hidden checkbox) you will need to consider all the various states (checked, unchecked, indeterminate, focus) as well as media query styling adjustments (high contrast, dark mode, etc.) that restyling these controls will require.  Note that restyling the checkbox directly will make some of these tasks easier (e.g., Windows High Contrast will be more likely to color the checkbox as expected when changing themes. But creating a faux custom checkbox will require additional effort to ensure the proper colors theme colors are respected).</p>
 
 
 
