@@ -8,11 +8,11 @@ In some cases, there may be a lack of support, or complications that arise when 
 
 
 ## How to use?
-Largely, many of these form controls can be copied and pasted into your pattern library, project, or pattern library project. Each form control has its own CSS file, and only when needed, JavaScript file. Each form control shares the *--demo-only--.css* and *--shared--.css* files. These files are largely only needed for presenting on these demo pages, and much of the shared styles are merely ports of a few [normalize.css](https://necolas.github.io/normalize.css/) selectors.  
+Largely, many of these demos can be copied and pasted into your pattern library, project, or pattern library project. Each form control has its own CSS file, and a JavaScript file as necessary. Each form control shares the *--demo-only--.css* and *--shared--.css* files. These stylesheets are largely only for use on these demo pages. Many of the shared styles are merely instances of a few [normalize.css](https://necolas.github.io/normalize.css/) selectors.  
 
 
 ### Wait, JavaScript?
-Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript (and sometime <abbr title="accessible rich internet applications">ARIA</abbr>) to function and correctly convey state. 
+Yes, while many of these form controls can be styled with some thoughtful maneuvering of markup and CSS, controls such as file uploads, toggle buttons and switches need a bit of JavaScript (and sometime <abbr title="accessible rich internet applications">ARIA</abbr>) to properly function and convey state. 
 
 
 ## The Different Form Elements
@@ -21,13 +21,13 @@ The following controls and elements each have demo pages with additional documen
 <details>
     <summary>Regarding screen reader announcements...</summary>
     <p>
-        Note the documentation of screen reader announcements is based on using the indicated versions of each screen reader and browser, as indicated in each test. The test results are as up to date as indicated on each test page. Documentation is noted as "updated" when new testing or techniques have changed.  Editorial updates may not constitute a change in the noted updated date. 
+        Note the documentation of screen reader announcements is based on using the versions of the screen reader and browser combos, as indicated on each test page. Be sure to check the last updated date of each test page. Documentation is noted as "updated" when new testing or techniques have changed.  Editorial updates may not constitute a change in the posted updated date. 
     </p>
     <p>
-        Things may change as browsers and screen readers are updated, so please refer to these as a snapshot in time, rather than being definitive results.  
+        Things may change as browsers and screen readers are updated, so please refer to these as a snapshot in time rather than being definitive results.  
     </p>
     <p>
-        If you find that announcements and/or support as changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
+        If you find that announcements and/or support has changed, please <a href="https://github.com/scottaohara/a11y_styled_form_controls/issues/new">file an issue</a>!
     </p>
 </details>
 
@@ -35,7 +35,7 @@ The following controls and elements each have demo pages with additional documen
 ### Checkboxes and Radio Buttons
 Styled HTML checkboxes, and radio button patterns.  
 
-Checkboxes can be used as a single form option, or grouped with similar checkboxes. Within a group, one or more checkboxes may be checked by the user. In contrast, radio buttons provide users two or more options to choose from, but only one option may be chosen from a single radio button grouping.
+Checkboxes can be used as a single form option, or grouped with similar checkboxes. Within a group, one or more checkboxes may be checked by the user. In contrast, radio buttons provide users two or more options to choose from, but only one option may be chosen from a radio button grouping at a time.
 
 1. [Styled Checkboxes](src/checkbox)
 2. [Styled Radio Buttons](src/radio-button)  
