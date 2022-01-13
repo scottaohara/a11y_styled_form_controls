@@ -3,6 +3,11 @@
 	position: relative;
 }
 
+[dir=rtl] .c-cb {
+	padding-left: 0;
+	padding-right: 2em;
+}
+
 .c-cb > input[type="checkbox"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -13,6 +18,11 @@
 	position: relative;
 	vertical-align: top;
 	z-index: 2;
+}
+
+[dir=rtl] .c-cb > input[type="checkbox"] {
+	margin-left: 0;
+	margin-right: -2em;
 }
 
 /**
@@ -44,6 +54,12 @@
 	width: 1.125em;
 }
 
+[dir=rtl] .c-cb > label::before,
+[dir=rtl] .c-cb > input[type="checkbox"] {
+	left: auto;
+	right: .125em;
+}
+
 /**
  * Base styles for use on both
  * pseudo elements.
@@ -72,10 +88,15 @@
 	width: 1.125em;
 }
 
+[dir=rtl] .c-cb > label::before {
+	left: auto;
+	right: .125em;
+}
+
 /**
  * This recreates the "check" mark.
  */
-.c-cb > label:after {
+.c-cb > label::after {
 	border: 0;
 	border-bottom: 4px solid #565656;
 	border-right: 4px solid #565656;
@@ -86,7 +107,10 @@
 	transform: rotate(45deg) scale(0);
 	width: .5em;
 }
-
+[dir=rtl] .c-cb > label::after {
+	left: auto;
+	right: .425em;
+}
 
 /**
  * ** Defining States **
@@ -138,6 +162,11 @@
 	top: -1em;
 }
 
+[dir=rtl] .c-cb input[required] ~ label .req-star {
+	left: -.7em;
+	right: auto;
+}
+
 .c-cb input[required] ~ label .req-star::after,
 .c-cb input[required] ~ label .req-star::before {
   border-left: .35em solid transparent;
@@ -145,6 +174,12 @@
   content: " ";
   position: absolute;
   right: 0;
+}
+
+[dir=rtl] .c-cb input[required] ~ label .req-star::after,
+[dir=rtl] .c-cb input[required] ~ label .req-star::before {
+	left: 0;
+	right: auto;
 }
 
 .c-cb input[required] ~ label .req-star::after {
