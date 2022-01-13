@@ -38,13 +38,6 @@
             <p>
               Cross-browser styling for native HTML checkboxes.
             </p>
-            
-            <div class=note>
-              <p><strong>Note:</strong>
-                This article is currently missing information about the accessibility of the indeterminiate / 'mixed' state of checkboxes.
-                This information is being written and will be posted asap. - sept 25, 2021.
-              </p>
-            </div>
           </header>
           <h2>
             Pattern Demos
@@ -119,6 +112,11 @@
               </label>
             </div>
           </fieldset>
+          
+          <p role=note>
+            Additional demos can be found in the examples provided in the blog post 
+            <a href="https://www.scottohara.me/blog/2021/09/24/custom-radio-checkbox-again.html">One last time: custom styling radio buttons and checkboxes</a>.
+          </p>
 
 
           <section class="demo-details">
@@ -166,7 +164,7 @@
               The most important thing to note about directly styling checkbox controls is that their inherent appearance needs to be reset by the CSS property <code>appearance: none</code>. Use the <code>-webkit-</code> prefix for this property if you need to target browsers where the unprefixed property is not supported. 
             </p>
             <p>
-              Note that Internet Explorer and pre-Chromium Edge do not support this prefixed property, so their direct styling of checkboxes will be limited. These browsers do support a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-check"><code>::-ms-check</code> selector</a>, which can be used instead for legacy styling.
+              Note that Internet Explorer and pre-Chromium Edge do not support this prefixed property, so their direct styling of checkboxes will be limited. These browsers do support a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-check"><code>::-ms-check</code> selector</a>, which can be used for legacy styling.
             </p>
 
             <p>
@@ -194,18 +192,18 @@
             </p>
 
             <h4>Ensure proper styling for all states and situations</h4>
-            <p>Regardless of which restyling method you choose (directly styling the native checkbox, or using a visually hidden checkbox) you will need to consider all the various states (checked, unchecked, indeterminate, focus) as well as media query styling adjustments (high contrast, dark mode, etc.) that restyling these controls will require.  Note that restyling the checkbox directly will make some of these tasks easier (e.g., Windows High Contrast will be more likely to color the checkbox as expected when changing themes. But creating a faux custom checkbox will require additional effort to ensure the proper colors theme colors are respected).</p>
-
+            <p>
+              Regardless of which restyling method you choose (directly styling the native checkbox, or using a visually hidden checkbox) you will need to consider all the various states (checked, unchecked, indeterminate, focus) as well as media query styling adjustments (high contrast, dark mode, etc.) that restyling these controls will require.  Note that restyling the checkbox directly will make some of these tasks easier (e.g., Windows High Contrast will be more likely to color the checkbox as expected when changing themes. But creating a faux custom checkbox will require additional effort to ensure the proper colors theme colors are respected).
+            </p>
 
 
             <h4>Affects on Screen Reader Announcements?</h4>
-
             <p>
               With either styling method, the native checkbox remains in the DOM, and is the focusable element that will be interacted with by all users.  These styling methods do not alter the way a screen reader will announce the checkboxes when focused by the <kbd>Tab</kbd> key.
             </p>
 
             <p>
-              Specifically for the visually hidden checkbox, people might think to hide it with a standard "visually-hidden" or "sr-only" CSS ruleset.  These popular rulesets often include <code>position: absolute</code> and squish the native <code>input</code> down to a 1px by 1px invisible dot on the screen.  Using this standard method to visually hide the checkbox will retain its keyboard accessibility, but impose screen reader quirks that should be avoided.
+              Specifically for the visually hidden checkbox, people might think to hide it with a standard "visually-hidden" or "sr-only" CSS ruleset.  These popular rulesets often include <code>position: absolute</code> and squish the native <code>input</code> down to a 1px by 1px invisible dot on the screen.  Using this method to visually hide the checkbox will retain its keyboard accessibility, but impose screen reader quirks that should be avoided.
             </p>
 
             <p>
@@ -213,11 +211,11 @@
             </p>
 
             <p>
-              This double virtual focus issue doesn't occur with unstyled checkboxes with Firefox + NVDA. This <code>position: absolute</code> behavior also does not occur with Chrome + NVDA.
+              This double virtual focus issue doesn't occur with unstyled checkboxes with Firefox + NVDA. This <code>position: absolute</code> behavior also does not occur with Chromium browsers paird with NVDA.
             </p>
 
             <p>
-              A user can hit the <kbd>up arrow</kbd> or <kbd>down arrow</kbd> keys to navigate between checkboxes and have their accessible names announced.  However, in Firefox + NVDA, when navigating with the <kbd>down arrow</kbd> key NVDA will announce "checkbox [check or unchecked]". A second press of <kbd>down arrow</kbd> will announce "clickable [accessible name of the checkbox]".  <b>Note</b> this separation of the form control from its accessible name does not occur when navigating by <kbd>X</kbd> or <kbd>F</kbd> keys, nor when using the <kbd>Tab</kbd> key to navigate the controls.
+              A user can hit the <kbd>up arrow</kbd> or <kbd>down arrow</kbd> keys to navigate between checkboxes and have their accessible names announced.  However, in Firefox + NVDA, when navigating with the <kbd>down arrow</kbd> key NVDA will announce "checkbox [check or unchecked]". A second press of <kbd>down arrow</kbd> will announce "clickable [accessible name of the checkbox]".  <strong>Note</strong> this separation of the form control from its accessible name does not occur when navigating by <kbd>X</kbd> or <kbd>F</kbd> keys, nor when using the <kbd>Tab</kbd> key to navigate the controls.
             </p>
 
             <p>
@@ -235,6 +233,9 @@
             <p>
               When re-checking the checkboxes after the latest releases of macOS and Safari, if navigating by <kbd>Tab</kbd> key or <kbd>VO</kbd> cursor, checkboxes will double announce their label.  For instance: <q>Option 1. Option 1.</q>. This only occurs if the checkbox precedes its <code>label</code>. If the checkbox comes after the <code>label</code>, or within it, in the DOM order, this behavior will not occur.  This behavior does not occur when using Chrome + VoiceOver.  (Bug filed: 45506356)
             </p>
+            
+            <h3>Mixed checkboxes</h3>
+            <p>Use the <code>indeterminate</code> IDL attribute to indicate when a checkbox is in a "mixed" state. It's important to use this IDL attribute, and avoide <code>aria-checked=mixed</code>, because browsers <strong>should</strong> ignore that attribute on native checkboxes, since browsers are supposed to ignore ARIA attributes that have native HTML equivalents. In this case, <code>aria-checked</code> is meant to be overwritten by the <code>checked</code> state of the form control. <a href="https://bugs.webkit.org/show_bug.cgi?id=231760">Webkit has a bug with exposing the 'mixed' state</a> (last checked Jan 2022) of a native checkbox, regardless of if you use <code>indeterminate</code> or <code>aria-checked=mixed</code>.</p>
           </section>
 
           <h3>Continue reading</h3>
