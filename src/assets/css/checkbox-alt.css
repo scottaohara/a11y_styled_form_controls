@@ -151,6 +151,17 @@
   border-top-color: rgba(34, 139, 236, .8);
 }
 
+/* support rtl */
+[dir=rtl] .s-cb input[required] + label {
+  padding-left: 1em;
+  padding-right: 0;
+}
+[dir=rtl] .s-cb input[required] + label::after,
+[dir=rtl] .s-cb input[required] + label::before {
+  left: 0;
+  right: auto;
+}
+
 
 
 /**
