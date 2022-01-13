@@ -37,7 +37,7 @@
  * It must be the same height, width and
  * position of the native checkbox element.
  */
-.c-cb > label:before,
+.c-cb > label::before,
 .c-cb > input[type="checkbox"] {
 	height: 1.125em;
 	left: .125em;
@@ -48,8 +48,8 @@
  * Base styles for use on both
  * pseudo elements.
  */
-.c-cb > label:before,
-.c-cb > label:after {
+.c-cb > label::before,
+.c-cb > label::after {
 	border: 1px solid;
 	content: " ";
 	position: absolute;
@@ -62,7 +62,7 @@
 /**
  * Styles for the custom box boundary.
  */
-.c-cb > label:before {
+.c-cb > label::before {
 	border-color: #565656;
 	border-radius: 2px;
 	box-shadow: 0 0 0 1px #565656;
@@ -91,38 +91,38 @@
 /**
  * ** Defining States **
  */
-.c-cb > input:checked ~ label:before {
+.c-cb > input:checked ~ label::before {
 	border-color: transparent;
 	box-shadow: 0 0 0 2px #0d5192;
 }
 
-.c-cb > input:focus ~ label:before {
+.c-cb > input:focus ~ label::before {
 	border-color: transparent;
 	box-shadow: 0 0 0 3px #228BEC;
-	outline-offset: 2px;
 	outline: 2px solid transparent;
+	outline-offset: 2px;
 }
 
-.c-cb > input:checked ~ label:after {
+.c-cb > input:checked ~ label::after {
 	transform: rotate(45deg) scale(1);
 }
 
-.c-cb > input:checked:focus ~ label:after {
+.c-cb > input:checked:focus ~ label::after {
 	border-color: #228BEC;
 }
 
 .c-cb > input[disabled] ~ label {
-	opacity: .625;
+	opacity: .825;
 }
 
 /* placeholder design until a better required
    design pattern can be created */
-.c-cb > input:invalid ~ label:before {
+.c-cb > input:invalid ~ label::before {
 	border-color: #f00;
 	box-shadow: 0 0 0 1px #f00;
 }
 
-.c-cb > input:invalid:focus ~ label:before {
+.c-cb > input:invalid:focus ~ label::before {
 	box-shadow: 0 0 0 2px #f00;
 }
 
@@ -132,14 +132,14 @@
 
 
 .c-cb input[required] ~ label .req-star {
-	position: relative;
 	display: inline-block;
+	position: relative;
 	right: -.7em;
 	top: -1em;
 }
 
-.c-cb input[required] ~ label .req-star:after,
-.c-cb input[required] ~ label .req-star:before {
+.c-cb input[required] ~ label .req-star::after,
+.c-cb input[required] ~ label .req-star::before {
   border-left: .35em solid transparent;
   border-right: .35em solid transparent;
   content: " ";
@@ -147,21 +147,21 @@
   right: 0;
 }
 
-.c-cb input[required] ~ label .req-star:after {
+.c-cb input[required] ~ label .req-star::after {
  border-bottom: .6em solid red;
  top: -.2em;
 }
 
-.c-cb input[required] ~ label .req-star:before {
+.c-cb input[required] ~ label .req-star::before {
  border-top: .6em solid red;
  top: 0
 }
 
 /* when checked, ease up on the "error" feel to the indicator */
-.c-cb input[required]:checked + label .req-star:after {
+.c-cb input[required]:checked + label .req-star::after {
   border-bottom-color: rgba(34, 139, 236, .8);
 }
 
-.c-cb input[required]:checked + label .req-star:before {
+.c-cb input[required]:checked + label .req-star::before {
   border-top-color: rgba(34, 139, 236, .8);
 }
