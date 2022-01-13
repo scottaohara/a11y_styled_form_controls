@@ -21,8 +21,8 @@
   transition: transform .2s ease-in-out;
 }
 
-.s-cb input:before,
-.s-cb input:after {
+.s-cb input::before,
+.s-cb input::after {
   border-bottom: 3px solid rgba(34, 139, 236, 1);
   border-right: 3px solid rgba(34, 139, 236, 1);
   bottom: 0;
@@ -39,7 +39,7 @@
   box-shadow: inset 0 0 20px 3px rgba(34, 139, 236, .05);
 }
 
-.s-cb input:checked:before {
+.s-cb input:checked::before {
   transform: rotate(45deg) scale(1);
 }
 
@@ -50,16 +50,43 @@
   outline-offset: 3px;
 }
 
+/** 
+ * Indeterminate (mixed) style
+ */
+.s-cb input:indeterminate::after {
+  border-bottom-width: 4px;
+  border-right-width: 0px;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: none;
+  width: 1em;
+}
+
 
 /**
  * Disabled styles
  */
 .s-cb input[disabled] {
-  opacity: .45
+  opacity: .45;
 }
 
 .s-cb input[disabled] + label {
-  opacity: .75;
+  opacity: .825;
+}
+
+.s-cb input[disabled].informative {
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.s-cb input[disabled].informative::before {
+  border-bottom-color: #000;
+  border-right-color: #000;
+  transform: rotate(45deg) scale(1.3)
 }
 
 
@@ -67,9 +94,9 @@
    allow for a required visual indicator to be absolutely positioned
 */
 .s-cb label {
-  position: relative;
   left: -.25em;
   padding-left: .75em;
+  position: relative;
 }
 
 /* if a checkbox is required, make some space for the
@@ -96,8 +123,8 @@
 /**
  * Create a visual indicator for the required checkbox
  */
-.s-cb input[required] + label:after,
-.s-cb input[required] + label:before {
+.s-cb input[required] + label::after,
+.s-cb input[required] + label::before {
   border-left: .35em solid transparent;
   border-right: .35em solid transparent;
   content: " ";
