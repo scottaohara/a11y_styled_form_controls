@@ -14,8 +14,8 @@
   width: 2em;
 }
 
-.s-cb input:before,
-.s-cb input:after {
+.s-cb input::before,
+.s-cb input::after {
   content: "";
   position: absolute;
   transition: transform .2s ease-in-out;
@@ -77,13 +77,13 @@
   opacity: .825;
 }
 
-.s-cb input[disabled].informative {
+.s-cb--informative input[disabled] {
   border: none;
   box-shadow: none;
   opacity: 1;
 }
 
-.s-cb input[disabled].informative::before {
+.s-cb--informative input[disabled]::before {
   border-bottom-color: #000;
   border-right-color: #000;
   transform: rotate(45deg) scale(1.3)
