@@ -35,7 +35,7 @@
           <header>
             <h1>Styled HTML Checkboxes</h1>
             <p>Published: <span>July 26, 2018</span></p>
-            <p>Last updated: <span>September 25, 2021</span></p>
+            <p>Last updated: <span>January 13, 2022</span></p>
             <p>
               Cross-browser styling for native HTML checkboxes.
             </p>
@@ -62,9 +62,16 @@
               </label>
             </div>
             <div class="s-cb">
-              <input type="checkbox" id="s_input_2" disabled>
+              <input type="checkbox" id="s_input_2a" disabled>
               <label for="s_input_2">
-                Option 2
+                Option 2a
+                (this option is disabled)
+              </label>
+            </div>
+            <div class="s-cb">
+              <input type="checkbox" id="s_input_2b" disabled class="informative">
+              <label for="s_input_2">
+                Option 2b
                 (this option is disabled)
               </label>
             </div>
@@ -74,6 +81,16 @@
                 Option 3 is required
               </label>
             </div>
+            <div class="s-cb">
+              <input type="checkbox" id="s_input_4">
+              <label for="s_input_3">
+                Option 4 (mixed)
+              </label>
+            </div>
+            <script>
+              const mixed = document.getElementById('s_input_4');
+              mixed.indeterminate = true;
+            </script>
           </fieldset>
 
 
