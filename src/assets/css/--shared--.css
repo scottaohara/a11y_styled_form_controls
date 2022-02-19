@@ -28,6 +28,12 @@ input::-ms-clear {
 	width: 0;
 }
 
+/**
+ * Style for disabled text fields
+ */
+input:not([type])[disabled], input[type=text][disabled], textarea[disabled] {
+	opacity: .625;
+}
 
 /**
  * <button> Focus Normalization:
