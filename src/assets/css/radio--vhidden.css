@@ -77,7 +77,7 @@
 		border: 6px solid buttonface;
 		box-shadow: none;
 	}
-	.c-radio:focused + label {
+	.c-radio input:focused + label {
 		outline: 2px solid;
 	}
 }
