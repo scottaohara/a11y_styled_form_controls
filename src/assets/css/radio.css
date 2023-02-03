@@ -48,9 +48,13 @@
 	opacity: .4;
 }
 
-@media screen and (-ms-high-contrast: active) {
+@media screen and (-ms-high-contrast: active), (forced-colors: active) {
 	.n-radio:checked {
 		border: 6px solid;
 		box-shadow: none;
+	}
+	.n-radio-label:focus-within  {
+		outline: 2px solid;
+		outlinse-offset: 2px;
 	}
 }
