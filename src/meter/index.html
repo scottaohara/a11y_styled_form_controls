@@ -46,20 +46,20 @@
 
 					<div class="progress-meter-example">
 						Test 1<br>
-						<meter class="meter" low="64" high="80" max="100" value="84"></meter>
+						<meter class="meter" low="64" high="80" max="100" value="84" aria-label="test 1"></meter>
 					</div>
 
 					<div class="progress-meter-example">
-						<label for="meter_2">
+						<label>
 							Test 2<br>
-							<meter class="meter" low="0" value="0" high="70" max="100"></meter>
+							<meter id="meter_2" class="meter" low="0" value="0" high="70" max="100"></meter>
 						</label>
 					</div>
 
 					<div class="progress-meter-example">
 						<label for="meter_n3">
 							Test 3<br>
-							<meter class="meter" low="10" value="100" high="80" max="100"></meter>
+							<meter id="meter_n3" class="meter" low="10" value="100" high="80" max="100"></meter>
 						</label>
 					</div>
 
@@ -142,7 +142,9 @@
 
 						<h4>Affects on Screen Reader Announcements?</h4>
 						<p>
-							The <code>meter</code> element has no support in Internet Explorer, but is supported in Microsoft Edge. The element has different levels of support in other major browsers, and screen readers can vary quite a bit in how they interpret the element, if at all.
+							The <code>meter</code> element has no support in Internet Explorer, but is supported in Microsoft Edge. 
+							The element has different levels of support in other major browsers, and screen readers can vary quite 
+							a bit in how they interpret the element, if at all.
 						</p>
 
 						<dl>
@@ -160,7 +162,9 @@
 							</dt>
 							<dd>
 								<p>
-									Chrome + JAWS will announce both styled and unstyled <code>meter</code> elements and their current value, with no indication of their low, high, or max values.  If a <code>meter</code> is provided an accessible name by <code>aria-label</code> or <code>aria-labelledby</code>, it will be completely ignored by JAWS.
+									Chrome + JAWS will announce both styled and unstyled <code>meter</code> elements and their current value, 
+									with no indication of their low, high, or max values.  If a <code>meter</code> is provided an accessible name 
+									by <code>aria-label</code> or <code>aria-labelledby</code>, it will be completely ignored by JAWS.
 								</p>
 							</dd>
 
